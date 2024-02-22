@@ -5,11 +5,17 @@ This contains three folders containing the different versions: English (en/), Fr
 
 Each of these is a separate [Jupyter-Book](https://jupyterbook.org/en/stable/intro.html).
 
-To view the page, clone the repo and then open "QuantumCommunicationsAndCryptography/en/_build/html/content/intro.html" in your web browser, by double clicking o doing ctrl-o in your browser and then selecting the file. If this file doesn't exist then you need to compile the HTML files using the compileAll.sh script or by running 
+To view the page, clone the repo and then open "QuantumCommunicationsAndCryptography/en/_build/html/content/intro.html" in your web browser, either by double clicking or doing ctrl-o in your browser and then selecting the file. 
+
+If this file doesn't exist then you need to compile the HTML files, first installing jupyter-book:
+```bash
+sudo apt-get install jupyter-book
+```
+and then by running:
 ```bash
 jupyter-book build en/
 ```
-for the language you want to compile.
+for the language you want to compile (in this case English).
 
 When editing the pages (the Markdown .md files) you'll need to recompile and then refresh your browser to view the changes. LaTeX equations are supported, can also use Jupyter notebooks if we need to run code but I think for our case just Markdown is fine. See either the online guide for Jupyter books linked above or just look at the files I've already done for syntax examples.
 
