@@ -1,0 +1,43 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: content/intro
+chapters:
+- file: content/chapter1/chapter1
+- file: content/chapter2/chapter2
+  sections:
+  - file: content/chapter2/section1
+  - file: content/chapter2/section2
+  - file: content/chapter2/section3
+  - file: content/chapter2/section4
+- file: content/chapter3/chapter3
+  sections:
+  - file: content/chapter3/section1
+  - file: content/chapter3/section2
+  - file: content/chapter3/section3
+  - file: content/chapter3/section4
+  - file: content/chapter3/section5
+- file: content/chapter4/chapter4
+- file: content/chapter5/chapter5
+  sections:
+  - file: content/chapter5/section1
+  - file: content/chapter5/section2
+- file: content/chapter6/chapter6
+  sections:
+  - file: content/chapter6/section1
+  - file: content/chapter6/section2
+  - file: content/chapter6/section3
+  - file: content/chapter6/section4
+- file: content/chapter7/chapter7
+- file: content/chapter8/chapter8
+  sections:
+  - file: content/chapter8/section1
+  - file: content/chapter8/section2
+- file: content/chapter9/chapter9
+  sections:
+  - file: content/chapter9/section1
+  - file: content/chapter9/section2
+  - file: content/chapter9/section3
+  - file: content/chapter9/section4
+- file: content/bibliography
