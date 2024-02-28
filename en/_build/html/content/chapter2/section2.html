@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Quantum Gates &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter2/section2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section3.html" />
-    <link rel="prev" title="TODO" href="section1.html" />
+    <link rel="next" title="The No-cloning Theorem" href="section3.html" />
+    <link rel="prev" title="The Quantum Bit" href="section1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,10 +180,10 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="section1.html">TODO</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Basics Elements of Quantum Information Theory</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">The No-cloning Theorem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
 </ul>
 </li>
@@ -219,7 +221,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">TODO</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -409,7 +410,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -420,11 +423,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Quantum Gates</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -434,9 +445,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-gates">
+<h1>Quantum Gates<a class="headerlink" href="#quantum-gates" title="Link to this heading">#</a></h1>
+<p>Although these notes focus on quantum communication and cryptography, let us briefly
+review here, for the sake of completeness, the basic logical operations
+acting on a qubit. Recall that any classical computation consists of a
+sequence of logical gates on a string of bits. Any of these gates
+can always be decomposed in terms of AND  and NOT gates. These two
+operations, then, give a universal set of gates for classical
+computation. One would conclude that what is needed in order to
+adapt classical to quantum computation is (i) encode the classical
+bits into quantum bits as above, <span class="math notranslate nohighlight">\(i\rightarrow\ket i\)</span>, and (ii)
+the quantum version of these gates.</p>
+<p>When dealing with quantum information processing in a controlled (closed)
+system, any evolution is described by a unitary operation <span class="math notranslate nohighlight">\(U\)</span>.
+These operations are reversible, i.e. knowing the operation and
+the output state, one can always reconstruct the input state. Note
+however that the OR and AND gates are irreversible, since the output bit
+is not enough to infer the two input bits.
+Therefore, in order to embed standard classical computation into the
+quantum formalism, one first has to make it reversible. This is
+indeed possible as shown by Bennett in <span id="id1">[<a class="reference internal" href="#id7" title="Charles H Bennett. Logical reversibility of computation. IBM journal of Research and Development, 17(6):525–532, 1973.">1</a>]</span>: any
+classical computation can be made reversible without an
+exponential increase of the required resources. This implies that
+any classical computation can be simulated by quantum means, as
+follows: first construct the equivalent reversible classical
+computation and then replace the classical bits, or cbits, by qubits. In this scheme, the
+corresponding quantum and reversible version of an operation <span class="math notranslate nohighlight">\(f\)</span>
+on a bit string <span class="math notranslate nohighlight">\(\vec b\)</span> reads</p>
+<div class="math notranslate nohighlight" id="equation-revf">
+<span class="eqno">(13)<a class="headerlink" href="#equation-revf" title="Link to this equation">#</a></span>\[    U_f\ket{\vec b}\ket 0=\ket{\vec b}\ket{f(\vec b)} .\]</div>
+<p>For example, the quantum AND can be as follows: an ancillary state
+in state <span class="math notranslate nohighlight">\(\ket{0}\)</span> is appended to the two input qubits in states <span class="math notranslate nohighlight">\(\ket i\)</span>
+and <span class="math notranslate nohighlight">\(\ket j\)</span>. It is easy to see that there exists a unitary acting
+on a three-qubit system mapping <span class="math notranslate nohighlight">\(\ket i\ket j\ket 0\rightarrow\ket
+i\ket j\ket{i\cdot j}\)</span>. (TODO: rather than a dot, maybe <span class="math notranslate nohighlight">\(i \text{AND} j\)</span> would be better?)</p>
+<p>The previous discussion shows that any classical computation can
+be embedded on a quantum computer, a device able to manipulate
+quantum states. However, one would like to see whether it is
+possible to go further. In order to do that, it is important to
+characterize the set of all quantum operations on a quantum state.
+For instance, it would be interesting to identify, as in the
+classical case, a set of elementary gates in which to decompose
+any unitary operation acting on an initial state of <span class="math notranslate nohighlight">\(N\)</span> qubits. A seminal
+result in this direction was provided in <span id="id2">[<a class="reference internal" href="#id8" title="Adriano Barenco, Charles H Bennett, Richard Cleve, David P DiVincenzo, Norman Margolus, Peter Shor, Tycho Sleator, John A Smolin, and Harald Weinfurter. Elementary gates for quantum computation. Physical review A, 52(5):3457, 1995.">2</a>]</span>: the set
+of all one-qubit operations plus the CNOT gate is
+universal. More precisely, any unitary operation actin on an <span class="math notranslate nohighlight">\(N\)</span>-qubit
+system, <span class="math notranslate nohighlight">\(U\in SU(2^N)\)</span>, can be decomposed as a sequence
+of single-qubit operations and CNOT gates. Actually, any two-qubit
+entangling operation turns out to be sufficient for quantum
+computation, when assisted with single-qubit operations
+<span id="id3">[<a class="reference internal" href="#id9" title="Michael J Bremner, Christopher M Dawson, Jennifer L Dodd, Alexei Gilchrist, Aram W Harrow, Duncan Mortimer, Michael A Nielsen, and Tobias J Osborne. Practical scheme for quantum computation with any two-qubit entangling gate. Physical review letters, 89(24):247902, 2002.">3</a>]</span>. From a more practical point of view, it has been
+shown that the so-called Hadamard, <span class="math notranslate nohighlight">\(U_H\)</span>, phase, <span class="math notranslate nohighlight">\(U_{ph}\)</span>, <span class="math notranslate nohighlight">\(\pi/8\)</span>
+gate, <span class="math notranslate nohighlight">\(U_{\pi/8}\)</span> and CNOT gates are universal, i.e. any <span class="math notranslate nohighlight">\(N\)</span>-qubit
+unitary operation can be decomposed in terms of these
+gates <span id="id4">[<a class="reference internal" href="#id10" title="P Oscar Boykin, Tal Mor, Matthew Pulver, Vwani Roychowdhury, and Farrokh Vatan. On universal and fault-tolerant quantum computing. arXiv preprint quant-ph/9906054, 1999.">4</a>]</span>. Their expressions are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  U_H = \frac{1}{\sqrt 2}\begin{pmatrix}1 &amp; 1 \\
+  1 &amp; 1\\\end{pmatrix}\quad
+  U_{ph} = \begin{pmatrix}1 &amp; 0 \\
+  0 &amp; i\\\end{pmatrix}\quad
+  U_{\pi/8} = \begin{pmatrix}1 &amp; 0 \\
+  0 &amp; e^{i\pi/4}\\\end{pmatrix} .\end{split}\]</div>
+<p>The implementation of the previous three single-qubit operation
+and the CNOT gate is sufficient for any experimental proposal of a
+quantum computer.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id5">
+<div role="list" class="citation-list">
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Charles H Bennett. Logical reversibility of computation. <em>IBM journal of Research and Development</em>, 17(6):525–532, 1973.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Adriano Barenco, Charles H Bennett, Richard Cleve, David P DiVincenzo, Norman Margolus, Peter Shor, Tycho Sleator, John A Smolin, and Harald Weinfurter. Elementary gates for quantum computation. <em>Physical review A</em>, 52(5):3457, 1995.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Michael J Bremner, Christopher M Dawson, Jennifer L Dodd, Alexei Gilchrist, Aram W Harrow, Duncan Mortimer, Michael A Nielsen, and Tobias J Osborne. Practical scheme for quantum computation with any two-qubit entangling gate. <em>Physical review letters</em>, 89(24):247902, 2002.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>P Oscar Boykin, Tal Mor, Matthew Pulver, Vwani Roychowdhury, and Farrokh Vatan. On universal and fault-tolerant quantum computing. <em>arXiv preprint quant-ph/9906054</em>, 1999.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -475,7 +571,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">The Quantum Bit</p>
       </div>
     </a>
     <a class="right-next"
@@ -483,7 +579,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">The No-cloning Theorem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,7 +590,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

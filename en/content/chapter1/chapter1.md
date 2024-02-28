@@ -101,9 +101,7 @@ and
 |ψ_i〉 = |i〉,
 ```
 
-that is, the initial state $\ket{\psi}$ collapses into $|i〉$ with probability given by the square of the overlap, $|〈i\ket{\psi}|^2$.
-
-The previous formulae also imply that there is no measurement (physical process) distinguishing $\ket{\psi}$ from $e^{iγ} \ket{\psi}$. Thus, the state of a physical system is actually described by a vector in a Hilbert space, up to an irrelevant global phase.
+that is, the initial state $\ket{\psi}$ collapses into $|i〉$ with probability given by the square of the overlap, $|〈i\ket{\psi}|^2$. The previous formulae also imply that there is no measurement (physical process) distinguishing $\ket{\psi}$ from $e^{iγ} \ket{\psi}$. Thus, the state of a physical system is actually described by a vector in a Hilbert space, up to an irrelevant global phase.
 
 ## Bibliography for this section
 ```{bibliography}
