@@ -3,7 +3,7 @@
 \def\L{{\cal L}}
 ```
 
-# The No-cloning Theorem
+# The No-Cloning Theorem
 
 The previous sections have shown that a quantum bit is richer than its classical counterpart
 because it can be in superposition states.

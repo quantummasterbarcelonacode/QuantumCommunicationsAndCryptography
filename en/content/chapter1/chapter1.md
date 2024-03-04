@@ -9,7 +9,7 @@ The scope of this first section is to introduce the basic postulates of Quantum 
 The norm of a vector $\ket{\psi}$ is $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. In general, most of Quantum Information (QI) applications deal with complex spaces of finite dimension $d$, denoted by $\mathbb{C}^d$.
 
 `````{admonition} Example
-:class: tip
+:class: note
 Given two vectors in a complex two-dimensional space, denoted by $\mathbb{C}^2$,
 
 $\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix}$,

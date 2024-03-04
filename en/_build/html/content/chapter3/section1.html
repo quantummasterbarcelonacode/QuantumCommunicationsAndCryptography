@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>One-Time Pad and Quantum Key Distribution &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter3/section1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section2.html" />
-    <link rel="prev" title="TODO" href="chapter3.html" />
+    <link rel="next" title="The BB84 protocol" href="section2.html" />
+    <link rel="prev" title="Quantum Cryptography" href="chapter3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,13 +183,13 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Basics Elements of Quantum Information Theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">The Quantum Bit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Quantum Gates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-cloning Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Bell’s Theorem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">Quantum Cryptography</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">The BB84 protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section5.html">TODO</a></li>
@@ -419,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>One-Time Pad and Quantum Key Distribution</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -433,9 +435,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="one-time-pad-and-quantum-key-distribution">
+<h1>One-Time Pad and Quantum Key Distribution<a class="headerlink" href="#one-time-pad-and-quantum-key-distribution" title="Link to this heading">#</a></h1>
+<p>Before moving into the quantum world, let us review a seminal
+result by Vernam showing how to exchange private information in a
+completely secure way using a pre-shared secret key.</p>
+<p>In any cryptographic scenario, two honest parties, Alice and Bob,
+want to exchange information in a private way. There is also a
+third dishonest party, the eavesdropper, also called Eve, that
+wants to read this information. Assume in what follows that Alice
+and Bob share a secret key, that is, a list of perfectly
+correlated bits which Eve has no information about. The secret
+key, of length <span class="math notranslate nohighlight">\(N\)</span>, is denoted by <span class="math notranslate nohighlight">\(\vec k\)</span>, which is a string of
+<span class="math notranslate nohighlight">\(N\)</span> bits <span class="math notranslate nohighlight">\(k_i\)</span>, with <span class="math notranslate nohighlight">\(i=1,\ldots,N\)</span>. In order to send a message of
+length <span class="math notranslate nohighlight">\(M\leq N\)</span> to Bob, denoted by <span class="math notranslate nohighlight">\(\vec m\)</span>, Alice can perform
+the sum modulo 2 of her message bits with <span class="math notranslate nohighlight">\(M\)</span> secret key bits and
+send the resulting <span class="math notranslate nohighlight">\(M\)</span>-bit string through the channel. More
+precisely, with this operation Alice computes the boolean
+XOR (The boolean XOR, denoted by <span class="math notranslate nohighlight">\(\oplus\)</span>, is the
+operation such that <span class="math notranslate nohighlight">\(0\oplus 0=1\oplus 1=0\)</span> and <span class="math notranslate nohighlight">\(0\oplus 1=1\oplus
+0=1\)</span>) of each bit in her message, <span class="math notranslate nohighlight">\(m_i\)</span>, with a bit in the secret
+key, <span class="math notranslate nohighlight">\(k_i\)</span>, and sends the resulting bits, <span class="math notranslate nohighlight">\(r_i=m_i\oplus k_i\)</span>,
+through the channel. It can be shown that Eve, who has access only to
+the message <span class="math notranslate nohighlight">\(\vec r\)</span> sent through the insecure channel, does not
+have any information about the real message <span class="math notranslate nohighlight">\(\vec m\)</span>. However, on
+Bob’s side, it is very easy to decode the message due to the fact
+that he knows the key. He simply has to add the received message
+to his key, getting <span class="math notranslate nohighlight">\(r_i\oplus k_i=m_i\oplus k_i\oplus k_i=m_i\)</span>.
+This scheme, known as the one-time pad
+protocol, is secure provided that (i) the number of key bits used
+for the encoding is equal to the number of bits in the message and
+(ii) the secret key bits are never reused.</p>
+<p>The main drawback for using one-time pad is that it requires an
+initially shared secret key. In a way, the problem of distributing
+the message is now moved into the almost analogous problem of
+distributing the key. But it is precisely here where Quantum
+Mechanics can help: the distribution of a secret key can be done
+in a provable secure way using quantum states and operations.
+Later, this key can be employed using one-time pad to exchange the
+final message in a completely secure way. The quantum protocols
+allowing Alice and Bob to distribute a key in a secure way are named Quantum Key
+Distribution (QKD) protocols, for obvious reasons.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -474,7 +514,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Quantum Cryptography</p>
       </div>
     </a>
     <a class="right-next"
@@ -482,7 +522,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">The BB84 protocol</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
