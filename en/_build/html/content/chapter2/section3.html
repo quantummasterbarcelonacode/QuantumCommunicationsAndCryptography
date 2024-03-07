@@ -189,19 +189,19 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General structure of QKD protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key rate for collective attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
@@ -467,26 +467,26 @@ system, i.e. for any  <span class="math notranslate nohighlight">\(\ket\psi\in\c
 machine outputs <span class="math notranslate nohighlight">\(\ket{\psi}\ket{\psi}\)</span>. This quantum process has to be
 mathematically described by a linear map <span class="math notranslate nohighlight">\(\L\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-clmach">
-<span class="eqno">(14)<a class="headerlink" href="#equation-clmach" title="Link to this equation">#</a></span>\[    \L(\ket{\psi}\otimes\ket{C})=\ket{\psi}\otimes\ket{\psi} ,\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-clmach" title="Link to this equation">#</a></span>\[    \L(\ket{\psi}\otimes\ket{C})=\ket{\psi}\otimes\ket{\psi} ,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\ket{C}\)</span> is the state of the machine where the clone is
 produced. Since this machine is assumed to work for any initial
 state, when applied to two orthogonal states, one gets</p>
 <div class="math notranslate nohighlight" id="equation-clclon">
-<span class="eqno">(15)<a class="headerlink" href="#equation-clclon" title="Link to this equation">#</a></span>\[\begin{split}  \L(\ket{0}\otimes\ket{C}) &amp;=&amp; \ket{0}\otimes\ket{0} \nonumber\\
+<span class="eqno">(18)<a class="headerlink" href="#equation-clclon" title="Link to this equation">#</a></span>\[\begin{split}  \L(\ket{0}\otimes\ket{C}) &amp;=&amp; \ket{0}\otimes\ket{0} \nonumber\\
   \L(\ket{1}\otimes\ket{C}) &amp;=&amp; \ket{1}\otimes\ket{1} .\end{split}\]</div>
 <p>If we now look to a superposition state, say <span class="math notranslate nohighlight">\((\ket 0+\ket 1)/\sqrt 2\)</span>, and since any quantum operation <span class="math notranslate nohighlight">\(\L\)</span> is linear,</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter2-section3-0">
-<span class="eqno">(16)<a class="headerlink" href="#equation-content-chapter2-section3-0" title="Link to this equation">#</a></span>\[    \L\left(\frac{1}{\sqrt 2}(\ket 0+\ket 1)\ket C\right)=
+<span class="eqno">(19)<a class="headerlink" href="#equation-content-chapter2-section3-0" title="Link to this equation">#</a></span>\[    \L\left(\frac{1}{\sqrt 2}(\ket 0+\ket 1)\ket C\right)=
     \frac{1}{\sqrt 2}(\L\left(\ket 0\ket C\right)+\L\left(\ket 1\ket C\right))=
     \frac{1}{\sqrt 2}(\ket{00}+\ket{11}) ,\]</div>
 <p>which is not equal to two copies of the initial state,</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter2-section3-1">
-<span class="eqno">(17)<a class="headerlink" href="#equation-content-chapter2-section3-1" title="Link to this equation">#</a></span>\[    \frac{1}{\sqrt 2}(\ket 0+\ket 1)\otimes
+<span class="eqno">(20)<a class="headerlink" href="#equation-content-chapter2-section3-1" title="Link to this equation">#</a></span>\[    \frac{1}{\sqrt 2}(\ket 0+\ket 1)\otimes
     \frac{1}{\sqrt 2}(\ket 0+\ket 1) .\]</div>
 <p>Therefore, the linearity of Quantum Mechanics makes the cloning
 process impossible. Note that one can indeed construct a cloning
 machine producing two copies of two orthogonal states
-(Eq. <a class="reference internal" href="#equation-clclon">(15)</a>), a classical cloning machine. Unfortunately, it
+(Eq. <a class="reference internal" href="#equation-clclon">(18)</a>), a classical cloning machine. Unfortunately, it
 fails when cloning any coherent superposition of these two states.
 In other words, nonorthogonality is at the heart of the No-cloning
 Theorem.</p>

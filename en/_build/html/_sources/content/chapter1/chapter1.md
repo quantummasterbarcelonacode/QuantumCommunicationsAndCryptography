@@ -12,13 +12,18 @@ The norm of a vector $\ket{\psi}$ is $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. I
 :class: note
 Given two vectors in a complex two-dimensional space, denoted by $\mathbb{C}^2$,
 
-$\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix}$,
+```{math}
+:label:
+\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix},
+```
 
 one has
 
-$\bra{\psi} = (1 \quad −i) \qquad \bra{\phi} = (3i \quad −1)$, 
-
-$\braket{\phi|\psi} = (3i \quad −1) \begin{pmatrix} 1 \\ i \end{pmatrix} = 2i$.
+```{math}
+:label:
+\bra{\psi} = (1 \quad −i) \qquad \bra{\phi} = (3i \quad −1), \\\\
+\braket{\phi|\psi} = (3i \quad −1) \begin{pmatrix} 1 \\ i \end{pmatrix} = 2i.
+```
 `````
 
 ## Pure states

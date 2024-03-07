@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>General structure of QKD protocols &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter4/chapter4';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="../chapter5/chapter5.html" />
-    <link rel="prev" title="TODO" href="../chapter3/section5.html" />
+    <link rel="next" title="Security proofs" href="../chapter5/chapter5.html" />
+    <link rel="prev" title="Bennett-Brassard-Mermin Argument" href="../chapter3/section5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,19 +189,19 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">General structure of QKD protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key rate for collective attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
@@ -419,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>General structure of QKD protocols</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -433,9 +435,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="general-structure-of-qkd-protocols">
+<h1>General structure of QKD protocols<a class="headerlink" href="#general-structure-of-qkd-protocols" title="Link to this heading">#</a></h1>
+<p>The general structure of a QKD protocol is as follows:</p>
+<ol class="arabic simple">
+<li><p>Repeat <span class="math notranslate nohighlight">\(N\)</span> times: Alice prepares states <span class="math notranslate nohighlight">\(\ket{\psi_a}\)</span> with probability <span class="math notranslate nohighlight">\(p_a\)</span> and sends them to Bob through the insecure channel. Bob performs one of the measurements <span class="math notranslate nohighlight">\(M_j\)</span> with probability <span class="math notranslate nohighlight">\(p_j\)</span> on the received particle, obtaining the result <span class="math notranslate nohighlight">\(r\)</span>. After this process Alice and Bob have a list of <span class="math notranslate nohighlight">\(N\)</span> symbols corresponding to the prepared states on Alice’s side <span class="math notranslate nohighlight">\(\vec a=(a_1\ldots a_N)\)</span> and implemented measurement on Bob’s side <span class="math notranslate nohighlight">\(\vec b=(b_1\ldots b_N)\)</span>. Note that here we have combined the chosen measurement by Bob <span class="math notranslate nohighlight">\(j\)</span> and the obtained result <span class="math notranslate nohighlight">\(r\)</span> within <span class="math notranslate nohighlight">\(b\)</span>, that is <span class="math notranslate nohighlight">\(b=(j,r)\)</span>.</p></li>
+<li><p>Alice and Bob announce the prepared state and performed measurement and result for <span class="math notranslate nohighlight">\(n\)</span> of these rounds. This allows them to estimate the frequencies of obtaining result <span class="math notranslate nohighlight">\(r\)</span> when performing measurement <span class="math notranslate nohighlight">\(j\)</span> on state <span class="math notranslate nohighlight">\(\ket{\psi_i}\)</span>.</p></li>
+<li><p>Using this information, and the security proof, Alice and Bob know how to process their classical list of symbols <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span> to distill a secret key rate of length <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(\vec k=(k_1\ldots k_K)\)</span>. The length of this key depends on the previous estimation round. If the channel quality is too bad, Alice and Bob conclude that no key distillation is possible, <span class="math notranslate nohighlight">\(K=0\)</span>, and the protocol is aborted.</p></li>
+</ol>
+<p>Several remarks are important here:</p>
+<ul class="simple">
+<li><p>In principle, the larger the number of rounds <span class="math notranslate nohighlight">\(N\)</span>, the better the protocol performance: it reduces the statistical fluctuation when estimating the properties of the channel and therefore Alice and Bob have a much more precise understanding of the key distillation process. In the limit of <span class="math notranslate nohighlight">\(N\rightarrow\infty\)</span>, one can define the key rate <span class="math notranslate nohighlight">\(k=\lim_{N\rightarrow\infty} K/N\)</span>.</p></li>
+<li><p>The number of announced rounds <span class="math notranslate nohighlight">\(n\)</span> should be sufficient to achieve a reliable estimation of the channel properties, that is, to accumulate enough statistics so that these properties are determined with a given pre-determined confidence. But, to optimise the protocol performance, it should not be much larger than this, as these rounds do not contribute to the secret key. In the limit of large <span class="math notranslate nohighlight">\(N\)</span>, one can have very large values of <span class="math notranslate nohighlight">\(n\)</span>, and therefore an arbitrarily good estimation of the channel properties, but such that <span class="math notranslate nohighlight">\(n\ll N\)</span>. In other words, the estimation hardly affects the asymptotic key rate.</p></li>
+<li><p>The security proof, discussed below, is crucial in step 3 to understand how Alice and Bob should distill the key from the noisy list of symbols <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>.</p></li>
+</ul>
+<p>In the case of BB84, <span class="math notranslate nohighlight">\(a=(b_A,p)\)</span>, where <span class="math notranslate nohighlight">\(b_A\)</span> specifies Alice’s choice of basis and <span class="math notranslate nohighlight">\(p\)</span> the prepared element of the basis, so that <span class="math notranslate nohighlight">\(a\)</span> can be equal to <span class="math notranslate nohighlight">\((z,\pm 1)\)</span> or <span class="math notranslate nohighlight">\((x,\pm 1)\)</span>. These four states are prepared with the same probability equal to <span class="math notranslate nohighlight">\(1/4\)</span>. On Bob’s side, we can also write <span class="math notranslate nohighlight">\(b=(b_B,r)\)</span>, where <span class="math notranslate nohighlight">\(b_B\)</span> now denotes Bob’s choice of basis. The basis reconciliation process in which Alice and Bob only keep those symbols where <span class="math notranslate nohighlight">\(b_A=b_B\)</span> is part of the key distillation process in step 3 mapping the initial list of symbols obtained in step 1 into the final key.</p>
+<p>The protocol in the entanglement picture is very similar, but step 1 is now replaced by</p>
+<ol class="arabic simple">
+<li><p>Repeat <span class="math notranslate nohighlight">\(N\)</span> times: Alice prepares the state <span class="math notranslate nohighlight">\(\ket{\Psi}_{AA'}=\sum_a \sqrt{p_a}\ket a_A\otimes\ket{\psi_a}_{A'}\)</span>, where <span class="math notranslate nohighlight">\(\{\ket{a}\}\)</span> defines an arbitrary basis in system <span class="math notranslate nohighlight">\(A\)</span>. She measures system <span class="math notranslate nohighlight">\(A\)</span> in this basis getting result <span class="math notranslate nohighlight">\(a\)</span> with probability <span class="math notranslate nohighlight">\(p_a\)</span>. She then sends system <span class="math notranslate nohighlight">\(A'\)</span>, which is in state <span class="math notranslate nohighlight">\(\ket{\psi_a}\)</span>, to Bob through the insecure channel. Bob performs one of the measurements <span class="math notranslate nohighlight">\(M_j\)</span> with probability <span class="math notranslate nohighlight">\(p_j\)</span> on the received particle, obtaining the result <span class="math notranslate nohighlight">\(r\)</span>. After this process Alice and Bob have a list of <span class="math notranslate nohighlight">\(N\)</span> symbols corresponding to the measurement result on Alice’s side <span class="math notranslate nohighlight">\(\vec a=(a_1\ldots a_N)\)</span>, and implemented measurement on Bob’s side <span class="math notranslate nohighlight">\(\vec b=(b_1\ldots b_N)\)</span>. Note that here we have combined the chosen measurement by Bob <span class="math notranslate nohighlight">\(j\)</span> and the obtained result <span class="math notranslate nohighlight">\(r\)</span> within <span class="math notranslate nohighlight">\(b\)</span>, that is <span class="math notranslate nohighlight">\(b=(j,r)\)</span>.</p></li>
+</ol>
+<p>In the particular case of BB84, the four states can be grouped into two bases. This simplifies the entanglement-based equivalent protocol, which, as said, can be seen as measuring bases <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(z\)</span> on half of a maximally entangled state. However, grouping the prepared states into more than one basis is in general not possible, e.g. for the B92 protocol.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -474,7 +493,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Bennett-Brassard-Mermin Argument</p>
       </div>
     </a>
     <a class="right-next"
@@ -482,7 +501,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Security proofs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

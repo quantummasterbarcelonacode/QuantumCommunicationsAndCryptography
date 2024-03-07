@@ -1,9 +1,9 @@
 
-# The BB84 protocol
+# The BB84 Protocol
 
 After introducing the idea of QKD,
 we present the first protocol, introduced in 1984 by Bennett
-and Brassard and known as BB84~\cite{BB84}. Recall that the goal
+and Brassard and known as BB84 {cite}`BB84`. Recall that the goal
 of the protocol is to establish a shared secret key, which is
 later consumed to run one-time pad. In
 the case of BB84, the key is established as follows:
@@ -33,7 +33,7 @@ random bits. Before proceeding, note that Alice and Bob can use any pair of base
 
 Let us briefly analyze why Eve cannot break this protocol. She has
 to interact with the quantum particle, say a photon, encoding the
-information while it propagates to Bob. The No-cloning Theorem
+information while it propagates to Bob. The no-cloning theorem
 implies that she cannot make a perfect copy of it, forward the
 first clone to Bob and keep the second one. She can however try to
 measure the quantum state of the particle and read the
@@ -75,5 +75,10 @@ We present the main ideas to build a general
 security proof for QKD protocols below. But first,
 we discuss other examples of protocols, showing that many variants are possible.
 
+## Bibliography for this section
+```{bibliography}
+:style: unsrt
+:filter: docname in docnames
+```
 
 

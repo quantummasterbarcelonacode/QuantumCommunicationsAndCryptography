@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Other Protocols &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter3/section3';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section4.html" />
-    <link rel="prev" title="The BB84 protocol" href="section2.html" />
+    <link rel="next" title="Ekert Protocol" href="section4.html" />
+    <link rel="prev" title="The BB84 Protocol" href="section2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,19 +189,19 @@
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">Quantum Cryptography</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="section1.html">One-Time Pad and Quantum Key Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">The BB84 protocol</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section5.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General structure of QKD protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key rate for collective attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
@@ -408,7 +410,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -419,11 +423,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Other Protocols</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b92">B92</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#six-state-protocol">Six-state Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goldenber-vaidman-protocol">Goldenber-Vaidman Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -433,9 +448,111 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="other-protocols">
+<h1>Other Protocols<a class="headerlink" href="#other-protocols" title="Link to this heading">#</a></h1>
+<p>The BB84 protocol distributes a secret key from Alice and Bob
+using quantum states that are prepared by Alice, sent through the
+insecure channel and measured by Bob. This type of protocols are
+known as <em>prepare and measure</em>. Clearly, the construction is much more
+general and one can design many other protocols for secure key
+distribution based on this idea. The main purpose of this section
+is to present some of them. Actually, one can find many QKD
+protocols in the literature. Here, we choose those that represented
+an important theoretical advance.</p>
+<section id="b92">
+<h2>B92<a class="headerlink" href="#b92" title="Link to this heading">#</a></h2>
+<p>The main reason why Eve cannot read the information
+encoded on the sent quantum states is that Alice is choosing them from a set that contains non-orthogonal quantum states.
+Being non-orthogonal, Eve cannot clone or measure all of them
+without introducing detectable errors. In 1992, Bennett showed that two non-orthogonal states
+are enough for secure QKD <span id="id1">[<a class="reference internal" href="#id23" title="Charles H Bennett. Quantum cryptography using any two nonorthogonal states. Physical review letters, 68(21):3121, 1992.">1</a>]</span>. The interest of this protocol comes from
+the fact that it is the one involving the minimal number of prepared states, namely two.</p>
+<p>The protocol works as follows. Alice encodes a random bit into two non-orthogonal states, <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, and sends the prepared state to Bob through the insecure channel. Again, Eve’s attack is limited by the non-orthogonality of the states. A possible simple measurement by Bob is as follows: he randomly chooses to measure in the basis defined by <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and its orthogonal state, denoted by <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> and such that <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, or the basis <span class="math notranslate nohighlight">\(\{\ket{\psi_1},\ket{\psi^\perp_1}\}\)</span>. When Bob gets the output corresponding to any of the orhogonal states for any of the two measurements, say outcome corresponding to <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> when measuring <span class="math notranslate nohighlight">\(\{\ket{\psi_0},\ket{\psi^\perp_0}\}\)</span>, he knows that the state was for sure not <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> because <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, and hence it has to be <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>. Therefore, in this reconciliation, Bob announces those instances in which his measurement gave an outcome corresponding to any of the states orthogonal to those prepared by Alice. A more efficient but also experimentally demanding measurement is given by the one attaining the optimal unambiguous discrimination of the states <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Exercise 2 - Unambiguous discrimination of two non-orthogonal pure states</p>
+<p>Consider two non-orthogonal pure states <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, with <span class="math notranslate nohighlight">\(\langle \psi_0\ket{\psi_1}&gt;0\)</span>. Without loss of generality, the two states can be rotated to be in the <span class="math notranslate nohighlight">\(XZ\)</span> plane and with the <span class="math notranslate nohighlight">\(+z\)</span> axis as bisector, so that they read:</p>
+<div class="math notranslate nohighlight" id="equation-states">
+<span class="eqno">(29)<a class="headerlink" href="#equation-states" title="Link to this equation">#</a></span>\[\begin{split}\ket{\psi_0}=\left(\begin{array}{c}\cos\theta \\ \sin\theta\end{array}\right) \quad\quad
+\ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right) ,\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(0\leq\theta\leq\pi/4\)</span>. Let <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> be an unknown state chosen between these two with equal probability. Consider a three-outcome measurements defined by the operators:</p>
+<div class="math notranslate nohighlight" id="equation-povm">
+<span class="eqno">(30)<a class="headerlink" href="#equation-povm" title="Link to this equation">#</a></span>\[M_0=\mu\proj{\psi_1^\perp} \quad\quad  M_1=\mu\proj{\psi_0^\perp}   \quad\quad  M_?=\one-M_0-M_1 ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\ket{\psi_i^\perp}\)</span> denotes the state orthogonal to <span class="math notranslate nohighlight">\(\ket{\psi_i}\)</span>.</p>
+<p>a) Find the range of values of <span class="math notranslate nohighlight">\(\mu\)</span> so that the measurement is well defined, that is, all the three measurement operators are positive semi-definite.</p>
+<p>b) For this value of <span class="math notranslate nohighlight">\(\mu\)</span>, compute the probabilities of obtaining the three outputs for each of the two states. What’s the operational meaning of this three-outcome measurement?</p>
+<!--Luke: Should this not be "values" or "range of values" rather than "value"?-->
+<p>c) Finally, determine the value of <span class="math notranslate nohighlight">\(\mu\)</span> that minimises the average probability of obtaining the third outcome, that is:</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter3-section3-0">
+<span class="eqno">(31)<a class="headerlink" href="#equation-content-chapter3-section3-0" title="Link to this equation">#</a></span>\[P_?=\frac{1}{2}\left(p(?|0)+p(?|1)\right) .\]</div>
+<p>How does it relate to the overlap between the two states?</p>
+</div>
+</section>
+<section id="six-state-protocol">
+<h2>Six-state Protocol<a class="headerlink" href="#six-state-protocol" title="Link to this heading">#</a></h2>
+<p>The six-state protocol, introduced by Bruß <span id="id2">[<a class="reference internal" href="#id24" title="Dagmar Bruß. Optimal eavesdropping in quantum cryptography with six states. Physical Review Letters, 81(14):3018, 1998.">2</a>]</span>,
+goes in the opposite direction: it involves more states to make
+Eve’s attack more difficult. In the BB84 protocol, only four states
+belonging to a given equator in the Bloch sphere, say the plane
+<span class="math notranslate nohighlight">\(xy\)</span>, are used. However, one could consider more elaborate
+protocols in which Alice prepares states that are better
+distributed over the sphere. This is precisely the main idea
+behind the six-state protocol: Alice prepares a state from the
+six-state set <span class="math notranslate nohighlight">\(\{\ket{\pm x},\ket{\pm y},\ket{\pm z}\}\)</span>. Bob now
+measures along these three bases, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. Clearly, after basis reconciliation,
+Alice and Bob are assumed to derive a list of perfectly correlated
+bits. From Eve’s point of view, her task becomes more complex as
+she has to clone, or distinguish, among more non-orthogonal
+states. However, from Alice and Bob’s point of view, only 1/3 of the rounds are kept after basis reconciliation.
+After all, the improvement in security is moderate, while in some implementations the technological
+requirements to prepare the six states are more demanding, so the protocol has hardly been adopted in practice.</p>
+</section>
+<section id="goldenber-vaidman-protocol">
+<h2>Goldenber-Vaidman Protocol<a class="headerlink" href="#goldenber-vaidman-protocol" title="Link to this heading">#</a></h2>
+<p>The last protocol that we present in this part was introduced by
+Goldenber and Vaidman <span id="id3">[<a class="reference internal" href="#id25" title="Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. Physical Review Letters, 75(7):1239, 1995.">3</a>]</span>. The protocol uses entanglement and proved that secure key
+distribution is still possible using two orthogonal states if
+these two states are used in a careful way. The idea of the
+protocol is as follows: Bob prepares a two-qubit maximally
+entangled state, <span class="math notranslate nohighlight">\(\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt 2\)</span>. He
+sends only one of the particles to Alice. Alice now applies nothing, that is <span class="math notranslate nohighlight">\(\one\)</span>,
+or <span class="math notranslate nohighlight">\(\sigma_z\)</span> depending on the bit she wants to transmit, and sends
+the qubit back to Bob. The two states, depending on Alice’s random
+bit, are <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, where now <span class="math notranslate nohighlight">\(\ket{\Phi^-}=(\ket{00}-\ket{11})/\sqrt 2\)</span>. On reception, Bob
+can perfectly discriminated between these two states and read the result because they are orthogonal.
+Although, as said, the information encoding by Alice produces two
+orthogonal states, this fact cannot be exploited by Eve. She only has
+access to one of the two
+quantum particles prepared and transmitted  by Bob, while the other particle always remains on
+Bob’s lab, hence never accessible to Eve. This makes the quantum measurement by Eve on the two
+orthogonal states impossible. In fact, the qubit Eve can access to is always in the reduced state of <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, equal to <span class="math notranslate nohighlight">\(\one/2\)</span> for both states, which guarantees the protocol security.</p>
+</section>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div role="list" class="citation-list">
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Charles H Bennett. Quantum cryptography using any two nonorthogonal states. <em>Physical review letters</em>, 68(21):3121, 1992.</p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Dagmar Bruß. Optimal eavesdropping in quantum cryptography with six states. <em>Physical Review Letters</em>, 81(14):3018, 1998.</p>
+</div>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. <em>Physical Review Letters</em>, 75(7):1239, 1995.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -474,7 +591,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The BB84 protocol</p>
+        <p class="prev-next-title">The BB84 Protocol</p>
       </div>
     </a>
     <a class="right-next"
@@ -482,7 +599,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Ekert Protocol</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -493,7 +610,23 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b92">B92</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#six-state-protocol">Six-state Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goldenber-vaidman-protocol">Goldenber-Vaidman Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

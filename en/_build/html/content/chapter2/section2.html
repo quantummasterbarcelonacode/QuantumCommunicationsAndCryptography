@@ -189,19 +189,19 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General structure of QKD protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key rate for collective attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
@@ -474,7 +474,7 @@ computation and then replace the classical bits, or cbits, by qubits. In this sc
 corresponding quantum and reversible version of an operation <span class="math notranslate nohighlight">\(f\)</span>
 on a bit string <span class="math notranslate nohighlight">\(\vec b\)</span> reads</p>
 <div class="math notranslate nohighlight" id="equation-revf">
-<span class="eqno">(13)<a class="headerlink" href="#equation-revf" title="Link to this equation">#</a></span>\[    U_f\ket{\vec b}\ket 0=\ket{\vec b}\ket{f(\vec b)} .\]</div>
+<span class="eqno">(15)<a class="headerlink" href="#equation-revf" title="Link to this equation">#</a></span>\[    U_f\ket{\vec b}\ket 0=\ket{\vec b}\ket{f(\vec b)} .\]</div>
 <p>For example, the quantum AND can be as follows: an ancillary state
 in state <span class="math notranslate nohighlight">\(\ket{0}\)</span> is appended to the two input qubits in states <span class="math notranslate nohighlight">\(\ket i\)</span>
 and <span class="math notranslate nohighlight">\(\ket j\)</span>. It is easy to see that there exists a unitary acting
@@ -500,8 +500,8 @@ shown that the so-called Hadamard, <span class="math notranslate nohighlight">\(
 gate, <span class="math notranslate nohighlight">\(U_{\pi/8}\)</span> and CNOT gates are universal, i.e. any <span class="math notranslate nohighlight">\(N\)</span>-qubit
 unitary operation can be decomposed in terms of these
 gates <span id="id4">[<a class="reference internal" href="#id10" title="P Oscar Boykin, Tal Mor, Matthew Pulver, Vwani Roychowdhury, and Farrokh Vatan. On universal and fault-tolerant quantum computing. arXiv preprint quant-ph/9906054, 1999.">4</a>]</span>. Their expressions are</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}  U_H = \frac{1}{\sqrt 2}\begin{pmatrix}1 &amp; 1 \\
+<div class="math notranslate nohighlight" id="equation-content-chapter2-section2-0">
+<span class="eqno">(16)<a class="headerlink" href="#equation-content-chapter2-section2-0" title="Link to this equation">#</a></span>\[\begin{split}  U_H = \frac{1}{\sqrt 2}\begin{pmatrix}1 &amp; 1 \\
   1 &amp; 1\\\end{pmatrix}\quad
   U_{ph} = \begin{pmatrix}1 &amp; 0 \\
   0 &amp; i\\\end{pmatrix}\quad

@@ -61,6 +61,7 @@ unitary operation can be decomposed in terms of these
 gates {cite}`boykin1999universal`. Their expressions are
 
 ```{math}
+:label:
   U_H = \frac{1}{\sqrt 2}\begin{pmatrix}1 & 1 \\
   1 & 1\\\end{pmatrix}\quad
   U_{ph} = \begin{pmatrix}1 & 0 \\

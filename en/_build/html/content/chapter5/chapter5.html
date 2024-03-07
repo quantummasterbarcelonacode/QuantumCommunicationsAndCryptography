@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Security proofs &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter5/chapter5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section1.html" />
-    <link rel="prev" title="TODO" href="../chapter4/chapter4.html" />
+    <link rel="next" title="Eve’s attacks" href="section1.html" />
+    <link rel="prev" title="General structure of QKD protocols" href="../chapter4/chapter4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,19 +187,19 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General structure of QKD protocols</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Security proofs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Eve’s attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Key rate for collective attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
@@ -419,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Security proofs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -433,9 +433,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="security-proofs">
+<h1>Security proofs<a class="headerlink" href="#security-proofs" title="Link to this heading">#</a></h1>
+<p>The previous sections have summarised some of the most known
+protocols for secure QKD and concluded with their general structure. The intuition for all of them is that
+an attack by Eve introduces detectable errors in the channel.
+The intuitive argument then goes on by saying that Alice and Bob can monitor the
+presence of these errors and stop the protocol aborting the
+eavesdropping attack. Clearly, while this intuition suggests that
+the scheme may be secure, it is unacceptable when dealing with
+practical implementations. In any realistic scenario, there will
+be errors which are not due to Eve but just a consequence of noise
+in the channel and/or imperfections on Alice and Bob’s labs.
+Therefore, we cannot accept that Alice and Bob abort the protocol
+whenever they observe errors.</p>
+<p>The purpose of a security proof is to deal with a noisy scenario
+and make QKD protocols implementable in practice. The main idea is
+that Alice and Bob should conclude from the amount of observed
+errors whether they are able to establish a secret key. The reason
+why they can do that is because in quantum theory it is
+possible to put a bound on the information Eve has access to from
+the amount of error (or correlations) between Alice and Bob. If
+Alice and Bob have a small amount of errors error (large correlations), Eve has little
+information. A security proof makes this trade-off quantitative.</p>
+<p>In what follows we sketch the main steps in a
+security proof. Our purpose is not to provide a detailed
+derivation of these proofs, as they are usually quite technical
+and involved, but to point out the main ideas and results used in
+their derivation.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -476,7 +501,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">General structure of QKD protocols</p>
       </div>
     </a>
     <a class="right-next"
@@ -484,7 +509,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Eve’s attacks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

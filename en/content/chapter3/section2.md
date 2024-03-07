@@ -1,5 +1,5 @@
 
-# The BB84 protocol
+# The BB84 Protocol
 
 After introducing the idea of QKD,
 we present the first protocol, introduced in 1984 by Bennett
@@ -75,5 +75,10 @@ We present the main ideas to build a general
 security proof for QKD protocols below. But first,
 we discuss other examples of protocols, showing that many variants are possible.
 
+## Bibliography for this section
+```{bibliography}
+:style: unsrt
+:filter: docname in docnames
+```
 
 
