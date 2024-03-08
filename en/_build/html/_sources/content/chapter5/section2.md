@@ -8,7 +8,7 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Key rate for collective attacks
+# Key Rate for Collective Attacks
 
 The importance of studying collective attacks comes from a result by Renner {cite}`renner` who proved that by increasing the number of protocol rounds $N$, 
 and for a large family of protocols that includes all those described here, the amount of key that can be distilled in a protocol against general attacks tends to the key rate that can be distilled against the optimal collective attack. In other words, the length of secret key $K$ that can distilled after $N$ rounds satisfies $\lim_{N\rightarrow\infty} K/N=k_C$, where $k_C$ is the key rate against collective attacks. For a practical realisation with a finite number of rounds, there will be corrections to this limit and $k_C$ cannot be attained, as one has $K=k_CN-o(N)$. These corrections are relevant in practical situations and a full security proof is able to compute, or bound them. But $k_C$ is the asymptotically attainable rate. 

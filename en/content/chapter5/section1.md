@@ -8,7 +8,7 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Eve's attacks
+# Eve's Attacks
 
 We first describe the possible attacks that Eve can implement. 
 As an illustration, we consider a paradigmatic attack on BB84 based on what are called optimal cloning machines. This is an example of a general family of attacks called *individual* attacks in which: (i) Eve intercepts the particle sent from Alice to Bob, $\ket{\psi_a}$; (ii) adds another particle in a reference state, say $\ket 0$, and performs a unitary operation $U_E$ on the two particles; (iii) Eve forwards one of the resulting states to Bob, while she keeps the other particles in a quantum memory; (iv) once the bases are announced by the honest users, Eve measures her particle, see {numref}`indattacks`, getting the measurement result $e$. As a result of this process, Alice, Bob and Eve share correlated random variables corresponding to their prepared states and measurement results, $a$ and $b$ for the honest users, and $e$ for Eve, described by the probability distribution $P(a,b,e)$.

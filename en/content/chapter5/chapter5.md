@@ -1,4 +1,4 @@
-# Security proofs
+# Security Proofs
 
 The previous sections have summarised some of the most known
 protocols for secure QKD and concluded with their general structure. The intuition for all of them is that
