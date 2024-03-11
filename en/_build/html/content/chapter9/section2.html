@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Quantum Error Correction &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter9/section2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section3.html" />
-    <link rel="prev" title="TODO" href="section1.html" />
+    <link rel="next" title="Entanglement-Based Quantum Communication" href="section3.html" />
+    <link rel="prev" title="Classical Communication" href="section1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,16 +209,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter9.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="section1.html">TODO</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter9.html">Long-Distance Quantum Communication</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Classical Communication</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 </ul>
@@ -408,7 +410,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -419,11 +423,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Quantum Error Correction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -433,9 +445,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="quantum-error-correction">
+<h1>Quantum Error Correction<a class="headerlink" href="#quantum-error-correction" title="Link to this heading">#</a></h1>
+<p>Adapting error correction to the quantum realm is not easy. Error correction somehow builds on redundancy, the repetition of the message, and we know that quantum information cannot be cloned. Also, at decoding, Bob should perform a measurement to read the received state and then decide about how to decode. But quantum measurements perturb the state of the system, hence it seems that the decoding procedure will also introduce errors. In fact, in the early days of quantum information theory, prominent researchers cast doubts on the possibility of quantum error correction <span id="id1">[<a class="reference internal" href="#id41" title="Serge Haroche and Jean-Michel Raimond. Quantum computing: dream or nightmare? Physics Today, 49(8):51–52, 1996.">1</a>]</span>.</p>
+<p>As first shown by Shor and Steane in <span id="id2">[<a class="reference internal" href="#id42" title="Peter W Shor. Scheme for reducing decoherence in quantum computer memory. Physical review A, 52(4):R2493, 1995.">2</a>, <a class="reference internal" href="#id43" title="Andrew M Steane. Error correcting codes in quantum theory. Physical Review Letters, 77(5):793, 1996.">3</a>]</span>, quantum error
+correction is possible. This breakthrough was based on a clever
+translation of the known classical techniques to the quantum
+formalism, where again <span class="math notranslate nohighlight">\(m\)</span> logical qubits are encoded into codewords made of <span class="math notranslate nohighlight">\(n\)</span>
+physical qubits (<span class="math notranslate nohighlight">\((m=1,n=7)\)</span> for Steane’s and <span class="math notranslate nohighlight">\((m=1,n=9)\)</span> for Shor’s scheme). Now, with this knowledge, we can rephrase the previous discussion on error correction in quantum terms. Given a channel described by a CPTP map <span class="math notranslate nohighlight">\(\Lambda\)</span>, Alice encodes an <span class="math notranslate nohighlight">\(m\)</span>-qubit message into <span class="math notranslate nohighlight">\(n\)</span> physical qubits through an <span class="math notranslate nohighlight">\(n\rightarrow m\)</span> isometry <span class="math notranslate nohighlight">\(\mathcal E\)</span> mapping any state <span class="math notranslate nohighlight">\(\ket\psi\in\compl^{\otimes m}\)</span> to <span class="math notranslate nohighlight">\(\ket{\psi'}=\mathcal E \ket{\psi}\in\compl^{\otimes n}\)</span>. These <span class="math notranslate nohighlight">\(n\)</span> qubits are now sent through the noisy channel, so Bob receives the <span class="math notranslate nohighlight">\(n\)</span>-qubit mixed state <span class="math notranslate nohighlight">\(\rho'=\Lambda^{\otimes N}(\proj{\psi'})\)</span>. Bob applies the decoding map <span class="math notranslate nohighlight">\(\mathcal D\)</span> to this state, getting <span class="math notranslate nohighlight">\(\rho=\mathcal D(\rho')\)</span>. The goal of the protocol is that this state is <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to the encoded state <span class="math notranslate nohighlight">\(\ket\psi\)</span>, that is, <span class="math notranslate nohighlight">\(\bra\psi\rho\ket\psi\geq 1-\epsilon\)</span> for a given error threshold <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>It is far from the scope of these
+notes to give a detailed explanation of quantum error correction.
+However, we provide in what follows a simple scheme that shows how to improve the error rate of
+the noisy channel</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter9-section2-0">
+<span class="eqno">(62)<a class="headerlink" href="#equation-content-chapter9-section2-0" title="Link to this equation">#</a></span>\[\Lambda_x(\rho)=(1-p_x)\rho+p_x\sx\rho\sx ,\]</div>
+<p>that is, a channel in which with probability <span class="math notranslate nohighlight">\(1-p_x\)</span> the state does not change, while a bit flip <span class="math notranslate nohighlight">\(\sx\)</span> is performed with probability <span class="math notranslate nohighlight">\(p_x\)</span>. It is a rather academic channel, but it is enough to illustrate how
+quantum error correcting techniques work.</p>
+<p>The goal is to present an encoding and decoding process that does the analogue of the simple classical <span class="math notranslate nohighlight">\(1\rightarrow 3\)</span> repetition code described above.
+A representation of this scheme is shown in <a class="reference internal" href="#errc"><span class="std std-numref">Fig. 10</span></a>. The initial qubit to be transmitted is in an arbitrary state <span class="math notranslate nohighlight">\(\ket\psi=\alpha\ket 0 +\beta\ket 1\)</span>. Alice encodes it into a 3-qubit state by the isometry in which she adds two new qubits in state <span class="math notranslate nohighlight">\(\ket 0\)</span> and performs two CNOT operations as shown in <a class="reference internal" href="#errc"><span class="std std-numref">Fig. 10</span></a>. The resulting state is <span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>. Note that the <span class="math notranslate nohighlight">\(1\rightarrow 3\)</span> repetition is somehow achieved keeping the coherences in the state. This state is now sent through the channel, so the state received by Bob is <span class="math notranslate nohighlight">\(\rho'=\Lambda_x^{\otimes 3}(\proj{\psi'})\)</span>. It is easy to see that this state can be written as</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter9-section2-1">
+<span class="eqno">(63)<a class="headerlink" href="#equation-content-chapter9-section2-1" title="Link to this equation">#</a></span>\[\rho'=(1-p_x)^3\rho'_0+3(1-p_x)^2p_x\rho'_1+3(1-p_x)p_x^2\rho'_2+p_x^3\rho'_3 ,\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter9-section2-2">
+<span class="eqno">(64)<a class="headerlink" href="#equation-content-chapter9-section2-2" title="Link to this equation">#</a></span>\[\begin{split}&amp;&amp;\rho'_0=\proj{\psi'}\nonumber\\
+&amp;&amp;\rho'_1=\frac{1}{3}\left(\sx\otimes\one\otimes\one\proj{\psi'}\sx\otimes\one\otimes\one+\one\otimes\sx\otimes\one\proj{\psi'}\one\otimes\sx\otimes\one\right.\nonumber\\
+&amp;\quad&amp;\left.\quad\quad+\one\otimes\one\otimes\sx \proj{\psi'} \one\otimes\one\otimes\sx\right) \nonumber\\
+&amp;&amp;\rho'_2= \frac{1}{3}\left(\sx\otimes\sx\otimes\one \proj{\psi'} \sx\otimes\sx\otimes\one + \sx\otimes\one\otimes\sx \proj{\psi'} \sx\otimes\one\otimes\sx\right.\nonumber\\
+&amp;\quad&amp;\left.\quad\quad+\one\otimes\sx\otimes\sx \proj{\psi'} \one\otimes\sx\otimes\sx\right) \nonumber\\
+&amp;&amp;\rho'_3= \sx\otimes\sx\otimes\sx \proj{\psi'} \sx\otimes\sx\otimes\sx ,\end{split}\]</div>
+<p>that is, all the different terms where zero, one, two or three errors take place. Note the analogies with the classical case. Now, the goal is to design a map correcting all instances with zero and one error, that is <span class="math notranslate nohighlight">\(\mathcal D(\rho'_0)=\mathcal D(\rho'_1)=\proj\psi\)</span>. The circuit in <a class="reference internal" href="#errc"><span class="std std-numref">Fig. 10</span></a> achieves this, as we are going to shown for each of the pure states appearing in these mixed states.</p>
+<figure class="align-default" id="errc">
+<a class="reference internal image-reference" href="../../_images/errcorr.png"><img alt="../../_images/errcorr.png" src="../../_images/errcorr.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Quantum error correction: The figure shows a simple example of encoding and decoding operations correcting at most one bit flip.
+The measurements on the fourth and fifth qubit inform Bob about which unitary operations <span class="math notranslate nohighlight">\(U_1\)</span>, <span class="math notranslate nohighlight">\(U_2\)</span> and <span class="math notranslate nohighlight">\(U_3\)</span> to implement to fix the error in one (or none) of the three physical qubits encoding the logical qubit
+in state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</span><a class="headerlink" href="#errc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>No errors: Bob receives the encoded state
+<span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>. One can see that the state after adding the extra two qubits and implementing the CNOTs in the error correction part is <span class="math notranslate nohighlight">\((\alpha\ket{000}+\beta\ket{111})\ket{00}\)</span>. The measurements of the last two qubits give <span class="math notranslate nohighlight">\(00\)</span>. Basically, this circuit leaves the state in the first three qubits unchanged, as they are controlling the result of the CNOT gates, while the two bits obtained in the measurement, see <a class="reference internal" href="#errc"><span class="std std-numref">Fig. 10</span></a>, extract the information about the error: they inform about whether qubit 1 and 2 are identical, or whether qubit 1 and qubit 3 are equal. In the present case, since the result is 00, Bob deduces that the three qubits are equal. This is compatible with no error, or three errors, but the first one is more likely, so he does nothing <span class="math notranslate nohighlight">\(U_1=U_2=U_3=\one\)</span>. The state entering into the final decoding part is again  <span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>, which is mapped into <span class="math notranslate nohighlight">\(\ket{\psi}=\alpha\ket{0}+\beta\ket{1}\)</span> by the two final CNOT operations and measurements. In fact, these two last measurements are not really needed.</p></li>
+<li><p>Error on the first qubit: Bob receives the state
+<span class="math notranslate nohighlight">\(\alpha\ket{100}+\beta\ket{011}\)</span>. After the series of CNOT gates, one has <span class="math notranslate nohighlight">\((\alpha\ket{100}+\beta\ket{011})\ket{11}\)</span>. The two measurements on the last two qubits give 11. This is informing Bob that qubit 1 is different from 2, and also from 3. If there was only one error, Bob knows he has to correct the first qubit, so
+applies <span class="math notranslate nohighlight">\(U_1=\sigma_x\)</span> and <span class="math notranslate nohighlight">\(U_2=U_3=\one\)</span>. The resulting state is again <span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>, so the final decoding part
+provides the initial state.</p></li>
+<li><p>Error on the second qubit: Bob receives the state
+<span class="math notranslate nohighlight">\(\alpha\ket{010}+\beta\ket{101}\)</span>. The reasoning proceeds as
+above, but now the state before the first measurement is <span class="math notranslate nohighlight">\((\alpha\ket{010}+\beta\ket{101})\ket{10}\)</span>. The measurements give 10 and inform Bob that the second qubit was different from the other two, hence he corrects it, <span class="math notranslate nohighlight">\(U_2=\sigma_x\)</span> and <span class="math notranslate nohighlight">\(U_1=U_3=\one\)</span>. The last part is identical as in the previous step</p></li>
+<li><p>Error on the third qubit: Bob receives the state
+<span class="math notranslate nohighlight">\(\alpha\ket{001}+\beta\ket{110}\)</span>. Same as above, but now the
+measurements on the fourth and fifth qubit give 01, so Bob infers that the third qubit is wrong and applies <span class="math notranslate nohighlight">\(U_3=\sigma_x\)</span> and
+<span class="math notranslate nohighlight">\(U_1=U_2=\one\)</span>.</p></li>
+</ul>
+<p>This simple scheme illustrates how quantum error correction works: (i) Alice encodes the
+<span class="math notranslate nohighlight">\(m\)</span> initial logical qubit into quantum codewords made of <span class="math notranslate nohighlight">\(n\)</span> physical
+qubits; (ii) after the propagation through the channel, some of the
+qubits are measured, providing Bob information about the errors
+occurred in the channel; (iii) the error is corrected and the
+original quantum state decoded. A real quantum error correcting
+method should correct not only bit flips, <span class="math notranslate nohighlight">\(\sigma_x\)</span>, but also
+phase flips, <span class="math notranslate nohighlight">\(\sigma_z\)</span>, and any arbitrary combination of them. As
+said, such schemes do exist and constitute a basic primitive on
+any implementation of quantum information processing, especially for quantum computation purposes.</p>
+<p>We now have all the ingredients to define the quantum capacity <span class="math notranslate nohighlight">\(\text{QC}\)</span> of a quantum channel <span class="math notranslate nohighlight">\(\Lambda\)</span>. First of all, for <span class="math notranslate nohighlight">\(n\)</span> uses of the channel, we define <span class="math notranslate nohighlight">\(m^*(n,\epsilon)\)</span> as the maximum number of qubits that can be transmitted with error <span class="math notranslate nohighlight">\(\epsilon\)</span>. This means that there exist encoding and decoding maps, <span class="math notranslate nohighlight">\(\mathcal E\)</span> and <span class="math notranslate nohighlight">\(\mathcal D\)</span>, such that for all <span class="math notranslate nohighlight">\(\ket\psi\in\compl^{\otimes m}\)</span>, one has <span class="math notranslate nohighlight">\(\bra\psi\rho\ket\psi\geq 1-\epsilon\)</span>, where <span class="math notranslate nohighlight">\(\rho=(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)\)</span>. Then, the quantum capacity of the channel is defined as in Eq. <a class="reference internal" href="section1.html#equation-capacity">(60)</a>, with this new definition of <span class="math notranslate nohighlight">\(m^*(n,\epsilon)\)</span>.</p>
+<p>While the formal definition of capacities for classical and quantum channels look almost identical, there are several important differences. First of all, and contrary to what happens in the classical case, there exist channels with zero quantum capacity, <span class="math notranslate nohighlight">\(\text{QC}=0\)</span>, although the state received by Bob depends on Alice’s preparation. The easiest examples of such channels are given by the so-called two-shareable channels. These are channels <span class="math notranslate nohighlight">\(\Lambda\)</span>, say from <span class="math notranslate nohighlight">\(A\rightarrow B\)</span>, such that there exists another channel <span class="math notranslate nohighlight">\(\tilde\Lambda\)</span> from <span class="math notranslate nohighlight">\(A\rightarrow B_1B_2\)</span> with the property that, for all input states <span class="math notranslate nohighlight">\(\rho\)</span>, one has <span class="math notranslate nohighlight">\(\tr_1(\tilde\Lambda(\rho))=\tr_2(\tilde\Lambda(\rho))=\Lambda(\rho)\)</span>. In fact, supposed that the original channel was such that <span class="math notranslate nohighlight">\(\text{QC}&gt;0\)</span>. This would mean that there exist encoding and decoding operations such that  <span class="math notranslate nohighlight">\(\bra\psi(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)\ket\psi\geq 1-\epsilon\)</span>. Now, one could then apply the encoding to a state <span class="math notranslate nohighlight">\(\ket\psi\)</span>, use it as input to <span class="math notranslate nohighlight">\(\tilde\Lambda\)</span> and apply the decoding map to the output states <span class="math notranslate nohighlight">\(B_1\)</span> and <span class="math notranslate nohighlight">\(B_2\)</span>, getting two copies of the initial state of arbitrarily good quality, and therefore violating the no-cloning theorem. That is, the cloning theorem implies the existence of non-trivial channels with zero quantum capacity. Note that there are very natural examples of two-shareable channels, possibly the simplest being a lossy channel in which a state is transmitted with probability <span class="math notranslate nohighlight">\(1/2\)</span> from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>. It can trivially be shared by a channel in which the state is transmitted either to <span class="math notranslate nohighlight">\(B_1\)</span> and <span class="math notranslate nohighlight">\(B_2\)</span> with probability <span class="math notranslate nohighlight">\(1/2\)</span>. Recall that this channel appears in optical fibre communications and, in fact, a transmission below <span class="math notranslate nohighlight">\(1/2\)</span> is obtained at relatively short distance. This implies that quantum error correction is of limited use for quantum communication purposes.</p>
+<p>Second, in the quantum case, we do not know whether a single-letter formula for the quantum channel capacity exists and, in fact, it is conceivable that it does not. Third, and this is related to the previous point, the quantum capacity is non-additive <span id="id3">[<a class="reference internal" href="#id44" title="Graeme Smith and Jon Yard. Quantum communication with zero-capacity channels. Science, 321(5897):1812–1815, 2008.">4</a>]</span>: there exist quantum channels <span class="math notranslate nohighlight">\(\Lambda_1\)</span> and <span class="math notranslate nohighlight">\(\Lambda_2\)</span> such that (i) <span class="math notranslate nohighlight">\(\text{QC}(\Lambda_1)=\text{QC}(\Lambda_2)=0\)</span>, but (ii) <span class="math notranslate nohighlight">\(\text{QC}(\Lambda_1\otimes\Lambda_2)&gt;0\)</span>. In other words, two channels that are useless to send quantum communication, become useful when combined. This astonishing property of quantum information is in fact more common than initially expected, as there are several operational scenarios in which quantum information properties are not additive, the quantum capacity being one of the most famous examples. This non-additivity property is sometimes encapsulated by the amusing formula <span class="math notranslate nohighlight">\(0+0&gt;0\)</span>.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div role="list" class="citation-list">
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Serge Haroche and Jean-Michel Raimond. Quantum computing: dream or nightmare? <em>Physics Today</em>, 49(8):51–52, 1996.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Peter W Shor. Scheme for reducing decoherence in quantum computer memory. <em>Physical review A</em>, 52(4):R2493, 1995.</p>
+</div>
+<div class="citation" id="id43" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>Andrew M Steane. Error correcting codes in quantum theory. <em>Physical Review Letters</em>, 77(5):793, 1996.</p>
+</div>
+<div class="citation" id="id44" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">4</a><span class="fn-bracket">]</span></span>
+<p>Graeme Smith and Jon Yard. Quantum communication with zero-capacity channels. <em>Science</em>, 321(5897):1812–1815, 2008.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -474,7 +579,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Classical Communication</p>
       </div>
     </a>
     <a class="right-next"
@@ -482,7 +587,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Entanglement-Based Quantum Communication</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -493,7 +598,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

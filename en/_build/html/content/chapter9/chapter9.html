@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Long-Distance Quantum Communication &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter9/chapter9';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section1.html" />
-    <link rel="prev" title="TODO" href="../chapter8/section2.html" />
+    <link rel="next" title="Classical Communication" href="section1.html" />
+    <link rel="prev" title="Device-Independent Quantum Key Distribution" href="../chapter8/section2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,16 +209,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Long-Distance Quantum Communication</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 </ul>
@@ -419,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Long-Distance Quantum Communication</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -433,9 +435,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="long-distance-quantum-communication">
+<h1>Long-Distance Quantum Communication<a class="headerlink" href="#long-distance-quantum-communication" title="Link to this heading">#</a></h1>
+<p>In the last part of the notes, we focus on the problem of long-distance quantum communication or, more generally, how to reliably send quantum information through a noisy channel. The scenario is quite similar to what discussed until now, with Alice and Bob in distant locations connected by a quantum channel. However, the goal is now to send quantum information, not to distribute a secret key. Therefore, we do not need to include Eve in the study.</p>
+<p>In the considered scenario, it is assumed that Alice and Bob can perform any type of quantum operations locally and can communicate classical information without any errors. This set of operations is called LOCC, for Local Operations and Classical Communication. The users can exchange quantum states, but only through a noisy channel described by a completely-positive trace-preserving (CPTP) map, <span class="math notranslate nohighlight">\(\Lambda\)</span>. The goal is to characterise the maximum amount of qubits that can be reliably sent from Alice to Bob as a function of the number of uses of the channel. A formal definition will be provided in this section.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -476,7 +479,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Device-Independent Quantum Key Distribution</p>
       </div>
     </a>
     <a class="right-next"
@@ -484,7 +487,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Classical Communication</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

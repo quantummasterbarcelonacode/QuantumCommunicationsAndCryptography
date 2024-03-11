@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Physical Correlations &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter8/section1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section2.html" />
-    <link rel="prev" title="TODO" href="chapter8.html" />
+    <link rel="next" title="Device-Independent Quantum Key Distribution" href="section2.html" />
+    <link rel="prev" title="The Device-Independent Scenario" href="chapter8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,16 +209,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter8.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter8.html">The Device-Independent Scenario</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Long-Distance Quantum Communication</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 </ul>
@@ -408,7 +410,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -419,11 +423,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Physical Correlations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -433,9 +445,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="physical-correlations">
+<h1>Physical Correlations<a class="headerlink" href="#physical-correlations" title="Link to this heading">#</a></h1>
+<p>The main reason why DI applications are possible is because it is assumed that the devices are compatible with a physical theory, in our case quantum mechanics, and this enforces some non-trivial constraints on the observed correlations.</p>
+<p>The weakest constraints that can be imposed is that the correlations do not allow for any form of communication between Alice and Bob. As said, this is one of the few assumptions of the formalism, which can for instance be enforced by means of space-time considerations. Some correlations are compatible with this assumption if, and only if, the marginal probability distribution seen by one of the parties, say Alice, is independent of the input used by the other, Bob. In fact, if it was not the case, Bob, by choosing his input, could produce a noticeable effect on Alice, that is to say that he could signal to her. These constraints  are known as no-signalling conditions and give rise to the so-called <em>non-signalling</em> correlations. They imply that correlations satisfy the linear constraints</p>
+<div class="math notranslate nohighlight" id="equation-nscorrelations">
+<span class="eqno">(55)<a class="headerlink" href="#equation-nscorrelations" title="Link to this equation">#</a></span>\[\forall y: p_A(a|x)=\sum_b p(ab|xy), \quad\quad
+\forall x: p_B(b|y)=\sum_a p(ab|xy).\]</div>
+<p>The set of non-signalling correlations, denoted by <span class="math notranslate nohighlight">\(\mathcal{NS}\)</span>, is convex and it can be proven that for finite <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(r\)</span> it has a finite number of extreme points, which defines what is called a polytope.</p>
+<p>Before the advent of quantum theory, the standard way of describing correlations was by means of deterministic classical models. This defines the so-called <em>classical</em> correlations, which are those that can be written as</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter8-section1-0">
+<span class="eqno">(56)<a class="headerlink" href="#equation-content-chapter8-section1-0" title="Link to this equation">#</a></span>\[p(ab|xy)\sum_\lambda p(\lambda)D_A(a|x\lambda)D_B(b|y\lambda) ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> denotes a correlated classical variables hidden in the devices described by the probability distribution <span class="math notranslate nohighlight">\(p(\lambda)\)</span>, while <span class="math notranslate nohighlight">\(D_A\)</span> and <span class="math notranslate nohighlight">\(D_B\)</span> are deterministic functions producing the outputs depending on the inputs and this variable. Classical correlations are nothing but the EPR correlations introduced in <span id="id1">[<a class="reference internal" href="#id11" title="Albert Einstein, Boris Podolsky, and Nathan Rosen. Can quantum-mechanical description of physical reality be considered complete? Physical review, 47(10):777, 1935.">1</a>]</span>. For finite <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(r\)</span>, the set of classical correlations <span class="math notranslate nohighlight">\(\mathcal C\)</span> is again a polytope, that is, a convex set with a finite number of points.</p>
+<p>Finally, the set of interest here is that of quantum correlations. This is defined by those correlations that can be obtained when performing local measurements on a two-party quantum state. We therefore have that some correlations are quantum whenever there exists a state acting on a composite Hilbert space <span class="math notranslate nohighlight">\(\mathcal H_A\otimes\mathcal H_B\)</span> and local measurement in each Hilbert space defined by POVMs elements <span class="math notranslate nohighlight">\(M_{a|x}\)</span> and <span class="math notranslate nohighlight">\(M_{b|y}\)</span>, all positive operators such that <span class="math notranslate nohighlight">\(\sum_a M_{a|x}=\one_A\)</span> for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\sum_a M_{b|y}=\one_B\)</span> for all <span class="math notranslate nohighlight">\(y\)</span>, such that</p>
+<div class="math notranslate nohighlight" id="equation-qcorrelations">
+<span class="eqno">(57)<a class="headerlink" href="#equation-qcorrelations" title="Link to this equation">#</a></span>\[p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{a|x}) .\]</div>
+<p>Note that we do not impose any specific conditions on the Hilbert spaces used to derive these correlations, they are arbitrary. In particular, the Hilbert space dimension are not specified, that is, the measured systems can be qubits, qutrits, or even have infinite dimension. In fact, the characterisation of quantum correlations, that is, which conditional probability distributions can be expressed as in Eq. <a class="reference internal" href="#equation-qcorrelations">(57)</a>, is very hard, as, intuitively, one needs to explore all possible Hilbert spaces. The set of quantum correlations <span class="math notranslate nohighlight">\(\mathcal Q\)</span> is again convex but does not have a finite number of extreme points.</p>
+<p>The relation among these three physical sets is relatively well understood and one has <span class="math notranslate nohighlight">\(\mathcal C \subsetneq \mathcal Q \subsetneq \mathcal{NS}\)</span>. A pictorial representation of these sets is given in <a class="reference internal" href="chapter8.html#difig"><span class="std std-numref">Fig. 8</span></a>, which reflects the most salient properties of these sets. The first strict inclusion is nothing but a consequence of Bell’s theorem, that is the existence of quantum correlations with no classical analogue. In fact, the facets of the classical set define Bell inequalities, hyperplanes defining linear conditions expressed in terms of the observed correlations that are satisfied by all classical correlations (as the set of classical correlations is fully contained on one side of the hyperplane). The second inclusion was proven by Tsirelson and, independently Popescu and Rohrlich <span id="id2">[<a class="reference internal" href="#id36" title="Sandu Popescu and Daniel Rohrlich. Quantum nonlocality as an axiom. Foundations of Physics, 24:379–385, 1994.">3</a>]</span>. They derived the so-called Popescu-Rohrlich (PR) box, a conditional probability distribution <span class="math notranslate nohighlight">\(p(ab|xy)\in\mathcal{NS}\)</span> that has no quantum realisation. This distribution is obtained for the case of binary inputs and outputs, <span class="math notranslate nohighlight">\(m=r=2\)</span>. Denoting the values of inputs and outputs by bits, the PR-box is such that <span class="math notranslate nohighlight">\(p(ab|xy)=\delta_{a\oplus b=xy}/2\)</span>. Here <span class="math notranslate nohighlight">\(\oplus\)</span> is the classical XOR, while <span class="math notranslate nohighlight">\(xy\)</span> is the AND of these two bits. To understand the notation, we give two examples: <span class="math notranslate nohighlight">\(p(a=1,b=1|x=1,y=1)=\delta_{1\oplus 1=AND(1,1)}/2=\delta_{0,1}/2=0\)</span> and <span class="math notranslate nohighlight">\(p(a=0,b=0|x=0,y=1)=\delta_{0\oplus 0=AND(0,1)}/2=\delta_{0,0}/2=1/2\)</span>. In a more compact way, when <span class="math notranslate nohighlight">\(xy=0\)</span> (<span class="math notranslate nohighlight">\(xy=1\)</span>) the outputs of Alice and Bob are perfectly (anti-) correlated and occur with the same probability. The proof that these correlations are not quantum follows from the fact that they lead to a CHSH value of 4, larger than the maximum allowed by quantum physics, equal to <span class="math notranslate nohighlight">\(2\sqrt 2\)</span> <span id="id3">[<a class="reference internal" href="#id21" title="BS Tsirelson. Lett. math. phys. Lett. Math. Phys, 4:93, 1980.">2</a>]</span>. To see that these correlations produce a CHSH value equal to <span class="math notranslate nohighlight">\(4\)</span> is convenient to relabel the outputs as <span class="math notranslate nohighlight">\(a,b=\pm 1\)</span> and the inputs as <span class="math notranslate nohighlight">\(x,y=1,2\)</span>. When the two or one input is equal to 1 (0 in the bit notation used to specify the PR-box), the outputs are perfectly correlated, hence <span class="math notranslate nohighlight">\(ab=+1\)</span>, so <span class="math notranslate nohighlight">\(A_1B_1=A_1B_2=A_2B_1=+1\)</span>, while when both inputs are equal to 2 (1 in the bit notation), outputs are perfectly anti-correlated, so one has <span class="math notranslate nohighlight">\(A_2B_2=-1\)</span>. These values produced the announced non-quantum value of <span class="math notranslate nohighlight">\(\text{CHSH}=4\)</span>.</p>
+<p>After this small parenthesis, devoted to motivate why correlations become non-trivial when combined with a physical theory or even just a physical principle, we present the main ideas to construct device-independent quantum information protocols. Note that in the DI scenario, for Alice and Bob to obtain a result not possible in classical information theory, they should observe correlations that do not have a classical model, that is, correlations that violate a Bell inequality. In fact, Bell inequalities are witnesses of the intrinsically quantum or non-classical origin of these correlations. Since we are going to assume that the devices are quantum, we can focus on correlations in <span class="math notranslate nohighlight">\(\mathcal Q\)</span> and discard those correlations in <span class="math notranslate nohighlight">\(\mathcal{NS}\)</span> that do not have a quantum realisation.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div role="list" class="citation-list">
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Albert Einstein, Boris Podolsky, and Nathan Rosen. Can quantum-mechanical description of physical reality be considered complete? <em>Physical review</em>, 47(10):777, 1935.</p>
+</div>
+<div class="citation" id="id21" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>BS Tsirelson. Lett. math. phys. <em>Lett. Math. Phys</em>, 4:93, 1980.</p>
+</div>
+<div class="citation" id="id36" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>Sandu Popescu and Daniel Rohrlich. Quantum nonlocality as an axiom. <em>Foundations of Physics</em>, 24:379–385, 1994.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -474,7 +528,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">The Device-Independent Scenario</p>
       </div>
     </a>
     <a class="right-next"
@@ -482,7 +536,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-title">Device-Independent Quantum Key Distribution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -493,7 +547,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

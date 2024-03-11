@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="es" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>BB84 with Time-Bin Encoding and Weak Coherent States &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,19 +51,22 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter6/section1';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section2.html" />
-    <link rel="prev" title="TODO" href="chapter6.html" />
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="The Photon-Number Splitting Attack" href="section2.html" />
+    <link rel="prev" title="Implementations" href="chapter6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="es"/>
   </head>
   
   
@@ -71,7 +74,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -159,9 +162,9 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Búsqueda</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -178,45 +181,45 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Basics Elements of Quantum Information Theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Bell’s Theorem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General Structure of QKD Protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security Proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key Rate for Collective Attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter6.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter6.html">Implementations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">BB84 with Time-Bin Encoding and Weak Coherent States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">The Photon-Number Splitting Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">SARG Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Decoy-State Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Long-Distance Quantum Communication</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -276,7 +279,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositorio de origen"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -310,7 +313,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter6/section1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abrir un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -331,7 +334,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -340,7 +343,7 @@
       
       <li><a href="../../_sources/content/chapter6/section1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -358,7 +361,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir en PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -378,7 +381,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo de pantalla completa"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -393,7 +396,7 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
@@ -404,7 +407,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -420,7 +423,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>BB84 with Time-Bin Encoding and Weak Coherent States</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -434,9 +437,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bb84-with-time-bin-encoding-and-weak-coherent-states">
+<h1>BB84 with Time-Bin Encoding and Weak Coherent States<a class="headerlink" href="#bb84-with-time-bin-encoding-and-weak-coherent-states" title="Link to this heading">#</a></h1>
+<p>Time bins represent one of the most popular solutions to send quantum information over long distances. In principle, the idea is to prepare single-photon states and send them though a fibre coupler with a given transmission <span class="math notranslate nohighlight">\(T\)</span>.  The two paths have different lengths and are recombined. A phase shift <span class="math notranslate nohighlight">\(\varphi\)</span> is applied to one of the two paths, say the longer one, see <a class="reference internal" href="#timebin"><span class="std std-numref">Figura 5</span></a>. By playing with the transmission of the coupling and the phase, it is in principle possible to prepare any qubit state, as one has <span class="math notranslate nohighlight">\(\ket\psi=\sqrt T\ket s+\sqrt Re^{i\varphi}\ket{\ell}\)</span>. In practice, changing the transmission of the first coupler is more demanding than changing the applied phase, so one often employs a fixed transmission given by <span class="math notranslate nohighlight">\(T=1/2\)</span>. Also, recombining the two paths in a deterministic way is also challenging, so one often uses another coupler again with transmission <span class="math notranslate nohighlight">\(1/2\)</span>. This simpler process therefore prepares any state <span class="math notranslate nohighlight">\(\ket\psi=(\ket s+e^{i\varphi}\ket{\ell})/\sqrt 2\)</span>, that is, any state in the equator of the Bloch sphere defined by <span class="math notranslate nohighlight">\(\ket s\)</span> and <span class="math notranslate nohighlight">\(\ket{\ell}\)</span>, with some probability. This is however sufficient to implement the BB84 protocol through the scheme in <a class="reference internal" href="#timebin"><span class="std std-numref">Figura 5</span></a>.</p>
+<!--Luke: Maybe we should mention that R is just the coefficient normalizing the state based on T?-->
+<figure class="align-default" id="timebin">
+<a class="reference internal image-reference" href="../../_images/TimeBin.png"><img alt="../../_images/TimeBin.png" src="../../_images/TimeBin.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 5 </span><span class="caption-text">Time-bin qubits: Quantum information is encoded in a single-photon state that can be in different temporal modes. Upper part: In the ideal situation, the transmission coefficient of the first coupler can be freely chosen. The second coupler first reflects the photon when it takes the short path, and then transmits when the photon takes the long path, resulting in the deterministic preparation of an arbitrary qubit state. In practice, it is much simpler to act with couplers of fixed transmission <span class="math notranslate nohighlight">\(T=1/2\)</span>. While photons may take the wrong path at the second coupler, this does not affect the protocol performance because only those cases in which Bob detects a photon will be kept, effectively discarding all the situations in which the photon was lost at the second coupler.  Lower part: time-bin implementation of BB84 protocol.</span><a class="headerlink" href="#timebin" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For that, Alice prepares the four possible BB84 states <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span> and <span class="math notranslate nohighlight">\(\ket{\pm y}\)</span> through the previous arrangement and by choosing a phase <span class="math notranslate nohighlight">\(\varphi_A=0,\pi\)</span> for <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span> and <span class="math notranslate nohighlight">\(\varphi_A=\pm\pi/2\)</span> for <span class="math notranslate nohighlight">\(\ket{\pm y}\)</span>. These states are sent to Bob, who applies the <em>same</em> interferometric arrangement and detects which path the photon takes at the end of the process. As it will become clear below, <span class="math notranslate nohighlight">\(\varphi_B=0\)</span> (<span class="math notranslate nohighlight">\(\varphi=\pi/2\)</span>) corresponds to a measurement in the <span class="math notranslate nohighlight">\(x\)</span> (<span class="math notranslate nohighlight">\(y\)</span>) basis. It is also important to keep in mind that only those events where Bob detects a photon are kept, all the rest are discarded. If we denote by <span class="math notranslate nohighlight">\(T\)</span> the time it takes to the photon to go from Alice to Bob, and by <span class="math notranslate nohighlight">\(\Delta T\)</span> the time shift between the two arms of the interferometer at each side, there are three possible values for the time <span class="math notranslate nohighlight">\(T_B\)</span> at which a photon detection on Bob’s side occurs:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T_B=T\)</span>: the photon took the short path in both interferometers. It can be detected in any of the two detectors with probability <span class="math notranslate nohighlight">\(1/2\)</span>. These events are discarded.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_B=T+2\Delta T\)</span>: the photon took the long path in both interferometers. It can be detected in any of the two detectors with probability <span class="math notranslate nohighlight">\(1/2\)</span>. These events are discarded.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_B=T+\Delta T\)</span>: there is interference between the two possibilities in which the photon first took the short and then long path, and viceversa. Crucially, this interference, and hence the probability of observing the photon in one or the other detector, depends on the phase difference applied by Alice and Bob. This is the interesting case that is used to generate the key.</p></li>
+</ul>
+<p>Note that to define these arrival times, Alice and Bon should share a time reference, that is, Bob should know when to expect the arrival of the photons prepared by Alice.</p>
+<p>In the implementation, Bob only keeps those events in which one of the two detectors click at <span class="math notranslate nohighlight">\(T_B=T+\Delta T\)</span>, while all the other events are discarded. Let’s compute the probabilities of observing a click in one of the detectors at this time. There are only two possible events that can contribute: (i) Alice’s photon takes the short arm, is sent to Bob, and then takes the long arm or (ii) Alice’s photon takes the long arm, is sent to Bob, and then takes the short arm. Quantum physics tells us that to compute the corresponding probability, we should sum the probability amplitudes of these two events. To do so, we work on second quantization and introduce the creation and annihilation operators for each mode, which we denote by <span class="math notranslate nohighlight">\(a\)</span>, instead of the more standard notation <span class="math notranslate nohighlight">\(a^\dagger\)</span>, to simplify the notation. Also, we will work with non-normalized states. A one-photon state <span class="math notranslate nohighlight">\(\ket{1}\)</span> is then written as <span class="math notranslate nohighlight">\(\ket 1=a\ket 0\)</span>, where now <span class="math notranslate nohighlight">\(\ket 0\)</span> is the vacuum state of the electromagnetic field (none of these states should be confused with the elements of the computational basis).</p>
+<p>The state leaving Alice’s lab is <span class="math notranslate nohighlight">\((a_s+e^{i\varphi_A}a_\ell)\ket 0\)</span>, that is, the superposition of a photon that took the short and the long arm, with the corresponding phase. To further simplify the notation, we omit the vacuum state. The state arriving to Bob’s last coupler at time <span class="math notranslate nohighlight">\(T+\Delta T\)</span> are <span class="math notranslate nohighlight">\(a_{s\ell}e^{i\varphi_B}+a_{\ell s}e^{i\varphi_A}\)</span>, where <span class="math notranslate nohighlight">\(a_{\ell s}\)</span> (<span class="math notranslate nohighlight">\(a_{s\ell}\)</span>) is the creation operator for the photon that first took the long (short) and then short (long) paths. The coupler is nothing but a standard balanced beamsplitter, with transmission coefficient <span class="math notranslate nohighlight">\(T=1/2\)</span>. It is well-known that a balanced beamsplitter transforms the input modes <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> into the output modes <span class="math notranslate nohighlight">\(b_1\)</span> and <span class="math notranslate nohighlight">\(b_2\)</span> as follows:</p>
+<div class="math notranslate nohighlight" id="equation-beamsplitter">
+<span class="eqno">(50)<a class="headerlink" href="#equation-beamsplitter" title="Link to this equation">#</a></span>\[\begin{split}    \begin{pmatrix}b_1 \\b_2 \\\end{pmatrix} =     \begin{pmatrix}\frac{1}{\sqrt 2} &amp; \frac{1}{\sqrt 2} \\\frac{1}{\sqrt 2} &amp; -\frac{1}{\sqrt 2} \\\end{pmatrix} \begin{pmatrix}a_1 \\ a_2 \\\end{pmatrix} .\end{split}\]</div>
+<p>In the considered setup, we should apply this transformation to the input modes of the last beamsplitter, <span class="math notranslate nohighlight">\(a_{\ell s}\)</span> and <span class="math notranslate nohighlight">\(a_{s\ell}\)</span>, while the output modes correspond to the photons going to the two detectors, that we denote by <span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span>. One therefore has</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter6-section1-0">
+<span class="eqno">(51)<a class="headerlink" href="#equation-content-chapter6-section1-0" title="Link to this equation">#</a></span>\[(d_1+d_2)e^{i\varphi_B}+(d_1-d_2)e^{i\varphi_A}. \]</div>
+<p>This implies that the probabilities of observing the photon in the detectors are, after restoring normalisation,</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter6-section1-1">
+<span class="eqno">(52)<a class="headerlink" href="#equation-content-chapter6-section1-1" title="Link to this equation">#</a></span>\[\begin{split}\text{Pr}(d_1 \text{ clicks})&amp;=&amp;\frac{|e^{i\varphi_A}+e^{i\varphi_B}|^2}{4}=\frac{|e^{i(\varphi_A-\varphi_B)/2}+e^{-i(\varphi_A-\varphi_B)/2}|^2}{4}=\frac{1+\cos(\varphi_A-\varphi_B)}{2} \nonumber\\
+\text{Pr}(d_2 \text{ clicks})&amp;=&amp;\frac{|e^{i\varphi_A}-e^{i\varphi_B}|^2}{4}=\frac{|e^{i(\varphi_A-\varphi_B)/2}-e^{-i(\varphi_A-\varphi_B)/2}|^2}{4}=\frac{1-\cos(\varphi_A-\varphi_B)}{2} .\end{split}\]</div>
+<p>When Alice and Bob bases agree and are equal to <span class="math notranslate nohighlight">\(z\)</span>, corresponding to <span class="math notranslate nohighlight">\(\varphi_A=0,\pi\)</span> and <span class="math notranslate nohighlight">\(\varphi_B=0\)</span>, then the first detector deterministically clicks when Alice prepare <span class="math notranslate nohighlight">\(\ket{+z}\)</span>, corresponding to <span class="math notranslate nohighlight">\(\varphi_A=0\)</span>, while the second does it for <span class="math notranslate nohighlight">\(\ket{-z}\)</span>, corresponding to <span class="math notranslate nohighlight">\(\varphi_A=\pi\)</span>. It is easy to see that the same is observed for <span class="math notranslate nohighlight">\(\varphi_A=\pm\pi/2\)</span> and <span class="math notranslate nohighlight">\(\varphi_B=\pi/2\)</span>. When the bases do not agree, say <span class="math notranslate nohighlight">\(\varphi_A=0\)</span> and <span class="math notranslate nohighlight">\(\varphi_B=\pi/2\)</span>, the two detectors click with the same probability, <span class="math notranslate nohighlight">\(\text{Pr}(d_1 \text{ clicks})=\text{Pr}(d_2 \text{ clicks})=1/2\)</span>. One therefore obtains the same correlations between Alice’s preparations and Bob’s measurements as in the BB84 protocol, as announced.</p>
+<p>The implementation of this scheme is still quite demanding because it requires the preparation of single-photon states. Despite tremendous progress in single-photon sources, this is still an expensive and challenging device. To overcome this problem, Alice replaces single-photon states by a weak coherent state. Recall that a coherent state is given by the following superposition of photon-number states:</p>
+<div class="math notranslate nohighlight" id="equation-coherentstate">
+<span class="eqno">(53)<a class="headerlink" href="#equation-coherentstate" title="Link to this equation">#</a></span>\[\ket\alpha=e^{-|\alpha|^2/2}\sum_n \frac{\alpha^n}{\sqrt{n!}}\ket n=\sum_n p(n)\ket n,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is an arbitrary complex number, <span class="math notranslate nohighlight">\(\alpha=\alpha_x+i\alpha_p=|\alpha|e^{i\phi}\)</span>. The phase of the coherent state is <span class="math notranslate nohighlight">\(\phi\)</span>, while its intensity, that we denote by <span class="math notranslate nohighlight">\(\mu\)</span>, is equal to <span class="math notranslate nohighlight">\(\mu=|\alpha|^2\)</span>. In fact, note that the average number of photons in the pulse is</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter6-section1-2">
+<span class="eqno">(54)<a class="headerlink" href="#equation-content-chapter6-section1-2" title="Link to this equation">#</a></span>\[\langle n\rangle=e^{-|\alpha|^2}\sum_n \frac{\alpha^{2n}}{n!} n = \mu.\]</div>
+<p>Coherent states are very easy to prepare, because they describe the state of a conventional laser. So, Alice can approximate the required single-photon state by an attenuated coherent state, where <span class="math notranslate nohighlight">\(\mu&lt;1\)</span>. Up to normalisation, an attenuated coherent state is approximately equal to <span class="math notranslate nohighlight">\(\ket 0 + \alpha\ket 1\)</span>, that is, a superposition of vacuum and the single-photon state. Now, the idea is that, since Bob is going to keep only those cases in which he detects light, this effectively projects the coherent state into the single-photon component, as the vacuum state cannot give any click on Bob’s side. In other words, the coherent state sort of behaves like the single-photon state for those events where Bob detected light. We therefore have all the ingredients for a feasible implementation of BB84 and, in fact, most of the commercial devices running this protocol are based on fibre interferometers, weak coherent states and light detectors.</p>
+<p>The rate these protocols produce can be estimated as follows. Coherent states are prepared with a repetition rate that we denote by <span class="math notranslate nohighlight">\(f\)</span>. They propagate through the channel with transmission <span class="math notranslate nohighlight">\(\eta_C\)</span>, see Eq. <a class="reference internal" href="chapter6.html#equation-channellosses">(49)</a>. The rate of detected photons therefore goes like <span class="math notranslate nohighlight">\(R_B=f\eta_c\mu\)</span>. Up to the terms <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span>, fixed in the preparation, the rate is proportional to <span class="math notranslate nohighlight">\(\eta_C\)</span>, that is, exponential with the distance. This is not the final key rate, which will depend on the key distillation process (basis reconciliation, error correction, privacy amplification,…), but it captures the order of magnitude of the protocol rate.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,19 +508,19 @@ document.write(`
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter6.html"
-       title="previous page">
+       title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Implementations</p>
       </div>
     </a>
     <a class="right-next"
        href="section2.html"
-       title="next page">
+       title="siguiente página">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">The Photon-Number Splitting Attack</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -505,7 +542,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
 </p>
 
   </div>

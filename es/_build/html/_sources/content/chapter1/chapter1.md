@@ -9,16 +9,21 @@ The scope of this first section is to introduce the basic postulates of Quantum 
 The norm of a vector $\ket{\psi}$ is $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. In general, most of Quantum Information (QI) applications deal with complex spaces of finite dimension $d$, denoted by $\mathbb{C}^d$.
 
 `````{admonition} Example
-:class: tip
+:class: note
 Given two vectors in a complex two-dimensional space, denoted by $\mathbb{C}^2$,
 
-$\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix}$,
+```{math}
+:label:
+\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix},
+```
 
 one has
 
-$\bra{\psi} = (1 \quad −i) \qquad \bra{\phi} = (3i \quad −1)$, 
-
-$\braket{\phi|\psi} = (3i \quad −1) \begin{pmatrix} 1 \\ i \end{pmatrix} = 2i$.
+```{math}
+:label:
+\bra{\psi} = (1 \quad −i) \qquad \bra{\phi} = (3i \quad −1), \\\\
+\braket{\phi|\psi} = (3i \quad −1) \begin{pmatrix} 1 \\ i \end{pmatrix} = 2i.
+```
 `````
 
 ## Pure states
@@ -101,9 +106,7 @@ and
 |ψ_i〉 = |i〉,
 ```
 
-that is, the initial state $\ket{\psi}$ collapses into $|i〉$ with probability given by the square of the overlap, $|〈i\ket{\psi}|^2$.
-
-The previous formulae also imply that there is no measurement (physical process) distinguishing $\ket{\psi}$ from $e^{iγ} \ket{\psi}$. Thus, the state of a physical system is actually described by a vector in a Hilbert space, up to an irrelevant global phase.
+that is, the initial state $\ket{\psi}$ collapses into $|i〉$ with probability given by the square of the overlap, $|〈i\ket{\psi}|^2$. The previous formulae also imply that there is no measurement (physical process) distinguishing $\ket{\psi}$ from $e^{iγ} \ket{\psi}$. Thus, the state of a physical system is actually described by a vector in a Hilbert space, up to an irrelevant global phase.
 
 ## Bibliography for this section
 ```{bibliography}

@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="fr" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Bennett-Brassard-Mermin Argument &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/documentation_options.js?v=72dce1d2"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,19 +51,22 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter3/section5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="../chapter4/chapter4.html" />
-    <link rel="prev" title="TODO" href="section4.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="General Structure of QKD Protocols" href="../chapter4/chapter4.html" />
+    <link rel="prev" title="Ekert Protocol" href="section4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -71,13 +74,13 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
-    Back to top
+    Haut de page
   </button>
 
   
@@ -159,9 +162,9 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Recherche</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -178,45 +181,45 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Basics Elements of Quantum Information Theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Bell’s Theorem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">Quantum Cryptography</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General Structure of QKD Protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security Proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key Rate for Collective Attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 with Time-Bin Encoding and Weak Coherent States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">The Photon-Number Splitting Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">SARG Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Decoy-State Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Long-Distance Quantum Communication</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -276,7 +279,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Dépôt source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -310,7 +313,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter3/section5.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Ouvrez un problème"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -331,7 +334,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -340,7 +343,7 @@
       
       <li><a href="../../_sources/content/chapter3/section5.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -358,7 +361,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -378,7 +381,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -393,7 +396,7 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
@@ -404,12 +407,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -420,11 +425,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Bennett-Brassard-Mermin Argument</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -434,9 +447,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bennett-brassard-mermin-argument">
+<h1>Bennett-Brassard-Mermin Argument<a class="headerlink" href="#bennett-brassard-mermin-argument" title="Link to this heading">#</a></h1>
+<p>A few months after Ekert’s work, Bennett, Brassard and
+Mermin <span id="id1">[<a class="reference internal" href="#id26" title="Charles H Bennett, Gilles Brassard, and N David Mermin. Quantum cryptography without bell’s theorem. Physical review letters, 68(5):557, 1992.">1</a>]</span> wrote an article showing that a QKD protocol à
+la Ekert can always be transformed into an equivalent protocol
+without entanglement, à la BB84, where states are prepared by
+Alice and measured by Bob. Their argument goes as follows.</p>
+<p>First of all, the role of a Bell inequality violation in Ekert’s
+proposal is to certify that Alice and Bob share a two-qubit
+maximally entangled state. However, there are other measurements
+which can provide the same level of certification. For instance,
+it is the only state which gives perfect correlations when both
+local parties measure in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(z\)</span> basis. That is, it is the
+only two-qubit state such that
+<span class="math notranslate nohighlight">\(\bra{\psi}\sigma_x\otimes\sigma_x\ket{\psi}=
+\bra{\psi}\sigma_z\otimes\sigma_z\ket{\psi}=1\)</span>. Thus, the detection of the maximally entangled state
+can equally be performed via a protocol in which
+both Alice and Bob measure in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(z\)</span> basis. Note that now
+Alice does not need to introduce a third basis to get outcomes
+that are perfectly correlated to Bob’s.</p>
+<p>The remaining step is noting that when measuring her quantum
+particle, Alice is effectively preparing a state for Bob. Indeed,
+in the ideal case, Alice receives half of a maximally entangled
+state. Then, one can see that her measurement projects Bob’s
+particle into a state which is equal to the measurement result by
+Alice. This follows from the simple observation that:</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter3-section5-0">
+<span class="eqno">(32)<a class="headerlink" href="#equation-content-chapter3-section5-0" title="Link to this equation">#</a></span>\[\begin{split}  _A\bra{\pm x}\ket{\Phi^+}_{AB} &amp;=&amp; \frac{1}{\sqrt 2}\ket{\pm x}_B \nonumber\\
+  _A\bra{\pm z}\ket{\Phi^+}_{AB} &amp;=&amp; \frac{1}{\sqrt 2}\ket{\pm
+  z}_B .\end{split}\]</div>
+<p>That is, depending on her choice of basis, Alice is preparing a
+state in the plus or minus direction with probability equal to
+1/2. Clearly, the resulting protocol is equivalent to the original
+protocol in terms of security. But the resulting protocol is
+nothing but the original BB84 protocol and does not require any
+entanglement. Thus, the authors of Ref. <span id="id2">[<a class="reference internal" href="#id26" title="Charles H Bennett, Gilles Brassard, and N David Mermin. Quantum cryptography without bell’s theorem. Physical review letters, 68(5):557, 1992.">1</a>]</span> concluded that
+the approach by Ekert did not provide any new significant insight
+into the problem of QKD, because both approaches were equivalent.</p>
+<p>Apart from the conceptual implications, the work by Bennett,
+Brassard and Mermin was also important from a technical point of
+view, as it pointed out a nice correspondence between entanglement-based
+à la Ekert and prepare-and-measure protocols à la BB84. On the one hand, most of
+the protocols based on entanglement can be mapped into an
+equivalent prepare-and-measure protocol using the previous
+ideas. On the other hand,
+any prepare-and-measure protocol can be mapped into an equivalent
+entanglement-based protocol. Indeed, assume that in the initial
+prepare-and-measure protocol Alice prepares the states
+<span class="math notranslate nohighlight">\(\{\ket{\psi_i}\}\)</span> with probabilities <span class="math notranslate nohighlight">\(p_i\)</span>. This can be done by
+Alice by preparing an entangled state</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter3-section5-1">
+<span class="eqno">(33)<a class="headerlink" href="#equation-content-chapter3-section5-1" title="Link to this equation">#</a></span>\[    \sum_i \sqrt{p_i}\ket{i}_A\otimes\ket{\psi_i}_B ,\]</div>
+<p>and measuring now her particle in the basis <span class="math notranslate nohighlight">\(\{\ket{i}\}\)</span>.
+As we discuss in the next section, this parallelism provides an
+important conceptual and technical simplification of security
+proofs in QKD. Usually, the security  proofs of QKD protocols are derived in the
+entanglement-based scenario, because there it is simpler to construct them, but the prepare-and-measure equivalent version is implemented in practice, as it just involves the preparation single-particle states and measurements.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id3">
+<div role="list" class="citation-list">
+<div class="citation" id="id26" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<p>Charles H Bennett, Gilles Brassard, and N David Mermin. Quantum cryptography without bell’s theorem. <em>Physical review letters</em>, 68(5):557, 1992.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,19 +550,19 @@ document.write(`
 <div class="prev-next-area">
     <a class="left-prev"
        href="section4.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Ekert Protocol</p>
       </div>
     </a>
     <a class="right-next"
        href="../chapter4/chapter4.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">General Structure of QKD Protocols</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,7 +573,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -505,7 +597,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+Par Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
 </p>
 
   </div>

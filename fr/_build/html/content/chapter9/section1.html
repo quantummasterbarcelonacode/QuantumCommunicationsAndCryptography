@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="fr" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Classical Communication &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/documentation_options.js?v=72dce1d2"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,19 +51,22 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter9/section1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="section2.html" />
-    <link rel="prev" title="TODO" href="chapter9.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="Quantum Error Correction" href="section2.html" />
+    <link rel="prev" title="Long-Distance Quantum Communication" href="chapter9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -71,13 +74,13 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
-    Back to top
+    Haut de page
   </button>
 
   
@@ -159,9 +162,9 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Recherche</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -178,45 +181,45 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Basics Elements of Quantum Information Theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Bell’s Theorem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General Structure of QKD Protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security Proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key Rate for Collective Attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 with Time-Bin Encoding and Weak Coherent States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">The Photon-Number Splitting Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">SARG Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Decoy-State Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter9.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="section4.html">TODO</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter9.html">Long-Distance Quantum Communication</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -276,7 +279,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Dépôt source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -310,7 +313,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter9/section1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Ouvrez un problème"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -331,7 +334,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -340,7 +343,7 @@
       
       <li><a href="../../_sources/content/chapter9/section1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -358,7 +361,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -378,7 +381,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -393,7 +396,7 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
@@ -404,7 +407,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -420,7 +423,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Classical Communication</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -434,9 +437,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="classical-communication">
+<h1>Classical Communication<a class="headerlink" href="#classical-communication" title="Link to this heading">#</a></h1>
+<p>The problem of sending information in a reliable way through a noisy channel has a long history in classical information theory. There, a classical channel is described by a stochastic map <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, describing how an input random variable <span class="math notranslate nohighlight">\(X\)</span> is transformed into an output variable <span class="math notranslate nohighlight">\(Y\)</span>. The standard way of correcting channel errors is through <em>error correction</em>.</p>
+<p>As an example, consider the simple binary symmetric channel <span class="math notranslate nohighlight">\(P_\epsilon\)</span> that flips a bit with probability <span class="math notranslate nohighlight">\(\epsilon\)</span>, that is, <span class="math notranslate nohighlight">\(P_\epsilon(Y=0|X=0)=P_\epsilon(Y=1|X=1)=1-\epsilon\)</span> and <span class="math notranslate nohighlight">\(P_\epsilon(Y=0|X=1)=P_\epsilon(Y=1|X=0)=\epsilon\)</span>, which defines the error probability. Without losing generality, the error probability satisfies <span class="math notranslate nohighlight">\(\epsilon&lt;1/2\)</span>. A very simple error correcting code exploits repetition: to transmit a bit <span class="math notranslate nohighlight">\(X\)</span> to Bob, Alice sends its value three times through the channel, <span class="math notranslate nohighlight">\(X_1=X_2=X_3=X\)</span>. To define the value of his bit, Bob uses the majority of the received symbols, <span class="math notranslate nohighlight">\(Y=\text{maj}(Y_1,Y_2,Y_3)\)</span>. The new error probability is therefore <span class="math notranslate nohighlight">\(\epsilon'=3(1-\epsilon)\epsilon^2+\epsilon^3\)</span>, which is always smaller than <span class="math notranslate nohighlight">\(\epsilon\)</span> when <span class="math notranslate nohighlight">\(\epsilon&lt;1/2\)</span>.</p>
+<p>This example provides the main ideas of error correction. In general, Alice encodes <span class="math notranslate nohighlight">\(m\)</span>-bit strings <span class="math notranslate nohighlight">\(\vec X=(X_1,\ldots,X_m)\)</span>, called logical bits, into <span class="math notranslate nohighlight">\(2^m\)</span> sequences of <span class="math notranslate nohighlight">\(n\)</span> physical bits, <span class="math notranslate nohighlight">\(\vec X'=(X'_1,\ldots,X'_n)\)</span>, the so-called codewords, through an <span class="math notranslate nohighlight">\(m\rightarrow n\)</span> bit encoding map <span class="math notranslate nohighlight">\(\mathcal E\)</span>. In the previous example, Alice was encoding <span class="math notranslate nohighlight">\(m=1\)</span> bits into 2 codewords of <span class="math notranslate nohighlight">\(n=3\)</span> bits, namely <span class="math notranslate nohighlight">\(000\)</span> and <span class="math notranslate nohighlight">\(111\)</span>.  On reception, the received message is the one resulting from applying the given channel <span class="math notranslate nohighlight">\(P(Y|X)\)</span> to each of the symbols in <span class="math notranslate nohighlight">\(\vec X'\)</span>. Now, Bob decodes the information by mapping the received <span class="math notranslate nohighlight">\(n\)</span>-bit string <span class="math notranslate nohighlight">\(\vec Y'=(Y'_1,\ldots,Y'_n)\)</span> into an <span class="math notranslate nohighlight">\(m\)</span>-bit string <span class="math notranslate nohighlight">\(\vec Y=(Y_1,\ldots,Y_m)\)</span> through an <span class="math notranslate nohighlight">\(n\rightarrow m\)</span> decoding map <span class="math notranslate nohighlight">\(\mathcal D\)</span>. The error probability for the full protocol is <span class="math notranslate nohighlight">\(P(\vec Y\neq\vec X)=\epsilon\)</span> (note that <span class="math notranslate nohighlight">\(\epsilon\)</span> now denotes the error probability after error correction). The goal of error correction is, for a given tolerable error <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(n\)</span> uses of the channel, to maximise the amount of sent bits <span class="math notranslate nohighlight">\(m\)</span> over all the possible encoding and decoding maps. We denote this optimum by <span class="math notranslate nohighlight">\(m^*(n,\epsilon)\)</span>. Now, to understand the ultimate limit for reliable transmission, one should consider the asymptotic rate when the users have access to unlimited uses of the channel and the protocol attains vanishing error probability. This defines the (classical) capacity of the channel,</p>
+<div class="math notranslate nohighlight" id="equation-capacity">
+<span class="eqno">(60)<a class="headerlink" href="#equation-capacity" title="Link to this equation">#</a></span>\[C=\lim_{\epsilon\rightarrow 0} \lim_{n\rightarrow \infty}\frac{m^*(n,\epsilon)}{n} .\]</div>
+<p>Remarkably, the value of the previous limit is known. Shannon indeed proved that the channel capacity <span class="math notranslate nohighlight">\(C\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-shannoncapacity">
+<span class="eqno">(61)<a class="headerlink" href="#equation-shannoncapacity" title="Link to this equation">#</a></span>\[C=\max_{P(X)} I(X:Y) ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(I(X:Y)\)</span> is the mutual information of the joint distribution <span class="math notranslate nohighlight">\(P(X,Y)=P(X)P(Y|X)\)</span>, where the first term <span class="math notranslate nohighlight">\(P(X)\)</span> is the one to be optimised, while the second <span class="math notranslate nohighlight">\(P(Y|X)\)</span> is given by the channel. This result is impressive, as shows how a difficult limit involving <span class="math notranslate nohighlight">\(n\)</span> uses of the channel can be computed by solving an optimisation problem involving a single use. This type of formula, which gives the asymptotic performance of an object, in this case a channel, for a given task, in this case reliable communication, only in terms of a single copy of the object are called single-letter formulas. This does not mean that the channel capacity can be attained by a single use of the channel, but that for its computation we only need to consider a single copy of it. In a practical situation, where one has access to a finite number of uses of the channel <span class="math notranslate nohighlight">\(n\)</span>, one should design an error correction code involving codewords of finite length <span class="math notranslate nohighlight">\(n\)</span> that gets as close as possible to the rate <span class="math notranslate nohighlight">\(C\)</span>. Another consequence of the previous result is that any channel in which the information sent by Alice is not totally erased, that is, any channel where <span class="math notranslate nohighlight">\(Y\)</span> is not independent from <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(P(Y|X)\neq P(Y)\)</span>, can be used for communication. This follows from the fact that <span class="math notranslate nohighlight">\(I(X:Y)=0\)</span> if, and only if <span class="math notranslate nohighlight">\(P(X,Y)=P(X)P(Y)\)</span>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,19 +482,19 @@ document.write(`
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter9.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Long-Distance Quantum Communication</p>
       </div>
     </a>
     <a class="right-next"
        href="section2.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Quantum Error Correction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -505,7 +516,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+Par Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
 </p>
 
   </div>

@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="es" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>General Structure of QKD Protocols &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,19 +51,22 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter4/chapter4';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="../chapter5/chapter5.html" />
-    <link rel="prev" title="TODO" href="../chapter3/section5.html" />
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Security Proofs" href="../chapter5/chapter5.html" />
+    <link rel="prev" title="Bennett-Brassard-Mermin Argument" href="../chapter3/section5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="es"/>
   </head>
   
   
@@ -71,7 +74,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -159,9 +162,9 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Búsqueda</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -178,45 +181,45 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Basics Elements of Quantum Information Theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Bell’s Theorem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">General Structure of QKD Protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security Proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key Rate for Collective Attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 with Time-Bin Encoding and Weak Coherent States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">The Photon-Number Splitting Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">SARG Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Decoy-State Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Long-Distance Quantum Communication</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -276,7 +279,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositorio de origen"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -310,7 +313,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter4/chapter4.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abrir un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -331,7 +334,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -340,7 +343,7 @@
       
       <li><a href="../../_sources/content/chapter4/chapter4.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -358,7 +361,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir en PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -378,7 +381,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo de pantalla completa"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -393,7 +396,7 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
@@ -404,7 +407,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -420,7 +423,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>General Structure of QKD Protocols</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -434,9 +437,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="general-structure-of-qkd-protocols">
+<h1>General Structure of QKD Protocols<a class="headerlink" href="#general-structure-of-qkd-protocols" title="Link to this heading">#</a></h1>
+<p>The general structure of a QKD protocol is as follows:</p>
+<ol class="arabic simple">
+<li><p>Repeat <span class="math notranslate nohighlight">\(N\)</span> times: Alice prepares states <span class="math notranslate nohighlight">\(\ket{\psi_a}\)</span> with probability <span class="math notranslate nohighlight">\(p_a\)</span> and sends them to Bob through the insecure channel. Bob performs one of the measurements <span class="math notranslate nohighlight">\(M_j\)</span> with probability <span class="math notranslate nohighlight">\(p_j\)</span> on the received particle, obtaining the result <span class="math notranslate nohighlight">\(r\)</span>. After this process Alice and Bob have a list of <span class="math notranslate nohighlight">\(N\)</span> symbols corresponding to the prepared states on Alice’s side <span class="math notranslate nohighlight">\(\vec a=(a_1\ldots a_N)\)</span> and implemented measurement on Bob’s side <span class="math notranslate nohighlight">\(\vec b=(b_1\ldots b_N)\)</span>. Note that here we have combined the chosen measurement by Bob <span class="math notranslate nohighlight">\(j\)</span> and the obtained result <span class="math notranslate nohighlight">\(r\)</span> within <span class="math notranslate nohighlight">\(b\)</span>, that is <span class="math notranslate nohighlight">\(b=(j,r)\)</span>.</p></li>
+<li><p>Alice and Bob announce the prepared state and performed measurement and result for <span class="math notranslate nohighlight">\(n\)</span> of these rounds. This allows them to estimate the frequencies of obtaining result <span class="math notranslate nohighlight">\(r\)</span> when performing measurement <span class="math notranslate nohighlight">\(j\)</span> on state <span class="math notranslate nohighlight">\(\ket{\psi_i}\)</span>.</p></li>
+<li><p>Using this information, and the security proof, Alice and Bob know how to process their classical list of symbols <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span> to distill a secret key rate of length <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(\vec k=(k_1\ldots k_K)\)</span>. The length of this key depends on the previous estimation round. If the channel quality is too bad, Alice and Bob conclude that no key distillation is possible, <span class="math notranslate nohighlight">\(K=0\)</span>, and the protocol is aborted.</p></li>
+</ol>
+<p>Several remarks are important here:</p>
+<ul class="simple">
+<li><p>In principle, the larger the number of rounds <span class="math notranslate nohighlight">\(N\)</span>, the better the protocol performance: it reduces the statistical fluctuation when estimating the properties of the channel and therefore Alice and Bob have a much more precise understanding of the key distillation process. In the limit of <span class="math notranslate nohighlight">\(N\rightarrow\infty\)</span>, one can define the key rate <span class="math notranslate nohighlight">\(k=\lim_{N\rightarrow\infty} K/N\)</span>.</p></li>
+<li><p>The number of announced rounds <span class="math notranslate nohighlight">\(n\)</span> should be sufficient to achieve a reliable estimation of the channel properties, that is, to accumulate enough statistics so that these properties are determined with a given pre-determined confidence. But, to optimise the protocol performance, it should not be much larger than this, as these rounds do not contribute to the secret key. In the limit of large <span class="math notranslate nohighlight">\(N\)</span>, one can have very large values of <span class="math notranslate nohighlight">\(n\)</span>, and therefore an arbitrarily good estimation of the channel properties, but such that <span class="math notranslate nohighlight">\(n\ll N\)</span>. In other words, the estimation hardly affects the asymptotic key rate.</p></li>
+<li><p>The security proof, discussed below, is crucial in step 3 to understand how Alice and Bob should distill the key from the noisy list of symbols <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>.</p></li>
+</ul>
+<p>In the case of BB84, <span class="math notranslate nohighlight">\(a=(b_A,p)\)</span>, where <span class="math notranslate nohighlight">\(b_A\)</span> specifies Alice’s choice of basis and <span class="math notranslate nohighlight">\(p\)</span> the prepared element of the basis, so that <span class="math notranslate nohighlight">\(a\)</span> can be equal to <span class="math notranslate nohighlight">\((z,\pm 1)\)</span> or <span class="math notranslate nohighlight">\((x,\pm 1)\)</span>. These four states are prepared with the same probability equal to <span class="math notranslate nohighlight">\(1/4\)</span>. On Bob’s side, we can also write <span class="math notranslate nohighlight">\(b=(b_B,r)\)</span>, where <span class="math notranslate nohighlight">\(b_B\)</span> now denotes Bob’s choice of basis. The basis reconciliation process in which Alice and Bob only keep those symbols where <span class="math notranslate nohighlight">\(b_A=b_B\)</span> is part of the key distillation process in step 3 mapping the initial list of symbols obtained in step 1 into the final key.</p>
+<p>The protocol in the entanglement picture is very similar, but step 1 is now replaced by</p>
+<ol class="arabic simple">
+<li><p>Repeat <span class="math notranslate nohighlight">\(N\)</span> times: Alice prepares the state <span class="math notranslate nohighlight">\(\ket{\Psi}_{AA'}=\sum_a \sqrt{p_a}\ket a_A\otimes\ket{\psi_a}_{A'}\)</span>, where <span class="math notranslate nohighlight">\(\{\ket{a}\}\)</span> defines an arbitrary basis in system <span class="math notranslate nohighlight">\(A\)</span>. She measures system <span class="math notranslate nohighlight">\(A\)</span> in this basis getting result <span class="math notranslate nohighlight">\(a\)</span> with probability <span class="math notranslate nohighlight">\(p_a\)</span>. She then sends system <span class="math notranslate nohighlight">\(A'\)</span>, which is in state <span class="math notranslate nohighlight">\(\ket{\psi_a}\)</span>, to Bob through the insecure channel. Bob performs one of the measurements <span class="math notranslate nohighlight">\(M_j\)</span> with probability <span class="math notranslate nohighlight">\(p_j\)</span> on the received particle, obtaining the result <span class="math notranslate nohighlight">\(r\)</span>. After this process Alice and Bob have a list of <span class="math notranslate nohighlight">\(N\)</span> symbols corresponding to the measurement result on Alice’s side <span class="math notranslate nohighlight">\(\vec a=(a_1\ldots a_N)\)</span>, and implemented measurement on Bob’s side <span class="math notranslate nohighlight">\(\vec b=(b_1\ldots b_N)\)</span>. Note that here we have combined the chosen measurement by Bob <span class="math notranslate nohighlight">\(j\)</span> and the obtained result <span class="math notranslate nohighlight">\(r\)</span> within <span class="math notranslate nohighlight">\(b\)</span>, that is <span class="math notranslate nohighlight">\(b=(j,r)\)</span>.</p></li>
+</ol>
+<p>In the particular case of BB84, the four states can be grouped into two bases. This simplifies the entanglement-based equivalent protocol, which, as said, can be seen as measuring bases <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(z\)</span> on half of a maximally entangled state. However, grouping the prepared states into more than one basis is in general not possible, e.g. for the B92 protocol.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,19 +491,19 @@ document.write(`
 <div class="prev-next-area">
     <a class="left-prev"
        href="../chapter3/section5.html"
-       title="previous page">
+       title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Bennett-Brassard-Mermin Argument</p>
       </div>
     </a>
     <a class="right-next"
        href="../chapter5/chapter5.html"
-       title="next page">
+       title="siguiente página">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Security Proofs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -505,7 +525,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
 </p>
 
   </div>

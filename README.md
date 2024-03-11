@@ -1,24 +1,24 @@
 
 # Quantum Communications and Cryptography
 
-This contains three folders containing the different versions: English (en/), French (fr/) and Spanish (es/).
+This contains three folders containing the different versions: English (en/), French (fr/) and Spanish (es/). You also have a folder containing the original notes and figures for reference (og/).
 
 Each of these is a separate [Jupyter-Book](https://jupyterbook.org/en/stable/intro.html).
 
-To view the page, clone the repo and then open "QuantumCommunicationsAndCryptography/en/_build/html/content/intro.html" in your web browser, either by double clicking or doing ctrl-o in your browser and then selecting the file. 
+To view the page, clone the repo and then open "QuantumCommunicationsAndCryptography/en/_build/html/index.html" in your web browser, either by double clicking or doing ctrl-o in your browser and then selecting the file. 
 
-If this file doesn't exist then you need to compile the HTML files, first installing jupyter-book:
+To compile the HTML files from the book, first install jupyter-book:
 ```bash
 sudo apt-get install jupyter-book
 ```
-and then by running:
+and then run:
 ```bash
 jupyter-book build en/
 ```
 for the language you want to compile (in this case English).
 
-When editing the pages (the Markdown .md files) you'll need to recompile and then refresh your browser to view the changes. LaTeX equations are supported, can also use Jupyter notebooks if we need to run code but I think for our case just Markdown is fine. See either the online guide for Jupyter books linked above or just look at the files I've already done for syntax examples.
+When editing the pages (the Markdown .md files) you'll need to recompile and then refresh your browser to view the changes. There's a file I left called examples.md which contains the syntax and formatting that I used to convert the notes. 
 
-When we are ready to make it public we can set it up with GitHub pages using the static HTML files, but that's for later, if it's private we can't so we have to test everything locally. Note than the hyperlinks between translations don't work and won't until we make it a proper webpage (because for now they are separate books so we can't use local file referencing between them).
+When we are ready to make it public we can set it up with GitHub pages using the static HTML files, but that's for later, if it's private we can't so we have to test everything locally. Note than the hyperlinks between translations don't work and won't until we make it a proper webpage (because for now they are separate books and we can't use local file referencing between them).
 
-The current logo thing is just something I generated with AI (thus we have copyright) to replace the default Jupyter logo that comes with the template. We don't have to keep it. Or I can generate something better, whatever you guys want.
+The current logo thing is just something I generated with AI locally with stable diffision (thus we have copyright) to replace the default Jupyter logo that comes with the template. We don't have to keep it. Or I can generate something better, whatever you guys want.

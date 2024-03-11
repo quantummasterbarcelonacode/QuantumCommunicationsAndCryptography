@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="es" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TODO &#8212; Quantum Communications and Cryptography</title>
+    <title>Device-Independent Quantum Key Distribution &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,19 +51,22 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter8/section2';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TODO" href="../chapter9/chapter9.html" />
-    <link rel="prev" title="TODO" href="section1.html" />
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Long-Distance Quantum Communication" href="../chapter9/chapter9.html" />
+    <link rel="prev" title="Physical Correlations" href="section1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="es"/>
   </head>
   
   
@@ -71,7 +74,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -159,9 +162,9 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Búsqueda</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -178,45 +181,45 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Basics Elements of Quantum Information Theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Bell’s Theorem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">TODO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General Structure of QKD Protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security Proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key Rate for Collective Attacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 with Time-Bin Encoding and Weak Coherent States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">The Photon-Number Splitting Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">SARG Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Decoy-State Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">TODO</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter8.html">TODO</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="section1.html">TODO</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter8.html">The Device-Independent Scenario</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Physical Correlations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Device-Independent Quantum Key Distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">TODO</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">TODO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">TODO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Long-Distance Quantum Communication</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Quantum Repeaters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -276,7 +279,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositorio de origen"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -310,7 +313,7 @@
       
       <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter8/section2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abrir un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -331,7 +334,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -340,7 +343,7 @@
       
       <li><a href="../../_sources/content/chapter8/section2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -358,7 +361,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir en PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -378,7 +381,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo de pantalla completa"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -393,7 +396,7 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
@@ -404,12 +407,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -420,11 +425,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TODO</h1>
+    <h1>Device-Independent Quantum Key Distribution</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -434,9 +447,61 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="todo">
-<h1>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h1>
-<p>This page still needs to be created.</p>
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="device-independent-quantum-key-distribution">
+<h1>Device-Independent Quantum Key Distribution<a class="headerlink" href="#device-independent-quantum-key-distribution" title="Link to this heading">#</a></h1>
+<p>We now have most of the ingredients needed to understand the structure of DIQKD protocols. It is important for what follows to understand that in the DI scenario there are two rather different type of players: the users and the provider. The users, Alice and Bob in our case, demand from the provider devices that produce some desired correlations <span class="math notranslate nohighlight">\(p(ab|xy)\)</span> that must violate a Bell inequality. These correlations have a specific quantum realisation, but from the user’s viewpoint this is not relevant, as they want to conclude about their utility to establish a secret key independently of the details of this realisation. The provider, however, does care about the realisation and has to prepare a state and measurements leading to the correlations requested by the user, otherwise the user will not buy the devices.</p>
+<p>We start the discussion with the ideal case and in the simplest scenario of binary inputs and outputs, <span class="math notranslate nohighlight">\(a,b,x,y=1,2\)</span>. To establish a secret key in the DI setting, Alice and Bob demand devices producing the maximal quantum violation of the CHSH inequality, namely <span class="math notranslate nohighlight">\(\text{CHSH}=2\sqrt 2\)</span>. However, if one looks at the correlations attaining this value, there are no inputs of Alice and Bob with perfectly correlated outputs. This is why Bob requires a third possible value for his input, <span class="math notranslate nohighlight">\(y=3\)</span>, whose output is  now perfectly correlated to the output of one of Alice’s inputs, say <span class="math notranslate nohighlight">\(x=1\)</span>. For these combinations of observables, the two results by Alice and Bob have the same probability, but they are identical, that is <span class="math notranslate nohighlight">\(\langle A_1\otimes B_3\rangle=1\)</span>. Inputs <span class="math notranslate nohighlight">\(x=1\)</span> and <span class="math notranslate nohighlight">\(y=3\)</span> will be the ones used to establish the secret key and, in fact, they have <span class="math notranslate nohighlight">\(I(A:B)=1\)</span>. This arrangement defines the so-called CHSH QKD protocol <span id="id1">[<a class="reference internal" href="#id36" title="Antonio Acín, Nicolas Brunner, Nicolas Gisin, Serge Massar, Stefano Pironio, and Valerio Scarani. Device-independent security of quantum cryptography against collective attacks. Physical Review Letters, 98(23):230501, 2007.">1</a>]</span>, where Alice has a binary input to check the CHSH Bell inequality and one of them, <span class="math notranslate nohighlight">\(x=1\)</span>, is used to establish the secret key, and Bob has an input that takes three values, where two of them, <span class="math notranslate nohighlight">\(y=1,2\)</span> are used to compute the CHSH inequality and the third, <span class="math notranslate nohighlight">\(y=3\)</span>, to establish the key with Alice. To compute Eve’s information, Alice and Bob use the fact that there is basically only one way of getting the maximal violations of the CHSH inequality, which is the one in which Alice and Bob share a Bell state <a class="reference internal" href="../chapter2/section4.html#equation-bellstate">(24)</a> in which they perform the observables in <a class="reference internal" href="../chapter2/section4.html#chshfig"><span class="std std-numref">Figura 2</span></a>. It follows from this result, that we are not going to prove, that the observation of <span class="math notranslate nohighlight">\(\text{CHSH}=2\sqrt 2\)</span> implies that that shared state between Alice and Bob is a maximally entangled state of two qubits. Since this state is pure, Eve cannot be correlated, hence her information is zero, <span class="math notranslate nohighlight">\(\chi(A:E)=0\)</span>. The maximal violation of the CHSH inequality therefore certifies that Alice and Bob can establish a perfect secret key, that is a list of perfectly correlated bits, as <span class="math notranslate nohighlight">\(I(A:B)=1\)</span>, for which Eve has no information, <span class="math notranslate nohighlight">\(\chi(A:E)=0\)</span>.</p>
+<p>What happens when devices are noisy and, therefore, do not attain the maximal CHSH violation? As for standard QKD, one needs to derive a security proof that allows Alice and Bob to bound Eve’s information from their observed correlations. Recall however that, when deriving this bound, Alice and Bob should not make any assumptions on their devices, apart from the fact that they produce the observed correlations. Because of continuity, some noise tolerance is to be expected. The main question is whether this tolerance is reasonable and attainable in practical situations. The optimisation problem Alice and Bob have to solve is</p>
+<div class="math notranslate nohighlight" id="equation-diholevo">
+<span class="eqno">(58)<a class="headerlink" href="#equation-diholevo" title="Link to this equation">#</a></span>\[\begin{split}&amp;&amp;\max_{\rho_{AB},\{M_{a|x}\},\{M_{b|y}\}}\chi(A:E)\\
+&amp;&amp;\text{such that }\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})=p(ab|xy) .\nonumber\end{split}\]</div>
+<p>This optimisation is performed over all possible attacks by Eve, that is all states and measurements in all possible Hilbert spaces compatible with the observed correlations. Note that Eve’s Holevo information is a function of the state shared by Alice and Bob and the performed measurements, as the state specifies the purification including Eve, <span class="math notranslate nohighlight">\(\ket{\psi}_{ABE}\)</span>, to which the measurements are applied to compute <span class="math notranslate nohighlight">\(\chi(A:E)\)</span>. The optimisation <a class="reference internal" href="#equation-diholevo">(58)</a> is in general very hard to solve. One can consider a weaker version of it in which only the observed violation of a Bell inequality, denoted by <span class="math notranslate nohighlight">\(\beta\)</span>, produced by the correlations between Alice and Bob is used as a constraint, that is, one replaces the constraints on the correlations by <span class="math notranslate nohighlight">\(\beta(p(ab|xy))=\beta_{\text{obs}}\)</span>. The resulting optimisation is again very hard, but it has been solved for the case of CHSH in <span id="id2">[<a class="reference internal" href="#id36" title="Antonio Acín, Nicolas Brunner, Nicolas Gisin, Serge Massar, Stefano Pironio, and Valerio Scarani. Device-independent security of quantum cryptography against collective attacks. Physical Review Letters, 98(23):230501, 2007.">1</a>]</span>. The obtained solution is equal to</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter8-section2-0">
+<span class="eqno">(59)<a class="headerlink" href="#equation-content-chapter8-section2-0" title="Link to this equation">#</a></span>\[\chi(A:E)=h\left(\frac{1+\sqrt{(\text{CHSH}/2)^2-1}}{2}\right) ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(h(x)=-x\log_2x-(1-x)\log_2(1-x)\)</span> is the binary entropy.  This value allows computing key rates in the case of collective attacks, as for standard QKD protocols. The resulting rates are shows in <a class="reference internal" href="#ratesfig"><span class="std std-numref">Figura 9</span></a>, together with those obtained for BB84. To make a fair comparison, everything is expressed in terms of the quantum bit error rate (QBER), which also affects the observed Bell inequality violation. The critical QBER, that is, the value for which the Devetak-Winter bound is equal to zero, for the CHSH protocol is <span class="math notranslate nohighlight">\(\text{QBER}\approx 7\%\)</span>, while it is equal to <span class="math notranslate nohighlight">\(\text{QBER}\approx 11\%\)</span> for BB84. The robustness is smaller, as expected because in the DI scenario Eve has more available attacks, but the obtained value of the QBER is realistic and attainable in current experiments.</p>
+<figure class="align-default" id="ratesfig">
+<a class="reference internal image-reference" href="../../_images/Key_Rates.png"><img alt="../../_images/Key_Rates.png" src="../../_images/Key_Rates.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 9 </span><span class="caption-text">Rates for QKD protocols: Comparison of the Devetak-Winter bounds on the key rate obtained for the standard BB84 protocol, and the DIQKD protocol based on the CHSH Bell inequality, as a function of the QBER. The bound becomes zero for <span class="math notranslate nohighlight">\(\text{QBER}\approx 11\%\)</span> and <span class="math notranslate nohighlight">\(\text{QBER}\approx 7\%\)</span>, respectively.</span><a class="headerlink" href="#ratesfig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The previous discussion provides the main ideas behind DIQKD protocols and shows how it is possible for Alice and Bob to extract a key without making any assumptions on their devices when exploiting quantum correlations violating a Bell inequality. Recently, a general framework to prove the security of DIQKD protocol has been obtained in <span id="id3">[<a class="reference internal" href="#id41" title="Rotem Arnon-Friedman, Frédéric Dupuis, Omar Fawzi, Renato Renner, and Thomas Vidick. Practical device-independent quantum cryptography via entropy accumulation. Nature communications, 9(1):459, 2018.">2</a>]</span>. DIQKD provides the strongest form of quantum security. Unfortunately, the realisation of DQIKD protocols is extremely challenging. As we have seen, in practice, Alice and Bob are connected by a lossy channel and Bell violations are very fragile against losses. This explains why, so far, there exist no commercial devices implementing DIQKD protocols and, in fact, only lab demonstrations have recently been achieved <span id="id4">[<a class="reference internal" href="#id38" title="David P Nadlinger, Peter Drmota, Bethan C Nichol, Gabriel Araneda, Dougal Main, Raghavendra Srinivas, David M Lucas, Christopher J Ballance, Kirill Ivanov, E Tan, and others. Device-independent quantum key distribution. arXiv preprint arXiv:2109.14600, 2021.">3</a>, <a class="reference internal" href="#id39" title="Wei Zhang, Tim van Leent, Kai Redeker, Robert Garthoff, René Schwonnek, Florian Fertig, Sebastian Eppelt, Wenjamin Rosenfeld, Valerio Scarani, Charles C-W Lim, and others. A device-independent quantum key distribution system for distant users. Nature, 607(7920):687–691, 2022.">4</a>, <a class="reference internal" href="#id40" title="Wen-Zhao Liu, Yu-Zhe Zhang, Yi-Zheng Zhen, Ming-Han Li, Yang Liu, Jingyun Fan, Feihu Xu, Qiang Zhang, and Jian-Wei Pan. Photonic verification of device-independent quantum key distribution against collective attacks. arXiv preprint arXiv:2110.01480, 2021.">5</a>]</span>. Despite this progress, it remains as a challenging open problem to design ways of observing a Bell inequality violation between distant parties, which in turn can be exploited for secure DIQKD.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id5">
+<div role="list" class="citation-list">
+<div class="citation" id="id36" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<p>Antonio Acín, Nicolas Brunner, Nicolas Gisin, Serge Massar, Stefano Pironio, and Valerio Scarani. Device-independent security of quantum cryptography against collective attacks. <em>Physical Review Letters</em>, 98(23):230501, 2007.</p>
+</div>
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>Rotem Arnon-Friedman, Frédéric Dupuis, Omar Fawzi, Renato Renner, and Thomas Vidick. Practical device-independent quantum cryptography via entropy accumulation. <em>Nature communications</em>, 9(1):459, 2018.</p>
+</div>
+<div class="citation" id="id38" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>David P Nadlinger, Peter Drmota, Bethan C Nichol, Gabriel Araneda, Dougal Main, Raghavendra Srinivas, David M Lucas, Christopher J Ballance, Kirill Ivanov, E Tan, and others. Device-independent quantum key distribution. <em>arXiv preprint arXiv:2109.14600</em>, 2021.</p>
+</div>
+<div class="citation" id="id39" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Wei Zhang, Tim van Leent, Kai Redeker, Robert Garthoff, René Schwonnek, Florian Fertig, Sebastian Eppelt, Wenjamin Rosenfeld, Valerio Scarani, Charles C-W Lim, and others. A device-independent quantum key distribution system for distant users. <em>Nature</em>, 607(7920):687–691, 2022.</p>
+</div>
+<div class="citation" id="id40" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">5</a><span class="fn-bracket">]</span></span>
+<p>Wen-Zhao Liu, Yu-Zhe Zhang, Yi-Zheng Zhen, Ming-Han Li, Yang Liu, Jingyun Fan, Feihu Xu, Qiang Zhang, and Jian-Wei Pan. Photonic verification of device-independent quantum key distribution against collective attacks. <em>arXiv preprint arXiv:2110.01480</em>, 2021.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,19 +536,19 @@ document.write(`
 <div class="prev-next-area">
     <a class="left-prev"
        href="section1.html"
-       title="previous page">
+       title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Physical Correlations</p>
       </div>
     </a>
     <a class="right-next"
        href="../chapter9/chapter9.html"
-       title="next page">
+       title="siguiente página">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TODO</p>
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Long-Distance Quantum Communication</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,7 +559,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -505,7 +583,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
 </p>
 
   </div>
