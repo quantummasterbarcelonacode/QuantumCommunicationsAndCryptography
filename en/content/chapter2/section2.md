@@ -37,7 +37,9 @@ For example, the quantum AND can be as follows: an ancillary state
 in state $\ket{0}$ is appended to the two input qubits in states $\ket i$
 and $\ket j$. It is easy to see that there exists a unitary acting
 on a three-qubit system mapping $\ket i\ket j\ket 0\rightarrow\ket
-i\ket j\ket{i\cdot j}$. (TODO: rather than a dot, maybe $i \text{AND} j$ would be better?)
+i\ket j\ket{i\cdot j}$. 
+
+<!--Luke: rather than a dot, maybe $i \text{AND} j$ would be better?) -->
 
 The previous discussion shows that any classical computation can
 be embedded on a quantum computer, a device able to manipulate
