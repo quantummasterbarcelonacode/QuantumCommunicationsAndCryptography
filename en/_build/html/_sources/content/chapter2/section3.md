@@ -6,7 +6,7 @@
 # The No-Cloning Theorem
 
 The previous sections have shown that a quantum bit is richer than its classical counterpart
-because it can be in superposition states.
+because it can exist in superposition states.
 Interestingly, the encoding of information on quantum states also
 suffer from limitations that do not appear in Classical
 Information Theory. One of the most important differences is encapsulated by the quantum
@@ -15,7 +15,7 @@ copied. At first sight this is serious drawback for an information
 theory. However, there are ways of circumventing this problem, as explained 
 below. Moreover, this limitation can be turned into an
 advantage, as shown by Quantum Cryptography. But let us
-start proving the No-cloning Theorem, first presented by Wootters
+start by proving the No-cloning Theorem, first presented by Wootters
 and Zurek in {cite}`wootters1982single`.
 
 Assume there is a machine duplicating the quantum state of a

@@ -12,11 +12,11 @@
 
 The BB84 protocol distributes a secret key from Alice and Bob
 using quantum states that are prepared by Alice, sent through the
-insecure channel and measured by Bob. This type of protocols are
+insecure channel and measured by Bob. This type of protocol is
 known as *prepare and measure*. Clearly, the construction is much more
-general and one can design many other protocols for secure key
+general than BB84 and one can design many other protocols for secure key
 distribution based on this idea. The main purpose of this section
-is to present some of them. Actually, one can find many QKD
+is to present some of them. One can find many more QKD
 protocols in the literature. Here, we choose those that represented
 an important theoretical advance.
 
@@ -29,7 +29,7 @@ without introducing detectable errors. In 1992, Bennett showed that two non-orth
 are enough for secure QKD {cite}`B92`. The interest of this protocol comes from
 the fact that it is the one involving the minimal number of prepared states, namely two.
 
-The protocol works as follows. Alice encodes a random bit into two non-orthogonal states, $\ket{\psi_0}$ and $\ket{\psi_1}$, and sends the prepared state to Bob through the insecure channel. Again, Eve's attack is limited by the non-orthogonality of the states. A possible simple measurement by Bob is as follows: he randomly chooses to measure in the basis defined by $\ket{\psi_0}$ and its orthogonal state, denoted by $\ket{\psi^\perp_0}$ and such that $\langle \psi^\perp_0\ket{\psi_0}=0$, or the basis $\{\ket{\psi_1},\ket{\psi^\perp_1}\}$. When Bob gets the output corresponding to any of the orhogonal states for any of the two measurements, say outcome corresponding to $\ket{\psi^\perp_0}$ when measuring $\{\ket{\psi_0},\ket{\psi^\perp_0}\}$, he knows that the state was for sure not $\ket{\psi_0}$ because $\langle \psi^\perp_0\ket{\psi_0}=0$, and hence it has to be $\ket{\psi_1}$. Therefore, in this reconciliation, Bob announces those instances in which his measurement gave an outcome corresponding to any of the states orthogonal to those prepared by Alice. A more efficient but also experimentally demanding measurement is given by the one attaining the optimal unambiguous discrimination of the states $\ket{\psi_0}$ and $\ket{\psi_1}$. 
+The protocol works as follows. Alice encodes a random bit into two non-orthogonal states, $\ket{\psi_0}$ and $\ket{\psi_1}$, and sends the prepared state to Bob through an insecure channel. Again, Eve's attack is limited by the non-orthogonality of the states. A possible simple measurement by Bob is as follows: he randomly chooses to measure in the basis defined by $\ket{\psi_0}$ and its orthogonal state, denoted by $\ket{\psi^\perp_0}$ and such that $\langle \psi^\perp_0\ket{\psi_0}=0$, or the basis $\{\ket{\psi_1},\ket{\psi^\perp_1}\}$. When Bob gets the output corresponding to any of the orhogonal states for any of the two measurements, say outcome corresponding to $\ket{\psi^\perp_0}$ when measuring $\{\ket{\psi_0},\ket{\psi^\perp_0}\}$, he knows that the state was for sure not $\ket{\psi_0}$ because $\langle \psi^\perp_0\ket{\psi_0}=0$, and hence it has to be $\ket{\psi_1}$. Therefore, in this reconciliation, Bob announces those instances in which his measurement gave an outcome corresponding to any of the states orthogonal to those prepared by Alice. A more efficient but also experimentally demanding measurement is given by the one attaining the optimal unambiguous discrimination of the states $\ket{\psi_0}$ and $\ket{\psi_1}$. 
 
 `````{admonition} Exercise 2 - Unambiguous discrimination of two non-orthogonal pure states
 :class: tip
@@ -41,7 +41,7 @@ Consider two non-orthogonal pure states $\ket{\psi_0}$ and $\ket{\psi_1}$, with 
 \ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right) ,
 ```
 
-with $0\leq\theta\leq\pi/4$. Let $\ket{\psi}$ be an unknown state chosen between these two with equal probability. Consider a three-outcome measurements defined by the operators:
+with $0<\theta\leq\pi/4$. Let $\ket{\psi}$ be an unknown state chosen between these two with equal probability. Consider a three-outcome measurements defined by the operators:
 
 ```{math}
 :label: povm
@@ -87,7 +87,7 @@ requirements to prepare the six states are more demanding, so the protocol has h
 ## Goldenber-Vaidman Protocol
 
 The last protocol that we present in this part was introduced by
-Goldenber and Vaidman {cite}`vaidman`. The protocol uses entanglement and proved that secure key
+Goldenber and Vaidman {cite}`vaidman`. The protocol uses entanglement and proves that secure key
 distribution is still possible using two orthogonal states if
 these two states are used in a careful way. The idea of the
 protocol is as follows: Bob prepares a two-qubit maximally
@@ -100,9 +100,9 @@ can perfectly discriminated between these two states and read the result because
 Although, as said, the information encoding by Alice produces two
 orthogonal states, this fact cannot be exploited by Eve. She only has
 access to one of the two
-quantum particles prepared and transmitted  by Bob, while the other particle always remains on
-Bob's lab, hence never accessible to Eve. This makes the quantum measurement by Eve on the two
-orthogonal states impossible. In fact, the qubit Eve can access to is always in the reduced state of $\ket{\Phi^\pm}$, equal to $\one/2$ for both states, which guarantees the protocol security.
+quantum particles prepared and transmitted  by Bob, while the other particle always remains in
+Bob's lab, and is hence never accessible to Eve. This makes the quantum measurement by Eve on the two
+orthogonal states impossible. In fact, the qubit Eve can access to is always in the reduced state of $\ket{\Phi^\pm}$, equal to $\one/2$ for both states, which guarantees the protocol's security.
 
 ## Bibliography for this section
 ```{bibliography}

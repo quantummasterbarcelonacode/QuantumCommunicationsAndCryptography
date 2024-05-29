@@ -13,7 +13,7 @@ correlated bits which Eve has no information about. The secret
 key, of length $N$, is denoted by $\vec k$, which is a string of
 $N$ bits $k_i$, with $i=1,\ldots,N$. In order to send a message of
 length $M\leq N$ to Bob, denoted by $\vec m$, Alice can perform
-the sum modulo 2 of her message bits with $M$ secret key bits and
+a sum modulo 2 of her message bits with $M$ secret key bits and
 send the resulting $M$-bit string through the channel. More
 precisely, with this operation Alice computes the boolean
 XOR (The boolean XOR, denoted by $\oplus$, is the
@@ -36,7 +36,7 @@ initially shared secret key. In a way, the problem of distributing
 the message is now moved into the almost analogous problem of
 distributing the key. But it is precisely here where Quantum
 Mechanics can help: the distribution of a secret key can be done
-in a provable secure way using quantum states and operations.
+in a provably secure way using quantum states and operations.
 Later, this key can be employed using one-time pad to exchange the
 final message in a completely secure way. The quantum protocols
 allowing Alice and Bob to distribute a key in a secure way are named Quantum Key

@@ -7,9 +7,9 @@ sequence of logical gates on a string of bits. Any of these gates
 can always be decomposed in terms of AND  and NOT gates. These two
 operations, then, give a universal set of gates for classical
 computation. One would conclude that what is needed in order to
-adapt classical to quantum computation is (i) encode the classical
+adapt classical to quantum computation is (i) to encode the classical
 bits into quantum bits as above, $i\rightarrow\ket i$, and (ii)
-the quantum version of these gates.
+to implement the quantum version of these gates.
 
 When dealing with quantum information processing in a controlled (closed)
 system, any evolution is described by a unitary operation $U$.
@@ -19,7 +19,7 @@ however that the OR and AND gates are irreversible, since the output bit
 is not enough to infer the two input bits.
 Therefore, in order to embed standard classical computation into the
 quantum formalism, one first has to make it reversible. This is
-indeed possible as shown by Bennett in {cite}`bennett1973logical`: any
+indeed possible, as shown by Bennett in {cite}`bennett1973logical`: any
 classical computation can be made reversible without an
 exponential increase of the required resources. This implies that
 any classical computation can be simulated by quantum means, as
@@ -51,14 +51,13 @@ classical case, a set of elementary gates in which to decompose
 any unitary operation acting on an initial state of $N$ qubits. A seminal
 result in this direction was provided in {cite}`barenco1995elementary`: the set
 of all one-qubit operations plus the CNOT gate is
-universal. More precisely, any unitary operation actin on an $N$-qubit
+universal. More precisely, any unitary operation acting on an $N$-qubit
 system, $U\in SU(2^N)$, can be decomposed as a sequence
-of single-qubit operations and CNOT gates. Actually, any two-qubit
-entangling operation turns out to be sufficient for quantum
-computation, when assisted with single-qubit operations
+of single-qubit operations and CNOT gates. In fact, it turns out that any two-qubit
+entangling operation is sufficient for quantum
+computation when assisted with single-qubit operations
 {cite}`bremner2002practical`. From a more practical point of view, it has been
-shown that the so-called Hadamard, $U_H$, phase, $U_{ph}$, $\pi/8$
-gate, $U_{\pi/8}$ and CNOT gates are universal, i.e. any $N$-qubit
+shown that the so-called Hadamard ($U_H$), phase ($U_{ph}$), $\pi/8$ ($U_{\pi/8}$) and CNOT gates are universal, i.e. any $N$-qubit
 unitary operation can be decomposed in terms of these
 gates {cite}`boykin1999universal`. Their expressions are
 
@@ -72,7 +71,7 @@ gates {cite}`boykin1999universal`. Their expressions are
   0 & e^{i\pi/4}\\\end{pmatrix} .
 ```
 
-The implementation of the previous three single-qubit operation
+The implementation of the previous three single-qubit operations
 and the CNOT gate is sufficient for any experimental proposal of a
 quantum computer. 
 
