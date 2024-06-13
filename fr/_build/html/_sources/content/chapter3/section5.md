@@ -21,7 +21,7 @@ both Alice and Bob measure in the $x$ and $z$ basis. Note that now
 Alice does not need to introduce a third basis to get outcomes
 that are perfectly correlated to Bob's.
 
-The remaining step is noting that when measuring her quantum
+The remaining step is to note that when measuring her quantum
 particle, Alice is effectively preparing a state for Bob. Indeed,
 in the ideal case, Alice receives half of a maximally entangled
 state. Then, one can see that her measurement projects Bob's
@@ -55,18 +55,18 @@ any prepare-and-measure protocol can be mapped into an equivalent
 entanglement-based protocol. Indeed, assume that in the initial
 prepare-and-measure protocol Alice prepares the states
 $\{\ket{\psi_i}\}$ with probabilities $p_i$. This can be done by
-Alice by preparing an entangled state
+Alice preparing an entangled state
 
 ```{math}
 :label: 
     \sum_i \sqrt{p_i}\ket{i}_A\otimes\ket{\psi_i}_B ,
 ```
 
-and measuring now her particle in the basis $\{\ket{i}\}$. 
+and measuring in the basis $\{\ket{i}\}$. 
 As we discuss in the next section, this parallelism provides an
 important conceptual and technical simplification of security
 proofs in QKD. Usually, the security  proofs of QKD protocols are derived in the 
-entanglement-based scenario, because there it is simpler to construct them, but the prepare-and-measure equivalent version is implemented in practice, as it just involves the preparation single-particle states and measurements.
+entanglement-based scenario, because there it is simpler to construct them, but the prepare-and-measure equivalent version is implemented in practice, as it only involves the preparation of single-particle states and measurements.
 
 ## Bibliography for this section
 ```{bibliography}

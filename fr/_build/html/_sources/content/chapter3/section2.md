@@ -5,7 +5,7 @@ After introducing the idea of QKD,
 we present the first protocol, introduced in 1984 by Bennett
 and Brassard and known as BB84 {cite}`BB84`. Recall that the goal
 of the protocol is to establish a shared secret key, which is
-later consumed to run one-time pad. In
+later consumed to run the one-time pad. In
 the case of BB84, the key is established as follows:
 
 - Alice chooses randomly one of the four possible states
@@ -45,7 +45,7 @@ information about Alice's symbol and introduces no errors on Bob's
 side. Now consider the case where Eve's measurement basis is
 different from Alice's. Eve will obtain the right bit with
 probability one half, which means that her information is zero. She now prepares a new state for Bob according to her measurement result, 
-which is not equal to the one sent by Alice. Focus now on the cases where Bob's basis is the
+which may not be equal to the one sent by Alice. Focus now on the cases where Bob's basis is the
 same as Alice's (after all, these are the only cases that are kept after the
 basis reconciliation process). Since Eve has prepared a "wrong"
 state, Bob will obtain the expected result with probability one
@@ -53,16 +53,16 @@ half. That is, Eve's strategy is introducing errors on Bob's side.
 Alice and Bob can detect Eve's intervention by making public a
 fraction of the symbols where their bases agree. If there are no
 errors, it is very likely that nobody has tried to eavesdrop their
-communication, and they can safely employed the remaining bits as
+communication, and they can safely employ the remaining bits as
 a secret key. If they see errors,
-someone is eavesdropping the channel, so they abort. Therefore,
+someone may be eavesdropping the channel, so they abort. Therefore,
 what BB84 prevents is that an eavesdropper reads
 the key Alice and Bob are exchanging without being
 detected.
 
-It is crucial for the security of the protocol that the channel is authenticated, that is, that Alice and Bob know to communicate to each other, for instance in the process of basis reconciliation. If this is not the case, Eve could separately run the protocol with Alice and Bob, establish two different secret keys with them, and hack the a posteriori communication. Alice and Bob therefore require to authenticate their channel, which is possible if they initially share a secret key. This introduces a form of circularity in the argument, but the main point is that the amount of secret key needed to authenticate the channels can be short. Once this is done and the QKD process has started, new generated key can be used when needed for authentication.
+It is crucial for the security of the protocol that the channel is authenticated, that is, that Alice and Bob know to communicate to each other, for instance in the process of basis reconciliation. If this is not the case, Eve could separately run the protocol with Alice and Bob, establish two different secret keys with them, and hack the a posteriori communication. Alice and Bob therefore need to authenticate their channel, which is possible if they initially share a secret key. This introduces a form of circularity in the argument, but the main point is that the amount of secret key bits needed to authenticate the channels can be small. Once this is done and the QKD process has started, new generated key can be used when needed for authentication.
 
-Operationally, this description of the protocol is far from being complete. First, we have
+Operationally, this description of the protocol is far from complete. First, we have
 analyzed a specific intercept and resend attack by Eve in which (i) she intercepts the sent qubits, (ii) measures them, and (iii) prepares a new state for Bob based on the obtained result. However the goal is to prove
 the security of the protocol against any possible attack by Eve.
 Second, from a practical point of view, it is useless to design a

@@ -22,7 +22,7 @@ maximise the value of the CHSH inequality. Moreover Alice applies
 a third measurement $A_3$ in the same direction as one of the
 measurements by Bob, say $B_1$, to get perfectly correlated
 outcomes. The idea is that the honest parties obtain a key from
-$A_3$ and $B_1$, which are perfectly aligned, while compute the
+$A_3$ and $B_1$, which are perfectly aligned, while computing the
 CHSH value to guarantee that they share a maximally entangled state. In the ideal
 case, this parameter should be equal to $2\sqrt 2$.
 

@@ -11,7 +11,7 @@
 # Key Rate for Collective Attacks
 
 The importance of studying collective attacks comes from a result by Renner {cite}`renner` who proved that by increasing the number of protocol rounds $N$, 
-and for a large family of protocols that includes all those described here, the amount of key that can be distilled in a protocol against general attacks tends to the key rate that can be distilled against the optimal collective attack. In other words, the length of secret key $K$ that can distilled after $N$ rounds satisfies $\lim_{N\rightarrow\infty} K/N=k_C$, where $k_C$ is the key rate against collective attacks. For a practical realisation with a finite number of rounds, there will be corrections to this limit and $k_C$ cannot be attained, as one has $K=k_CN-o(N)$. These corrections are relevant in practical situations and a full security proof is able to compute, or bound them. But $k_C$ is the asymptotically attainable rate. 
+for a large family of protocols includiing all those described here, the amount of key that can be distilled in a protocol against general attacks tends to the key rate that can be distilled against the optimal collective attack. In other words, the length of secret key $K$ that can be distilled after $N$ rounds satisfies $\lim_{N\rightarrow\infty} K/N=k_C$, where $k_C$ is the key rate against collective attacks. For a practical realisation with a finite number of rounds, there will be corrections to this limit and $k_C$ cannot be attained, as one has $K=k_CN-\mathcal{O}(N)$. These corrections are relevant in practical situations and a full security proof is able to compute or bound them. But $k_C$ is the asymptotically attainable rate. 
 
 Putting everything together, in the entanglement-based picture, the security analysis of a protocol under collective attacks is as follows:
 
@@ -20,9 +20,9 @@ Putting everything together, in the entanglement-based picture, the security ana
 - For all the rounds of the protocol, Eve prepares the tripartite pure state $\ket{\Psi}_{ABE}$, unknown to Alice and Bob, and distributes particles $A$ and $B$ to the honest users, while she keeps $E$ in a quantum memory. The reduced state shared between Alice and Bob is $\rho_{AB}=\tr_E\proj{\Psi}_{ABE}$.
 - Alice (Bob) chooses to perform a series of measurements  $M_{a|x}$ ($M_{b|y}$)
     on her (his) particles, where $x$ ($y$) denotes the implemented measurement and $a$ ($b$) the obtained result, with probabilities $p_A(x)$ ($p_B(y)$).
-- From their measurement results, Alice and Bob can estimate $p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})$. These probabilities fully or partly characterize their shared state. We denote by $\mathcal{S}_{AB}$ the set of states between Alice and Bob compatible with the observed probability distributions $p(ab|xy)$. 
+- From their measurement results, Alice and Bob can estimate $p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})$. These probabilities fully or partially characterize their shared state. We denote by $\mathcal{S}_{AB}$ the set of states between Alice and Bob compatible with the observed probability distributions $p(ab|xy)$. 
 - For each of these states $\tilde\rho_{AB}\in\mathcal S_{AB}$, Alice and Bob can include Eve's
-system because of the Schmidt
+system using the Schmidt
 decomposition. Indeed, consider the spectral decomposition of
 $\tilde\rho_{AB}$, namely $\tilde\rho_{AB}=\sum_i\lambda_i\proj{\lambda_i}$.
 If Alice and Bob want to include Eve in the picture, they should
@@ -45,14 +45,14 @@ the only difference between these two states is a unitary
 operation on Eve's space, which corresponds to a different basis
 $\{\ket{e'_i}\}$. This implies that any of these states is equally
 powerful from Eve's point of view. We denote by $\mathcal{S}_{ABE}$ the set of pure states between Alice, Bob and Eve compatible with the observed probability distributions $p(ab|xy)$. Of course the state $\ket{\Psi}_{ABE}$ actually prepared by Eve is an element of this set.
-- Alice and Bob focus on those measurements that are used to construct the key, for instance measurements $z$ by Alice and Bob in the BB84 protocol. When they apply these measurements to any of the states $\ket{\tilde\Psi}_{ABE}$, one gets
+- Alice and Bob focus on those measurements that are used to construct the key, for instance measurements $z$ by Alice and Bob in the BB84 protocol. When they apply these measurements to any of the states $\ket{\tilde\Psi}_{ABE}$, they get
 
     ```{math}
     :label: ccq
         \tilde\rho_{ABE}=\sum_{a,b}p(ab)\proj{a}_A \otimes\proj{b}_B\otimes\proj{\tilde e^{ab}}_E,
     ```
 
-    where $p(ab)=\bra{ab}\tilde\rho_{AB}\ket{ab}$ is the probability of
+    where $p(ab)=\bra{ab}\tilde\rho_{AB}\ket{ab}$ is the joint probability of
 getting outcomes $a$ and $b$ and $\ket{\tilde e^{ab}}$ is Eve's projected
 state when Alice and Bob have got these results. Up to normalization, this state is proportional to
 
@@ -69,7 +69,7 @@ classical outcomes whose correlations are encapsulated by the
 probability distribution $p(ab)$. On Eve's side, however, she has
 a quantum state $\ket{\tilde e^{ab}}$ that depends on, or equivalently, is correlated to Alice and Bob's classical
 measurement results.
-- Devetak and Winter proved that the key rate distillable $k_C$ from an asymptotically large number of identical copies of a ccq state {eq}`ccq` is lower bounded by the so-called Devetak-Winter bound, which reads {cite}`dwrate`
+- Devetak and Winter proved that the key rate $k_C$ distillable from an asymptotically large number of identical copies of a ccq state {eq}`ccq` is lower bounded by the so-called Devetak-Winter bound, which reads {cite}`dwrate`
 
     ```{math}
     :label: dwbound
@@ -104,7 +104,7 @@ measurement results.
         k_C\geq \min_{\tilde\rho_{ABE}\in\mathcal S_{ABE}}K_{DW}(\tilde\rho_{ABE}) .
     ```
 
-    In fact, Alice and Bob should assume that the prepared state by Eve is the worst possible, that is, the solution to the previous minimisation problem. This minimisation provides the searched asymptotic key rate.
+    In fact, Alice and Bob should assume that the prepared state by Eve is the worst possible, that is, the solution to the previous minimisation problem. This minimisation provides the desired asymptotic key rate.
 
 `````{admonition} Exercise 4: Computation of key rates
 :class: tip
@@ -132,7 +132,7 @@ P(\pm,\pm)=\bra{\pm z}\bra{\pm z}\rho_{AB} \ket{\pm z}\ket{\pm z} .
 
 c) Include Eve in the picture by providing a purification of the state $\rho_{AB}$, that is, a pure state $\ket{\psi}_{ABE}$ such that $\tr_E\proj{\Psi}_{ABE}=\rho_{AB}$.
 
-d) Compute now the state between Alice, Bob and Eve after Alice and Bob measure in the $z$ basis
+d) Now compute the state between Alice, Bob and Eve after Alice and Bob measure in the $z$ basis
 
 ```{math}
 :label: 

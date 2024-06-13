@@ -462,11 +462,11 @@ document.write(`
 <h1>Other Protocols<a class="headerlink" href="#other-protocols" title="Link to this heading">#</a></h1>
 <p>The BB84 protocol distributes a secret key from Alice and Bob
 using quantum states that are prepared by Alice, sent through the
-insecure channel and measured by Bob. This type of protocols are
+insecure channel and measured by Bob. This type of protocol is
 known as <em>prepare and measure</em>. Clearly, the construction is much more
-general and one can design many other protocols for secure key
+general than BB84 and one can design many other protocols for secure key
 distribution based on this idea. The main purpose of this section
-is to present some of them. Actually, one can find many QKD
+is to present some of them. One can find many more QKD
 protocols in the literature. Here, we choose those that represented
 an important theoretical advance.</p>
 <section id="b92">
@@ -477,14 +477,14 @@ Being non-orthogonal, Eve cannot clone or measure all of them
 without introducing detectable errors. In 1992, Bennett showed that two non-orthogonal states
 are enough for secure QKD <span id="id1">[<a class="reference internal" href="#id23" title="Charles H Bennett. Quantum cryptography using any two nonorthogonal states. Physical review letters, 68(21):3121, 1992.">1</a>]</span>. The interest of this protocol comes from
 the fact that it is the one involving the minimal number of prepared states, namely two.</p>
-<p>The protocol works as follows. Alice encodes a random bit into two non-orthogonal states, <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, and sends the prepared state to Bob through the insecure channel. Again, Eve’s attack is limited by the non-orthogonality of the states. A possible simple measurement by Bob is as follows: he randomly chooses to measure in the basis defined by <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and its orthogonal state, denoted by <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> and such that <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, or the basis <span class="math notranslate nohighlight">\(\{\ket{\psi_1},\ket{\psi^\perp_1}\}\)</span>. When Bob gets the output corresponding to any of the orhogonal states for any of the two measurements, say outcome corresponding to <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> when measuring <span class="math notranslate nohighlight">\(\{\ket{\psi_0},\ket{\psi^\perp_0}\}\)</span>, he knows that the state was for sure not <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> because <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, and hence it has to be <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>. Therefore, in this reconciliation, Bob announces those instances in which his measurement gave an outcome corresponding to any of the states orthogonal to those prepared by Alice. A more efficient but also experimentally demanding measurement is given by the one attaining the optimal unambiguous discrimination of the states <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>.</p>
+<p>The protocol works as follows. Alice encodes a random bit into two non-orthogonal states, <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, and sends the prepared state to Bob through an insecure channel. Again, Eve’s attack is limited by the non-orthogonality of the states. A possible simple measurement by Bob is as follows: he randomly chooses to measure in the basis defined by <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and its orthogonal state, denoted by <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> and such that <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, or the basis <span class="math notranslate nohighlight">\(\{\ket{\psi_1},\ket{\psi^\perp_1}\}\)</span>. When Bob gets the output corresponding to any of the orhogonal states for any of the two measurements, say outcome corresponding to <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> when measuring <span class="math notranslate nohighlight">\(\{\ket{\psi_0},\ket{\psi^\perp_0}\}\)</span>, he knows that the state was for sure not <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> because <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, and hence it has to be <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>. Therefore, in this reconciliation, Bob announces those instances in which his measurement gave an outcome corresponding to any of the states orthogonal to those prepared by Alice. A more efficient but also experimentally demanding measurement is given by the one attaining the optimal unambiguous discrimination of the states <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Exercise 2 - Unambiguous discrimination of two non-orthogonal pure states</p>
 <p>Consider two non-orthogonal pure states <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, with <span class="math notranslate nohighlight">\(\langle \psi_0\ket{\psi_1}&gt;0\)</span>. Without loss of generality, the two states can be rotated to be in the <span class="math notranslate nohighlight">\(XZ\)</span> plane and with the <span class="math notranslate nohighlight">\(+z\)</span> axis as bisector, so that they read:</p>
 <div class="math notranslate nohighlight" id="equation-states">
 <span class="eqno">(29)<a class="headerlink" href="#equation-states" title="Link to this equation">#</a></span>\[\begin{split}\ket{\psi_0}=\left(\begin{array}{c}\cos\theta \\ \sin\theta\end{array}\right) \quad\quad
 \ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right) ,\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(0\leq\theta\leq\pi/4\)</span>. Let <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> be an unknown state chosen between these two with equal probability. Consider a three-outcome measurements defined by the operators:</p>
+<p>with <span class="math notranslate nohighlight">\(0&lt;\theta\leq\pi/4\)</span>. Let <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> be an unknown state chosen between these two with equal probability. Consider a three-outcome measurements defined by the operators:</p>
 <div class="math notranslate nohighlight" id="equation-povm">
 <span class="eqno">(30)<a class="headerlink" href="#equation-povm" title="Link to this equation">#</a></span>\[M_0=\mu\proj{\psi_1^\perp} \quad\quad  M_1=\mu\proj{\psi_0^\perp}   \quad\quad  M_?=\one-M_0-M_1 ,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\ket{\psi_i^\perp}\)</span> denotes the state orthogonal to <span class="math notranslate nohighlight">\(\ket{\psi_i}\)</span>.</p>
@@ -519,7 +519,7 @@ requirements to prepare the six states are more demanding, so the protocol has h
 <section id="goldenber-vaidman-protocol">
 <h2>Goldenber-Vaidman Protocol<a class="headerlink" href="#goldenber-vaidman-protocol" title="Link to this heading">#</a></h2>
 <p>The last protocol that we present in this part was introduced by
-Goldenber and Vaidman <span id="id3">[<a class="reference internal" href="#id25" title="Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. Physical Review Letters, 75(7):1239, 1995.">3</a>]</span>. The protocol uses entanglement and proved that secure key
+Goldenber and Vaidman <span id="id3">[<a class="reference internal" href="#id25" title="Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. Physical Review Letters, 75(7):1239, 1995.">3</a>]</span>. The protocol uses entanglement and proves that secure key
 distribution is still possible using two orthogonal states if
 these two states are used in a careful way. The idea of the
 protocol is as follows: Bob prepares a two-qubit maximally
@@ -532,9 +532,9 @@ can perfectly discriminated between these two states and read the result because
 Although, as said, the information encoding by Alice produces two
 orthogonal states, this fact cannot be exploited by Eve. She only has
 access to one of the two
-quantum particles prepared and transmitted  by Bob, while the other particle always remains on
-Bob’s lab, hence never accessible to Eve. This makes the quantum measurement by Eve on the two
-orthogonal states impossible. In fact, the qubit Eve can access to is always in the reduced state of <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, equal to <span class="math notranslate nohighlight">\(\one/2\)</span> for both states, which guarantees the protocol security.</p>
+quantum particles prepared and transmitted  by Bob, while the other particle always remains in
+Bob’s lab, and is hence never accessible to Eve. This makes the quantum measurement by Eve on the two
+orthogonal states impossible. In fact, the qubit Eve can access to is always in the reduced state of <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, equal to <span class="math notranslate nohighlight">\(\one/2\)</span> for both states, which guarantees the protocol’s security.</p>
 </section>
 <section id="bibliography-for-this-section">
 <h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>

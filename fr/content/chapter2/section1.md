@@ -4,7 +4,7 @@
 
 # The Quantum Bit
 
-The first step is to introduce the basic unit of QI, the quantum bit or qubit. Consider the encoding of a classical bit into a quantum particle. The way of doing this is by means of a two-dimensional system: bit value 0 is encoded into a state $\ket{\psi_0}$, or simply $\ket{0}$, and 1 into $\ket{1}$. Since these two options have to define a classical bit, the states have to be orthogonal and give a basis in $\compl^2$. Thus, a measurement in this basis distinguishes in a deterministic way between the two possibilities, as it happens for a classical bit. For instance,
+The first step is to introduce the basic unit of QI, the quantum bit or qubit. Consider the encoding of a classical bit into a quantum particle. One can do this by means of a two-dimensional system: bit value 0 is encoded into a state $\ket{\psi_0}$, or simply $\ket{0}$, and 1 into $\ket{1}$. Since these two options have to define a classical bit, the states have to be orthogonal and give a basis in $\compl^2$. Thus, a measurement in this basis distinguishes in a deterministic way between the two possibilities, as it happens for a classical bit. For instance,
 
 ```{math}
 :label:
@@ -12,7 +12,7 @@ The first step is to introduce the basic unit of QI, the quantum bit or qubit. C
 \ket 1=\begin{pmatrix}0\\1\\\end{pmatrix} .
 ```
 
-A two-dimensional quantum particle can encode a classical bit and then defines a quantum bit. Note however that, because of the superposition principle, any coherent combination of $\ket 0$ and
+A two-dimensional quantum particle can encode a classical bit and thereby defines a quantum bit. Note however that, because of the superposition principle, any coherent combination of $\ket 0$ and
 $\ket 1$ is also allowed, something that is classically impossible. Therefore a quantum bit can be in any state,
 
 ```{math}
@@ -40,7 +40,7 @@ Two angles $\theta$ and $\varphi$ suffice to specify any pure state in $\compl^2
 
 so orthogonal vectors in $\compl^2$ define antiparallel vectors on
 the Bloch sphere. Pauli matrices are going to play a significant role
-in all what follows. Their expression is
+in what follows. Their expression is
 
 ```{math}
 :label: pauli
@@ -49,14 +49,14 @@ in all what follows. Their expression is
     \sigma_z=\begin{pmatrix}1&0\\0&-1\\\end{pmatrix} .
 ```
 
-Note that in our definition of the qubit, $\ket 0$ and $\ket 1$ are the eigenvectors of $\sigma_z$ with eigenvalues $\pm 1$, since$\sigma_z\ket i=(-1)^i\ket i$. This is why $\sigma_z$ is oftencalled a phase flip. Note that putting $\theta=0$ (and $\varphi=\pi$) in Eq. [](blochv) and Eq. [](blochvorth), that is, Blochvectors pointing in the $\pm z$ direction, one obtains $\ket 0$and $\ket 1$, the eigenvectors of $\sigma_z$. The effect of $\sigma_x$ in our qubit basis is $\sigma_x\ket i=\ket{1-i}$, i.e. it gives a bit flip. In a similar way as above, substituting$(\theta,\varphi)=(\pi/2,0)$ and $(\theta,\varphi)=(\pi/2,\pi/2)$ in Eq. [](blochv) and Eq. [](blochvorth) gives the two eigenvectors of $\sigma_x$ and $\sigma_y$, often denoted by $\ket{\pm x}$ and $\ket{\pm y}$.
+Note that in our definition of the qubit, $\ket 0$ and $\ket 1$ are the eigenvectors of $\sigma_z$ with eigenvalues $\pm 1$, since$\sigma_z\ket i=(-1)^i\ket i$. This is why $\sigma_z$ is oftencalled a phase flip. Note that putting $\theta=0$ (and $\theta=\pi$) in Eq. [](blochv) and Eq. [](blochvorth), that is, defining Bloch vectors that point in the $\pm z$ direction, one obtains $\ket 0$and $\ket 1$, the eigenvectors of $\sigma_z$. The effect of $\sigma_x$ in our qubit basis is $\sigma_x\ket i=\ket{1-i}$, i.e. it gives a bit flip. In a similar way as above, substituting $(\theta,\varphi)=(\pi/2,0)$, $(\pi,0)$, $(\pi/2,\pi/2)$ and $(\pi/2,-\pi/2)$ in Eq. [](blochv) and Eq. [](blochvorth) gives the two eigenvectors each of $\sigma_x$ and $\sigma_y$, often denoted by $\ket{\pm x}$ and $\ket{\pm y}$.
 
 ```{figure} ./qubit.png
 ---
 height: 400px
 name: bloch
 ---
-$\textbf{Bloch sphere:}$ Any pure quantum bit can be represented  by a point in the surface of the Bloch sphere. The corresponding  unit vector, $\hat n=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,  \cos\theta)$, is known as Bloch vector. Mixed states are inside the sphere.
+$\textbf{Bloch sphere:}$ Any pure quantum bit can be represented  by a point in the surface of the Bloch sphere. The corresponding  unit vector, $\hat n=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,  \cos\theta)$, is known as a Bloch vector. Mixed states are inside the sphere.
 ```
 
 
