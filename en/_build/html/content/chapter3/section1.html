@@ -442,7 +442,7 @@ result by Vernam showing how to exchange private information in a
 completely secure way using a pre-shared secret key.</p>
 <p>In any cryptographic scenario, two honest parties, Alice and Bob,
 want to exchange information in a private way. There is also a
-third dishonest party, the eavesdropper, also called Eve, that
+third dishonest party, the eavesdropper, called Eve, that
 wants to read this information. Assume in what follows that Alice
 and Bob share a secret key, that is, a list of perfectly
 correlated bits which Eve has no information about. The secret
@@ -450,7 +450,7 @@ key, of length <span class="math notranslate nohighlight">\(N\)</span>, is denot
 <span class="math notranslate nohighlight">\(N\)</span> bits <span class="math notranslate nohighlight">\(k_i\)</span>, with <span class="math notranslate nohighlight">\(i=1,\ldots,N\)</span>. In order to send a message of
 length <span class="math notranslate nohighlight">\(M\leq N\)</span> to Bob, denoted by <span class="math notranslate nohighlight">\(\vec m\)</span>, Alice can perform
 a sum modulo 2 of her message bits with <span class="math notranslate nohighlight">\(M\)</span> secret key bits and
-send the resulting <span class="math notranslate nohighlight">\(M\)</span>-bit string through the channel. More
+send the resulting <span class="math notranslate nohighlight">\(M\)</span>-bit string to Bob through a public (insecure) channel. More
 precisely, with this operation Alice computes the boolean
 XOR (The boolean XOR, denoted by <span class="math notranslate nohighlight">\(\oplus\)</span>, is the
 operation such that <span class="math notranslate nohighlight">\(0\oplus 0=1\oplus 1=0\)</span> and <span class="math notranslate nohighlight">\(0\oplus 1=1\oplus

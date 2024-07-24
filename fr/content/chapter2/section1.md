@@ -1,10 +1,11 @@
-```{math}
+﻿```{math}
 \def\compl{{\mathbb{C}}}
 ```
 
-# The Quantum Bit
+# Le Bit Quantique
 
-The first step is to introduce the basic unit of QI, the quantum bit or qubit. Consider the encoding of a classical bit into a quantum particle. One can do this by means of a two-dimensional system: bit value 0 is encoded into a state $\ket{\psi_0}$, or simply $\ket{0}$, and 1 into $\ket{1}$. Since these two options have to define a classical bit, the states have to be orthogonal and give a basis in $\compl^2$. Thus, a measurement in this basis distinguishes in a deterministic way between the two possibilities, as it happens for a classical bit. For instance,
+
+La première étape consiste à introduire l'unité de base de l'information quantique, le bit quantique ou qubit. Considérons le codage d'un bit classique dans une particule quantique. On peut le faire au moyen d'un système bidimensionnel : la valeur du bit 0 est codée dans un état $\ket{\psi_0}$, ou simplement $\ket{0}$, et 1 dans $\ket{1}$. Puisque ces deux options doivent définir un bit classique, les états doivent être orthogonaux et former une base dans $\compl^2$. Ainsi, une mesure dans cette base distingue de manière déterministe les deux possibilités, comme c'est le cas pour un bit classique. Par exemple,
 
 ```{math}
 :label:
@@ -12,15 +13,16 @@ The first step is to introduce the basic unit of QI, the quantum bit or qubit. C
 \ket 1=\begin{pmatrix}0\\1\\\end{pmatrix} .
 ```
 
-A two-dimensional quantum particle can encode a classical bit and thereby defines a quantum bit. Note however that, because of the superposition principle, any coherent combination of $\ket 0$ and
-$\ket 1$ is also allowed, something that is classically impossible. Therefore a quantum bit can be in any state,
+Une particule quantique bidimensionnelle peut coder un bit classique et ainsi définir un bit quantique. Notez cependant que, grâce au principe de superposition, toute combinaison cohérente de $\ket{0}$ et $\ket{1}$ est également permise, ce qui est impossible en physique classique. Ainsi, un bit quantique peut être dans n'importe quel état,
+
 
 ```{math}
 :label:
     \ket{\psi}=\alpha\ket 0+\beta\ket 1 ,
 ```
 
-where $\alpha$ and $\beta$ are complex numbers such that $|\alpha|^2+|\beta|^2=1$. It is possible to pictorially represent the state of a qubit, or two-dimensional quantum particle, by means of the Poincaré or Bloch sphere (see {numref}`bloch`). Indeed, using the fact that the global phase of any pure state is irrelevant, $\alpha$ can always be taken real. Then, any quantum bit can be specified by a complex number $\beta$, since $\alpha$ is fixed because of normalization. That is, any state has the form
+où $\alpha$ et $\beta$ sont des nombres complexes tels que $|\alpha|^2 + |\beta|^2 = 1$. Il est possible de représenter graphiquement l'état d'un qubit, ou d'une particule quantique bidimensionnelle, au moyen de la sphère de Poincaré ou de Bloch (voir {numref}bloch). En effet, en utilisant le fait que la phase globale de tout état pur est sans importance, $\alpha$ peut toujours être considéré comme réel. Ainsi, tout bit quantique peut être spécifié par un nombre complexe $\beta$, puisque $\alpha$ est fixé en raison de la normalisation. Autrement dit, tout état a la forme suivante
+
 
 ```{math}
 :label: blochv
@@ -29,7 +31,7 @@ where $\alpha$ and $\beta$ are complex numbers such that $|\alpha|^2+|\beta|^2=1
     .
 ```
 
-Two angles $\theta$ and $\varphi$ suffice to specify any pure state in $\compl^2$, as any point on the surface of a unit sphere. It is important to mention here that given $\ket{\psi}$, the orthogonal vector, $\ket{\psi_\perp}$, reads
+Deux angles, $\theta$ et $\varphi$, suffisent pour spécifier tout état pur dans $\compl^2$, comme n'importe quel point à la surface d'une sphère unité. Il est important de mentionner ici que, étant donné $\ket{\psi}$, le vecteur orthogonal, $\ket{\psi_\perp}$, s'exprime ainsi
 
 ```{math}
 :label: blochvorth
@@ -38,9 +40,7 @@ Two angles $\theta$ and $\varphi$ suffice to specify any pure state in $\compl^2
     ,
 ```
 
-so orthogonal vectors in $\compl^2$ define antiparallel vectors on
-the Bloch sphere. Pauli matrices are going to play a significant role
-in what follows. Their expression is
+ainsi les vecteurs orthogonaux dans $\compl^2$ définissent des vecteurs antiparallèles sur la sphère de Bloch. Les matrices dites « de Pauli » vont jouer un rôle significatif dans ce qui suit. Leur expression est la suivante
 
 ```{math}
 :label: pauli
@@ -49,15 +49,14 @@ in what follows. Their expression is
     \sigma_z=\begin{pmatrix}1&0\\0&-1\\\end{pmatrix} .
 ```
 
-Note that in our definition of the qubit, $\ket 0$ and $\ket 1$ are the eigenvectors of $\sigma_z$ with eigenvalues $\pm 1$, since$\sigma_z\ket i=(-1)^i\ket i$. This is why $\sigma_z$ is oftencalled a phase flip. Note that putting $\theta=0$ (and $\theta=\pi$) in Eq. [](blochv) and Eq. [](blochvorth), that is, defining Bloch vectors that point in the $\pm z$ direction, one obtains $\ket 0$and $\ket 1$, the eigenvectors of $\sigma_z$. The effect of $\sigma_x$ in our qubit basis is $\sigma_x\ket i=\ket{1-i}$, i.e. it gives a bit flip. In a similar way as above, substituting $(\theta,\varphi)=(\pi/2,0)$, $(\pi,0)$, $(\pi/2,\pi/2)$ and $(\pi/2,-\pi/2)$ in Eq. [](blochv) and Eq. [](blochvorth) gives the two eigenvectors each of $\sigma_x$ and $\sigma_y$, often denoted by $\ket{\pm x}$ and $\ket{\pm y}$.
-
+Notez que dans notre définition du qubit, $\ket{0}$ et $\ket{1}$ sont les vecteurs propres de $\sigma_z$ avec les valeurs propres $\pm 1$, puisque $\sigma_z \ket{i} = (-1)^i \ket{i}$. C'est pourquoi $\sigma_z$ est souvent appelée « phase flip ». En mettant $\theta=0$ (et $\theta=\pi$) dans les équations (blochv) et (blochvorth), c'est-à-dire en définissant des vecteurs de Bloch qui pointent dans les directions $\pm z$, on obtient $\ket{0}$ et $\ket{1}$, les vecteurs propres de $\sigma_z$. L'effet de $\sigma_x$ dans notre base de qubit est $\sigma_x \ket{i} = \ket{1-i}$, c'est-à-dire qu'il effectue un « bit flip ». De manière similaire, en substituant $(\theta,\varphi) = (\pi/2,0)$, $(\pi,0)$, $(\pi/2,\pi/2)$ et $(\pi/2,-\pi/2)$ dans les équations (blochv) et (blochvorth), on obtient les deux vecteurs propres de $\sigma_x$ et $\sigma_y$, souvent notés $\ket{\pm x}$ et $\ket{\pm y}$.
 ```{figure} ./qubit.png
 ---
 height: 400px
 name: bloch
 ---
-$\textbf{Bloch sphere:}$ Any pure quantum bit can be represented  by a point in the surface of the Bloch sphere. The corresponding  unit vector, $\hat n=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,  \cos\theta)$, is known as a Bloch vector. Mixed states are inside the sphere.
-```
+$\textbf{Sphère de Bloch:}$ Tout qubit quantique pur peut être représenté par un point à la surface de la sphère de Bloch. Le vecteur unitaire correspondant, $\hat n=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,  \cos\theta)$, est appelé vecteur de Bloch. Les états mixtes se trouvent à l'intérieur de la sphère.```
+
 
 
 

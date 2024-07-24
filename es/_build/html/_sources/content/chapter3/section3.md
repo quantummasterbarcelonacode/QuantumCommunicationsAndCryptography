@@ -67,7 +67,7 @@ How does it relate to the overlap between the two states?
 
 ## Six-state Protocol
 
-The six-state protocol, introduced by Bruß {cite}`6state`, 
+The six-state protocol, introduced by BruÃŸ {cite}`6state`, 
 goes in the opposite direction: it involves more states to make
 Eve's attack more difficult. In the BB84 protocol, only four states
 belonging to a given equator in the Bloch sphere, say the plane

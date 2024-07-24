@@ -20,7 +20,7 @@ $\ket 1$ is also allowed, something that is classically impossible. Therefore a 
     \ket{\psi}=\alpha\ket 0+\beta\ket 1 ,
 ```
 
-where $\alpha$ and $\beta$ are complex numbers such that $|\alpha|^2+|\beta|^2=1$. It is possible to pictorially represent the state of a qubit, or two-dimensional quantum particle, by means of the Poincaré or Bloch sphere (see {numref}`bloch`). Indeed, using the fact that the global phase of any pure state is irrelevant, $\alpha$ can always be taken real. Then, any quantum bit can be specified by a complex number $\beta$, since $\alpha$ is fixed because of normalization. That is, any state has the form
+where $\alpha$ and $\beta$ are complex numbers such that $|\alpha|^2+|\beta|^2=1$. It is possible to pictorially represent the state of a qubit, or two-dimensional quantum particle, by means of the PoincarÃ© or Bloch sphere (see {numref}`bloch`). Indeed, using the fact that the global phase of any pure state is irrelevant, $\alpha$ can always be taken real. Then, any quantum bit can be specified by a complex number $\beta$, since $\alpha$ is fixed because of normalization. That is, any state has the form
 
 ```{math}
 :label: blochv

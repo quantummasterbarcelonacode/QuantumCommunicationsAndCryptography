@@ -1,76 +1,38 @@
+﻿
+# L’argument Bennett-Brassard-Mermin 
 
-# Bennett-Brassard-Mermin Argument
+Quelques mois après le travail d'Ekert, Bennett, Brassard et Mermin {cite}`BBM` écrivirent un article montrant qu'un protocole de QKD à la Ekert peut toujours être transformé en un protocole équivalent sans intrication, à la BB84, où les états sont préparés par Alice et mesurés par Bob. Leur argument est le suivant.
 
-A few months after Ekert's work, Bennett, Brassard and
-Mermin {cite}`BBM` wrote an article showing that a QKD protocol à
-la Ekert can always be transformed into an equivalent protocol
-without entanglement, à la BB84, where states are prepared by
-Alice and measured by Bob. Their argument goes as follows.
+Tout d'abord, le rôle d'une violation des inégalités de Bell dans la proposition d'Ekert est de certifier qu'Alice et Bob partagent un état maximalement intriqué à deux qubits.
 
-First of all, the role of a Bell inequality violation in Ekert's
-proposal is to certify that Alice and Bob share a two-qubit
-maximally entangled state. However, there are other measurements
-which can provide the same level of certification. For instance,
-it is the only state which gives perfect correlations when both
-local parties measure in the $x$ and $z$ basis. That is, it is the
-only two-qubit state such that
-$\bra{\psi}\sigma_x\otimes\sigma_x\ket{\psi}=
-\bra{\psi}\sigma_z\otimes\sigma_z\ket{\psi}=1$. Thus, the detection of the maximally entangled state
-can equally be performed via a protocol in which
-both Alice and Bob measure in the $x$ and $z$ basis. Note that now
-Alice does not need to introduce a third basis to get outcomes
-that are perfectly correlated to Bob's.
+ Cependant, il existe d'autres mesures qui peuvent fournir le même niveau de certification. Par exemple, c'est le seul état qui donne des corrélations parfaites lorsque les deux parties locales mesurent dans les bases $x$ et $z$. C'est-à-dire que c'est le seul état à deux qubits tel que $\bra{\psi}\sigma_x\otimes\sigma_x\ket{\psi}=
+\bra{\psi}\sigma_z\otimes\sigma_z\ket{\psi}=1$. Ainsi, la détection de l’état maximalement intriqué
+eut également être effectuée via un protocole dans lequel Alice et Bob mesurent tous deux dans les bases $x$ and $z$. Notez que maintenant, Alice n'a plus besoin d'introduire une troisième base pour obtenir des résultats parfaitement corrélés à ceux de Bob.
 
-The remaining step is to note that when measuring her quantum
-particle, Alice is effectively preparing a state for Bob. Indeed,
-in the ideal case, Alice receives half of a maximally entangled
-state. Then, one can see that her measurement projects Bob's
-particle into a state which is equal to the measurement result by
-Alice. This follows from the simple observation that:
-
-```{math}
+L'étape restante consiste à noter que lorsqu'elle mesure sa particule quantique, Alice prépare effectivement un état pour Bob. En effet, dans le cas idéal, Alice reçoit la moitié d'un état maximalement intriqué. Sa mesure projette la particule de Bob dans un état qui est égal au résultat de la mesure d'Alice. Cela découle de la simple observation que :```{math}
 :label: 
   _A\bra{\pm x}\ket{\Phi^+}_{AB} &=& \frac{1}{\sqrt 2}\ket{\pm x}_B \nonumber\\
   _A\bra{\pm z}\ket{\Phi^+}_{AB} &=& \frac{1}{\sqrt 2}\ket{\pm
   z}_B .
 ```
 
-That is, depending on her choice of basis, Alice is preparing a
-state in the plus or minus direction with probability equal to
-1/2. Clearly, the resulting protocol is equivalent to the original
-protocol in terms of security. But the resulting protocol is
-nothing but the original BB84 protocol and does not require any
-entanglement. Thus, the authors of Ref. {cite}`BBM` concluded that
-the approach by Ekert did not provide any new significant insight
-into the problem of QKD, because both approaches were equivalent.
+Selon son choix de base, Alice prépare un état dans la direction plus ou moins avec une probabilité égale à 1/2. Clairement, le protocole résultant est équivalent au protocole original en termes de sécurité. Mais le protocole résultant n'est rien d'autre que le protocole BB84 original et ne nécessite aucune intrication. Ainsi, les auteurs de la référence {cite}`BBM` conclurent que l'approche d'Ekert ne fournissait pas de nouvel aperçu significatif sur le problème de la QKD, car les deux approches étaient équivalentes.
 
-Apart from the conceptual implications, the work by Bennett,
-Brassard and Mermin was also important from a technical point of
-view, as it pointed out a nice correspondence between entanglement-based
-à la Ekert and prepare-and-measure protocols à la BB84. On the one hand, most of
-the protocols based on entanglement can be mapped into an
-equivalent prepare-and-measure protocol using the previous
-ideas. On the other hand,
-any prepare-and-measure protocol can be mapped into an equivalent
-entanglement-based protocol. Indeed, assume that in the initial
-prepare-and-measure protocol Alice prepares the states
-$\{\ket{\psi_i}\}$ with probabilities $p_i$. This can be done by
-Alice preparing an entangled state
+En dehors des implications conceptuelles, le travail de Bennett, Brassard et Mermin est également important d'un point de vue technique, car il a mis en évidence une correspondance intéressante entre les protocoles basés sur l'intrication à la Ekert et les protocoles de préparation-et-mesure à la BB84. D'une part, la plupart des protocoles basés sur l'intrication peuvent être transformés en un protocole de préparation-et-mesure équivalent en utilisant les idées précédentes. D'autre part, tout protocole de préparation-et-mesure peut être transformé en un protocole basé sur l'intrication équivalent. En effet, supposons que dans le protocole initial de préparation-et-mesure, Alice prépare les états$\{\ket{\psi_i}\}$ de probabilités $p_i$. Pour ce faire, Alice peut preparer un état intriqué
 
 ```{math}
 :label: 
     \sum_i \sqrt{p_i}\ket{i}_A\otimes\ket{\psi_i}_B ,
 ```
 
-and measuring in the basis $\{\ket{i}\}$. 
-As we discuss in the next section, this parallelism provides an
-important conceptual and technical simplification of security
-proofs in QKD. Usually, the security  proofs of QKD protocols are derived in the 
-entanglement-based scenario, because there it is simpler to construct them, but the prepare-and-measure equivalent version is implemented in practice, as it only involves the preparation of single-particle states and measurements.
+et mesurer dans la base $\{\ket{i}\}$. 
 
-## Bibliography for this section
+Comme nous le verrons dans la section suivante, ce parallélisme offre une simplification conceptuelle et technique considérable pour les preuves de sécurité en QKD. En effet, les preuves de sécurité des protocoles QKD sont généralement développées dans le cadre des protocoles basés sur l'intrication, car cette approche facilite leur construction. En revanche, la version équivalente de préparation-et-mesure est effectivement mise en œuvre dans la pratique, car elle requiert uniquement la préparation d'états de particules uniques et la réalisation de mesures, ce qui la rend plus adaptée à une application concrète.
+
+## Bibliographie de la section
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
+
 

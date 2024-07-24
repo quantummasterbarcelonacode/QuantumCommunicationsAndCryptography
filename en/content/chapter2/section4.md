@@ -9,17 +9,17 @@
 # Bell's Theorem
 
 Bell's theorem is arguably the strongest result showing the separation between classical and quantum physics (and the corresponding information theories). Historically, the whole discussion started with a celebrated article by Einstein, Podolsky and
-Rosen (EPR) "Can a Quantum-Mechanical Description of Physical Reality
+Rosen (EPR) "Can Quantum-Mechanical Description of Physical Reality
 Be Considered Complete?" {cite}`epr`, where they raised doubts about the
 completeness of quantum theory as a local-realistic (LR) theory. Their argument was based on three requirements that any physical theory, according to EPR, should satisfy:
 
-- Locality: Events in space-like separated regions cannot have
-a causal relation.
-- Reality: If, without disturbing a system in any way, we
+- “Locality”: Events in space-like separated regions cannot have
+a (direct) causal relation.
+- “Reality”: If, without disturbing a system in any way, we
 can predict with certainty the value of a physical quantity,
 then there exists an element of physical reality corresponding
 to this physical quantity.
-- Completeness: Every element of the physical reality must
+- “Completeness”: Every element of the physical reality must
 have a counterpart in the physical theory.
 
 All these conditions seem intuitively natural and hardly
@@ -143,6 +143,7 @@ no faster-than-light (in fact, instantaneous) communication is possible.
 :style: unsrt
 :filter: docname in docnames
 ```
+
 
 
 

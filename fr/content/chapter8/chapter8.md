@@ -1,22 +1,25 @@
 
-# The Device-Independent Scenario
+# Scenario Indépendant des Dispositifs (Device-Independent)
 
-The solution to the previous hacking attacks is provided by the so-called device-independent (DI) scenario {cite}`diqkd`. In this approach, quantum devices are seen as black boxes with which the users can interact, providing a classical input and getting a classical output. The DI approach is quite general and can, in fact, can be applied to any quantum information protocol, but in what follows we focus on QKD. 
+a solution aux précédentes attaques de piratage est fournie par le scénario dit indépendant des dispositifs (DI){cite}`diqkd`. Dans cette approche, les dispositifs quantiques sont considérés comme des boîtes noires avec lesquelles les utilisateurs peuvent interagir, fournissant une entrée classique et en obtenant une sortie classique. L'approche DI est assez générale et peut, en fait, être appliquée à n'importe quel protocole d'information quantique. Dans ce qui suit, nous nous concentrerons sur la distribution quantique de clés (QKD).
 
-As said, in the DI scenario devices are seen as quantum black boxes processing a classical input to produce a classical output. It is assumed that the input-output process in a given device takes place locally, meaning it is not causally influenced by what happens in the other devices. This can for instance be enforced by synchronising the devices so that these input-output processes define space-like separated events and there is therefore no time for any signal, not even those propagating at the speed of light, to go from one device to another. However, there may be other ways of enforcing this no-communication assumption.  In a QKD context, Alice and Bob have one device each, see {numref}`difig`. Without loss of generality, we assume that their inputs, labelled by $x$ and $y$, can take $m$ possible values and their outputs, labelled by $a$ and $b$, can take $r$ possible results, that is $x,y=1,\ldots,m$ and $a,b=1,\ldots,r$. Alice and Bob test their devices using different inputs, collecting the statistics they generate. This is encapsulated by the conditional probability distribution $p(ab|xy)$, which gives the probability that Alice and Bob observe result $a$ and $b$, respectively, when they use inputs $x$ and $y$. We therefore have a list of $m^2r^2$ real numbers such that $p(ab|xy)\geq 0$ and $\sum_{ab}p(ab|xy)=1$ for all $x$ and $y$. This conditional probability distribution is also dubbed as *correlations*. The goal of a DIQKD protocol is to conclude from these observed correlations, and from them alone, that the parties can distill a secret key. If this is the case, there cannot be any mismatch between modelling and implementation. This is because no modelling is made on these devices, apart from the fact that whatever happens inside to produce the output given the input should be compatible with the quantum laws.
+
+Dans le scénario DI, les dispositifs sont considérés comme des boîtes noires quantiques traitant une entrée classique pour produire une sortie classique. On suppose que le processus d'entrée-sortie dans un dispositif donné se déroule localement, ce qui signifie qu'il n'est pas influencé causalement par ce qui se passe dans les autres dispositifs. Cela peut, par exemple, être imposé en synchronisant les dispositifs de sorte que ces processus d'entrée-sortie définissent des événements séparés par un intervalle de genre espace, de telles sorte qu’il n’y ait pas le temps d’envoyer un signal, même ceux se propageant à la vitesse de la lumière, d'un dispositif à un autre. Cependant, il peut exister d'autres moyens d'imposer cette hypothèse de non-communication.
+
+ans un contexte de QKD, Alice et Bob disposent chacun d'un dispositif, voir {numref}`difig`. Sans perte de généralité, nous supposons que leurs entrées, notées $x$ et $y$, peuvent prendre $m$ valeurs possibles et que leurs sorties, notées $a$ et $b$, peuvent prendre $r$ résultats possibles, c'est-à-dire $x,y=1,\ldots,m$ et $a,b=1,\ldots,r$. Alice et Bob utilisent leurs dispositifs pour différentes entrées, collectant les statistiques qu'ils génèrent. Celles-ci sont encapsulées par la distribution de probabilité conditionnelle $p(ab|xy)$, qui correspond à la probabilité pour Alice et Bob d’observer les résultats $a$ et $b$, respectivement, pour des entrées $x$ et $y$ données. Nous avons donc une liste de $m^2r^2$ nombres réels tels que $p(ab|xy)\geq 0$ et $\sum_{ab}p(ab|xy)=1$ pour tout $x$ et $y$. Cette distribution de probabilité conditionnelle est également appelée *corrélations*. Le but d'un protocole DIQKD est de conclure à partir de ces corrélations observées, et d'elles seules, que les parties peuvent distiller une clé secrète. Si c'est le cas, il ne peut y avoir aucune divergence entre le modèle et l'implémentation. En effet, aucun modèle n'est apposé sur ces dispositifs, hormis le fait que le processus à l'intérieur des boîtes noires conduisant à la production de la sortie étant donnée l'entrée doit être compatible avec les lois quantiques. 
 
 ```{figure} ./Correlations.png
 ---
 height: 400px
 name: difig
 ---
-Device-independent scenario: Alice and Bob model their devices as quantum black boxes producing a classical output given a classical input. The description of the setup is by means of the observed statistics, given by the conditional probability distribution $p(ab|xy)$. There are three main sets of physical correlations: classical, quantum and non-signalling. The first one is strictly includes in the second that, in turn, is also strictly included in the third.
-```
+Scénario indépendant des dispositifs : Alice et Bob modélisent leurs dispositifs comme des boîtes noires quantiques produisant une sortie classique étant donnée une entrée classique. La description de l'expérience se fait au moyen des statistiques observées, données par la distribution de probabilité conditionnelle $p(ab|xy)$. l existe trois principaux ensembles de corrélations physiques : classiques, quantiques et sans communication (non-signalling). Le premier est strictement inclus dans le deuxième qui, à son tour, est également strictement inclus dans le troisième. ```
 
-## Bibliography for this section
+## Bibliographie de la section
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
+
 
 

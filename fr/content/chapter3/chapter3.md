@@ -1,32 +1,7 @@
-# Quantum Cryptography
-
-The no-cloning theorem shows that QIT offers new possibilities but
-also limitations to the way information on quantum states can be
-processed. The derivation of this theorem is astonishingly simple. In fact, it turns out be connected to a better known
-limitation of the quantum formalism: that the measurement process
-perturbs the state of the system. Indeed, perfect cloning would
-obviously violate the fact that the state of a single quantum
-system cannot be perfectly known. If perfect cloning were
-possible, one could know everything of the state of a single
-particle without even measuring it, just by producing clones and
-measuring these, leaving the initial state untouched. On the other hand, if perfect estimation was possible, 
-one could easily clone by first perfectly measuring the state and then preparing as many copies of it as desired.
-
-Remarkably, these limitations can be converted into something
-positive, as beautifully demonstrated by quantum cryptography:
-since the measurement process perturbs the state of a system, the
-action of any adversary trying to read quantum information propagating
-through a channel has a detectable effect on the sent
-state. Or in other words, the action of the adversary, also known as
-the eavesdropper, is limited by the impossibility of producing a
-perfect copy of the quantum state. These two ideas lie at the
-basis of any quantum cryptography protocol. In what follows, we
-present several of the main results on quantum cryptography. More
-precisely, we focus all our analysis on quantum key distribution.
-This is the most advanced quantum cryptography application, both
-from a theoretical and experimental point of view. However, it should
-be made clear that "quantum cryptography" is a general term that
-refers to any cryptographic protocol exploiting the quantum formalism.
+# Cryptographie Quantique
 
 
+Le théorème de non-clonage montre que la Théorie de l'Information Quantique offre de nouvelles possibilités mais aussi des limitations quant à la manière dont l'information sur les états quantiques peut être traitée. La démonstration de ce théorème est remarquablement simple, étant intimement liée à une limitation bien connue du formalisme quantique : la perturbation de l'état du système lors du processus de mesure. En effet, le clonage parfait violerait directement le principe selon lequel l'état d'un système quantique individuel ne peut être complètement connu. Si le clonage parfait était réalisable, il serait possible de déterminer entièrement l'état d'une particule sans la mesurer, simplement en produisant des clones et en les mesurant, tout en laissant l'état initial intact. D'autre part, si une estimation parfaite était possible, on pourrait facilement cloner en mesurant d'abord parfaitement l'état, puis en préparant autant de copies que désiré.
+
+Cependant, ces limitations peuvent être transformées en quelque chose de positif, comme l’illustre brillamment la cryptographie quantique : puisque le processus de mesure perturbe l'état d'un système, toute tentative d’espionnage pour lire de l'information quantique se propageant à travers un canal a un effet détectable sur l'état envoyé. En d'autres termes, l'action de l'adversaire, également connu sous le nom d'espion, est limitée par l'impossibilité de produire une copie parfaite de l'état quantique. Ces deux idées sont à la base de tout protocole de cryptographie quantique. Dans ce qui suit, nous présentons plusieurs des principaux résultats sur la cryptographie quantique, en mettant l'accent particulièrement sur la distribution quantique de clés, qui représente l'application la plus avancée tant sur le plan théorique qu'expérimental. Il est toutefois important de noter que le terme "cryptographie quantique" désigne de manière générale tout protocole cryptographique exploitant le formalisme quantique.
 

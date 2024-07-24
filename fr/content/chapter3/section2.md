@@ -1,84 +1,33 @@
 
-# The BB84 Protocol
+# Le Protocole BB84
 
-After introducing the idea of QKD,
-we present the first protocol, introduced in 1984 by Bennett
-and Brassard and known as BB84 {cite}`BB84`. Recall that the goal
-of the protocol is to establish a shared secret key, which is
-later consumed to run the one-time pad. In
-the case of BB84, the key is established as follows:
-
-- Alice chooses randomly one of the four possible states
+Après avoir introduit l'idée de la distribution quantique de clés (QKD), nous présentons le premier protocole, introduit en 1984 par Bennett et Brassard, connu sous le nom de BB84 [1]. Rappelons que l'objectif de ce protocole est d'établir une clé secrète partagée, qui sera ensuite utilisée pour exécuter le one-time pad. Dans le cas du protocole BB84, la clé est établie de la manière suivante :
+- Alice choisit aléatoirement l'un des quatre états possibles
     ```{math}
     :label: bb84enc
     \ket{\pm x}=\frac{1}{\sqrt 2}(\ket 0\pm\ket 1)\quad
     \ket{\pm y}=\frac{1}{\sqrt 2}(\ket 0\pm i\ket 1) .
     ```
-- The bit 0 (1) is encoded onto $\ket{+x}$ and $\ket{+y}$
-($\ket{-x}$ and $\ket{-y}$). The vectors $\ket{\pm x}$ and
-$\ket{\pm y}$ define the so-called $x$ and $y$ basis.
-- Bob measures randomly in one of these two bases. He maps his result into a classical bit using the same convention as Alice.
-- Alice and Bob announce the bases used in the preparation and measurement, respectively. In case the bases agree, the outputs produced by the protocol are kept, otherwise discarded. This process is known as basis reconciliation.
+- Le bit 0 (1) est encode sur $\ket{+x}$ et $\ket{+y}$
+($\ket{-x}$ et $\ket{-y}$). Les vecteurs $\ket{\pm x}$ et
+$\ket{\pm y}$ définissent respectivement les bases $x$ et $y$.
+- Bob mesure aléatoirement dans l'une de ces deux bases. Il convertit son résultat en un bit classique en utilisant la même convention qu'Alice.
+- Alice et Bob annoncent les bases utilisées respectivement pour la préparation et la mesure. Si les bases concordent, les résultats produits par le protocole sont conservés, sinon ils sont écartés. Ce processus est connu sous le nom de réconciliation des bases.
 
-Note that if Alice and Bob's bases agree, their bits are perfectly
-correlated. On the other hand, if the bases are different, Alice's
-preparation and Bob's result are completely uncorrelated. Indeed,
-assume that Alice has sent $\ket{\pm x}$ and Bob measures in the
-$y$ basis. He will obtain the outcome corresponding to $\ket{\pm y}$
-with probability $p(\pm y|\pm x)=|\langle \pm x\ket{\pm y}|^2=1/2$. 
-This is equivalent to Bob discarding Alice's state and flipping a coin.
-Therefore, after the basis reconciliation, Alice and Bob discard
-all the bad instances and share a list of perfectly correlated
-random bits. Before proceeding, note that Alice and Bob can use any pair of bases in the Bloch sphere satisfying the previous overlap condition. The $x$ and $y$ bases appeared in the original formulation of the protocol, but one could equally formulate it using the $x$ and $z$ bases. In fact, this choice is equivalent but often simpler in terms of notation.
+Notez que si les bases d'Alice et Bob concordent, leurs bits sont parfaitement corrélés. En revanche, si les bases sont différentes, la préparation d'Alice et le résultat de Bob sont complètement décorrélés. En effet, supposons qu'Alice ait envoyé $\ket{\pm x}$ et que Bob mesure dans la base $y$. Il obtiendra le résultat correspondant à  $\ket{\pm y}$ avec une probabilité de $p(\pm y|\pm x)=|\langle \pm x\ket{\pm y}|^2=1/2$, ce qui est équivalent à ce que Bob ignore l’état d’Alice et lance une pièce.
+Ainsi, après la réconciliation des bases, Alice et Bob écartent toutes les mauvaises instances et partagent une liste de bits aléatoires parfaitement corrélés. Before proceeding, Avant de continuer, notez qu'Alice et Bob peuvent utiliser n'importe quelle paire de bases sur la sphère de Bloch satisfaisant  le produit scalaire précédent. Les bases $x$ et $y$ apparaissent dans la formulation originale du protocole, mais on pourrait tout aussi bien le formuler en utilisant les bases $x$ and $z$. De fait, ce choix est equivalent mais souvent plus simple en termes de notation.
 
-Let us briefly analyze why Eve cannot break this protocol. She has
-to interact with the quantum particle, say a photon, encoding the
-information while it propagates to Bob. The no-cloning theorem
-implies that she cannot make a perfect copy of it, forward the
-first clone to Bob and keep the second one. She can however try to
-measure the quantum state of the particle and read the
-information. However, at this time in the protocol, she does not
-know the basis chosen by Alice. Consider first that Eve measures
-in the right basis. Then, she obtains all the information and can
-prepare a new copy of the state to Bob. She obtains full
-information about Alice's symbol and introduces no errors on Bob's
-side. Now consider the case where Eve's measurement basis is
-different from Alice's. Eve will obtain the right bit with
-probability one half, which means that her information is zero. She now prepares a new state for Bob according to her measurement result, 
-which may not be equal to the one sent by Alice. Focus now on the cases where Bob's basis is the
-same as Alice's (after all, these are the only cases that are kept after the
-basis reconciliation process). Since Eve has prepared a "wrong"
-state, Bob will obtain the expected result with probability one
-half. That is, Eve's strategy is introducing errors on Bob's side.
-Alice and Bob can detect Eve's intervention by making public a
-fraction of the symbols where their bases agree. If there are no
-errors, it is very likely that nobody has tried to eavesdrop their
-communication, and they can safely employ the remaining bits as
-a secret key. If they see errors,
-someone may be eavesdropping the channel, so they abort. Therefore,
-what BB84 prevents is that an eavesdropper reads
-the key Alice and Bob are exchanging without being
-detected.
+Analysons brièvement pourquoi Eve ne peut pas briser ce protocole. Elle doit interagir avec la particule quantique, disons un photon, encodant l'information pendant qu'il se propage vers Bob. Le théorème de non-clonage implique qu'elle ne peut pas en faire une copie parfaite, envoyer le premier clone à Bob et garder le second. Cependant, elle peut essayer de mesurer l'état quantique de la particule et lire l'information. Mais, à ce stade du protocole, elle ne connaît pas la base choisie par Alice. Considérons d'abord qu'Eve mesure dans la bonne base. Elle obtient alors toutes les informations et peut préparer une nouvelle copie de l'état pour Bob. Elle obtient toutes les informations sur le symbole d'Alice et n'introduit aucune erreur du côté de Bob. Maintenant, supposons qu'Eve mesure dans une base différente de celle d'Alice. Eve obtiendra le bon bit avec une probabilité de un sur deux, ce qui signifie que son information est nulle. Elle prépare ensuite un nouvel état pour Bob selon son résultat de mesure, qui peut ne pas être identique à celui envoyé par Alice. Concentrons-nous maintenant sur les cas où la base de Bob est la même que celle d'Alice (après tout, ce sont les seuls cas conservés après le processus de réconciliation des bases). Puisque Eve a préparé un état "incorrect", Bob obtiendra le résultat attendu avec une probabilité de un sur deux. C'est-à-dire que la stratégie d'Eve introduit des erreurs du côté de Bob. Alice et Bob peuvent détecter l'intervention d'Eve en rendant publics une fraction des symboles où leurs bases concordent. S'il n'y a pas d'erreurs, il est très probable que personne n'a essayé d'espionner leur communication, et ils peuvent utiliser en toute sécurité les bits restants comme clé secrète. S'ils constatent des erreurs, il se peut que quelqu'un espionne le canal, ils annulent alors le processus. Par conséquent, ce que BB84 empêche, c'est qu'un espion lise la clé qu'Alice et Bob échangent sans être détecté.
 
-It is crucial for the security of the protocol that the channel is authenticated, that is, that Alice and Bob know to communicate to each other, for instance in the process of basis reconciliation. If this is not the case, Eve could separately run the protocol with Alice and Bob, establish two different secret keys with them, and hack the a posteriori communication. Alice and Bob therefore need to authenticate their channel, which is possible if they initially share a secret key. This introduces a form of circularity in the argument, but the main point is that the amount of secret key bits needed to authenticate the channels can be small. Once this is done and the QKD process has started, new generated key can be used when needed for authentication.
+Il est crucial pour la sécurité du protocole que le canal soit authentifié, c'est-à-dire qu'Alice et Bob sachent qu'ils communiquent bien entre eux, par exemple lors du processus de réconciliation des bases. Si ce n'est pas le cas, Eve pourrait exécuter le protocole séparément avec Alice et Bob, établir deux clés secrètes différentes avec eux, et pirater la communication a posteriori. Alice et Bob doivent donc authentifier leur canal, ce qui est possible s'ils partagent initialement une clé secrète. Cela introduit une forme de circularité dans l'argument, mais le point principal est que la quantité de bits de clé secrète nécessaires pour authentifier les canaux peut être faible. Une fois cela fait et le processus de QKD démarré, la nouvelle clé générée peut être utilisée lorsque nécessaire pour l'authentification.
 
-Operationally, this description of the protocol is far from complete. First, we have
-analyzed a specific intercept and resend attack by Eve in which (i) she intercepts the sent qubits, (ii) measures them, and (iii) prepares a new state for Bob based on the obtained result. However the goal is to prove
-the security of the protocol against any possible attack by Eve.
-Second, from a practical point of view, it is useless to design a
-protocol which is aborted whenever errors are seen. It would be
-aborted in any realistic, and therefore noisy, implementation!
-Fortunately, these two problems can be solved and one can design
-general security proofs which are valid against any attack in a
-noisy situation. In fact, the scope of a security proof is to show how Alice and Bob can distill a secret key in the presence of errors. 
-We present the main ideas to build a general
-security proof for QKD protocols below. But first,
-we discuss other examples of protocols, showing that many variants are possible.
+Opérationnellement, cette description du protocole est loin d'être complète. Premièrement, nous avons analysé une attaque spécifique d'interception et de réémission par Eve où (i) elle intercepte les qubits envoyés, (ii) les mesure, et (iii) prépare un nouvel état pour Bob en fonction du résultat obtenu. Cependant, l'objectif est de prouver la sécurité du protocole contre toute attaque possible par Eve. Deuxièmement, d'un point de vue pratique, il est inutile de concevoir un protocole qui est annulé chaque fois que des erreurs sont constatées. Il serait annulé dans toute mise en œuvre réaliste et donc bruyante ! Heureusement, ces deux problèmes peuvent être résolus et il est possible de concevoir des preuves de sécurité générales qui sont valables contre toute attaque dans une situation bruyante. En fait, l'objectif d'une preuve de sécurité est de montrer comment Alice et Bob peuvent distiller une clé secrète en présence d'erreurs. Nous présentons ci-dessous les principales idées pour construire une preuve de sécurité générale pour les protocoles QKD. Mais d'abord, nous discutons d'autres exemples de protocoles, montrant que de nombreuses variantes sont possibles.
 
-## Bibliography for this section
+## Bibliographie de la section
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
+
 
 
