@@ -1,14 +1,14 @@
-# Quantum Communications and Cryptography
+# Communications quantiques et Cryptographie
 
 [English](https://www.google.com/search?q=need+to+replace+this+with+the+actual+link&client=ubuntu-sn&hs=4Uw&sca_esv=ffe33ea245d4af43&channel=fs&sxsrf=ACQVn09Pa2wqHfngIxR7KuEU28zfvWbcvg%3A1708622445910&ei=bYLXZfLvNq_yi-gPj_2gmAE&ved=0ahUKEwiy2sXPur-EAxUv-QIHHY8-CBMQ4dUDCBA&uact=5&oq=need+to+replace+this+with+the+actual+link&gs_lp=Egxnd3Mtd2l6LXNlcnAiKW5lZWQgdG8gcmVwbGFjZSB0aGlzIHdpdGggdGhlIGFjdHVhbCBsaW5rMgUQIRigATIFECEYoAEyBRAhGJ8FSKgVULsDWI8UcAF4AZABAJgBjwGgAbIUqgEEMC4yMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABgWGB4YD8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogSIBgGQBgU&sclient=gws-wiz-serp) - [Français](https://www.google.com/search?q=need+to+replace+this+with+the+actual+link&client=ubuntu-sn&hs=4Uw&sca_esv=ffe33ea245d4af43&channel=fs&sxsrf=ACQVn09Pa2wqHfngIxR7KuEU28zfvWbcvg%3A1708622445910&ei=bYLXZfLvNq_yi-gPj_2gmAE&ved=0ahUKEwiy2sXPur-EAxUv-QIHHY8-CBMQ4dUDCBA&uact=5&oq=need+to+replace+this+with+the+actual+link&gs_lp=Egxnd3Mtd2l6LXNlcnAiKW5lZWQgdG8gcmVwbGFjZSB0aGlzIHdpdGggdGhlIGFjdHVhbCBsaW5rMgUQIRigATIFECEYoAEyBRAhGJ8FSKgVULsDWI8UcAF4AZABAJgBjwGgAbIUqgEEMC4yMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABgWGB4YD8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogSIBgGQBgU&sclient=gws-wiz-serp) - [Español](https://www.google.com/search?q=need+to+replace+this+with+the+actual+link&client=ubuntu-sn&hs=4Uw&sca_esv=ffe33ea245d4af43&channel=fs&sxsrf=ACQVn09Pa2wqHfngIxR7KuEU28zfvWbcvg%3A1708622445910&ei=bYLXZfLvNq_yi-gPj_2gmAE&ved=0ahUKEwiy2sXPur-EAxUv-QIHHY8-CBMQ4dUDCBA&uact=5&oq=need+to+replace+this+with+the+actual+link&gs_lp=Egxnd3Mtd2l6LXNlcnAiKW5lZWQgdG8gcmVwbGFjZSB0aGlzIHdpdGggdGhlIGFjdHVhbCBsaW5rMgUQIRigATIFECEYoAEyBRAhGJ8FSKgVULsDWI8UcAF4AZABAJgBjwGgAbIUqgEEMC4yMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABgWGB4YD8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogSIBgGQBgU&sclient=gws-wiz-serp)
 
 Ceci sont les notes du cours sur les Communications Quantiques et la Cryptographie du Master en Science et Ingénierie Quantique de l'Université de Barcelone, donné par le Prof. Antonio Acín.
 
-Nous donnons d'abord un résumé des techniques mathématiques requises dans le formalisme quantique : comment représenter les états quantiques, leur évolution et leur mesure. Cela définit les règles communes à toute application d'information quantique. Ensuite, nous présentons l'unité de base de l'information quantique, le soi-disant bit quantique ou qubit. Puis, nous passons à la cryptographie quantique, en mettant l'accent sur les protocoles de distribution quantique de clés. Enfin, nous discutons du problème de la communication quantique à longue distance.
+Nous donnons d'abord un résumé des techniques mathématiques requises dans le formalisme quantique : comment représenter les états quantiques, leur évolution et leur mesure. Ceci définit les règles communes à toute application d'information quantique. Ensuite, nous présentons l'unité de base de l'information quantique, appelé bit quantique ou qubit. Puis, nous passons à la cryptographie quantique, en mettant l'accent sur les protocoles de distribution quantique de clés. Enfin, nous discutons du problème de la communication quantique à longue distance.
 
 - Matériel de cours créé par le Prof. Antonio Acín
 - Rédaction en anglais par Luke Mortimer et Fionnuala Curran
 - Traduction française par Dr. Hippolyte Dourdent et Dr. Raja Yehia
-- Traduction espagnole par Júlia Barberà Rodríguez et Mariana Navarro Asan-Srain
+- Traduction espagnole par Júlia Barberà Rodríguez et Mariana Navarro Asan-Srain 
 
 

@@ -1,9 +1,9 @@
 
-# Long-Distance Quantum Communication
+# Communication à longue distance
 
-In the last part of the notes, we focus on the problem of long-distance quantum communication or, more generally, how to reliably send quantum information through a noisy channel. The scenario is quite similar to what discussed until now, with Alice and Bob in distant locations connected by a quantum channel. However, the goal is now to send quantum information, not to distribute a secret key. Therefore, we do not need to include Eve in the study. 
+Dans la dernière partie de ces notes, nous nous concentrons sur le problème de la communication quantique à longue distance ou, plus généralement, sur la manière d'envoyer de manière fiable des informations quantiques à travers un canal bruité. Le scénario est assez similaire à ce qui a été discuté jusqu'à présent, avec Alice et Bob dans des endroits éloignés connectés par un canal quantique. Cependant, l'objectif maintenant est d'envoyer de l'information quantique, et non de distribuer une clé secrète. Par conséquent, nous n'avons pas besoin d'inclure Eve dans l'étude.
 
-In the considered scenario, it is assumed that Alice and Bob can perform any type of quantum operations locally and can communicate classical information without any errors. This set of operations is called LOCC, for Local Operations and Classical Communication. The users can exchange quantum states, but only through a noisy channel described by a completely-positive trace-preserving (CPTP) map, $\Lambda$. The goal is to characterise the maximum amount of qubits that can be reliably sent from Alice to Bob as a function of the number of uses of the channel. A formal definition will be provided in this section.
+Dans le scénario considéré, on suppose qu'Alice et Bob peuvent effectuer tout type d'opérations quantiques localement et peuvent communiquer des informations classiques sans aucune erreur. Cet ensemble d'opérations est appelé LOCC, pour Local Operations and Classical Communication. Les utilisateurs peuvent échanger des états quantiques, mais uniquement à travers un canal bruité décrit par une matrice complètement positive et préservant la trace (appelé CPTP pour completely positive and trace preserving), $\Lambda$. L'objectif est de caractériser la quantité maximale de qubits qui peuvent être envoyés de manière fiable d'Alice à Bob en fonction du nombre d'utilisations du canal. Une définition formelle sera fournie dans cette section.
 
 
 

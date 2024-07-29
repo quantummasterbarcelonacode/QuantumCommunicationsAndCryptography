@@ -1,33 +1,10 @@
-# Security Proofs
+# Preuves de sécurité
 
-The previous sections summarised some of the best-known
-protocols for secure QKD and concluded with their general structure. The intuition for all of them is that
-an attack by Eve introduces detectable errors in the channel. 
-The intuitive argument then goes on by saying that Alice and Bob can monitor the
-presence of these errors and stop the protocol, aborting the
-eavesdropping attack. Clearly, while this intuition suggests that
-the scheme may be secure, it is unacceptable when dealing with
-practical implementations. In any realistic scenario, there will
-be errors which are not due to Eve but are just a consequence of noise
-in the channel and/or imperfections in Alice and Bob's labs.
-Therefore, we cannot accept that Alice and Bob abort the protocol
-whenever they observe errors.
+Les sections précédentes ont résumé certains des protocoles les plus connus de QKD (quantum key distribution) sécurisé et ont conclu avec leur structure générale. L'intuition pour tous ces protocoles est qu'une attaque par Eve introduit des erreurs détectables dans le canal. L'argument intuitif poursuit en disant qu'Alice et Bob peuvent surveiller la présence de ces erreurs et arrêter le protocole, mettant fin à la tentative d'espionnage. Il est clair que, bien que cette intuition suggère que le schéma peut être sécurisé, elle est ne fonctionne pas lorsqu'il s'agit de mises en œuvre pratiques. Dans tout scénario réaliste, il y aura des erreurs qui ne sont pas dues à Eve mais qui sont simplement une conséquence du bruit dans le canal et/ou des imperfections dans les laboratoires d'Alice et Bob. Par conséquent, nous ne pouvons pas accepter qu'Alice et Bob interrompent le protocole chaque fois qu'ils observent des erreurs.
 
-The purpose of a security proof is to deal with a noisy scenario
-and make QKD protocols implementable in practice. The main idea is
-that Alice and Bob should conclude from the amount of observed
-errors whether they can establish a secret key. 
-They are able do this because in quantum theory it is
-possible to put a bound on the information Eve has access to from
-the amount of error (or correlations) between Alice and Bob. If
-Alice and Bob have a small amount of error (large correlations), Eve has little
-information. A security proof makes this trade-off quantitative.
+Le but d'une preuve de sécurité est de gérer un scénario bruité et de rendre les protocoles de QKD applicables en pratique. L'idée principale est qu'Alice et Bob devraient conclure, d'après la quantité d'erreurs observées, s'ils peuvent établir une clé secrète. Ils sont capables de le faire parce qu'en théorie quantique, il est possible de fixer une limite sur la quantité d'information à laquelle Eve a accès en fonction de la quantité d'erreurs (ou de corrélations) entre Alice et Bob. Si Alice et Bob ont une petite quantité d'erreurs (grandes corrélations), Eve a peu d'informations. Une preuve de sécurité rend cet échange quantitatif.
 
-In what follows we sketch the main steps in a
-security proof. Our purpose is not to provide a detailed
-derivation of these proofs, as they are usually quite technical
-and involved, but to point out the main ideas and results used in
-their derivation.
+Dans ce qui suit, nous esquissons les principales étapes d'une preuve de sécurité. Notre objectif n'est pas de fournir une dérivation détaillée de ces preuves, car elles sont généralement assez techniques et complexes, mais de souligner les principales idées et résultats utilisés dans leur dérivation.
 
 
 

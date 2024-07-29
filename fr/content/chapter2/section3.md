@@ -6,7 +6,7 @@
 # Le Théorème de Non-Clonage
 
 
-Les sections précédentes ont montré qu'un qubit quantique est plus sophistiqué que son homologue classique car il peut exister dans des états de superposition. Paradoxalement, l'encodage de l'information sur les états quantiques souffre également de limitations qui n'apparaissent pas dans la Théorie de l'Information Classique. L'une des différences les majeures réside dans le Théorème de Non-Clonage quantique, qui démontre que l'information quantique ne peut pas être copiée. À première vue, il s'agit d'un sérieux inconvénient pour une théorie de l'information. Cependant, il existe des moyens de contourner ce problème, comme expliqué ci-dessous. De plus, cette limitation peut être transformée en avantage, comme le montre la Cryptographie Quantique. Mais commençons par donner  la preuve du Théorème de Non-Clonage, présentée pour la première fois par Wootters et Zurek dans {cite}`wootters1982single`.
+Les sections précédentes ont montré qu'un qubit quantique est plus sophistiqué que son homologue classique car il peut exister dans des états de superposition. Paradoxalement, l'encodage de l'information sur les états quantiques souffre également de limitations qui n'apparaissent pas dans la Théorie de l'Information Classique. L'une des différences les majeures réside dans le Théorème de Non-Clonage, qui démontre que l'information quantique ne peut pas être copiée. À première vue, il s'agit d'un sérieux inconvénient pour une théorie de l'information. Cependant, il existe des moyens de contourner ce problème, comme expliqué ci-dessous. De plus, cette limitation peut être transformée en avantage, comme le montre la Cryptographie Quantique. Mais commençons par donner  la preuve du Théorème de Non-Clonage, présentée pour la première fois par Wootters et Zurek dans {cite}`wootters1982single`.
 
 
 <!--Hippo: not exactly… say a bit more about the history or give ref ?-->
@@ -42,8 +42,7 @@ ce qui n'est pas égal à deux copies de l'état initial,
     \frac{1}{\sqrt 2}(\ket 0+\ket 1) .
 ```
 
-Par conséquent, la linéarité de la Mécanique Quantique rend le processus de clonage impossible. Notez que l'on peut en effet construire une machine de clonage produisant deux copies de deux états orthogonaux (Eq. {eq}`clclon`), a classical cloning machine. Unfortunately, it
-fails when une machine de clonage classique. Malheureusement, elle échoue lorsqu'il s'agit de cloner toute superposition cohérente de ces deux états. En d'autres termes, la non-orthogonalité est au cœur du Théorème de Non-Clonage.
+Par conséquent, la linéarité de la Mécanique Quantique rend le processus de clonage impossible. Notez que l'on peut en effet construire une machine de clonage produisant deux copies de deux états orthogonaux (Eq. {eq}`clclon`), une machine de clonage classique. Malheureusement, elle échoue lorsqu'il s'agit de cloner toute superposition cohérente de ces deux états. En d'autres termes, la non-orthogonalité est au cœur du Théorème de Non-Clonage.
 
 ## Bibliographie de la section
 ```{bibliography}
