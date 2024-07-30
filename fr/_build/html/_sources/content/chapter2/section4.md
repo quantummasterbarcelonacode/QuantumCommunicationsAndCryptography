@@ -6,7 +6,7 @@
 \def\sy{{\sigma_y}}
 ```
 
-# le Théorème de Bell
+# Le Théorème de Bell
 
 Le théorème de Bell est sans doute le résultat le plus convaincant montrant la séparation entre la physique classique et la physique quantique (ainsi que les théories de l'information correspondantes). Historiquement, cette discussion commença avec un article célèbre d'Einstein, Podolsky et Rosen (EPR) intitulé "Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?"
 {cite}`epr`, où ils soulevèrent des doutes sur la complétude de la théorie quantique en tant que théorie “réaliste-locale” (LR). Leur argument reposait sur trois hypothèses que toute théorie physique, selon EPR, devait satisfaire :

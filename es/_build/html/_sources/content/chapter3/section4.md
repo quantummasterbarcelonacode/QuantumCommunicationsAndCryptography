@@ -27,8 +27,8 @@ CHSH value to guarantee that they share a maximally entangled state. In the idea
 case, this parameter should be equal to $2\sqrt 2$.
 
 The intuition is that if the measurements by Alice and Bob lead to
-a Bell inequality violation, there is no hidden-variable model
-reproducing the outcomes. This absence of hidden-variable model
+a Bell inequality violation, there is no local hidden-variable model
+reproducing the outcomes. This absence of local hidden-variable model
 should guarantee the privacy of the obtained outcomes. In other
 words, if Eve could predict the outcomes by the honest parties,
 this would constitute a local hidden variable model for the
@@ -42,4 +42,5 @@ protocol, but does not represent any security proof.
 :style: unsrt
 :filter: docname in docnames
 ```
+
 
