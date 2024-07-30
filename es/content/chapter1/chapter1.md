@@ -1,12 +1,13 @@
-# Basics of Quantum Mechanics
+﻿# Basics of Quantum Mechanics
 
-The scope of this first section is to introduce the basic postulates of Quantum Mechanics and its mathematical structure. Most of the formalism presented here can be found in Chapter 2 of {cite}`nielsen2010quantum`. Linear algebra is the study of vector spaces and of linear operators acting on those spaces. In fact, all quantum machinery is linear algebra on a complex Hilbert space explained through the less standard Dirac notation. In this notation,
+
+The scope of this first section is to introduce the basic postulates of Quantum Mechanics and its mathematical structure. Most of the formalism presented here can be found in Chapter 2 of {cite}`nielsen2010quantum`. Linear algebra is the study of vector spaces and of linear operators acting on those spaces. In fact, all quantum machinery is fundamentally linear algebra on a complex Hilbert space, represented by the less standard Dirac notation. In this notation,
 
 - $\ket{\psi}$ stands for a column vector, also known as a ket.
 - $\bra{\psi}$ stands for the vector dual to $\ket{\psi}$, also known as a bra.
-- $\braket{\phi|\psi}$ is the standard scalar product between two vectors $\ket{\psi}$ and $\ket{\psi}$.
+- $\braket{\phi|\psi}$ is the standard scalar product between two vectors $\ket{\phi}$ and $\ket{\psi}$.
 
-The norm of a vector $\ket{\psi}$ is $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. In general, most of Quantum Information (QI) applications deal with complex spaces of finite dimension $d$, denoted by $\mathbb{C}^d$.
+The norm of a vector $\ket{\psi}$ is defined as $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. In general, most of Quantum Information (QI) applications deal with complex spaces of finite dimension $d$, denoted by $\mathbb{C}^d$.
 
 `````{admonition} Example
 :class: note
@@ -27,15 +28,14 @@ one has
 `````
 
 ## Pure states
-The first postulate of Quantum Mechanics says that there is a complex Hilbert space
-(vector space with an inner product) associated to any physical system. The description of this system is given by a normalized vector in this space. On the other hand, any normalized vector in the space represents a possible state of the physical system. Therefore, all the information about an isolated physical system can be specified by means of a vector in a Hilbert space. It follows from this postulate and the definition of a vector space that if $\ket{\psi_1}, \ket{\psi_2} \in \mathbb{C}^d$ are two possible states of a system, then any linear superposition of these two vectors, $\ket{\psi} = \alpha\ket{\psi_1} + \beta \ket{\psi_2}$, is a valid vector and, hence, also represents a valid state of the system. Here α and β are complex numbers such that $||\psi|| = 1$. This is also known as the superposition principle and $\ket{\psi}$ is often called a coherent superposition of $\ket{\psi_1}$ and $\ket{\psi_2}$.
+The first postulate of Quantum Mechanics states that every physical system is associated with a complex Hilbert space (a vector space with an inner product). The state of the system is described by a normalized vector in this space. Conversely, any normalized vector in the space represents a possible state of the physical system. Therefore, all the information about an isolated physical system can be specified by means of a vector in a Hilbert space. It follows from this postulate and the definition of a vector space that if $\ket{\psi_1}, \ket{\psi_2} \in \mathbb{C}^d$ are two possible states of a system, then any linear superposition of these two vectors, $\ket{\psi} = \alpha\ket{\psi_1} + \beta \ket{\psi_2}$, is a valid vector and, hence, also represents a valid state of the system. Here α and β are complex numbers such that $||\psi|| = 1$. This is also known as the superposition principle and $\ket{\psi}$ is often called a coherent superposition of $\ket{\psi_1}$ and $\ket{\psi_2}$.
 
 ## Composite systems
 Consider now two physical systems, $A$ and $B$, each described by the corresponding Hilbert space, $\mathcal{H}_A$ and $\mathcal{H}_B$. The Hilbert space associated to the global system $AB$, denoted by $\mathcal{H}$, consists of the tensor product of the two local spaces, $\mathcal{H} = \mathcal{H}_A \otimes \mathcal{H}_B$. This is another postulate of Quantum Mechanics.
 
 ## Entanglement
 The consequences of these two initial postulates are huge. Indeed, consider two
-possible states of the global system, $\mathcal{H}_A \otimes \mathcal{H}_B$: $\ket{\psi_A}\otimes\ket{\psi_B}$ and $\ket{\phi_A}\otimes\ket{\phi_B}$, or more briefly $\ket{\psi_A \psi_B}$ and $\ket{\phi_A \phi_B}$. Then, $\ket{\Psi} = \alpha\ket{\psi_A \psi_B} + \beta\ket{\phi_A \phi_B}$ also gives a possible state of the composite system $AB$. However, this state in general cannot be written as the tensor product of two vectors on each local space, meaning $\ket{\Psi} \ne \ket{\varphi_A \varphi_B}$. In this case, it is said that $\ket{\Psi}$ is entangled. Entanglement then appears as a consequence of the tensor product and vector space structure of Quantum Mechanics.
+possible states of the global system, $\mathcal{H}_A \otimes \mathcal{H}_B$: $\ket{\psi_A}\otimes\ket{\psi_B}$ and $\ket{\phi_A}\otimes\ket{\phi_B}$, or more briefly $\ket{\psi_A \psi_B}$ and $\ket{\phi_A \phi_B}$. Then, $\ket{\Psi} = \alpha\ket{\psi_A \psi_B} + \beta\ket{\phi_A \phi_B}$ also gives a possible state of the composite system $AB$. However, this state in general cannot always be written as the tensor product of two vectors on each local space, meaning $\ket{\Psi} \ne \ket{\varphi_A \varphi_B}$. In this case, it is said that $\ket{\Psi}$ is entangled. Entanglement then appears as a consequence of the tensor product and vector space structure of Quantum Mechanics.
 
 ## Unitary evolution
 The evolution of an isolated physical system, whose initial state is given by $\ket{\psi}$, is described by the application of a unitary operation, $U$. Thus, the evolved state of the system is $\ket{\phi} = U \ket{\psi}$. Recall that this is another postulate of Quantum Mechanics. A unitary operation on a Hilbert space of dimension $d$ is simply a $d×d$ complex matrix satisfying $U U^† = \mathbb{1}$.
@@ -113,4 +113,5 @@ that is, the initial state $\ket{\psi}$ collapses into $|i〉$ with a probabilit
 :style: unsrt
 :filter: docname in docnames
 ```
+
 

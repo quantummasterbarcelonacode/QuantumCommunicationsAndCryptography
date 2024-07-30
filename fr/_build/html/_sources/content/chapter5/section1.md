@@ -8,24 +8,23 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Eve's Attacks
+# Les attaques d'Eve
 
-We first describe the possible attacks that Eve can implement. 
-As an illustration, we consider a paradigmatic attack on BB84 based on what are called optimal cloning machines. This is an example of a general family of attacks called *individual* attacks in which: (i) Eve intercepts the particle sent from Alice to Bob, $\ket{\psi_a}$; (ii) she adds another particle in a reference state, say $\ket 0$, and performs a unitary operation $U_E$ on the two particles; (iii) Eve forwards one of the resulting states to Bob, while she keeps the other particles in a quantum memory; (iv) once the bases are announced by the honest users, Eve measures her particle (see {numref}`indattacks`), getting the measurement result $e$. As a result of this process, Alice, Bob and Eve share correlated random variables corresponding to their prepared states and measurement results, $a$ and $b$ for the honest users, and $e$ for Eve, described by the probability distribution $P(a,b,e)$.
+Nous décrivons d'abord les attaques possibles qu'Eve peut mettre en œuvre. 
+À titre d'illustration, nous considérons une attaque générale sur le protocole BB84 basée sur ce que l'on appelle des machines de clonage optimales. Ceci est un exemple d'une famille générale d'attaques, appelées attaques individuelles, dans lesquelles : (i) Eve intercepte la particule envoyée par Alice à Bob, $\ket{\psi_a}$ ; (ii) elle ajoute une autre particule dans un état de référence, disons $\ket{0}$, et effectue une opération unitaire $U_E$ sur les deux particules ; (iii) Eve envoie l'un des états résultants à Bob, tandis qu'elle garde les autres particules dans une mémoire quantique ; (iv) une fois que les bases sont annoncées par les utilisateurs honnêtes, Eve mesure sa particule (voir {numref}`indattacks`), obtenant le résultat de mesure $e$. À la suite de ce processus, Alice, Bob et Eve partagent des variables aléatoires corrélées correspondant à leurs états préparés et à leurs résultats de mesure, $a$ et $b$ pour les utilisateurs honnêtes, et $e$ pour Eve, décrites par la distribution de probabilité $P(a,b,e)$.
 
 ```{figure} ./Cloning_Attack.png
 ---
 height: 400px
 name: indattacks
 ---
-Structure of individual attacks: Eve interacts with the states prepared by Alice and a reference state, say $\ket 0$ through a unitary operation $E_E$. She forwards one particle to Bob and keeps the other one, which is measured after the bases are announced.
+Structure des attaques individuelles : Eve interagit avec les états préparés par Alice et un état de référence, disons $\ket{0}$, par le biais d'une opération unitaire $U_E$. Elle envoie une particule à Bob et garde l'autre, qu'elle mesure après l'annonce des bases.
 ```
 
-`````{admonition} Exercise 3
+`````{admonition} Exercice 3
 :class: tip
-Consider a cloning individual attack in which Eve's action is described by a one-parameter family of unitary operations $U(\eta)$. While the no-cloning theorem states that an unknown quantum state
-cannot be cloned, approximate cloning is always possible.
-Consider states in the equator of the Bloch sphere, that is,
+Considérons une attaque individuelle par clonage dans laquelle l'action d'Eve est décrite par une famille uniparamétrique d'opérations unitaires $U(\eta)$. Bien que le théorème de non-clonage stipule qu'un état quantique inconnu ne peut pas être cloné, un clonage approximatif est toujours possible. 
+Considérons des états situés sur l'équateur de la sphère de Bloch, c'est-à-dire,
 
 ```{math}
 :label: thetast
@@ -33,9 +32,7 @@ Consider states in the equator of the Bloch sphere, that is,
 2}\left(\ket{0}+e^{i\theta}\ket{1}\right) .
 ```
 
-Note that if $\theta=0,\pi/2,\pi,3\pi/2$ one gets the four states $\ket{\pm x}$ and $\ket{\pm y}$ that can be used for BB84. Take a generic state $\ket{\theta}$ and an ancillary state
-$\ket{0}$ and apply the global transformation (acting on the two
-states) $U(\eta)$, or $U$ to simplify the notation, 
+Notez que si $\theta = 0, \pi/2, \pi, 3\pi/2$, on obtient les quatre états $\ket{\pm x}$ et $\ket{\pm y}$ qui peuvent être utilisés pour le protocole BB84. Prenons un état générique $\ket{\theta}$ et un état auxiliaire $\ket{0}$ et appliquons la transformation globale (agissant sur les deux états) $U(\eta)$, ou $U$ pour simplifier la notation. 
 
 
 ```{math}
@@ -44,40 +41,32 @@ states) $U(\eta)$, or $U$ to simplify the notation,
   U\ket{10} &= \cos\eta\ket{10}+\sin\eta\ket{01} .
 ```
 
-a) Briefly explain why $U$ is a valid unitary transformation on the considered quantum states.
+a) Expliquez brièvement pourquoi $U$ est une transformation unitaire valide sur les états quantiques considérés.
 
-b) Compute the final two-qubit state $\ket{\psi(\theta)}_{BE}=U_{BE}\ket{\theta}_B\ket{0}_E$
-and the reduced states $\rho_B$ and $\rho_E$, where
-$\rho_B=\tr_E\proj{\psi(\theta)}$ and similar for $\rho_E$.
+b) Calculez l'état final des deux qubits $\ket{\psi(\theta)}{BE}=U{BE}\ket{\theta}_B\ket{0}_E$ et les états réduits $\rho_B$ et $\rho_E$, où $\rho_B=\tr_E\proj{\psi(\theta)}$ et de manière similaire pour $\rho_E$.
 
-<!--Luke: The partial trace hasn't been defined in this course, no?-->
+c) Calculez le recouvrement, ou la fidélité, de ces deux états avec l'état initial, c'est-à-dire $F_i=\bra{\theta}\rho_i\ket{\theta}$, avec $i=B,E$. Ces fidélités dépendent-elles de $\theta$ ? Trouvez également la valeur de $\eta$ pour laquelle les deux fidélités deviennent égales. Enfin, calculez les états réduits lorsque $F_B=1$. Comment interprétez-vous ces résultats ?
 
-c) Compute the overlap, or fidelity, of these two states with the initial
-state, that is $F_i=\bra{\theta}\rho_i\ket{\theta}$, with $i=B,E$.
-Do these fidelities depend on $\theta$? Find also the value of
-$\eta$ for which the two fidelities become equal. Finally, compute the
-reduced states when $F_B=1$. How do you interpret these results?
-
-d) Apply this attack to the BB84 protocol when Alice and Bob use the states $\ket{\pm x}$ and $\ket{\pm y}$ and Eve measures in the same basis as Alice and Bob after basis reconciliation. Compute the distribution of variables $P(a,b,e)$ where $a$ denotes the bit encoded by Alice, and $b$ and $e$ the measurement results by Bob and Eve, respectively. Compute also the so-called Quantum Bit Error Rate (QBER) defined by the probability that Bob's result is different from Alice's preparation when the bases agree, and the mutual information between Alice and Bob, $I(A:B)$, and between Alice and Eve, $I(A:E)$, where $I(X:Y)=H(A)+H(B)-H(AB)$ and $H(X)=-\sum_x p(x)\log(p(x))$.
+d) Appliquez cette attaque au protocole BB84 lorsque Alice et Bob utilisent les états $\ket{\pm x}$ et $\ket{\pm y}$ et qu'Eve mesure dans la même base qu'Alice et Bob après la réconciliation des bases. Calculez la distribution des variables $P(a,b,e)$ où $a$ désigne le bit encodé par Alice, et $b$ et $e$ les résultats de mesure de Bob et Eve, respectivement. Calculez également le taux d'erreur quantique (QBER), défini par la probabilité que le résultat de Bob soit différent de la préparation d'Alice lorsque les bases concordent, et l'information mutuelle entre Alice et Bob, $I(A)$, et entre Alice et Eve, $I(A)$, où $I(X)=H(A)+H(B)-H(AB)$ et $H(X)=-\sum_x p(x)\log(p(x))$.
 `````
 
-Historically, individual attacks were the first studied in the security of cryptographic protocols. The previous cloning attack is optimal in terms of fidelities because it, for a given fidelity on Bob's side $F_B$, optimises the value of $F_E$. Individual attacks, however, are not the most general because they assume that Eve (i) interacts in the same way with all the quantum particles sent from Alice to Bob and (ii) measures her particle at the end of basis reconciliation. Individual attacks may for instance miss the possibility that a correlated interaction among rounds of the protocol could give Eve more information, or that Eve could wait until the end of the key distillation process and use all the information revealed during it to optimise her measurement, or even wait until the key is used. In fact, the security proof should work for the most general situation in which Eve keeps her quantum particle in a quantum memory and does not measure it: if one proves security for this situation, the proof also holds for any measurement Eve could later apply to her quantum system. Individual and the most general attacks are shown in {numref}`attacks`, where we show them in the entanglement-based picture usually employed to prove security. An intermediate attack that happens to be very useful is the so-called *collective* attack in which Eve (i) keeps her information in a quantum form, that is, stores her quantum particles in a memory, but (ii) she applies the same interaction in each round. 
+Historiquement, les attaques individuelles ont été les premières étudiées dans le cadre de la sécurité des protocoles cryptographiques. L'attaque de clonage précédente est optimale en termes de fidélités car elle optimise la valeur de $F_E$ pour une fidélité donnée du côté de Bob, $F_B$. Cependant, les attaques individuelles ne sont pas les plus générales car elles supposent qu'Eve (i) interagit de la même manière avec toutes les particules quantiques envoyées par Alice à Bob et (ii) mesure sa particule à la fin de la réconciliation des bases. Les attaques individuelles peuvent par exemple négliger la possibilité qu'une interaction corrélée entre les tours du protocole puisse fournir à Eve plus d'informations, ou qu'Eve pourrait attendre la fin du processus de distillation de la clé et utiliser toutes les informations révélées pendant celui-ci pour optimiser sa mesure, voire attendre jusqu'à ce que la clé soit utilisée. En fait, la preuve de sécurité doit fonctionner pour la situation la plus générale dans laquelle Eve conserve sa particule quantique dans une mémoire quantique sans la mesurer. Si l'on prouve la sécurité pour cette situation, la preuve est également valable pour toute mesure qu'Eve pourrait appliquer ultérieurement à son système quantique. Les attaques individuelles et les attaques les plus générales sont illustrées dans {numref}`attacks`, où elles sont présentées dans le cadre d'un protocol basé sur l'intrication habituellement utilisé pour prouver la sécurité. Une attaque intermédiaire qui s'avère très utile est appelée attaque *collective*, dans laquelle Eve (i) conserve ses informations sous une forme quantique, c'est-à-dire stocke ses particules quantiques dans une mémoire, mais (ii) applique la même interaction à chaque tour.
 
-Finally, since in the most general situations we are considering attacks in which Eve keeps her information in a quantum form, the definition of a secret key should be adapted to this scenario. Informally, a protocol is able to distill a key of length $k$ whenever the result of the protocol is a state $\rho_{ABE}$, that is, very close to the ideal state
+Enfin, comme dans les situations les plus générales, nous considérons des attaques dans lesquelles Eve conserve ses informations sous une forme quantique, la définition d'une clé secrète doit être adaptée à ce scénario. De manière informelle, un protocole est capable de distiller une clé de longueur $k$ chaque fois que le résultat du protocole est un état $\rho_{ABE}$, très proche de l'état idéal
 
 ```{math}
 :label: secretkey
 \rho_{ABE}^{(k)}=\frac{1}{2}(\proj{00}+\proj{11})_{AB}^{\otimes k}\otimes\proj{E}_E.
 ```
 
-Here: Alice and Bob share $k$ perfectly correlated bits that are secret because they are uncoupled from Eve's quantum system, which is in some arbitrary reference state $\ket E$.
+Ici, Alice et Bob partagent $k$ bits parfaitement corrélés qui sont secrets parce qu'ils ne sont pas couplés au système quantique d'Eve, qui est dans un état de référence arbitraire $\ket{E}$.
 
 ```{figure} ./attacks.png
 ---
 height: 400px
 name: attacks
 ---
-Structure of eavesdropping attacks: In the individual and collective attacks, Eve prepares $N$ copies of the same state $\ket{\psi}_{ABE}$ and forwards a particle from each state to Alice and Bob who measure them. In the case of individual attacks, Eve also applies the same measurement on each particle after basis reconciliation. In a collective attack, Eve keeps her $N$ quantum systems in a quantum memory for later use. In a general attack, Eve prepares a joint state $\ket{\psi^{(N)}}_{\vec A\vec BE}$, and forwards the corresponding particles to Alice and Bob for their measurements, while she keeps a (possibly large) quantum system in a quantum memory. All the attacks are shown in the entanglement-based scenario.
+Structure des attaques d'espionnage : Dans les attaques individuelles et collectives, Eve prépare $N$ copies du même état $\ket{\psi}{ABE}$ et envoie une particule de chaque état à Alice et Bob, qui les mesurent. Dans le cas des attaques individuelles, Eve applique également la même mesure sur chaque particule après la réconciliation des bases. Dans une attaque collective, Eve conserve ses $N$ systèmes quantiques dans une mémoire quantique pour une utilisation ultérieure. Dans une attaque générale, Eve prépare un état conjoint $\ket{\psi^{(N)}}{\vec A\vec BE}$ et envoie les particules correspondantes à Alice et Bob pour leurs mesures, tandis qu'elle conserve un système quantique (possiblement large) dans une mémoire quantique. Toutes les attaques sont présentées dans le scénario basé sur l'intrication.
 ```
 
 

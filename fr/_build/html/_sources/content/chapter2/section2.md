@@ -3,7 +3,7 @@
 
 Bien que ces notes se concentrent sur la communication et la cryptographie quantiques, revoyons brièvement ici, pour des raisons d'exhaustivité, les opérations logiques de base agissant sur un qubit. Rappelons que tout calcul classique consiste en une séquence de portes logiques appliquées à une chaîne de bits. Chacune de ces portes peut toujours être décomposée en termes de portes AND et NOT. Ces deux opérations fournissent donc un ensemble universel de portes pour le calcul classique. On pourrait conclure que les ingrédients nécessaire au passage du calcul classique au calcul quantique est (i) d'encoder les bits classiques en qubits comme précédemment, $i\rightarrow\ket i$, et (ii) d'implémenter la version quantique de ces portes.
 
-Lorsqu'on aborde le traitement de l'information quantique dans un système contrôlé (fermé), toute évolution est décrite par une opération unitaire $U$. Ces opérations sont réversibles, c'est-à-dire qu’en connaissant l'opération et l'état de sortie, on peut toujours reconstruire l'état d'entrée. Notez cependant que les portes OR et AND sont irréversibles, car le bit de sortie n'est pas suffisant pour inférer les deux bits d'entrée. Ainsi, pour incorporer le calcul classique standard dans le formalisme quantique, il faut d'abord le rendre réversible. C'est en effet possible, comme l'a montré Bennett dans {cite}bennett1973logical: tout calcul classique peut être rendu réversible sans augmentation exponentielle des ressources requises. Cela implique que tout calcul classique peut être simulé par des ressources quantiques de la manière suivante : d'abord, construire le calcul classique réversible équivalent, puis remplacer les bits classiques, ou cbits, par des qubits.
+Lorsqu'on aborde le traitement de l'information quantique dans un système contrôlé (fermé), toute évolution est décrite par une opération unitaire $U$. Ces opérations sont réversibles, c'est-à-dire qu’en connaissant l'opération et l'état de sortie, on peut toujours reconstruire l'état d'entrée. Notez cependant que les portes OR et AND sont irréversibles, car le bit de sortie n'est pas suffisant pour inférer les deux bits d'entrée. Ainsi, pour incorporer le calcul classique standard dans le formalisme quantique, il faut d'abord le rendre réversible. C'est en effet possible, comme l'a montré Bennett dans {cite}`bennett1973logical`: tout calcul classique peut être rendu réversible sans augmentation exponentielle des ressources requises. Cela implique que tout calcul classique peut être simulé par des ressources quantiques de la manière suivante : d'abord, construire le calcul classique réversible équivalent, puis remplacer les bits classiques, ou cbits, par des qubits.
 
 
 
@@ -33,7 +33,7 @@ La discussion précédente montre que tout calcul classique peut être incorpor�
   0 & e^{i\pi/4}\\\end{pmatrix} .
 ```
 
-L’implémentation de ces trois opérations sur un qubit et de la porte est suffisante pour toute proposition expérimentale d’ordinateur quantique.  
+L’implémentation de ces trois opérations sur un qubit et de la porte CNOT est suffisante pour toute proposition expérimentale d’ordinateur quantique. 
  
 ## Bibliographie de la section
 ```{bibliography}

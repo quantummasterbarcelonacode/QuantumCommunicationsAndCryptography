@@ -6,7 +6,7 @@ completely secure way using a pre-shared secret key.
 
 In any cryptographic scenario, two honest parties, Alice and Bob,
 want to exchange information in a private way. There is also a
-third dishonest party, the eavesdropper, also called Eve, that
+third dishonest party, the eavesdropper, called Eve, that
 wants to read this information. Assume in what follows that Alice
 and Bob share a secret key, that is, a list of perfectly
 correlated bits which Eve has no information about. The secret
@@ -14,7 +14,7 @@ key, of length $N$, is denoted by $\vec k$, which is a string of
 $N$ bits $k_i$, with $i=1,\ldots,N$. In order to send a message of
 length $M\leq N$ to Bob, denoted by $\vec m$, Alice can perform
 a sum modulo 2 of her message bits with $M$ secret key bits and
-send the resulting $M$-bit string through the channel. More
+send the resulting $M$-bit string to Bob through a public (insecure) channel. More
 precisely, with this operation Alice computes the boolean
 XOR (The boolean XOR, denoted by $\oplus$, is the
 operation such that $0\oplus 0=1\oplus 1=0$ and $0\oplus 1=1\oplus
@@ -41,5 +41,6 @@ Later, this key can be employed using one-time pad to exchange the
 final message in a completely secure way. The quantum protocols
 allowing Alice and Bob to distribute a key in a secure way are named Quantum Key
 Distribution (QKD) protocols, for obvious reasons.
+
 
 
