@@ -1,9 +1,9 @@
 
-# Long-Distance Quantum Communication
+# Comunicación Cuántica a Larga Distancia
 
-In the last part of the notes, we focus on the problem of long-distance quantum communication or, more generally, how to reliably send quantum information through a noisy channel. The scenario is quite similar to what discussed until now, with Alice and Bob in distant locations connected by a quantum channel. However, the goal is now to send quantum information, not to distribute a secret key. Therefore, we do not need to include Eve in the study. 
+En la última parte de las notas, nos enfocamos en el problema de la comunicación cuántica a larga distancia o, más generalmente, cómo enviar de manera confiable información cuántica a través de un canal ruidoso. El escenario es bastante similar a lo discutido hasta ahora, con Alice y Bob en ubicaciones distantes conectados por un canal cuántico. Sin embargo, ahora el objetivo es enviar información cuántica, no distribuir una clave secreta. Por lo tanto, no necesitamos incluir a Eve en el estudio.
 
-In the considered scenario, it is assumed that Alice and Bob can perform any type of quantum operations locally and can communicate classical information without any errors. This set of operations is called LOCC, for Local Operations and Classical Communication. The users can exchange quantum states, but only through a noisy channel described by a completely-positive trace-preserving (CPTP) map, $\Lambda$. The goal is to characterise the maximum amount of qubits that can be reliably sent from Alice to Bob as a function of the number of uses of the channel. A formal definition will be provided in this section.
+En el escenario considerado, se asume que Alice y Bob pueden realizar cualquier tipo de operaciones cuánticas localmente y pueden comunicarse información clásica sin errores. Este conjunto de operaciones se denomina LOCC, por sus siglas en inglés (local operations and classical communication). Los usuarios pueden intercambiar estados cuánticos, pero solo a través de un canal ruidoso descrito por un mapa completamente positivo que preserva la traza (completely-positive trace-preserving, CPTP), $\Lambda$. El objetivo es caracterizar la máxima cantidad de cúbits que se pueden enviar de manera confiable desde Alice a Bob en función del número de usos del canal. Se proporcionará una definición formal en esta sección.
 
 
 

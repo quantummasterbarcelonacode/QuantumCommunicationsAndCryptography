@@ -8,38 +8,29 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Quantum Error Correction
+# Corrección de Errores Cuánticos
 
-Adapting error correction to the quantum realm is not easy. Error correction builds on redundancy, the repetition of the message, and we know that quantum information cannot be cloned. Also, when decoding, Bob should perform a measurement to read the received state and then decide about how to decode. But quantum measurements perturb the state of the system, hence it seems that the decoding procedure will also introduce errors. In fact, in the early days of quantum information theory, prominent researchers cast doubts on the possibility of quantum error correction {cite}`haroche`.
+Adaptar la corrección de errores al mundo cuántico no es fácil. La corrección de errores se basa en la redundancia, la repetición del mensaje, y sabemos que la información cuántica no puede ser clonada. Además, al decodificar, Bob debería realizar una medición para leer el estado recibido y luego decidir cómo decodificar. Pero las mediciones cuánticas perturban el estado del sistema, por lo que parece que el proceso de decodificación también introducirá errores. De hecho, en los primeros días de la teoría de la información cuántica, investigadores prominentes dudaban de la posibilidad de la corrección de errores cuánticos {cite}`haroche`.
 
-As first shown by Shor and Steane in {cite}`errcorr1,errcorr2`, quantum error
-correction is possible. This breakthrough was based on a clever
-translation of the known classical techniques to the quantum
-formalism, where again $m$ logical qubits are encoded into codewords made of $n$
-physical qubits: $(m=1,n=7)$ for Steane's and $(m=1,n=9)$ for Shor's scheme. Now, with this knowledge, we can rephrase the previous discussion on error correction in quantum terms. Given a channel described by a CPTP map $\Lambda$, Alice encodes an $m$-qubit message into $n$ physical qubits through an $n\rightarrow m$ isometry $\mathcal E$ mapping any state $\ket\psi\in\compl^{\otimes m}$ to $\ket{\psi'}=\mathcal E \ket{\psi}\in\compl^{\otimes n}$. These $n$ qubits are now sent through the noisy channel, so Bob receives the $n$-qubit mixed state $\rho'=\Lambda^{\otimes N}(\proj{\psi'})$. Bob applies the decoding map $\mathcal D$ to this state, getting $\rho=\mathcal D(\rho')$. The goal of the protocol is for this state to be $\epsilon$-close to the encoded state $\ket\psi$, that is, to have $\bra\psi\rho\ket\psi\geq 1-\epsilon$ for a given error threshold $\epsilon$.
+Como mostraron por primera vez Shor y Steane en {cite}`errcorr1,errcorr2`, la corrección de errores cuánticos es posible. Este avance se basó en una ingeniosa traducción de las técnicas clásicas conocidas al formalismo cuántico, donde nuevamente $m$ cúbits lógicos son codificados en palabras clave formadas por $n$ cúbits físicos: $(m=1,n=7)$ en el esquema de Steane y $(m=1,n=9)$ en el esquema de Shor. Ahora, con este conocimiento, podemos reformular la discusión anterior sobre la corrección de errores en términos cuánticos. Dado un canal descrito por un mapa CPTP $\Lambda$, Alice codifica un mensaje de $m$ cúbits en $n$ cúbits físicos a través de una isometría $\mathcal E$ que mapea cualquier estado $\ket\psi\in\compl^{\otimes m}$ a $\ket{\psi'}=\mathcal E \ket{\psi}\in\compl^{\otimes n}$. Estos $n$ cúbits ahora se envían a través del canal ruidoso, por lo que Bob recibe el estado mixto de $n$ cúbits $\rho'=\Lambda^{\otimes N}(\proj{\psi'})$. Bob aplica un mapa de decodificación $\mathcal D$ a este estado, obteniendo $\rho=\mathcal D(\rho')$. El objetivo del protocolo es que este estado sea $\epsilon$ cercano al estado codificado $\ket\psi$, es decir, que se cumpla $\bra\psi\rho\ket\psi\geq 1-\epsilon$ para un umbral de error dado $\epsilon$.
 
-It is far from the scope of these
-notes to give a detailed explanation of quantum error correction.
-However, we provide in what follows a simple scheme that shows how to improve the error rate of
-the noisy channel 
+Está fuera del alcance de estas notas dar una explicación detallada de la corrección de errores cuánticos. Sin embargo, proporcionamos a continuación un esquema simple que muestra cómo mejorar la tasa de error del canal ruidoso
 
 ```{math}
 :label:
 \Lambda_x(\rho)=(1-p_x)\rho+p_x\sx\rho\sx ,
 ```
 
-a channel for which with probability $1-p_x$ the state does not change, while a bit flip $\sx$ is performed with probability $p_x$. It is a rather academic channel, but it is enough to illustrate how
-quantum error correcting techniques work.
+un canal para el cual, con probabilidad $1-p_x$ el estado no cambia, mientras que el bit sea invertido $\sx$ ocurre con probabilidad $p_x$. Es un canal bastante académico, pero es suficiente para ilustrar cómo funcionan las técnicas de corrección de errores cuánticos.
 
-The goal is to present an encoding and decoding process that does the analogue of the simple classical $1\rightarrow 3$ repetition code described above.
-A representation of this scheme is shown in {numref}`errc`. The initial qubit to be transmitted is in an arbitrary state $\ket\psi=\alpha\ket 0 +\beta\ket 1$. Alice encodes it into a 3-qubit state by the isometry in which she adds two new qubits in state $\ket 0$ and performs two CNOT operations as shown in {numref}`errc`. The resulting state is $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$. Note that the $1\rightarrow 3$ repetition is somehow achieved while keeping the coherences in the state. This state is now sent through the channel, so the state received by Bob is $\rho'=\Lambda_x^{\otimes 3}(\proj{\psi'})$. It is easy to see that this state can be written as
+El objetivo es presentar un proceso de codificación y decodificación que haga el análogo del simple código de repetición clásico $1\rightarrow 3$ descrito anteriormente. Una representación de este esquema se muestra en {numref}`errc`. El cúbit inicial que se va a transmitir está en un estado arbitrario $\ket\psi=\alpha\ket 0 +\beta\ket 1$. Alice los codifica en un estado de tres cúbits mediante la isometría en la que añade dos nuevos cúbits en estado $\ket 0$ y realiza dos operaciones CNOT como se muestra en {numref}`errc`. El estado resultante es $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$. Cabe destacar que de alguna manera se logra la repetición $1\rightarrow 3$ manteniendo las coherencias en el estado. Este estado ahora se envía a través del canal, por lo que el estado que recibe Bob es $\rho'=\Lambda_x^{\otimes 3}(\proj{\psi'})$. Es fácil ver que este estado se puede escribir como
 
 ```{math}
 :label:
 \rho'=(1-p_x)^3\rho'_0+3(1-p_x)^2p_x\rho'_1+3(1-p_x)p_x^2\rho'_2+p_x^3\rho'_3 ,
 ```
 
-where
+donde
 
 ```{math}
 :label:
@@ -51,50 +42,37 @@ where
 &&\rho'_3= \sx\otimes\sx\otimes\sx \proj{\psi'} \sx\otimes\sx\otimes\sx ,
 ```
 
-that is, all the different terms where zero, one, two or three errors take place. Note the analogies with the classical case. Now, the goal is to design a map correcting all instances with zero and one error, that is $\mathcal D(\rho'_0)=\mathcal D(\rho'_1)=\proj\psi$. The circuit in {numref}`errc` achieves this, as we are going to show for each of the pure states appearing in these mixed states.
+es decir, todos los diferentes términos donde ocurren cero, uno, dos o tres errores. Note las analogías con el caso clásico. Ahora, el objetivo es diseñar un mapa que corrija todos los casos con cero y un error, es decir, $\mathcal D(\rho'_0)=\mathcal D(\rho'_1)=\proj\psi$. El circuito en {numref}`errc`  logra esto, como vamos a mostrar para cada uno de los estados puros que aparecen en estos estados mixtos.
 
 ```{figure} ./errcorr.png
 ---
 height: 400px
 name: errc
 ---
-Quantum error correction: The figure shows a simple example of encoding and decoding operations correcting at most one bit flip.
-  The measurements on the fourth and fifth qubit inform Bob about which unitary operations $U_1$, $U_2$ and $U_3$ to implement to fix the error in one (or none) of the three physical qubits encoding the logical qubit
-  in state $\ket{\psi}$.
+Corrección de errores cuánticos: La figura muestra un ejemplo simple de operaciones de codificación y decodificación que corrigen como máximo un bit invertido. Las mediciones en el cuarto y quinto cúbit informan a Bob sobre qué operaciones unitarias $U_1$, $U_2$ y $U_3$ implementar para corregir el error en uno (o ninguno) de los tres cúbits físicos que codifican el cúbit lógico en el estado $\ket{\psi}$.
 ```
 
-- No errors: Bob receives the encoded state
-    $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$. One can see that the state after adding the extra two qubits and implementing the CNOTs in the error correction part is $(\alpha\ket{000}+\beta\ket{111})\ket{00}$. The measurements of the last two qubits give $00$. Basically, this circuit leaves the state in the first three qubits unchanged, as they are controlling the result of the CNOT gates, while the two bits obtained in the measurement, see {numref}`errc`, extract the information about the error: they inform us whether qubit 1 and 2 are identical, or whether qubit 1 and qubit 3 are equal. In the present case, since the result is 00, Bob deduces that the three qubits are equal. This is compatible with no error, or three errors, but the former is more likely, so he does nothing, $U_1=U_2=U_3=\one$. The state entering into the final decoding part is again  $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$, which is mapped into $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$ by the two final CNOT operations and measurements. In fact, these two last measurements are not really needed.
-- Error on the first qubit: Bob receives the state
-    $\alpha\ket{100}+\beta\ket{011}$. After the series of CNOT gates, one has $(\alpha\ket{100}+\beta\ket{011})\ket{11}$. The two measurements on the last two qubits give 11. This informs Bob that qubit 1 is different from 2, and also from 3. If there was only one error, Bob knows he has to correct the first qubit, so he
-    applies $U_1=\sigma_x$ and $U_2=U_3=\one$. The resulting state is again $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$, so the final decoding part
-    provides the initial state.
-- Error on the second qubit: Bob receives the state
-    $\alpha\ket{010}+\beta\ket{101}$. The reasoning proceeds as
-    above, but now the state before the first measurement is $(\alpha\ket{010}+\beta\ket{101})\ket{10}$. The measurements give 10 and inform Bob that the second qubit was different from the other two, hence he corrects it, $U_2=\sigma_x$ and $U_1=U_3=\one$. The last part is identical to that in the previous step
-- Error on the third qubit: Bob receives the state
-    $\alpha\ket{001}+\beta\ket{110}$. Same as above, but now the
-    measurements on the fourth and fifth qubit give 01, so Bob infers that the third qubit is wrong and applies $U_3=\sigma_x$ and
+- Sin errores: Bob recibe el estado codificado
+    $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$. Se puede ver que el estado después de agregar los dos cúbits adicionales y realizar las CNOT en la parte de corrección de errores es $(\alpha\ket{000}+\beta\ket{111})\ket{00}$. Las mediciones de los dos últimos cúbits dan $00$. Básicamente, este circuito deja el estado en los primeros tres cúbits sin cambios, ya que están controlando el resultado de las puertas CNOT, mientras que los dos bits obtenidos en la medición, ver {numref}`errc`, extraen la información sobre el error: informan si el cúbit 1 y el cúbit 2 son idénticos, o si el cúbit 1 y el cúbit 3 son iguales. En el presente caso, dado que el resultado es 00, Bob deduce que los tres cúbits son iguales. Esto es compatible con ningún error o tres errores, pero es más probable el primero, por lo que no hace nada, $U_1=U_2=U_3=\one$. El estado que entra en la parte final de decodificación es nuevamente  $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$, que se mapea a $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$ mediante las dos últimas operaciones CNOT y mediciones. De hecho, estas dos últimas mediciones no son realmente necesarias.
+- Error en el primer cúbit: Bob recibe el estado
+    $\alpha\ket{100}+\beta\ket{011}$. Después de la serie de puertas CNOT, se obtiene $(\alpha\ket{100}+\beta\ket{011})\ket{11}$. Las dos mediciones en los últimos dos cúbits dan 11. Esto informa a Bob que el cúbit 1 es diferente del 2, y también del 3. Si hubo solo un error, Bob sabe que debe corregir el primer cúbit, por lo que aplica $U_1=\sigma_x$ y $U_2=U_3=\one$. El estado resultante es nuevamente $\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}$, por lo que la parte final de decodificación proporciona el estado inicial.
+- Error en el segundo cúbit: Bob recibe el estado
+    $\alpha\ket{010}+\beta\ket{101}$. El razonamiento procede como
+se explicó anteriormente, pero ahora el estado antes de la primera medición es $(\alpha\ket{010}+\beta\ket{101})\ket{10}$. Las mediciones dan 10 e informan a Bob que el segundo cúbit es diferente de los otros dos, por lo tanto, lo corrige, $U_2=\sigma_x$ y $U_1=U_3=\one$. La última parte es idéntica a la del paso anterior.
+- Error en el tercer cúbit: Bob recibe el estado
+    $\alpha\ket{001}+\beta\ket{110}$. Igual que antes, pero ahora las
+mediciones en el cuarto y quinto cúbit dan 01, por lo que Bob infiere que el tercer cúbit es incorrecto y aplica $U_3=\sigma_x$ y
     $U_1=U_2=\one$.
 
-This simple scheme illustrates how quantum error correction works: (i) Alice encodes the
-$m$ initial logical qubits into quantum codewords made of $n$ physical
-qubits; (ii) after propagation through the channel, some of the
-qubits are measured, providing Bob information about the errors
-occurred in the channel; (iii) the error is corrected and the
-original quantum state decoded. A real quantum error correcting
-method should correct not only bit flips, $\sigma_x$, but also
-phase flips, $\sigma_z$, and any arbitrary combination of them. As
-said, such schemes do exist and constitute a basic primitive on
-any implementation of quantum information processing, especially for quantum computation purposes.
+Este esquema simple ilustra cómo funciona la corrección de errores cuánticos: (i) Alice codifica los $m$ cúbits lógicos iniciales en palabras código cuánticas hechas de $n$ cúbits físicos; (ii) después de la propagación a través del canal, algunos de los cúbits son medidos, proporcionando a Bob información sobre los errores ocurridos en el canal; (iii) el error se corrige y el estado cuántico original se decodifica. Un método real de corrección de errores cuánticos debería corregir no solo errores de bit, $\sigma_x$, sino también errores de fase, $\sigma_z$, y cualquier combinación arbitraria de ellos. Como se mencionó, tales esquemas existen y constituyen una primitiva básica en cualquier implementación de procesamiento de información cuántica, especialmente con fines en computación cuántica.
 
-We now have all the ingredients to define the quantum capacity $\text{QC}$ of a quantum channel $\Lambda$. First of all, for $n$ uses of the channel, we define $m^*(n,\epsilon)$ as the maximum number of qubits that can be transmitted with error $\epsilon$. This means that there exist encoding and decoding maps, $\mathcal E$ and $\mathcal D$, such that for all $\ket\psi\in\compl^{\otimes m}$, one has $\bra\psi\rho\ket\psi\geq 1-\epsilon$, where $\rho=(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)$. Then, the quantum capacity of the channel is defined as in Eq. {eq}`capacity`, with this new definition of $m^*(n,\epsilon)$.
+Ahora tenemos todos los ingredientes para definir la capacidad cuántica $\text{QC}$ de un canal cuántico $\Lambda$. Primero, para $n$ usos del canal, definimos $m^*(n,\epsilon)$ como el número máximo de cúbits que se pueden transmitir con un error $\epsilon$. Esto significa que existen mapas de codificación y decodificación, $\mathcal E$ y $\mathcal D$, tales que para todos los $\ket\psi\in\compl^{\otimes m}$, se tiene $\bra\psi\rho\ket\psi\geq 1-\epsilon$, donde $\rho=(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)$. Luego, la capacidad cuántica del canal se define como en la Ec. {eq}`capacity`, con esta nueva definición de $m^*(n,\epsilon)$.
 
-While the formal definition of capacities for classical and quantum channels look almost identical, there are several important differences. First of all, and contrary to what happens in the classical case, there exist channels with zero quantum capacity, $\text{QC}=0$, although the state received by Bob depends on Alice's preparation. The easiest examples of such channels are given by the so-called two-shareable channels. These are channels $\Lambda$, say from $A\rightarrow B$, such that there exists another channel $\tilde\Lambda$ from $A\rightarrow B_1B_2$ with the property that, for all input states $\rho$, one has $\tr_1(\tilde\Lambda(\rho))=\tr_2(\tilde\Lambda(\rho))=\Lambda(\rho)$. In fact, supposed that the original channel was such that $\text{QC}>0$. This would mean that there exist encoding and decoding operations such that  $\bra\psi(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)\ket\psi\geq 1-\epsilon$. Now, one could then apply the encoding to a state $\ket\psi$, use it as input to $\tilde\Lambda$ and apply the decoding map to the output states $B_1$ and $B_2$, getting two copies of the initial state of arbitrarily good quality, and therefore violating the no-cloning theorem. That is, the no-cloning theorem implies the existence of non-trivial channels with zero quantum capacity. Note that there are very natural examples of two-shareable channels, possibly the simplest being a lossy channel in which a state is transmitted with probability $1/2$ from $A$ to $B$. It can trivially be shared by a channel in which the state is transmitted either to $B_1$ and $B_2$ with probability $1/2$. Recall that this channel appears in optical fibre communications and, in fact, a transmission below $1/2$ is obtained at relatively short distance. This implies that quantum error correction is of limited use for quantum communication purposes. 
+Aunque la definición formal de capacidades para canales clásicos y cuánticos parece casi idéntica, hay varias diferencias importantes. Primero, y contrario a lo que sucede en el caso clásico, existen canales con capacidad cuántica cero, $\text{QC}=0$, aunque el estado recibido por Bob depende de la preparación de Alice. Los ejemplos más sencillos de este tipo de canales son los denominados canales bipartitos. Estos son canales $\Lambda$, digamos $A\rightarrow B$, tal que existe otro canal $\tilde\Lambda$ donde $A\rightarrow B_1B_2$ con la propiedad que, para todos los estados de entrada $\rho$, uno tiene $\tr_1(\tilde\Lambda(\rho))=\tr_2(\tilde\Lambda(\rho))=\Lambda(\rho)$. De hecho, supongamos que el canal original era tal que $\text{QC}>0$. Esto significaría que existen operaciones de codificación y decodificación tales que $\bra\psi(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)\ket\psi\geq 1-\epsilon$. Ahora, podríamos aplicar entonces la codificación a un estado $\ket\psi$, usarlo como entrada para $\tilde\Lambda$ y aplicar un mapa de decodificación a los estados de salida $B_1$ y $B_2$,obteniendo dos copias del estado inicial de calidad arbitrariamente buena, y por lo tanto violando el teorema de no clonación. Es decir, el teorema de no clonación implica la existencia de canales no triviales con capacidad cuántica cero. Cabe destacar que existen ejemplos muy naturales de canales bipartitos, posiblemente el más simple sea un canal con pérdida en el cual un estado se transmite con probabilidad $1/2$ desde $A$ hasta $B$. Se puede compartir trivialmente por un canal en el cual el estado se transmite ya sea a $B_1$ y $B_2$ con probabilidad $1/2$. Recordemos que este canal aparece en comunicaciones por fibra óptica y, de hecho, se obtiene una transmisión inferior a $1/2$ a una distancia relativamente corta. Esto implica que la corrección de errores cuánticos tiene un uso limitado para fines de comunicación cuántica.
 
-Second, in the quantum case, we do not know whether a single-letter formula for the quantum channel capacity exists and, in fact, it is conceivable that it does not. Third, and this is related to the previous point, the quantum capacity is non-additive {cite}`smithyard`: there exist quantum channels $\Lambda_1$ and $\Lambda_2$ such that (i) $\text{QC}(\Lambda_1)=\text{QC}(\Lambda_2)=0$, but (ii) $\text{QC}(\Lambda_1\otimes\Lambda_2)>0$. In other words, two channels that are individually useless to send quantum communication become useful when combined. This astonishing property of quantum information is in fact more common than initially expected, as there are several operational scenarios in which quantum information properties are not additive, the quantum capacity being one of the most famous examples. This non-additivity property is sometimes encapsulated by the amusing formula $0+0>0$.
+En segundo lugar, en el caso cuántico, no sabemos si existe una fórmula de una sola letra para la capacidad del canal cuántico y, de hecho, es concebible que no exista. En tercer lugar, y esto está relacionado con el punto anterior, la capacidad cuántica no es aditiva {cite}`smithyard`: existen canales cuánticos $\Lambda_1$ y $\Lambda_2$ tal que (i) $\text{QC}(\Lambda_1)=\text{QC}(\Lambda_2)=0$, pero (ii) $\text{QC}(\Lambda_1\otimes\Lambda_2)>0$. En otras palabras, dos canales que individualmente no son útiles para enviar comunicación cuántica se vuelven útiles cuando se combinan. Esta asombrosa propiedad de la información cuántica es, de hecho, más común de lo inicialmente esperado, ya que hay varios escenarios operativos en los que las propiedades de la información cuántica no son aditivas, siendo la capacidad cuántica uno de los ejemplos más famosos. Esta propiedad de no aditividad a veces se encapsula en la curiosa fórmula $0+0>0$.
 
-## Bibliography for this section
+## Bibliografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames

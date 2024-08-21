@@ -8,52 +8,43 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Entanglement-Based Quantum Communication
+# Comunicación Cuántica Basada en Entrelazamiento
 
-Quantum error correction provides a solution for solving the
-imperfections in the channel. However, if the errors in the
-channel are too large, there cannot be any quantum error
-correcting code allowing the faithful transmission of quantum
-information through the channel. As said, this is in strong contrast to what
-happens for classical information: even if the errors in the
-channel are very large, there is always an encoding and decoding
-process allowing a noise-free error transmission. When dealing with quantum channels, quantum
-error correction may be impossible even in situations where Bob's
-quantum state is correlated to Alice's initial state. Therefore, the problem of long-distance quantum communication should explore other methods and the solution again comes through entanglement.
+La corrección de errores cuánticos ofrece una solución para resolver las imperfecciones en el canal. Sin embargo, si los errores en el canal son demasiado grandes, no existirá un código de corrección de errores cuánticos que permita una transmisión fiable de información cuántica a través del canal. Como se mencionó, esto contrasta fuertemente con lo que sucede con la información clásica: incluso si los errores en el canal son muy grandes, siempre existe un proceso de codificación y decodificación que permite una transmisión libre de errores. Al tratar con canales cuánticos, la corrección de errores puede ser imposible incluso en situaciones donde el estado cuántico de Bob está correlacionado con el estado inicial de Alice. Por lo tanto, el problema de la comunicación cuántica a larga distancia debe explorar otros métodos, y la solución nuevamente se obtiene a través del entrelazamiento.
 
-Before proceeding, note that in a quantum communication scenario, if the parties are initially assisted by a maximally entangled state, say of two qubits Eq. {eq}`bellstate`, then Alice can perfectly send a qubit to Bob by means of quantum teleportation {cite}`teleportation`. At the end of this protocol, the entanglement is destroyed, so sharing a maximally entangled state is equivalent in this context to use once the identity channel $\Lambda(\rho)=\rho$, that is, a perfect channel with no errors. Let us now see how to make use of this idea.
+Antes de proceder, es importante destacar que en un escenario de comunicación cuántica, si las partes están inicialmente en un estado maximalmente entrelazado, digamos de dos cúbits como en la Ec. {eq}`bellstate`, entonces Alice puede enviar perfectamente un cúbit a Bob mediante la teleportación cuántica {cite}`teleportation`. Al final de este protocolo, el entrelazamiento se destruye, por lo que compartir un estado maximalmente entrelazado es equivalente, en este contexto, a usar una vez el canal de identidad $\Lambda(\rho)=\rho$, es decir, un canal perfecto sin errores. Veamos ahora cómo hacer uso de esta idea.
 
-If Alice and Bob are connected by a channel $\Lambda$, say of one qubit, and Alice is thinking of using teleportation, she can try to establish entanglement with Bob by locally preparing a two-qubit entangled state and then sending half of it through the channel. At the end of this process, Alice and Bob share the state
+Si Alice y Bob están conectados por un canal $\Lambda$, digamos de un cúbit, y Alice está pensando en usar teleportación, ella puede intentar establecer entrelazamiento con Bob preparando localmente un estado entrelazado de dos cúbits y luego enviando la mitad de él a través del canal. Al final de este proceso, Alice y Bob comparten el estado
 
 ```{math}
 :label:
 \rho_{AB}=(\one\otimes\Lambda)(\proj{\Phi^+}) .
 ```
 
-Now, suppose that this state can be transformed by LOCC into a maximally entangled state with some probability $p$. This process is called *entanglement distillation*. Then, the resulting maximally entangled state can be used to teleport a qubit reliable from Alice and Bob. If they repeat this process $n$ times, Alice and Bob will deterministically get of the order of $np$ maximally entangled states, and will hence be able to transmit of the order of $np$ qubits.
+Ahora, supongamos que este estado puede ser transformado mediante LOCC en un estado maximalmente entrelazado con alguna probabilidad $p$. Este proceso se llama *destilación de entrelazamiento*. Luego, el estado maximalmente entrelazado resultante puede usarse para teleportar un cúbit de manera confiable de Alice a Bob. Si repiten este proceso $n$ veces, Alice y Bob obtendrán determinísticamente del orden de $np$ estados máximalmente entrelazados, y por lo tanto podrán transmitir del orden de $np$ cúbits.
 
-This procedure works for channels that are two-shareable, where quantum error correction is useless. A simple example is the channel with transmission coefficient $1/2$. In fact, it works for any purely lossy channel of transmission $\eta_C$. When sending half of a maximally entangled state, say encoded in two photons, through it, Alice and Bob end up with the state
+Este procedimiento funciona para canales bipartitos, donde la corrección de errores cuánticos no es útil. Un ejemplo simple es el canal con coeficiente de transmisión $1/2$. De hecho, funciona para cualquier canal con pérdidas con una transmisión $\eta_C$. Al enviar la mitad de un estado maximalmente, digamos codificado en dos fotones, a través de él, Alice y Bob terminan con el estado 
 
 ```{math}
 :label:
 \rho_{AB}=\eta_C\proj{\Phi^+}+(1-\eta_C)\frac{\one}{2}\otimes\proj\varnothing ,
 ```
 
-where $\ket\varnothing$ is the state associated to the loss of the photon. Now, Bob can now implement the two output measurement described by the Kraus operators
+donde $\ket\varnothing$ es el estado asociado al fotón perdido. Ahora, Bob puede implementar la medición de dos salidas descrita por los operadores de Kraus
 
 ```{math}
 :label:
 A_{\text{ok}}=\proj 0+\proj 1, \quad A_{\text{loss}}=\proj\varnothing .
 ```
 
-This is nothing other than Bob observing whether the particle encoding half of the maximally entangled state, in our example the photon, has made it through the channel without being destroyed. It is an example of the so-called quantum non-demolition measurements, which are challenging but possible.  It is clear than when Bob gets the result $r=\text{ok}$, which happens with probability $\eta_C$, the state between Alice and Bob is projected into $\ket{\Phi^+}$. 
+Esto no es mas que Bob observando si la partícula que codifica la mitad del estado maximalmente entrelazado, en nuestro ejemplo el fotón, ha pasado a través del canal sin ser destruida. Es un ejemplo de las llamadas mediciones cuánticas no destructivas, que son desafiantes, pero posibles. Está claro que cuando Bob obtiene el resultado $r=\text{ok}$, lo cual ocurre con una probabilidad $\eta_C$, el estado entre Alice y Bob se proyecta en $\ket{\Phi^+}$.
  
- This result shows that quantum information can be transmitted through any purely lossy channel, with a rate that goes at least as $\eta_C$. This is not in contradiction with the previous result using quantum error correction. In fact, the previous expression for the quantum channel capacity was defined in terms of quantum error correction protocols in which information only goes from Alice to Bob. This implies that our previous definition was in fact encapsulating the so-called one-way communication capacity, denoted by $\textbf{QC}^\rightarrow$. In particular, this capacity is zero for two-shareable channels. However, in the previous protocol, using entanglement distillation, Bob needs to communicate with Alice to inform her about the result of his measurement, and this message goes in the opposite direction. A more general protocol could in fact involve several rounds of classical communication from Alice to Bob and viceversa. To take into account this possibility, we will define below the two-way quantum capacity $\text{QC}^\leftrightarrow$. 
+Este resultado muestra que la información cuántica puede ser transmitida a través de cualquier canal con pérdidas, con una tasa que va al menos como $\eta_C$. Esto no contradice el resultado anterior utilizando corrección de errores cuánticos. De hecho, la expresión anterior para la capacidad del canal cuántico se definió en términos de protocolos de corrección de errores cuánticos en los cuales la información solo va de Alice a Bob. Esto implica que nuestra definición anterior encapsulaba de hecho la llamada capacidad de comunicación unidireccional, denotada por $\textbf{QC}^\rightarrow$. En particular, esta capacidad es cero para canales bipartitos. Sin embargo, en el protocolo anterior, usando destilación de entrelazamiento, Bob necesita comunicarse con Alice para informarle sobre el resultado de su medición, y este mensaje va en la dirección opuesta. Un protocolo más general podría de hecho involucrar varias rondas de comunicación clásica de Alice a Bob y viceversa. Para tener en cuenta esta posibilidad, definiremos a continuación la capacidad cuántica bidireccional $\text{QC}^\leftrightarrow$. 
  
-The previous discussion shows that the problem of long-distance quantum communication is intimately connected to the problem of entanglement distillation through the channel. In fact, imagine that the channel would allow the distribution of states that are distillable, that is, that Alice and Bob could establish after $n$ uses of the channel a state that can be transformed into $m$ maximally entangled states of two qubits. Then, these $n$ uses would allow the exchange of $m$ qubits through teleportation. On the other hand, imagine that,  using $n$ times the channel, Alice and Bob could reliable distribute $m$ qubits. Then, Alice could apply this protocol to reliably send the $m$ halves of $m$ maximally entangled states to Bob, hence perfectly distributing entanglement.
-It therefore follows that the two-way quantum capacity can be defined as follows. Consider $n$ uses of the channel acting on the $n$ halves of $n$ maximally entangled states, resulting in a state equal to $n$ copies of $\rho_{AB}=(\one\otimes\Lambda)(\proj{\Phi^+})$. Now, define $m^*(n,\epsilon)$ as the maximum number $m$ of maximally entangled states that can be distilled from this state by LOCC with an error $\epsilon$, that is, $^{\otimes m}\bra{\Phi^+}\text{LOCC}(\rho_{AB}^{\otimes n})\ket{\Phi^+}^{\otimes m}\geq 1-\epsilon$. Then, the two-way quantum capacity is defined as in {eq}`capacity`. For example, it follows from what has been said above that a lossy channel has $\text{QC}^\leftrightarrow>\text{QC}^\rightarrow=0$, proving the advantage of two-way communication strategies.
+La discusión anterior muestra que el problema de la comunicación cuántica a larga distancia está íntimamente relacionado con el problema de la destilación de entrelazamiento a través del canal. De hecho, imagina que el canal permitiera la distribución de estados que son destilables, es decir, que Alice y Bob pudieran establecer después de $n$ usos del canal un estado que pueda ser transformado en $m$ estados maximalmente entrelazados de dos cúbits. Entonces, estos $n$ usos permitirían el intercambio de $m$ cúbits a través de la teleportación. Por otro lado, imagina que, usando $n$ veces el canal, Alice y Bob pudieran distribuir de manera confiable $m$ cúbits. Entonces, Alice podría aplicar este protocolo para enviar de manera confiable las $m$ mitades de $m$ estados maximalmente entrelazados a Bob, distribuyendo así perfectamente el entrelazamiento.
+Por lo tanto, se sigue que la capacidad cuántica bidireccional se puede definir como sigue: considera $n$ usos del canal actuando en las $n$ mitades de $n$ estados maximalmente entrelazados, resultando en un estado igual a $n$ copias de $\rho_{AB}=(\one\otimes\Lambda)(\proj{\Phi^+})$. Ahora, define $m^*(n,\epsilon)$ como el número máximo $m$ de estados maximalmente entrelazados que se pueden destilar de este estado mediante LOCC con un error $\epsilon$, es decir, $^{\otimes m}\bra{\Phi^+}\text{LOCC}(\rho_{AB}^{\otimes n})\ket{\Phi^+}^{\otimes m}\geq 1-\epsilon$. Entonces, la capacidad cuántica bidireccional se define como en {eq}`capacity`. Por ejemplo, se sigue de lo dicho anteriormente que un canal con pérdidas tiene $\text{QC}^\leftrightarrow>\text{QC}^\rightarrow=0$, lo que demuestra la ventaja de las estrategias de comunicación bidireccional.
 
-## Bibliography for this section
+## Bibliografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
