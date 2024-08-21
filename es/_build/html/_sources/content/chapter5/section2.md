@@ -8,153 +8,117 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Key Rate for Collective Attacks
+# Tasa de Clave para Ataques Colectivos
 
-The importance of studying collective attacks comes from a result by Renner {cite}`renner` who proved that by increasing the number of protocol rounds $N$, 
-for a large family of protocols includiing all those described here, the amount of key that can be distilled in a protocol against general attacks tends to the key rate that can be distilled against the optimal collective attack. In other words, the length of secret key $K$ that can be distilled after $N$ rounds satisfies $\lim_{N\rightarrow\infty} K/N=k_C$, where $k_C$ is the key rate against collective attacks. For a practical realisation with a finite number of rounds, there will be corrections to this limit and $k_C$ cannot be attained, as one has $K=k_CN-\mathcal{O}(N)$. These corrections are relevant in practical situations and a full security proof is able to compute or bound them. But $k_C$ is the asymptotically attainable rate. 
+La importancia de estudiar ataques colectivos proviene de un resultado de Renner {cite}`renner`, quien demostró que, al aumentar el número de rondas del protocolo $N$, para una gran familia de protocolos, incluyendo todos los descritos aquí, la cantidad de clave que se puede destilar en un protocolo bajo ataques generales tiende a la tasa de clave que se puede destilar bajo el ataque colectivo óptimo. En otras palabras, la longitud de la clave secreta $K$ que se puede destilar después de $N$ rondas satisface $\lim_{N\rightarrow\infty} K/N=k_C$, donde $k_C$ es la tasa de clave contra ataques colectivos. Para una realización práctica con un número finito de rondas, habrá correcciones a este límite y $k_C$ no se puede alcanzar, ya que se tiene $K=k_CN-\mathcal{O}(N)$. Estas correcciones son relevantes en situaciones prácticas y una prueba de seguridad completa es capaz de calcularlas o acotarlas. Aun así, $k_C$ es la tasa asintóticamente alcanzable.
 
-Putting everything together, in the entanglement-based picture, the security analysis of a protocol under collective attacks is as follows:
+En resumen, en el escenario basado en entrelazamiento, el análisis de seguridad de un protocolo bajo ataques colectivos es el siguiente:
 
-<!--Luke: The extra spaces at the start of the line here are important to maintain the blocks-->
-
-- For all the rounds of the protocol, Eve prepares the tripartite pure state $\ket{\Psi}_{ABE}$, unknown to Alice and Bob, and distributes particles $A$ and $B$ to the honest users, while she keeps $E$ in a quantum memory. The reduced state shared between Alice and Bob is $\rho_{AB}=\tr_E\proj{\Psi}_{ABE}$.
-- Alice (Bob) chooses to perform a series of measurements  $M_{a|x}$ ($M_{b|y}$)
-    on her (his) particles, where $x$ ($y$) denotes the implemented measurement and $a$ ($b$) the obtained result, with probabilities $p_A(x)$ ($p_B(y)$).
-- From their measurement results, Alice and Bob can estimate $p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})$. These probabilities fully or partially characterize their shared state. We denote by $\mathcal{S}_{AB}$ the set of states between Alice and Bob compatible with the observed probability distributions $p(ab|xy)$. 
-- For each of these states $\tilde\rho_{AB}\in\mathcal S_{AB}$, Alice and Bob can include Eve's
-system using the Schmidt
-decomposition. Indeed, consider the spectral decomposition of
-$\tilde\rho_{AB}$, namely $\tilde\rho_{AB}=\sum_i\lambda_i\proj{\lambda_i}$.
-If Alice and Bob want to include Eve in the picture, they should
-characterise those pure states $\ket{\tilde\Psi}_{ABE}$ compatible with their shared state $\tilde\rho_{AB}$. Any such state can be written as  
+- Para todas las rondas del protocolo, Eve prepara el estado puro tripartito $\ket{\Psi}_{ABE}$, desconocido para Alice y Bob, y distribuye las partículas $A$ y $B$ a los usuarios honestos, mientras ella mantiene $E$ en una memoria cuántica. El estado reducido compartido entre Alice y Bob es $\rho_{AB}=\tr_E\proj{\Psi}_{ABE}$.
+- Alice (Bob) elige realizar una serie de mediciones $M_{a|x}$ ($M_{b|y}$) en sus partículas, donde $x$ ($y$) denota la medición realizada y $a$ ($b$) el resultado obtenido, con probabilidades $p_A(x)$ ($p_B(y)$).
+- A partir de sus resultados de medición, Alice y Bob pueden estimar $p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})$. Estas probabilidades caracterizan total o parcialmente su estado compartido. Denotamos por $\mathcal{S}_{AB}$ el conjunto de estados entre Alice y Bob compatibles con las distribuciones de probabilidad observadas $p(ab|xy)$.
+- Para cada uno de estos estados $\tilde\rho_{AB}\in\mathcal{S}_{AB}$, Alice y Bob pueden incluir el sistema de Eve utilizando la descomposición de Schmidt. De hecho, consideren la descomposición espectral de $\tilde\rho_{AB}$, es decir, $\tilde\rho_{AB}=\sum_i\lambda_i\proj{\lambda_i}$. Si Alice y Bob quieren incluir a Eve en el escenario, deben caracterizar aquellos estados puros $\ket{\tilde\Psi}_{ABE}$ compatibles con su estado compartido $\tilde\rho_{AB}$. Cualquier estado con estas características puede ser escrito como
 
     ```{math}
     :label: psiabe
         \ket{\tilde\Psi}_{ABE}=\sum_i
         \sqrt{\lambda_i}\ket{\lambda_i}_{AB}\ket{e_i} ,
     ```  
-
-    where $\{\ket{e_i}\}$ define an orthonormal basis in Eve's space.
-Note that Eve's dimensional space is equal to the rank (number of
-non-zero eigenvalues) of $\tilde\rho_{AB}$. Given
-$\ket{\tilde\Psi}_{ABE}$, which is completely specified by the basis
-$\{\ket{e_i}\}$, any other state $\ket{\Phi}_{ABE}$ compatible with $\rho_{AB}$
-is such that
-$\ket{\Phi}_{ABE}=\one_{AB}\otimes U_E\ket{\tilde\Psi}_{ABE}$. That is,
-the only difference between these two states is a unitary
-operation on Eve's space, which corresponds to a different basis
-$\{\ket{e'_i}\}$. This implies that any of these states is equally
-powerful from Eve's point of view. We denote by $\mathcal{S}_{ABE}$ the set of pure states between Alice, Bob and Eve compatible with the observed probability distributions $p(ab|xy)$. Of course the state $\ket{\Psi}_{ABE}$ actually prepared by Eve is an element of this set.
-- Alice and Bob focus on those measurements that are used to construct the key, for instance measurements $z$ by Alice and Bob in the BB84 protocol. When they apply these measurements to any of the states $\ket{\tilde\Psi}_{ABE}$, they get
+    donde $\{\ket{e_i}\}$ define una base ortonormal en el espacio de Eve. 
+Note que el espacio dimensional de Eve es igual al rango (número de valores propios no nulos) de $\tilde\rho_{AB}$. Dado $\ket{\tilde\Psi}_{ABE}$, que está completamente especificado por la base $\{\ket{e_i}\}$, cualquier otro estado $\ket{\Phi}_{ABE}$ compatible con $\rho_{AB}$ es tal que $\ket{\Phi}_{ABE}=\one_{AB}\otimes U_E\ket{\tilde\Psi}_{ABE}$. Es decir, la única diferencia entre estos dos estados es una operación unitaria en el espacio de Eve, que corresponde a una base diferente $\{\ket{e'_i}\}$. Esto implica que cualquiera de estos estados es igual de poderoso desde el punto de vista de Eve. Denotamos por $\mathcal{S}_{ABE}$ el conjunto de estados puros entre Alice, Bob y Eve compatibles con las distribuciones de probabilidad observadas $p(ab|xy)$. Naturalmente, el estado $\ket{\Psi}_{ABE}$ realmente preparado por Eve es un elemento de este conjunto.
+- Alice y Bob se concentran en aquellas mediciones que se utilizan para construir la clave, por ejemplo, las mediciones $z$ realizadas por Alice y Bob en el protocolo BB84. Cuando aplican estas mediciones a cualquiera de los estados $\ket{\tilde\Psi}_{ABE}$, obtienen
 
     ```{math}
     :label: ccq
         \tilde\rho_{ABE}=\sum_{a,b}p(ab)\proj{a}_A \otimes\proj{b}_B\otimes\proj{\tilde e^{ab}}_E,
     ```
 
-    where $p(ab)=\bra{ab}\tilde\rho_{AB}\ket{ab}$ is the joint probability of
-getting outcomes $a$ and $b$ and $\ket{\tilde e^{ab}}$ is Eve's projected
-state when Alice and Bob have got these results. Up to normalization, this state is proportional to
+donde $p(ab)=\bra{ab}\tilde\rho_{AB}\ket{ab}$ es la probabilidad conjunta de obtener los resultados $a$ y $b$, y $\ket{\tilde e^{ab}}$ es el estado proyectado de Eve cuando Alice y Bob han obtenido estos resultados. Salvo por un factor de normalización, este estado es proporcional a
 
     ```{math}
     :label: evestate
         \ket{\tilde e^{ab}}\propto\langle ab\ket{\tilde\Psi}_{ABE} .
     ```
 
-    More precisely, the pure state $\ket{\tilde e^{ab}}$ is given by the right-hand side of the previous equation after normalisation.
-The state {eq}`ccq` is often said to contain
-classical-classical-quantum (ccq) correlations. In fact, note that, although
-the state is given in a quantum form, Alice and Bob share only
-classical outcomes whose correlations are encapsulated by the
-probability distribution $p(ab)$. On Eve's side, however, she has
-a quantum state $\ket{\tilde e^{ab}}$ that depends on, or equivalently, is correlated to Alice and Bob's classical
-measurement results.
-- Devetak and Winter proved that the key rate $k_C$ distillable from an asymptotically large number of identical copies of a ccq state {eq}`ccq` is lower bounded by the so-called Devetak-Winter bound, which reads {cite}`dwrate`
+Más precisamente, el estado puro $\ket{\tilde e^{ab}}$ se obtiene de la parte derecha de la ecuación anterior después de la normalización. El estado {eq}`ccq` se dice a menudo que contiene correlaciones clásicas-clásicas-cuánticas (ccc). De hecho, aunque el estado se da en forma cuántica, Alice y Bob comparten solo resultados clásicos cuyas correlaciones están encapsuladas por la distribución de probabilidad $p(ab)$. Por otro lado, Eve tiene un estado cuántico $\ket{\tilde e^{ab}}$ que depende de, o de forma equivalente, está correlacionado con los resultados de medición clásicos de Alice y Bob.
+- Devetak y Winter demostraron que la tasa de clave $k_C$ destilable a partir de un número asintóticamente grande de copias idénticas de un estado ccc {eq}`ccq` está acotada inferiormente por el llamado límite Devetak-Winter, que se expresa en {cite}`dwrate`.
 
     ```{math}
     :label: dwbound
         k_C\geq K_{DW}(\tilde\rho_{ABE})=I(A:B)-\chi(A:E) .
     ```
 
-    Clearly, the bound is a function of the ccq state $\tilde\rho_{ABE}$.
-    Recall that $I(A:B)=H(A)+H(B)-H(A,B)$ is the mutual information of the
-    probability distribution $p(ab)$. The expression $\chi(A:E)$ denotes the
-    Holevo quantity {cite}`Holevo` for the effective coding of Alice's measurement
-    outcome $a$ on Eve's quantum states. Indeed, any measurement result by
-    Alice projects Eve's state into
+Evidentemente, el límite es una función del estado ccc $\tilde\rho_{ABE}$. Recuerde que $I(A:B)=H(A)+H(B)-H(A,B)$ es la información mutua de la distribución de probabilidad $p(ab)$. La expresión $\chi(A:E)$ denota la cantidad de Holevo {cite}`Holevo` para la codificación efectiva del resultado de la medición de Alice $a$ en los estados cuánticos de Eve. De hecho, cualquier resultado de medición de Alice proyecta el estado de Eve en
 
     ```{math}
     :label: 
         \tilde\rho_E^a=\tr_{AB}(\proj a\otimes\one_{BE}\proj{\tilde\Psi}_{ABE})/p(a),
     ```
 
-    where $p(a)$ is the probability that Alice observes the result $a$, $p(a)=\sum_bp(ab)=\tr(\proj a \otimes \one_{BE}\proj{\Psi}_{ABE})=\tr(\proj a\otimes\one_B\rho_{AB})=\tr(\proj a\rho_A)$, where $\rho_A=\tr_B\rho_{AB}$.
-    The Holevo quantity then reads
+donde $p(a)$ es la probabilidad de que Alice observe el resultado $a$, $p(a)=\sum_b p(ab)=\tr(\proj a \otimes \one_{BE} \proj{\Psi}_{ABE})=\tr(\proj a \otimes \one_B \rho_{AB})=\tr(\proj a \rho_A)$, donde $\rho_A=\tr_B \rho_{AB}$. La cantidad de Holevo entonces se expresa como
 
     ```{math}
     :label: 
         \chi(A:E)=S(\tilde\rho_E)-\sum_a p(a)S(\tilde\rho_E^a) ,
     ```
 
-    where $\tilde\rho_E=\sum_a p(a)\tilde\rho_E^a=\tr_{AB}\proj{\tilde\Psi}_{ABE}$. 
-    To compute a valid bound on the the key rate, Alice and Bob should minimise the Devetak-Winter bound over all those states compatible with the observed statistics
+donde $\tilde\rho_E=\sum_a p(a) \tilde\rho_E^a=\tr_{AB}\proj{\tilde\Psi}_{ABE}$. Para calcular un límite válido sobre la tasa de clave, Alice y Bob deben minimizar el límite Devetak-Winter sobre todos los estados compatibles con las estadísticas observadas.
 
     ```{math}
     :label: dwbound
         k_C\geq \min_{\tilde\rho_{ABE}\in\mathcal S_{ABE}}K_{DW}(\tilde\rho_{ABE}) .
     ```
 
-    In fact, Alice and Bob should assume that the prepared state by Eve is the worst possible, that is, the solution to the previous minimisation problem. This minimisation provides the desired asymptotic key rate.
+En realidad, Alice y Bob deben asumir que el estado preparado por Eve es el peor posible, es decir, la solución al problema de minimización anterior. Esta minimización proporciona la tasa de clave asintótica deseada.
 
-`````{admonition} Exercise 4: Computation of key rates
+`````{admonition} Ejercicio 4: Cálculo de tasas de clave
 :class: tip
 
-In the six-state protocol, Alice prepares the eigenstates of $\sigma_x$, $\sigma_y$ and $\sigma_z$, and sends them to Bob, who measures these observables. After basis reconciliation, Alice and Bob keep only those cases in which they use the same basis. In the entanglement-based picture, the protocol is basically equivalent to the preparation of the two-qubit maximally entangled state {eq}`bellstate` on which Alice and Bob measure the three Pauli operators. Consider now that Alice and Bob are connected by the so-called qubit depolarizing channel defined as
+En el protocolo de seis estados, Alice prepara los estados propios de $\sigma_x$, $\sigma_y$ y $\sigma_z$, y los envía a Bob, quien mide estos observables. Después de la reconciliación de bases, Alice y Bob conservan solo aquellos casos en los que usan la misma base. En la perspectiva basada en entrelazamiento, el protocolo es básicamente equivalente a la preparación del estado maximamente entrelazado de dos qubits {eq}`bellstate`, sobre el cual Alice y Bob miden los tres operadores de Pauli. Consideremos ahora que Alice y Bob están conectados por el llamado canal de despolarización de cúbits definido como
 
 ```{math}
 :label: depchannel
 \mathcal D_p(X)=pX + (1-p)\frac{\one}{2}\tr(X) .
 ```
 
-a) Compute the state between Alice and Bob resulting from applying this channel to half of the maximally entangled state, 
+a) Calcula el estado entre Alice y Bob resultante de aplicar este canal a la mitad del estado maximamente entrelazado,
 
 ```{math}
 :label: 
 \rho_{AB}=(\one_A\otimes\mathcal D_p)(\proj{\Phi}_{AB}).
 ```
 
-b) Compute the probabilities of the results by Alice and Bob when they both measure in the $z$ basis
+b) Calcula las probabilidades de los resultados para Alice y Bob cuando ambos miden en la base $z$,
 
 ```{math}
 :label: 
 P(\pm,\pm)=\bra{\pm z}\bra{\pm z}\rho_{AB} \ket{\pm z}\ket{\pm z} .
 ```
 
-c) Include Eve in the picture by providing a purification of the state $\rho_{AB}$, that is, a pure state $\ket{\psi}_{ABE}$ such that $\tr_E\proj{\Psi}_{ABE}=\rho_{AB}$.
+c) Incluye a Eve en el escenario proporcionando una purificación del estado $\rho_{AB}$, es decir, un estado puro $\ket{\psi}{ABE}$ tal que $\tr_E\proj{\Psi}{ABE}=\rho_{AB}$.
 
-d) Now compute the state between Alice, Bob and Eve after Alice and Bob measure in the $z$ basis
+d) Ahora calcula el estado entre Alice, Bob y Eve después de que Alice y Bob midan en la base $z$,
 
 ```{math}
 :label: 
 \rho_{ABE}=\sum_{a,b=\pm}P(a,b)\proj{a}\otimes\proj{b}\otimes\proj{e^{ab}}_E ,
 ```
 
-where $\ket{e^{\pm\pm}}_E$ is given by $\bra{\pm z}_A\otimes\bra{\pm z}_B\otimes\one_E\ket{\Psi}_{ABE}$ after normalization.
+donde $\ket{e^{\pm\pm}}_E$ está dado por $\bra{\pm z}_A\otimes\bra{\pm z}B\otimes\one_E\ket{\Psi}{ABE}$ después de la normalización.
 
-e) Compute the two terms appearing in the Devetak-Winter bound, $I(A:B)$ and $\chi(A:E)$, where 
+e) Calcula los dos términos que aparecen en el límite de Devetak-Winter, $I(A)$ y $\chi(A)$, donde
 
 ```{math}
 :label: 
 \chi(A:E)=S(\rho_E)-\sum_{a=\pm}p(a)S(\rho^a_E), 
 ```
 
-$S(\rho)=-\tr(\rho\log\rho)$ is the standard von Neumann entropy, $\rho^a_E=\sum_{b=\pm}p(b|a)\proj{e^{ab}}_E$ and $\rho_E=\sum_a p(a)\rho^a_E=\tr_{AB}\proj{\Psi}_{ABE}$. Calculate the value of $p$ for which the Devetak-Winter bound becomes equal to zero.
+donde $S(\rho)=-\tr(\rho\log\rho)$ es la entropía de von Neumann estándar, $\rho^a_E=\sum_{b=\pm}p(b|a)\proj{e^{ab}}E$ y $\rho_E=\sum_a p(a)\rho^a_E=\tr{AB}\proj{\Psi}_{ABE}$. Calcula el valor de $p$ para el cual el límite de Devetak-Winter se vuelve igual a cero.
 
 `````
 
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-

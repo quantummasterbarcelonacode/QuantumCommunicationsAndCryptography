@@ -8,106 +8,57 @@
 \def\proj#1{\ket{#1}\!\bra{#1}}
 ```
 
-# Other Protocols
+# Otros Protocolos 
 
-The BB84 protocol distributes a secret key from Alice and Bob
-using quantum states that are prepared by Alice, sent through the
-insecure channel and measured by Bob. This type of protocol is
-known as *prepare and measure*. Clearly, the construction is much more
-general than BB84 and one can design many other protocols for secure key
-distribution based on this idea. The main purpose of this section
-is to present some of them. One can find many more QKD
-protocols in the literature. Here, we choose those that represented
-an important theoretical advance.
+El protocolo BB84 distribuye una clave secreta entre Alice y Bob utilizando estados cuánticos que son preparados por Alice, enviados a través de un canal inseguro y medidos por Bob. Este tipo de protocolo es conocido como *prepara y mide*. Claramente, la construcción es mucho más general que el BB84, y es posible diseñar muchos otros protocolos para la distribución segura de claves basados en esta idea. El objetivo principal de esta sección es presentar algunos de ellos. Se pueden encontrar muchos más protocolos de QKD en la literatura. Aquí, elegimos aquellos que representaron un avance teórico importante.
 
 ## B92
 
-The main reason why Eve cannot read the information 
-encoded on the sent quantum states is that Alice is choosing them from a set that contains non-orthogonal quantum states.
-Being non-orthogonal, Eve cannot clone or measure all of them
-without introducing detectable errors. In 1992, Bennett showed that two non-orthogonal states
-are enough for secure QKD {cite}`B92`. The interest of this protocol comes from
-the fact that it is the one involving the minimal number of prepared states, namely two.
+La razón principal por la que Eve no puede leer la información codificada en los estados cuánticos enviados es que Alice los elige de un conjunto que contiene estados cuánticos no ortogonales. Al ser no ortogonales, Eve no puede clonarlos ni medirlos todos sin introducir errores detectables. En 1992, Bennett demostró que dos estados no ortogonales son suficientes para QKD de manera segura {cite}`B92`. El interés de este protocolo radica en que es el que involucra el menor número de estados preparados, es decir, dos.
 
-The protocol works as follows. Alice encodes a random bit into two non-orthogonal states, $\ket{\psi_0}$ and $\ket{\psi_1}$, and sends the prepared state to Bob through an insecure channel. Again, Eve's attack is limited by the non-orthogonality of the states. A possible simple measurement by Bob is as follows: he randomly chooses to measure in the basis defined by $\ket{\psi_0}$ and its orthogonal state, denoted by $\ket{\psi^\perp_0}$ and such that $\langle \psi^\perp_0\ket{\psi_0}=0$, or the basis $\{\ket{\psi_1},\ket{\psi^\perp_1}\}$. When Bob gets the output corresponding to any of the orhogonal states for any of the two measurements, say outcome corresponding to $\ket{\psi^\perp_0}$ when measuring $\{\ket{\psi_0},\ket{\psi^\perp_0}\}$, he knows that the state was for sure not $\ket{\psi_0}$ because $\langle \psi^\perp_0\ket{\psi_0}=0$, and hence it has to be $\ket{\psi_1}$. Therefore, in this reconciliation, Bob announces those instances in which his measurement gave an outcome corresponding to any of the states orthogonal to those prepared by Alice. A more efficient but also experimentally demanding measurement is given by the one attaining the optimal unambiguous discrimination of the states $\ket{\psi_0}$ and $\ket{\psi_1}$. 
+El protocolo funciona de la siguiente manera. Alice codifica un bit aleatorio en dos estados no ortogonales, $\ket{\psi_0}$ y $\ket{\psi_1}$, y envía el estado preparado a Bob a través de un canal inseguro. Nuevamente, el ataque de Eve está limitado por la no ortogonalidad de los estados. Una posible medición simple por parte de Bob es la siguiente: él elige al azar medir en la base definida por $\ket{\psi_0}$ y su estado ortogonal, denotado por $\ket{\psi^\perp_0}$ y tal que $\langle \psi^\perp_0\ket{\psi_0}=0$, o en la base $\{\ket{\psi_1},\ket{\psi^\perp_1}\}$. Cuando Bob obtiene un resultado correspondiente a cualquiera de los estados ortogonales en cualquiera de las dos mediciones, por ejemplo, el resultado correspondiente a $\ket{\psi^\perp_0}$ al medir $\{\ket{\psi_0},\ket{\psi^\perp_0}\}$, sabe que el estado no era $\ket{\psi_0}$ porque $\langle \psi^\perp_0\ket{\psi_0}=0$, y por lo tanto, tiene que ser $\ket{\psi_1}$. En esta reconciliación, Bob anuncia aquellas instancias en las que su medición dio un resultado correspondiente a cualquiera de los estados ortogonales a los preparados por Alice. Una medición más eficiente, pero también más exigente experimentalmente, es la que permite la discriminación inequívoca óptima de los estados $\ket{\psi_0}$ y $\ket{\psi_1}$. 
 
-`````{admonition} Exercise 2 - Unambiguous discrimination of two non-orthogonal pure states
+`````{admonition} Ejercicio 2 - Discriminación inequívoca de dos estados puros no ortogonales
 :class: tip
-Consider two non-orthogonal pure states $\ket{\psi_0}$ and $\ket{\psi_1}$, with $\langle \psi_0\ket{\psi_1}>0$. Without loss of generality, the two states can be rotated to be in the $XZ$ plane and with the $+z$ axis as bisector, so that they read:
+Considera dos estados puros no ortogonales $\ket{\psi_0}$ y $\ket{\psi_1}$, con $\langle \psi_0\ket{\psi_1}>0$. Sin pérdida de generalidad, los dos estados pueden ser rotados para estar en el plano $XZ$ y con el eje $+z$ como bisector, de manera que se escriben:
 
 ```{math}
 :label: states
 \ket{\psi_0}=\left(\begin{array}{c}\cos\theta \\ \sin\theta\end{array}\right) \quad\quad
-\ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right) ,
+\ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right),
 ```
 
-with $0<\theta\leq\pi/4$. Let $\ket{\psi}$ be an unknown state chosen between these two with equal probability. Consider a three-outcome measurements defined by the operators:
+con $0<\theta\leq\pi/4$. Sea $\ket{\psi}$ un estado desconocido elegido entre estos dos con probabilidad igual. Considera una medición de tres resultados, definida por los operadores:
 
 ```{math}
 :label: povm
 M_0=\mu\proj{\psi_1^\perp} \quad\quad  M_1=\mu\proj{\psi_0^\perp}   \quad\quad  M_?=\one-M_0-M_1 ,
 ```
 
-where $\ket{\psi_i^\perp}$ denotes the state orthogonal to $\ket{\psi_i}$. 
+donde $\ket{\psi_i^\perp}$ denota el estado ortogonal a $\ket{\psi_i}$.
 
-a) Find the range of values of $\mu$ so that the measurement is well defined, that is, all the three measurement operators are positive semi-definite. 
+a) Encuentra el rango de valores de $\mu$ para que la medición esté bien definida, es decir, para que los tres operadores de medición sean positivos semidefinidos.
 
-b) For this value of $\mu$, compute the probabilities of obtaining the three outputs for each of the two states. What's the operational meaning of this three-outcome measurement? 
+b) Para este valor de $\mu$, calcula las probabilidades de obtener los tres resultados para cada uno de los dos estados. ¿Cuál es el significado operacional de esta medición de tres resultados?
 
-<!--Luke: Should this not be "values" or "range of values" rather than "value"?-->
-
-c) Finally, determine the value of $\mu$ that minimises the average probability of obtaining the third outcome, that is:
+c) Finalmente, determina el valor de $\mu$ que minimiza la probabilidad promedio de obtener el tercer resultado, es decir:
 ```{math}
 :label:
 P_?=\frac{1}{2}\left(p(?|0)+p(?|1)\right) .
 ```
-How does it relate to the overlap between the two states?
+¿Cómo se relaciona con la superposición entre los dos estados?
 `````
 
+## Protocolo de Seis Estados
 
-## Six-state Protocol
+El protocolo de seis estados, introducido por BruÃŸ {cite}`6state`, sigue una dirección opuesta: involucra más estados para dificultar el ataque de Eve. En el protocolo BB84, solo se utilizan cuatro estados que pertenecen a un determinado ecuador en la esfera de Bloch, digamos el plano $xy$. Sin embargo, se podrían considerar protocolos más elaborados en los que Alice prepare estados que estén mejor distribuidos sobre la esfera. Esta es precisamente la idea principal detrás del protocolo de seis estados: Alice prepara un estado del conjunto de seis estados $\{\ket{\pm x},\ket{\pm y},\ket{\pm z}\}$. Bob mide ahora a lo largo de estas tres bases, $x$, $y$ y $z$. Claramente, después de la reconciliación de bases, se asume que Alice y Bob derivan una lista de bits perfectamente correlacionados. Desde el punto de vista de Eve, su tarea se vuelve más compleja ya que tiene que clonar o distinguir entre más estados no ortogonales. Sin embargo, desde el punto de vista de Alice y Bob, solo 1/3 de las rondas se mantienen después de la reconciliación de bases. Después de todo, la mejora en seguridad es moderada, mientras que en algunas implementaciones los requisitos tecnológicos para preparar los seis estados son más exigentes, por lo que el protocolo apenas se ha adoptado en la práctica.
 
-The six-state protocol, introduced by BruÃŸ {cite}`6state`, 
-goes in the opposite direction: it involves more states to make
-Eve's attack more difficult. In the BB84 protocol, only four states
-belonging to a given equator in the Bloch sphere, say the plane
-$xy$, are used. However, one could consider more elaborate
-protocols in which Alice prepares states that are better
-distributed over the sphere. This is precisely the main idea
-behind the six-state protocol: Alice prepares a state from the
-six-state set $\{\ket{\pm x},\ket{\pm y},\ket{\pm z}\}$. Bob now
-measures along these three bases, $x$, $y$ and $z$. Clearly, after basis reconciliation,
-Alice and Bob are assumed to derive a list of perfectly correlated
-bits. From Eve's point of view, her task becomes more complex as
-she has to clone, or distinguish, among more non-orthogonal
-states. However, from Alice and Bob's point of view, only 1/3 of the rounds are kept after basis reconciliation. 
-After all, the improvement in security is moderate, while in some implementations the technological
-requirements to prepare the six states are more demanding, so the protocol has hardly been adopted in practice.
+## Protocolo de Goldenber-Vaidman
 
-## Goldenber-Vaidman Protocol
+El último protocolo que presentamos en esta sección fue introducido por Goldenberg y Vaidman {cite}`vaidman`. El protocolo utiliza entrelazamiento y demuestra que la distribución segura de claves aún es posible utilizando dos estados ortogonales si estos dos estados se utilizan de manera cuidadosa. La idea del protocolo es la siguiente: Bob prepara un estado entrelazado de dos cúbits, $\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt 2$. Envía solo una de las partículas a Alice. Alice ahora no aplica nada, es decir, $\one$ o $\sigma_z$ dependiendo del bit que quiere transmitir, y envía el cúbit de vuelta a Bob. Los dos estados, dependiendo del bit aleatorio de Alice, son $\ket{\Phi^\pm}$,  donde ahora $\ket{\Phi^-}=(\ket{00}-\ket{11})/\sqrt{2}$. Al recibirlo, Bob puede discriminar perfectamente entre estos dos estados y leer el resultado porque son ortogonales. Aunque la codificación de la información por Alice genera dos estados ortogonales, Eve no puede aprovechar este hecho. Ella solo tiene acceso a una de las dos partículas cuánticas preparadas y transmitidas por Bob, mientras que la otra partícula siempre permanece en el laboratorio de Bob, y por lo tanto nunca está accesible para Eve. Esto hace que la medición cuántica por parte de Eve sobre los dos estados ortogonales sea imposible. De hecho, el cúbit al que Eve puede acceder siempre está en el estado reducido de $\ket{\Phi^\pm}$, igual a $\one/2$ para ambos estados, lo que garantiza la seguridad del protocolo. 
 
-The last protocol that we present in this part was introduced by
-Goldenber and Vaidman {cite}`vaidman`. The protocol uses entanglement and proves that secure key
-distribution is still possible using two orthogonal states if
-these two states are used in a careful way. The idea of the
-protocol is as follows: Bob prepares a two-qubit maximally
-entangled state, $\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt 2$. He
-sends only one of the particles to Alice. Alice now applies nothing, that is $\one$,
-or $\sigma_z$ depending on the bit she wants to transmit, and sends
-the qubit back to Bob. The two states, depending on Alice's random
-bit, are $\ket{\Phi^\pm}$, where now $\ket{\Phi^-}=(\ket{00}-\ket{11})/\sqrt 2$. On reception, Bob
-can perfectly discriminated between these two states and read the result because they are orthogonal.
-Although, as said, the information encoding by Alice produces two
-orthogonal states, this fact cannot be exploited by Eve. She only has
-access to one of the two
-quantum particles prepared and transmitted  by Bob, while the other particle always remains in
-Bob's lab, and is hence never accessible to Eve. This makes the quantum measurement by Eve on the two
-orthogonal states impossible. In fact, the qubit Eve can access to is always in the reduced state of $\ket{\Phi^\pm}$, equal to $\one/2$ for both states, which guarantees the protocol's security.
-
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-
-

@@ -1,46 +1,14 @@
-# Ekert Protocol
+# Protocolo de Ekert
 
-In all the previous protocols, except the last one, entanglement
-does not play any role: Alice prepares single-particle states
-that are sent to and measured by Bob. In 1991, Artur Ekert proposed
-a novel scheme for secure QKD that was based on entangled states
-and a Bell inequality violation {cite}`Ekert`. Ekert was not aware of
-the previous work by Bennett and Brassard, which appear in the
-proceedings of a computer scientist conference. Actually, he
-(re)discovered QKD in an independent way. However his approach to
-the problem seemed to be completely different, based on the
-Bell inequality violations produced by entangled states rather the the
-non-orthogonality of quantum states.
+En todos los protocolos anteriores, excepto en el último, el entrelazamiento no juega ningún papel: Alice prepara estados de una sola partícula que son enviados y medidos por Bob. En 1991, Artur Ekert propuso un esquema novedoso para la distribución segura de claves cuánticas basado en estados entrelazados y en la violación de la desigualdad de Bell {cite}`Ekert`. Ekert no estaba al tanto del trabajo previo de Bennett y Brassard, que apareció en las actas de una conferencia de informática. De hecho, él (re)descubrió la QKD de manera independiente. Sin embargo, su enfoque del problema parecía ser completamente diferente, basado en las violaciones de la desigualdad de Bell producidas por estados entrelazados, en lugar de la no ortogonalidad de los estados cuánticos.
 
-The protocol by Ekert works as follows (we provide here a slightly
-different version of his original protocol which is simpler but
-conceptually equivalent): Alice and Bob receive correlated quantum
-bits assumed to be in a maximally entangled state, say the state {eq}`bellstate`. 
-Alice and Bob apply each the two measurements $A_1$,
-$A_2$ and $B_1$ and $B_2$ given in {numref}`CHSHfig`, which
-maximise the value of the CHSH inequality. Moreover Alice applies
-a third measurement $A_3$ in the same direction as one of the
-measurements by Bob, say $B_1$, to get perfectly correlated
-outcomes. The idea is that the honest parties obtain a key from
-$A_3$ and $B_1$, which are perfectly aligned, while computing the
-CHSH value to guarantee that they share a maximally entangled state. In the ideal
-case, this parameter should be equal to $2\sqrt 2$.
+El protocolo de Ekert funciona de la siguiente manera (aquí proporcionamos una versión ligeramente diferente de su protocolo original, que es más simple pero conceptualmente equivalente): Alice y Bob reciben bits cuánticos correlacionados que se supone que están en un estado maximamente entrelazado, digamos el estado {eq}`bellstate`. Alice y Bob aplican cada uno las dos mediciones $A_1$, $A_2$ y $B_1$ y $B_2$ dadas en {numref}`CHSHfig`, que maximizan el valor de la desigualdad de CHSH. Además, Alice realiza una tercera medición $A_3$ en la misma dirección que una de las mediciones de Bob, digamos $B_1$, para obtener resultados perfectamente correlacionados. La idea es que las partes honestas obtienen una clave a partir de $A_3$ y $B_1$, que están perfectamente alineadas. Luego, calculan el valor de CHSH para garantizar que comparten un estado maximamente entrelazado. En el caso ideal, este parámetro debería ser igual a $2\sqrt{2}$.
 
-The intuition is that if the measurements by Alice and Bob lead to
-a Bell inequality violation, there is no local hidden-variable model
-reproducing the outcomes. This absence of local hidden-variable model
-should guarantee the privacy of the obtained outcomes. In other
-words, if Eve could predict the outcomes by the honest parties,
-this would constitute a local hidden variable model for the
-experiment. However this is impossible because the observed data
-violate a Bell inequality violation. Clearly, this is only the
-intuitive argument that led Ekert to the construction of this
-protocol, but does not represent any security proof. 
+La intuición es que si las mediciones de Alice y Bob derivan a una violación de la desigualdad de Bell, no existe un modelo de variables ocultas locales que reproduzca los resultados. Esta ausencia de un modelo de variables ocultas locales debería garantizar la privacidad de los resultados obtenidos. En otras palabras, si Eve pudiera predecir los resultados de las partes honestas, esto constituiría un modelo de variables ocultas locales para el experimento. Sin embargo, esto es imposible porque los datos observados violan una desigualdad de Bell. Claramente, este es solo el argumento intuitivo que llevó a Ekert a la construcción de este protocolo, pero no representa una prueba de seguridad.
 
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-
 

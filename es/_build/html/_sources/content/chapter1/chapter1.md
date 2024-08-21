@@ -1,24 +1,31 @@
-﻿# Basics of Quantum Mechanics
+# Fundamentos de la Mecánica Cuántica 
+# 
 
+El objetivo de esta primera sección es introducir los postulados básicos de la mecánica cuántica y su estructura matemática. La mayor parte del formalismo presentado aquí se puede encontrar en el Capítulo 2 de {cite}`nielsen2010quantum`. 
+La álgebra lineal es el estudio de los espacios vectoriales y de los operadores lineales que actúan sobre esos espacios. De hecho, toda la maquinaria cuántica es fundamentalmente álgebra lineal en un espacio de Hilbert complejo, representada por la notación menos estándar de Dirac. En esta notación, 
 
-The scope of this first section is to introduce the basic postulates of Quantum Mechanics and its mathematical structure. Most of the formalism presented here can be found in Chapter 2 of {cite}`nielsen2010quantum`. Linear algebra is the study of vector spaces and of linear operators acting on those spaces. In fact, all quantum machinery is fundamentally linear algebra on a complex Hilbert space, represented by the less standard Dirac notation. In this notation,
+- $\ket{\psi}$ representa un vector columna, también conocido como ket.
+- $\bra{\psi}$ representa el vector dual de $\ket{\psi}$, también conocido como bra.
+- $\braket{\phi|\psi}$ es el producto escalar estándar entre dos vectores $\ket{\phi}$ y $\ket{\psi}$.
 
-- $\ket{\psi}$ stands for a column vector, also known as a ket.
-- $\bra{\psi}$ stands for the vector dual to $\ket{\psi}$, also known as a bra.
-- $\braket{\phi|\psi}$ is the standard scalar product between two vectors $\ket{\phi}$ and $\ket{\psi}$.
+La norma de un vector $\ket{\psi}$ se define como $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. En general, la mayoría de las aplicaciones de la Información Cuántica (IC) tratan con espacios complejos de dimensión finita $d$, denotados por $\mathbb{C}^d$. 
 
-The norm of a vector $\ket{\psi}$ is defined as $||\psi||$ = $\sqrt{\braket{\psi|\psi}}$. In general, most of Quantum Information (QI) applications deal with complex spaces of finite dimension $d$, denoted by $\mathbb{C}^d$.
-
-`````{admonition} Example
+`````{admonition} Ejemplo
 :class: note
-Given two vectors in a complex two-dimensional space, denoted by $\mathbb{C}^2$,
+
+Dado dos vectores en un espacio complejo bidimensional, denotado por $\mathbb{C}^2$, 
 
 ```{math}
 :label:
 \ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix},
 ```
 
-one has
+```{math}
+:label:
+\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix},
+```
+
+se tiene 
 
 ```{math}
 :label:
@@ -27,91 +34,94 @@ one has
 ```
 `````
 
-## Pure states
-The first postulate of Quantum Mechanics states that every physical system is associated with a complex Hilbert space (a vector space with an inner product). The state of the system is described by a normalized vector in this space. Conversely, any normalized vector in the space represents a possible state of the physical system. Therefore, all the information about an isolated physical system can be specified by means of a vector in a Hilbert space. It follows from this postulate and the definition of a vector space that if $\ket{\psi_1}, \ket{\psi_2} \in \mathbb{C}^d$ are two possible states of a system, then any linear superposition of these two vectors, $\ket{\psi} = \alpha\ket{\psi_1} + \beta \ket{\psi_2}$, is a valid vector and, hence, also represents a valid state of the system. Here α and β are complex numbers such that $||\psi|| = 1$. This is also known as the superposition principle and $\ket{\psi}$ is often called a coherent superposition of $\ket{\psi_1}$ and $\ket{\psi_2}$.
+## Estados puros 
+El primer postulado de la Mecánica Cuántica establece que cada sistema físico está asociado a un espacio de Hilbert complejo (un espacio vectorial con un producto interno). El estado del sistema se describe mediante un vector normalizado en este espacio. En cambio, cualquier vector normalizado en el espacio representa un posible estado del sistema físico. Por lo tanto, toda la información sobre un sistema físico aislado puede especificarse mediante un vector en un espacio de Hilbert. Se deduce de este postulado y de la definición de un espacio vectorial que si $\ket{\psi_1}, \ket{\psi_2} \in \mathbb{C}^d$ son dos posibles estados de un sistema, entonces cualquier superposición lineal de estos dos vectores, $\ket{\psi} = \alpha\ket{\psi_1} + \beta \ket{\psi_2}$, es un vector válido y, por lo tanto, también representa un estado válido del sistema. Aquí, α y β son números complejos tales que $||\psi|| = 1$. Esto también se conoce como el principio de superposición y $\ket{\psi}$ a menudo se llama una superposición coherente de $\ket{\psi_1}$ y $\ket{\psi_2}$.
 
-## Composite systems
-Consider now two physical systems, $A$ and $B$, each described by the corresponding Hilbert space, $\mathcal{H}_A$ and $\mathcal{H}_B$. The Hilbert space associated to the global system $AB$, denoted by $\mathcal{H}$, consists of the tensor product of the two local spaces, $\mathcal{H} = \mathcal{H}_A \otimes \mathcal{H}_B$. This is another postulate of Quantum Mechanics.
+## Sistemas compuestos 
+Considera ahora dos sistemas físicos, $A$ y $B$, cada uno descrito por el espacio de Hilbert correspondiente, $\mathcal{H}_A$ y $\mathcal{H}_B$. El espacio de Hilbert asociado al sistema global $AB$, denotado por $\mathcal{H}$, consiste en el producto tensorial de los dos espacios locales, $\mathcal{H} = \mathcal{H}_A \otimes \mathcal{H}_B$. Este es otro postulado de la Mecánica Cuántica.
 
-## Entanglement
-The consequences of these two initial postulates are huge. Indeed, consider two
-possible states of the global system, $\mathcal{H}_A \otimes \mathcal{H}_B$: $\ket{\psi_A}\otimes\ket{\psi_B}$ and $\ket{\phi_A}\otimes\ket{\phi_B}$, or more briefly $\ket{\psi_A \psi_B}$ and $\ket{\phi_A \phi_B}$. Then, $\ket{\Psi} = \alpha\ket{\psi_A \psi_B} + \beta\ket{\phi_A \phi_B}$ also gives a possible state of the composite system $AB$. However, this state in general cannot always be written as the tensor product of two vectors on each local space, meaning $\ket{\Psi} \ne \ket{\varphi_A \varphi_B}$. In this case, it is said that $\ket{\Psi}$ is entangled. Entanglement then appears as a consequence of the tensor product and vector space structure of Quantum Mechanics.
+## Entrelazamiento
+Las consecuencias de estos dos postulados iniciales son inmensas. De hecho, considera dos posibles estados del sistema global, $\mathcal{H}_A \otimes \mathcal{H}_B$: $\ket{\psi_A}\otimes\ket{\psi_B}$ y $\ket{\phi_A}\otimes\ket{\phi_B}$, o más brevemente $\ket{\psi_A \psi_B}$ y $\ket{\phi_A \phi_B}$. Entonces, $\ket{\Psi} = \alpha\ket{\psi_A \psi_B} + \beta\ket{\phi_A \phi_B}$ también representa un posible estado del sistema compuesto $AB$. Sin embargo, este estado en general no siempre puede escribirse como el producto tensorial de dos vectores en cada espacio local, es decir, $\ket{\Psi} \ne \ket{\varphi_A \varphi_B}$. En este caso, se dice que $\ket{\Psi}$ está entrelazado. El entrelazamiento aparece entonces como una consecuencia de la estructura del producto tensorial y del espacio vectorial en la Mecánica Cuántica.
 
-## Unitary evolution
-The evolution of an isolated physical system, whose initial state is given by $\ket{\psi}$, is described by the application of a unitary operation, $U$. Thus, the evolved state of the system is $\ket{\phi} = U \ket{\psi}$. Recall that this is another postulate of Quantum Mechanics. A unitary operation on a Hilbert space of dimension $d$ is simply a $d×d$ complex matrix satisfying $U U^† = \mathbb{1}$.
+## Evolución unitaria 
+La evolución de un sistema físico aislado, cuyo estado inicial está dado por $\ket{\psi}$, se describe mediante la aplicación de una operación unitaria, $U$. Así, el estado evolucionado del sistema es $\ket{\phi} = U \ket{\psi}$. Recuerda que este es otro postulado de la Mecánica Cuántica. Una operación unitaria en un espacio de Hilbert de dimensión $d$ es simplemente una matriz compleja $d \times d$ que satisface $U U^\dagger = \mathbb{1}$.
 
-## Mixed states
-Consider the previous description of entanglement: a state is entangled when it cannot be written in a product form. That is, although the global state of the system can be described by a vector in $\mathcal{H}_A ⊗ \mathcal{H}_B$ , it is impossible to associate to each local system a vector in $\mathcal{H}_A$ and $\mathcal{H}_B$. This is indeed related to the fact that system A is correlated to B, so it is not isolated. Is there a mathematical way of describing non-isolated systems?
+## Estados mixtos
+Considera la descripción anterior del entrelazamiento: un estado está entrelazado cuando no puede escribirse en forma de producto. Es decir, aunque el estado global del sistema puede describirse mediante un vector en $\mathcal{H}_A ⊗ \mathcal{H}_B$, es imposible asociar a cada sistema local un vector en $\mathcal{H}_A$ y $\mathcal{H}_B$. Esto está relacionado con el hecho de que el sistema A está correlacionado con B, por lo que no está aislado. ¿Existe una manera matemática de describir sistemas no aislados?
 
-Alternatively, consider the case in which the preparation of a system is imperfect, that is, the system can be in state $|ψ_1〉$ with probability $p_1$, $|ψ_2〉$ with probability $p_2$ and so on. What’s the mathematical description of the state of the system? Notice that in both cases there is a lack of knowledge about the state of the system. This is evident in the second scenario, since the preparation is noisy. But the same is also true in the first case: when trying to describe the local state of a non-isolated system, all the correlations with other systems or the environment are ignored. Since the information on the state of the system is not complete, the state cannot be pure. In order to take into account this lack of information, the concept of mixed states is introduced.
+Alternativamente, considera el caso en el que la preparación de un sistema es imperfecta, es decir, el sistema puede estar en el estado $|ψ_1〉$ con probabilidad $p_1$, $|ψ_2〉$ con probabilidad $p_2$, y así sucesivamente. ¿Cuál es la descripción matemática del estado del sistema? Observa que en ambos casos hay una falta de conocimiento sobre el estado del sistema. Esto es evidente en el segundo escenario, ya que la preparación es ruidosa. Pero lo mismo es cierto en el primer caso: al intentar describir el estado local de un sistema no aislado, se ignoran todas las correlaciones con otros sistemas o el entorno. Dado que la información sobre el estado del sistema no es completa, el estado no puede ser puro. Para tener en cuenta esta falta de información, se introduce el concepto de estados mixtos.
 
-The mathematical description of a system that can be in state $|ψ_i〉∈ \mathcal{H}$ with probabilities $p_i$, where $i = 1, ..., N$ and $N$ is arbitrary, is no longer given by a vector in this Hilbert space, but by an operator acting on it with the form
+La descripción matemática de un sistema que puede estar en el estado $|ψ_i〉∈ \mathcal{H}$ con probabilidades $p_i$, donde $i = 1, ..., N$ y $N$ es arbitrario, ya no está dada por un vector en este espacio de Hilbert, sino por un operador que actúa sobre él con la forma
 
 ```{math}
 :label:
 ρ = \sum^N_{i=1} p_i |ψ_i〉〈ψ_i|. 
 ```
 
-Note that $\text{tr}(ρ) = ∑ p_i \text{tr}(|ψ_i〉〈ψ_i|) = \sum_i p_i 〈ψ_i|ψ_i〉 = \sum_i p_i = 1$. If the state is pure, $\ket{\psi}$, there is only one non-vanishing probability, $p_1 = 1$, and $ρ = \ket{\psi}〈ψ|$. More generally, a state $ρ$ is pure if and only if $\text{tr}(ρ^2) = 1$.
+Observa que $\text{tr}(ρ) = ∑ p_i \text{tr}(|ψ_i〉〈ψ_i|) = \sum_i p_i 〈ψ_i|ψ_i〉 = \sum_i p_i = 1$. Si el estado es puro, $\ket{\psi}$, solo hay una probabilidad no nula, $p_1 = 1$, y $ρ = \ket{\psi}〈ψ|$. De forma más general, un estado $ρ$ es puro si y solo si $\text{tr}(ρ^2) = 1$.
 
-## Noisy evolution
-Having introduced the mixed-state formalism, one can specify how an open quantum
-system evolves, or how to describe a noisy evolution. In this case, a quantum system in a pure state may loses its purity and become mixed. The general formalism is given by trace-preserving completely positive maps. Indeed, any evolution of any (possibly mixed) initial state, $ρ_i$, into a state $ρ_f$, can be represented as
+## Evolución ruidosa 
+Habiendo introducido el formalismo de estados mixtos, se puede especificar cómo evoluciona un sistema cuántico abierto, o cómo describir una evolución ruidosa. En este caso, un sistema cuántico en un estado puro puede perder su pureza y volverse mixto. El formalismo general está dado por mapas completamente positivos que conservan la traza. De hecho, cualquier evolución de un estado inicial (posiblemente mixto), $ρ_i$, a un estado $ρ_f$, puede representarse como
 
 ```{math}
 :label:
 ρ_f = \sum_k A_k ρ_i A^†_k,
 ```
 
-where $A_k$ are operators such that $∑_k A_k A_k^† = \mathbb{1}.$ Note that $ρ_f$ has trace one, is Hermitian and is positive semidefinite (has only non-negative eigenvalues).
+donde $A_k$ son operadores tales que $∑_k A_k A_k^† = \mathbb{1}$. Nota que $ρ_f$ tiene traza uno, es Hermítico y es positivo semidefinido (tiene únicamente valores propios no negativos).
 
-## Measurements
-The last process to consider is a measurement. Any measurement of $m$ outcomes on a system whose associated Hilbert space has dimension $d$ can be represented by the so-called Positive-Operator Valued Measure (POVM), defined by $r$ positive operators ${M_i ≥ 0}$, where $i = 1, ..., r$, such that $\sum_i M_i = \mathbb{1}$. Denote by $ρ$ the state to be measured. Then, outcome $i$ is obtained with probability $p(i|ρ) = \text{tr}(ρ M_i)$. This value is positive because $M_i$ are positive. It also follows that $\sum_i p(i|ρ) = \sum_i \text{tr}(ρ M_i) = \text{tr}(ρ \sum_i M_i) = \text{tr}(ρ) = 1$.
+## Medición
+El último proceso a considerar es una medición. Cualquier medición con $m$ resultados en un sistema cuyo espacio de Hilbert asociado tiene dimensión $d$ puede ser representada por el llamado medida de valor de operador positivo (POVM, por sus siglas en inglés), definida por $r$ operadores positivos ${M_i ≥ 0}$, donde $i = 1, ..., r$, tales que $\sum_i M_i = \mathbb{1}$. Denotemos por $ρ$ el estado a medir. Entonces, el resultado $i$ se obtiene con probabilidad $p(i|ρ) = \text{tr}(ρ M_i)$. Este valor es positivo porque $M_i$ son positivos. También se deduce que $\sum_i p(i|ρ) = \sum_i \text{tr}(ρ M_i) = \text{tr}(ρ \sum_i M_i) = \text{tr}(ρ) = 1$.
 
-## General evolution
-Collecting all the previous processes, a general evolution, consisting of a sequence
-of measurements and possibly noisy evolutions, can always be specified by a set of operators 
-$A^i_k$ describing a map transforming any state $ρ$ into
+## Evolución general 
+Reuniendo todos los procesos anteriores, una evolución general, que consiste en una secuencia de mediciones y posiblemente evoluciones ruidosas, siempre puede ser especificada por un conjunto de operadores $A^i_k$ que describe un mapa que transforma cualquier estado $ρ$ en
 
 ```{math}
 :label: eqnref5
 ρ_i = \frac{\sum_k A^i_k ρ A^{i†}_k}{\text{tr}(\sum_k A^i_k ρ A^{i†}_k)} \quad \text{with probability} \quad p_i = \text{tr}(\sum_k A^i_k ρ A^{i†}_k).
 ```
 
-Standard von Neumann measurements are covered by the previous formalism. A von Neumann, or rank-one projective, measurement in a $d$-dimensional system has $d$ possible outcomes and the corresponding operators are the projectors onto a basis in this space. More precisely: consider a basis in $\mathbb{C}^d$, defined by $d$ orthonormal vectors $|i〉$ such that $〈i|j〉= δ_{ij}$. A measurement in this basis is represented by the projectors $A_i = |i〉〈i|$. Note that if the initial state is $ρ$, the probability of obtaining outcome $i$, see Eq. [](eqnref5), is
+Las mediciones estándar de von Neumann están cubiertas por el
+formalismo anterior. Una medición de von Neumann, o medición
+proyectiva de rango uno, en un sistema de dimensión $d$ tiene
+$d$ resultados posibles y los operadores correspondientes son
+los proyectores sobre una base en este espacio. Más
+precisamente: considera una base en $\mathbb{C}^d$, definida
+por $d$ vectores ortonormales $|i〉$ tales que $〈i|j〉= δ_{ij}$. Una medición en esta base está representada por los
+proyectores $A_i = |i〉〈i|$. Nota que si el estado inicial
+es $ρ$, la probabilidad de obtener el resultado $i$, véase la
+Ec. [](eqnref5), es
 
 ```{math}
 :label:
 p_i = \text{tr}(|i〉〈i|ρ|i〉〈i|) = 〈i|ρ|i〉,
 ```
 
-while the state is mapped into
+mientras que el estado se mapea a 
 
 ```{math}
 :label:
 ρ_i = \frac{|i〉〈i|ρ|i〉〈i|}{\text{tr}(|i〉〈i|ρ|i〉〈i|)} = |i〉〈i|.
 ```
 
-For the pure-state case, ρ = $\ket{\psi}\bra{\psi}$, these expressions read
+Para el caso de estados puros, ρ = $\ket{\psi}\bra{\psi}$, estas expresiones se escriben como 
 
 ```{math}
 :label:
 p_i = \text{tr}(|i〉〈i|\ket{\psi}〈ψ||i〉〈i|) = |〈i\ket{\psi}|^2,
 ```
 
-and
+y 
 
 ```{math}
 :label:
 |ψ_i〉 = |i〉,
 ```
 
-that is, the initial state $\ket{\psi}$ collapses into $|i〉$ with a probability given by the square of the overlap, $|〈i\ket{\psi}|^2$. The previous formulae also imply that there is no measurement (physical process) distinguishing $\ket{\psi}$ from $e^{iγ} \ket{\psi}$. Thus, the state of a physical system is actually described by a vector in a Hilbert space, up to an irrelevant global phase.
+es decir, el estado inicial $\ket{\psi}$ colapsa en $|i〉$ con una probabilidad dada por el cuadrado de la superposición, $|〈i\ket{\psi}|^2$. Las fórmulas anteriores también implican que no hay ninguna medición (proceso físico) que distinga $\ket{\psi}$ de $e^{iγ} \ket{\psi}$. De esta manera, el estado de un sistema físico está en realidad descrito por un vector en un espacio de Hilbert, salvo por una fase global irrelevante.
 
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-
-

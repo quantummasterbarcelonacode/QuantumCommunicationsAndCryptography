@@ -1,65 +1,19 @@
-# Quantum Gates
+# Puertas Cuánticas 
 
-Although these notes focus on quantum communication and cryptography, let us briefly
-review here, for the sake of completeness, the basic logical operations
-acting on a qubit. Recall that any classical computation consists of a
-sequence of logical gates on a string of bits. Any of these gates
-can always be decomposed in terms of AND  and NOT gates. These two
-operations, then, give a universal set of gates for classical
-computation. One would conclude that what is needed in order to
-adapt classical to quantum computation is (i) to encode the classical
-bits into quantum bits as above, $i\rightarrow\ket i$, and (ii)
-to implement the quantum version of these gates.
+Aunque estas notas se centran en la comunicación y la criptografía cuánticas, revisemos brevemente, para mayor claridad, las operaciones lógicas básicas que actúan sobre un cúbit. Recordemos que cualquier cálculo clásico consiste en una secuencia de puertas lógicas sobre una cadena de bits. Cualquiera de estas puertas siempre puede descomponerse en términos de puertas AND y NOT. Estas dos operaciones, entonces, proporcionan un conjunto universal de puertas para la computación clásica. Se concluiría que lo que se necesita para adaptar la computación clásica a la cuántica es (i) codificar los bits clásicos en bits cuánticos como se describió anteriormente, $i \rightarrow \ket i$, y (ii) implementar la versión cuántica de estas puertas.
 
-When dealing with quantum information processing in a controlled (closed)
-system, any evolution is described by a unitary operation $U$.
-These operations are reversible, i.e. knowing the operation and
-the output state, one can always reconstruct the input state. Note
-however that the OR and AND gates are irreversible, since the output bit
-is not enough to infer the two input bits.
-Therefore, in order to embed standard classical computation into the
-quantum formalism, one first has to make it reversible. This is
-indeed possible, as shown by Bennett in {cite}`bennett1973logical`: any
-classical computation can be made reversible without an
-exponential increase of the required resources. This implies that
-any classical computation can be simulated by quantum means, as
-follows: first construct the equivalent reversible classical
-computation and then replace the classical bits, or cbits, by qubits. In this scheme, the
-corresponding quantum and reversible version of an operation $f$
-on a bit string $\vec b$ reads
+Cuando se trata de procesamiento de información cuántica en un sistema controlado (cerrado), cualquier evolución se describe mediante una operación unitaria $U$. Estas operaciones son reversibles, es decir, conociendo la operación y el estado de salida, siempre se puede reconstruir el estado de entrada. Sin embargo, cabe señalar que las puertas OR y AND son irreversibles, ya que el bit de salida no es suficiente para inferir los dos bits de entrada.
+
+Por lo tanto, para integrar la computación clásica estándar en el formalismo cuántico, primero hay que hacerla reversible. De hecho, esto es posible tal como mostró Bennett en {cite}`bennett1973logical`: cualquier cálculo clásico puede hacerse reversible sin un aumento exponencial de los recursos necesarios. Esto implica que cualquier cálculo clásico puede ser simulado por medios cuánticos, de la siguiente manera: primero se construye la computación clásica reversible equivalente y luego se reemplazan los bits clásicos, o cbits, por cúbits. En este esquema, la versión cuántica y reversible correspondiente de una operación $f$ sobre una cadena de bits $\vec b$ se representa como
 
 ```{math}
 :label: revf
     U_f\ket{\vec b}\ket 0=\ket{\vec b}\ket{f(\vec b)} .
 ```
 
-For example, the quantum AND can be as follows: an ancillary state
-in state $\ket{0}$ is appended to the two input qubits in states $\ket i$
-and $\ket j$. It is easy to see that there exists a unitary acting
-on a three-qubit system mapping $\ket i\ket j\ket 0\rightarrow\ket
-i\ket j\ket{i\cdot j}$. 
+Por ejemplo, el AND cuántico puede ser el siguiente: se añade un estado auxiliar en el estado $\ket{0}$ a los dos cúbits de entrada en los estados $\ket i$ y $\ket j$. Es fácil ver que existe una operación unitaria que actúa sobre un sistema de tres cúbits mapeando $\ket i\ket j\ket 0 \rightarrow \ket i\ket j\ket{i \cdot j}$.
 
-<!--Luke: rather than a dot, maybe $i \text{AND} j$ would be better?) -->
-
-The previous discussion shows that any classical computation can
-be embedded on a quantum computer, a device able to manipulate
-quantum states. However, one would like to see whether it is
-possible to go further. In order to do that, it is important to
-characterize the set of all quantum operations on a quantum state.
-For instance, it would be interesting to identify, as in the
-classical case, a set of elementary gates in which to decompose
-any unitary operation acting on an initial state of $N$ qubits. A seminal
-result in this direction was provided in {cite}`barenco1995elementary`: the set
-of all one-qubit operations plus the CNOT gate is
-universal. More precisely, any unitary operation acting on an $N$-qubit
-system, $U\in SU(2^N)$, can be decomposed as a sequence
-of single-qubit operations and CNOT gates. In fact, it turns out that any two-qubit
-entangling operation is sufficient for quantum
-computation when assisted with single-qubit operations
-{cite}`bremner2002practical`. From a more practical point of view, it has been
-shown that the so-called Hadamard ($U_H$), phase ($U_{ph}$), $\pi/8$ ($U_{\pi/8}$) and CNOT gates are universal, i.e. any $N$-qubit
-unitary operation can be decomposed in terms of these
-gates {cite}`boykin1999universal`. Their expressions are
+La discusión anterior muestra que cualquier cálculo clásico puede ser integrado en una computadora cuántica, un dispositivo capaz de manipular estados cuánticos. Sin embargo, sería interesante ver si es posible ir más allá. Para lograrlo, es importante caracterizar el conjunto de todas las operaciones cuánticas sobre un estado cuántico. Por ejemplo, sería interesante identificar, al igual que en el caso clásico, un conjunto de puertas elementales en el que descomponer cualquier operación unitaria que actúe sobre un estado inicial de $N$ cúbits. Un resultado fundamental en esta dirección fue proporcionado en {cite}`barenco1995elementary`: el conjunto de todas las operaciones de un solo cúbit más la puerta CNOT es universal. Específicamente, cualquier operación unitaria que actúe sobre un sistema de $N$ cúbits, $U\in SU(2^N)$, puede descomponerse como una secuencia de operaciones de un solo cúbit y puertas CNOT. En efecto, resulta que cualquier operación de entrelazamiento de dos cúbits es suficiente para la computación cuántica cuando se combina con operaciones de un solo cúbit {cite}`bremner2002practical`. Desde un punto de vista más práctico, se ha demostrado que las llamadas puertas Hadamard ($U_H$), fase ($U_{ph}$), $\pi/8$ ($U_{\pi/8}$) y CNOT son universales, es decir, cualquier operación unitaria de $N$ cúbits puede descomponerse en términos de estas puertas {cite}`boykin1999universal`. Sus expresiones son
 
 ```{math}
 :label:
@@ -71,14 +25,10 @@ gates {cite}`boykin1999universal`. Their expressions are
   0 & e^{i\pi/4}\\\end{pmatrix} .
 ```
 
-The implementation of the previous three single-qubit operations
-and the CNOT gate is sufficient for any experimental proposal of a
-quantum computer. 
+La implementación de las tres operaciones de un solo qubit anteriores y la puerta CNOT es suficiente para cualquier propuesta experimental de una computadora cuántica.
 
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-
-

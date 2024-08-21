@@ -3,34 +3,18 @@
 \def\L{{\cal L}}
 ```
 
-# The No-Cloning Theorem
+# El Teorema de No Clonación
 
-The previous sections have shown that a quantum bit is richer than its classical counterpart
-because it can exist in superposition states.
-Interestingly, the encoding of information on quantum states also
-suffer from limitations that do not appear in Classical
-Information Theory. One of the most important differences is encapsulated by the quantum
-No-cloning Theorem, that shows that quantum information cannot be
-copied. At first sight this is serious drawback for an information
-theory. However, there are ways of circumventing this problem, as explained 
-below. Moreover, this limitation can be turned into an
-advantage, as shown by Quantum Cryptography. But let us
-start by proving the No-cloning Theorem, first presented by Wootters
-and Zurek in {cite}`wootters1982single`.
+Las secciones anteriores han mostrado que un bit cuántico es más rico que su contraparte clásica porque puede existir en estados de superposición. Curiosamente, la codificación de información en estados cuánticos también presenta limitaciones que no aparecen en la Teoría de la Información Clásica. Una de las diferencias más importantes está encapsulada en el Teorema de No Clonación cuántico, que demuestra que la información cuántica no puede ser copiada. A primera vista, esto parece una desventaja grave para una teoría de la información. Sin embargo, existen formas de sortear este problema, como se explica a continuación. Además, esta limitación puede convertirse en una ventaja, como lo demuestra la Criptografía Cuántica. Pero comencemos demostrando el Teorema de No Clonación, presentado por Wootters y Zurek en {cite}`wootters1982single`.
 
-Assume there is a machine duplicating the quantum state of a
-system, i.e. for any  $\ket\psi\in\compl^d$, the
-machine outputs $\ket{\psi}\ket{\psi}$. This quantum process has to be
-mathematically described by a linear map $\L$,
+Supongamos que existe una máquina que duplica el estado cuántico de un sistema, es decir, para cualquier $\ket\psi \in \compl^d$, la máquina produce $\ket{\psi}\ket{\psi}$. Este proceso cuántico debe ser descrito matemáticamente por un mapa lineal $\L$,
 
 ```{math}
 :label: clmach
     \L(\ket{\psi}\otimes\ket{C})=\ket{\psi}\otimes\ket{\psi} ,
 ```
 
-where $\ket{C}$ is the state of the machine where the clone is
-produced. Since this machine is assumed to work for any initial
-state, when applied to two orthogonal states, one gets
+donde $\ket{C}$ es el estado de la máquina en la que se produce el clon. Dado que se asume que esta máquina funciona para cualquier estado inicial, al aplicarla a dos estados ortogonales, se obtiene
 
 ```{math}
 :label: clclon
@@ -38,7 +22,7 @@ state, when applied to two orthogonal states, one gets
   \L(\ket{1}\otimes\ket{C}) &=& \ket{1}\otimes\ket{1} .
 ```
 
-If we now look to a superposition state, say $(\ket 0+\ket 1)/\sqrt 2$, and since any quantum operation $\L$ is linear,
+Si ahora consideramos un estado de superposición, digamos $(\ket 0+\ket 1)/\sqrt 2$, y dado que cualquier operación cuántica $\L$ es lineal,
 
 ```{math}
 :label: 
@@ -47,7 +31,7 @@ If we now look to a superposition state, say $(\ket 0+\ket 1)/\sqrt 2$, and sinc
     \frac{1}{\sqrt 2}(\ket{00}+\ket{11}) ,
 ```
 
-which is not equal to two copies of the initial state,
+lo cual no es igual a dos copias del estado inicial,
 
 ```{math}
 :label: 
@@ -55,17 +39,10 @@ which is not equal to two copies of the initial state,
     \frac{1}{\sqrt 2}(\ket 0+\ket 1) .
 ```
 
-Therefore, the linearity of Quantum Mechanics makes the cloning
-process impossible. Note that one can indeed construct a cloning
-machine producing two copies of two orthogonal states
-(Eq. {eq}`clclon`), a classical cloning machine. Unfortunately, it
-fails when cloning any coherent superposition of these two states.
-In other words, nonorthogonality is at the heart of the No-cloning
-Theorem.
+Por lo tanto, la linealidad de la Mecánica Cuántica hace que el proceso de clonación sea imposible. De hecho, cabe destacar que se puede construir una máquina de clonación que produzca dos copias de dos estados ortogonales (Ec. {eq}`clclon`), una máquina de clonación clásica. Desafortunadamente, esta falla al clonar cualquier superposición coherente de estos dos estados. En otras palabras, la no ortogonalidad está en el corazón del Teorema de No Clonación.
 
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-

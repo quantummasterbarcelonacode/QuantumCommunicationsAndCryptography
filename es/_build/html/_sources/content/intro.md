@@ -1,14 +1,12 @@
-# Quantum Communications and Cryptography
+# Comunicaciones y Criptografía Cuánticas
 
 [English](https://www.google.com/search?q=need+to+replace+this+with+the+actual+link&client=ubuntu-sn&hs=4Uw&sca_esv=ffe33ea245d4af43&channel=fs&sxsrf=ACQVn09Pa2wqHfngIxR7KuEU28zfvWbcvg%3A1708622445910&ei=bYLXZfLvNq_yi-gPj_2gmAE&ved=0ahUKEwiy2sXPur-EAxUv-QIHHY8-CBMQ4dUDCBA&uact=5&oq=need+to+replace+this+with+the+actual+link&gs_lp=Egxnd3Mtd2l6LXNlcnAiKW5lZWQgdG8gcmVwbGFjZSB0aGlzIHdpdGggdGhlIGFjdHVhbCBsaW5rMgUQIRigATIFECEYoAEyBRAhGJ8FSKgVULsDWI8UcAF4AZABAJgBjwGgAbIUqgEEMC4yMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABgWGB4YD8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogSIBgGQBgU&sclient=gws-wiz-serp) - [Français](https://www.google.com/search?q=need+to+replace+this+with+the+actual+link&client=ubuntu-sn&hs=4Uw&sca_esv=ffe33ea245d4af43&channel=fs&sxsrf=ACQVn09Pa2wqHfngIxR7KuEU28zfvWbcvg%3A1708622445910&ei=bYLXZfLvNq_yi-gPj_2gmAE&ved=0ahUKEwiy2sXPur-EAxUv-QIHHY8-CBMQ4dUDCBA&uact=5&oq=need+to+replace+this+with+the+actual+link&gs_lp=Egxnd3Mtd2l6LXNlcnAiKW5lZWQgdG8gcmVwbGFjZSB0aGlzIHdpdGggdGhlIGFjdHVhbCBsaW5rMgUQIRigATIFECEYoAEyBRAhGJ8FSKgVULsDWI8UcAF4AZABAJgBjwGgAbIUqgEEMC4yMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABgWGB4YD8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogSIBgGQBgU&sclient=gws-wiz-serp) - [Español](https://www.google.com/search?q=need+to+replace+this+with+the+actual+link&client=ubuntu-sn&hs=4Uw&sca_esv=ffe33ea245d4af43&channel=fs&sxsrf=ACQVn09Pa2wqHfngIxR7KuEU28zfvWbcvg%3A1708622445910&ei=bYLXZfLvNq_yi-gPj_2gmAE&ved=0ahUKEwiy2sXPur-EAxUv-QIHHY8-CBMQ4dUDCBA&uact=5&oq=need+to+replace+this+with+the+actual+link&gs_lp=Egxnd3Mtd2l6LXNlcnAiKW5lZWQgdG8gcmVwbGFjZSB0aGlzIHdpdGggdGhlIGFjdHVhbCBsaW5rMgUQIRigATIFECEYoAEyBRAhGJ8FSKgVULsDWI8UcAF4AZABAJgBjwGgAbIUqgEEMC4yMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABgWGB4YD8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogSIBgGQBgU&sclient=gws-wiz-serp)
 
-These are the notes for the course on Quantum Communications and Cryptography of the Master
-of Quantum Science and Engineering at the University of Barcelona, given by Prof. Antonio Acín.
+Estas son las notas del curso de Comunicaciones y Criptografía Cuánticas del Máster en Ciencia y Tecnología Cuánticas de la Universidad de Barcelona, impartido por el Prof. Antonio Acín.
 
-We first give a summary of the mathematical techniques required in the quantum formalism: how to represent quantum states, their evolution and their measurement. This defines the rules common to any quantum information application. Then, we present the basic unit of quantum information, the so-called quantum bit or qubit. Then, we move to quantum cryptography, with an emphasis on quantum key distribution protocols. Finally, we discuss the problem of long-distance quantum communication. 
+Primero, damos un resumen de las técnicas matemáticas requeridas en el formalismo cuántico: cómo representar los estados cuánticos, su evolución y su medición. Esto define las reglas comunes a cualquier aplicación de la información cuántica. Luego, presentamos la unidad básica de la información cuántica, el llamado bit cuántico o cúbit. A continuación, nos movemos hacia la criptografía cuántica, con un énfasis en los protocolos de distribución de claves cuánticas. Finalmente, discutimos el problema de la comunicación cuántica a larga distancia.
 
-- Course material created by Prof. Antonio Acín
-- English write-up by Luke Mortimer and Fionnuala Curran
-- French translation by Dr. Hippolyte Dourdent and Dr. Raja Yehia
-- Spanish translation by Júlia Barberà Rodríguez and Mariana Navarro Asan-Srain
-
+- Material del curso creado por el Prof. Antonio Acín
+- Redacción en inglés por Luke Mortimer y Fionnuala Curran
+- Traducción al francés por Dr. Hippolyte Dourdent y Dr. Raja Yehia
+- Traducción al español por Júlia Barberà-Rodríguez y Mariana Navarro Asan-Srain

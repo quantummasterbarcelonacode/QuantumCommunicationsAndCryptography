@@ -6,146 +6,96 @@
 \def\sy{{\sigma_y}}
 ```
 
-# Bell's Theorem
+# Teorema de Bell
 
-Bell's theorem is arguably the strongest result showing the separation between classical and quantum physics (and the corresponding information theories). Historically, the whole discussion started with a celebrated article by Einstein, Podolsky and
-Rosen (EPR) "Can Quantum-Mechanical Description of Physical Reality
-Be Considered Complete?" {cite}`epr`, where they raised doubts about the
-completeness of quantum theory as a local-realistic (LR) theory. Their argument was based on three requirements that any physical theory, according to EPR, should satisfy:
+El teorema de Bell es, sin duda, el resultado más contundente que muestra la separación entre la física clásica y la cuántica (y las correspondientes teorías de la información). Históricamente, toda la discusión comenzó con un célebre artículo de Einstein, Podolsky y Rosen (EPR) titulado "¿Puede Considerarse Completa la Descripción Cuántico-Mecánica de la Realidad Física?" {cite}`epr`, donde plantearon dudas sobre la completitud de la teoría cuántica como una teoría local-realista (LR). Su argumento se basaba en tres requisitos que, según EPR, debería cumplir cualquier teoría física:
 
-- “Locality”: Events in space-like separated regions cannot have
-a (direct) causal relation.
-- “Reality”: If, without disturbing a system in any way, we
-can predict with certainty the value of a physical quantity,
-then there exists an element of physical reality corresponding
-to this physical quantity.
-- “Completeness”: Every element of the physical reality must
-have a counterpart in the physical theory.
+- "Localidad": Los eventos en regiones separadas espacialmente no pueden tener una relación causal (directa).
+- "Realidad": Si, sin perturbar un sistema de ninguna manera, podemos predecir con certeza el valor de una cantidad física, entonces existe un elemento de realidad físico correspondiente a esta cantidad física.
+- "Completitud": Todo elemento de la realidad física debe tener un contraparte en la teoría física.
 
-All these conditions seem intuitively natural and hardly
-restrictive. Einstein, Podolsky and Rosen argued that if quantum theory was local and realistic, then it could not be complete. They did not necessarily question the predictive power of quantum theory, but advocated for the existence of another theory, possibly with the same predictive power as quantum theory, but complete and hence more satisfactory. 
+Todas estas condiciones parecen intuitivamente naturales y poco restrictivas. Einstein, Podolsky y Rosen argumentaron que si la teoría cuántica fuera local y realista, entonces no podría ser completa. No cuestionaban necesariamente el poder predictivo de la teoría cuántica, sino que abogaban por la existencia de otra teoría, posiblemente con el mismo poder predictivo que la teoría cuántica, pero completa y, por lo tanto, más satisfactoria.
 
-For years the EPR program was mainly a matter of
-quasi-philosophical debate, until the work of J. Bell in 1964 {cite}`bell`. Bell's merit was to (i) identify a series of
-conditions, the so-called Bell inequalities, that any LR theory
-satisfies and (ii) provide a quantum experiment violating them.
-Therefore, Bell was able to construct an experimentally verifiable
-condition testing LR theories against quantum theory. The experimental
-demonstrations of Bell inequality violations, from the pioneering demonstrations in {cite}`Aspect,exp1,exp2,exp3` to the most recent loophole-free experiments {cite}`hanson,nist,vienna`, definitively closed the EPR program. 
+Durante años, el programa EPR fue principalmente un asunto de debate cuasi-filosófico, hasta el trabajo de J. Bell en 1964 {cite}`bell`. El mérito de Bell fue (i) identificar una serie de condiciones, las llamadas desigualdades de Bell, que cualquier teoría LR cumple y (ii) proporcionar un experimento cuántico que las viola. Por lo tanto, Bell pudo construir una condición verificable experimentalmente para poner a prueba las teorías LR frente a la teoría cuántica. Las demostraciones experimentales de violaciones de las desigualdades de Bell, desde las demostraciones pioneras en {cite}`Aspect,exp1,exp2,exp3` hasta los experimentos más recientes libres de "loopholes" {cite}`hanson,nist,vienna`, cerraron de manera definitiva el programa EPR.
 
-Here we present Bell's theorem through the best-known Bell inequality, the
-so-called Clauser-Horne-Shimony-Holt (CHSH) inequality {cite}`CHSH`. In fact, this was not the inequality used by Bell to prove his theorem, but it is now the most used one and it provides the simplest demonstration of Bell's result. To do that, we follow a more modern and operational formulation of the problem, without making explicit use of the concepts of locality and realism. 
+Aquí presentamos el teorema de Bell a través de la desigualdad de Bell más conocida, la llamada desigualdad Clauser-Horne-Shimony-Holt (CHSH) {cite}`CHSH`. De hecho, esta no fue la desigualdad utilizada por Bell para probar su teorema, pero es la más utilizada actualmente y proporciona la demostración más sencilla del resultado de Bell. Para ello, seguimos una formulación más moderna y operativa del problema, sin hacer uso explícito de los conceptos de localidad y realismo.
 
-A Bell scenario is defined by two non-communicating observers, Alice and Bob, who receive two correlated systems from a source. The parties can perform $m$ possible measurements on their systems, each with $r$ possible outcomes. The performed measurements are labelled by $x,y=1,\ldots,m$ and the obtained results by $a,b=1,\ldots,r$, see also {numref}`CHSHfig`. By repeating the experiment several times, it is possible to compute the conditional probabilities $p(ab|xy)$ of observing the different results $(a,b)$ for each configuration of measurements $(x,y)$. Clearly, these probabilities are all positive and normalised, $p(ab|xy)>0$ and $\sum_{a,b}p(ab|xy)=1$ for all $(x,y)$. These probabilities define the observed statistics and are often dubbed *correlations*. What EPR called a LR model is given by correlations that can be written as local deterministic strategies specifying the output given the input and possibly correlated through the particles received from the source. These correlations read
+Un escenario de Bell se define por dos observadores no comunicantes, Alice y Bob, que reciben dos sistemas correlacionados de una fuente. Las partes pueden realizar $m$ mediciones posibles en sus sistemas, cada una con $r$ resultados posibles. Las mediciones realizadas están etiquetadas por $x,y=1,\ldots,m$ y los resultados obtenidos por $a,b=1,\ldots,r$, véase también {numref}`CHSHfig`. Al repetir el experimento varias veces, es posible calcular las probabilidades condicionales $p(ab|xy)$ de observar los diferentes resultados $(a,b)$ para cada configuración de mediciones $(x,y)$. Claramente, estas probabilidades son todas positivas y normalizadas, $p(ab|xy)>0$ y $\sum_{a,b}p(ab|xy)=1$ para todos $(x,y)$. Estas probabilidades definen las estadísticas observadas y a menudo se denominan *correlaciones*. Lo que EPR llamaba un modelo LR se da mediante correlaciones que pueden escribirse como estrategias deterministas locales que especifican la salida dada la entrada y posiblemente correlacionadas a través de las partículas recibidas de la fuente. Estas correlaciones se expresan como
 
 ```{math}
 :label: lrmodel
 p(ab|xy)=\sum_{\lambda}p(\lambda) ~ D_A(a|x\lambda) ~ D_B(a|x\lambda) ,
 ```
 
-where $\lambda$ denote the instructions received from the source, possibly changing according to a probabilistic preparation $p(\lambda)$, while the functions $D_A$ and $D_B$ deterministically specify the output of each party given the input and these instructions. Note that these functions do not depend on the other party's input because it is assumed that the parties do not communicate. Also, note that if the value of $\lambda$ is known, which can be interpreted as the state prepared by the source, then it is possible to predict the measurement output in a deterministic way. It is natural to expect that, in nature, correlations between two non-communicating parties can always be expressed in this form.
+donde $\lambda$ denota las instrucciones recibidas de la fuente, que pueden cambiar de acuerdo con una preparación probabilística $p(\lambda)$, mientras que las funciones $D_A$ y $D_B$ especifican de manera determinista la salida de cada parte dada la entrada y estas instrucciones. Cabe destacar que estas funciones no dependen de la entrada de la otra parte porque se asume que las partes no se comunican. Además, es importante señalar que si se conoce el valor de $\lambda$, que puede interpretarse como el estado preparado por la fuente, entonces es posible predecir la salida de la medición de manera determinista. Es natural esperar que, en la naturaleza, las correlaciones entre dos partes no comunicantes siempre puedan expresarse de esta forma.
 
 ```{figure} ./CHSH_Fig.png
 ---
 height: 400px
 name: CHSHfig
 ---
-CHSH Bell inequality: Two
-  parties measure two two-outcome observables, $A_1$
-  and $A_2$ for Alice, and $B_1$ and $B_2$ for Bob. The choice of
-  measurement is represented by a bit, $x$ for Alice and $y$ for Bob.
-  The two possible
-  outcomes are labeled by $\pm 1$. For the quantum violation, observables are replaced by quantum operators and they act on a two-qubit maximally entangled state.
+Desigualdad de Bell CHSH: Dos partes miden dos observables de dos resultados, $A_1$ y $A_2$ para Alice, y $B_1$ y $B_2$ para Bob. La elección de la medición está representada por un bit, $x$ para Alice y $y$ para Bob. Los dos posibles resultados están etiquetados por $\pm 1$. Para la violación cuántica, los observables se reemplazan por operadores cuánticos que actúan sobre un estado de dos cúbits        maximamente entrelazado.
 ```
 
-The CHSH inequality {cite}`CHSH` is defined in the simplest Bell scenario in which the parties perform two measurements of two outputs, $m=r=2$, and the convention is to denote the performed measurement by $x,y=1,2$ and the obtained result by $a,b=\pm 1$. This convention is arbitrary but this choice simplifies the calculations. One then considers the following quantity:
+La desigualdad CHSH {cite}`CHSH` se define en el escenario de Bell más simple, en el cual las partes realizan dos mediciones con dos resultados, $m=r=2$, y la convención es denotar la medición realizada por $x,y=1,2$ y el resultado obtenido por $a,b=\pm 1$. Esta convención es arbitraria, pero esta elección simplifica los cálculos. Luego se considera la siguiente cantidad:
 
 ```{math}
 :label: CHSHdef
     \text{CHSH}=A_1B_1+A_1B_2+A_2B_1-A_2B_2 ,
 ```
-
-where $A_x$ ($B_y$) denotes the measurement result by Alice (Bob) when implementing measurement $x$ ($y$). It is very simple to see that if the measurement results are deterministically fixed, that is for any assignments of $\pm 1$ to these values, the CHSH expression satisfies $|CHSH|=2$. This implies that even if the assignment changes according to a probabilistic preparation at the source $p(\lambda)$,  as in Eq. {eq}`lrmodel`, the expectation value of this expression always satisfies
+donde $A_x$ ($B_y$) denota el resultado de la medición hecha por Alice (Bob) al implementar la medición $x$ ($y$). Es muy sencillo ver que si los resultados de las mediciones están fijados de manera determinista, es decir, para cualquier asignación de $\pm 1$ a estos valores, la expresión CHSH satisface $|CHSH|=2$. Esto implica que, incluso si la asignación cambia según una preparación probabilística en la fuente $p(\lambda)$, como en la Ec. {eq}`lrmodel`, el valor esperado de esta expresión siempre satisface
 
 ```{math}
 :label: CHSHineq
     \langle CHSH\rangle \leq 2.
 ```
 
-Eq. {eq}`CHSHineq` is the famous CHSH inequality, whose mathematical derivation is astonishingly simple. The maximal violation of an inequality for LR models is called the local bound, equal to 2 for CHSH.
+La Ec. {eq}`CHSHineq` es la famosa desigualdad CHSH, cuya derivación matemática es sorprendentemente simple. La violación máxima de una desigualdad para modelos LR se llama el límite local, que es igual a 2 para CHSH.
 
-Let us now consider a quantum implementation of a CHSH Bell scenario in which the state prepared by the source is the two-qubit maximally entangled state 
+Ahora consideremos una implementación cuántica de un escenario de Bell CHSH en el cual el estado preparado por la fuente es el estado de dos cúbits maximamente entrelazado
 
 ```{math}
 :label: bellstate
     \ket{\Phi^+}=\frac{1}{\sqrt 2}(\ket{00}+\ket{11}) ,
 ```
 
-and the measurements by each of the two parties are defined by the observables $A_1=\sx$, $A_2=\sz$, $B_1=(\sx+\sz)/\sqrt 2$ and $B_2=(\sx-\sz)/\sqrt 2$, see {numref}`CHSHfig`. After some calculations, it is possible to see that the quantum value of the CHSH expression for this configuration is 
+y las mediciones realizadas por cada una de las dos partes están definidas por los observables $A_1=\sx$, $A_2=\sz$, $B_1=(\sx+\sz)/\sqrt 2$ y $B_2=(\sx-\sz)/\sqrt 2$, véase {numref}`CHSHfig`. Tras algunos cálculos, es posible ver que el valor cuántico de la expresión CHSH para esta configuración es
 
 ```{math}
 :label: tsirelson
     \langle \text{CHSH}\rangle =\langle A_1B_1\rangle +\langle A_1B_2\rangle +\langle A_2B_1\rangle -\langle A_2B_2\rangle =2\sqrt 2 > 2,
 ```
 
-proving that quantum correlations do not have a description in terms of an EPR model {eq}`lrmodel`. The value $2\sqrt 2$ is the largest possible in quantum physics and is known as the Tsirelson bound {cite}`tsirelson`.
+demostrando que las correlaciones cuánticas no tienen una descripción en términos de un modelo EPR {eq}`lrmodel`. El valor $2\sqrt{2}$ es el mayor posible en la física cuántica y se conoce como el límite de Tsirelson {cite}`tsirelson`.
 
-<!--\textbf{Exercise 1}: Compute the quantum value of each of the four terms $\langle A_x\otimes B_y\rangle$, with $x,y=1,2$, in the CHSH expression for the state {eq}`bellstate` and settings as in {numref}`CHSHfig` and verify that they sum up to $2\sqrt 2$.-->
-
-`````{admonition} Exercise 1
+`````{admonition} Ejercicio 1
 :class: tip
-Compute the quantum value of each of the four terms $\langle A_x\otimes B_y\rangle$, with $x,y=1,2$, in the CHSH expression for the state {eq}`bellstate` and settings as in {numref}`CHSHfig` and verify that they sum up to $2\sqrt 2$.
+Calcula el valor cuántico de cada uno de los cuatro términos $\langle A_x\otimes B_y\rangle$, con $x,y=1,2$, en la expresión CHSH para el estado {eq}`bellstate` y con los ajustes como en {numref}`CHSHfig`, y verifica que la suma sea $2\sqrt{2}$.
 `````
 
-The implications of this violation are huge. First of all, there is no LR
-theory able to give a value of CHSH larger than 2, so either the predictions of quantum theory are wrong or the EPR program is not possible. Bell was thereby able to
-map the EPR debate into a measurable condition. The only thing
-left was to design the experimental situation for testing the
-violation of any of these quantities. The rigorous experimental
-verification of the violation of a Bell inequality came almost two
-decades after Bell's seminal paper {cite}`Aspect`. Since then, other
-experimental tests have been performed, all of who's results favored the
-quantum formalism {cite}`hanson,nist,vienna`.
+Las implicaciones de esta violación son enormes. En primer lugar, no existe ninguna teoría LR capaz de dar un valor de CHSH mayor a 2, por lo que o las predicciones de la teoría cuántica son incorrectas o el programa EPR no es posible. De este modo, Bell pudo mapear el debate EPR en una condición medible. Lo único que quedaba era diseñar la situación experimental para probar la violación de cualquiera de estas cantidades. La verificación experimental rigurosa de la violación de una desigualdad de Bell se realizó casi dos décadas después del trabajo seminal de Bell {cite}`Aspect`. Desde entonces, se han llevado a cabo otras pruebas experimentales, cuyos resultados han favorecido al formalismo cuántico {cite}`hanson,nist,vienna`.
 
-Two facts should be mentioned here. First, note that, although only
-one inequality is presented here, there are many similar
-conditions that characterize the set of probability distributions
-achievable in a LR theory {eq}`lrmodel`. The fact
-that quantum theory predicts the existence of correlations leading to a Bell inequality violation means that these quantum correlations cannot be written in this form.
-Second, despite the fact that quantum theory predicts the violation of these
-inequalities, no faster-than-light communication is allowed in the
-quantum formalism. This would correspond to the case where Alice's measurement
-could change Bob's measurement statistics. It is straightforward
-to prove that this is not possible. Consider the situation where
-Alice and Bob share a quantum state $\rho_{AB}$ on which they
-apply measurements $\{M_{a|x}\}$ and $\{M_{b|y}\}$ so that
+Aquí se deben mencionar dos hechos. Primero, cabe señalar que, aunque solo se presenta una desigualdad, existen muchas condiciones similares que caracterizan el conjunto de distribuciones de probabilidad alcanzables en una teoría LR {eq}`lrmodel`. El hecho de que la teoría cuántica prediga la existencia de correlaciones que conducen a una violación de una desigualdad de Bell significa que estas correlaciones cuánticas no pueden escribirse de esta forma.
+
+En segundo lugar, a pesar de que la teoría cuántica predice la violación de estas desigualdades, en el formalismo cuántico no se permite la comunicación más rápida que la luz. Esto correspondería al caso en el que la medición de Alice pudiera cambiar las estadísticas de medición de Bob. Es sencillo demostrar que esto no es posible. Considera la situación en la que Alice y Bob comparten un estado cuántico $\rho_{AB}$ sobre el cual aplican mediciones ${M_{a|x}}$ y ${M_{b|y}}$ de manera que
 
 ```{math}
 :label: qcorr
 p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{b|y}) .
 ```
 
-The probability that Alice obtains outcome $a$ when she measures $x$ and Bob measures $y$ is
+La probabilidad de que Alice obtenga el resultado $a$ cuando ella mide $x$ y Bob mide $y$ es
+
 ```{math}
 :label:
     p_A\,(a|xy)=\sum_b p\,(ab|xy)=\sum_b\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})
     =\tr(\rho_{AB}M_{a|x}\otimes \one_B) =\tr(A_x\rho_A) ,
 ```
 
-and we used that $\sum_b M_{b|y}=\one_B$ for all $y$ and where $\rho_A=\tr_B(\rho_{AB})$. Here $\tr_B$ is the partial trace over subsystem $B$. This means that Alice's local measurement statistics
-cannot be affected by any measurement by Bob (and vice versa), as they do not depend on the implemented measurement $y$, so
-no faster-than-light (in fact, instantaneous) communication is possible. 
+donde hemos utilizado que $\sum_b M_{b|y}=\one_B$ para todo $y$ y donde $\rho_A=\tr_B(\rho_{AB})$. Aquí, $\tr_B$ es la traza parcial sobre el subsistema $B$. Esto significa que las estadísticas de medición local de Alice no pueden verse afectadas por ninguna medición de Bob (y viceversa), ya que no dependen de la medición implementada $y$, por lo que no es posible la comunicación más rápida que la luz (de hecho, instantánea).
 
-<!--TODO Luke: I think this above section could be clearer, regarding the partial trace etc. -->
-
-## Bibliography for this section
+## Bibilografía para esta sección
 ```{bibliography}
 :style: unsrt
 :filter: docname in docnames
 ```
-
-
-
-
-
-

@@ -1,32 +1,5 @@
-# Quantum Cryptography
+# Criptografía Cuántica 
 
-The no-cloning theorem shows that QIT offers new possibilities but
-also limitations to the way information on quantum states can be
-processed. The derivation of this theorem is astonishingly simple. In fact, it turns out be connected to a better known
-limitation of the quantum formalism: that the measurement process
-perturbs the state of the system. Indeed, perfect cloning would
-obviously violate the fact that the state of a single quantum
-system cannot be perfectly known. If perfect cloning were
-possible, one could know everything of the state of a single
-particle without even measuring it, just by producing clones and
-measuring these, leaving the initial state untouched. On the other hand, if perfect estimation was possible, 
-one could easily clone by first perfectly measuring the state and then preparing as many copies of it as desired.
+El teorema de no clonación muestra que la TIC ofrece nuevas posibilidades pero también limitaciones en la forma en que se puede procesar la información en los estados cuánticos. La derivación de este teorema es sorprendentemente simple. De hecho, resulta estar conectada a una limitación más conocida del formalismo cuántico: que el proceso de medición perturba el estado del sistema. De hecho, la clonación perfecta violaría claramente el hecho de que el estado de un solo sistema cuántico no puede conocerse perfectamente. Si la clonación perfecta fuera posible, uno podría conocer todo sobre el estado de una sola partícula sin siquiera medirla, simplemente produciendo clones y midiendo estos, dejando el estado inicial intacto. Por otro lado, si la estimación perfecta fuera posible, uno podría clonar fácilmente haciendo primero una medición precisa del estado y luego preparando tantas copias como se desee.
 
-Remarkably, these limitations can be converted into something
-positive, as beautifully demonstrated by quantum cryptography:
-since the measurement process perturbs the state of a system, the
-action of any adversary trying to read quantum information propagating
-through a channel has a detectable effect on the sent
-state. Or in other words, the action of the adversary, also known as
-the eavesdropper, is limited by the impossibility of producing a
-perfect copy of the quantum state. These two ideas lie at the
-basis of any quantum cryptography protocol. In what follows, we
-present several of the main results on quantum cryptography. More
-precisely, we focus all our analysis on quantum key distribution.
-This is the most advanced quantum cryptography application, both
-from a theoretical and experimental point of view. However, it should
-be made clear that "quantum cryptography" is a general term that
-refers to any cryptographic protocol exploiting the quantum formalism.
-
-
-
+Notablemente, estas limitaciones pueden convertirse en algo positivo, como se demuestra maravillosamente en la criptografía cuántica: dado que el proceso de medición perturba el estado de un sistema, la acción de cualquier adversario que intente leer la información cuántica que se propaga a través de un canal tiene un efecto detectable sobre el estado enviado. En otras palabras, la acción del adversario, también conocido como el espía, está limitada por la incapacidad de producir una copia perfecta del estado cuántico. Estas dos ideas están en la base de cualquier protocolo de criptografía cuántica. A continuación, presentamos varios de los principales resultados en criptografía cuántica. Con mayor exactitud, centramos todo nuestro análisis en la distribución de claves cuánticas. Esta es la aplicación de criptografía cuántica más avanzada, tanto desde un punto de vista teórico como experimental. Sin embargo, debe quedar claro que "criptografía cuántica" es un término general que se refiere a cualquier protocolo criptográfico que explote el formalismo cuántico.

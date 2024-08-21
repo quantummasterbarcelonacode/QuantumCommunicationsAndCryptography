@@ -1,5 +1,5 @@
-# Basics Elements of Quantum Information Theory
+# Elementos Básicos de la Teoría de la Información Cuántica
 
-The previous section summarizes the quantum formalism and presents the main tools that will be needed in what follows. In this section, we introduce some of the most basic concepts in Quantum Information Theory (QIT): the quantum bit and quantum gates (or operations). Once all these concepts have been introduced, we will illustrate through the no-cloning theorem and Bell's theorem how QIT can drastically depart from its classical counterpart.
+La sección anterior resume el formalismo cuántico y presenta las principales herramientas que se necesitarán a continuación. En esta sección, introducimos algunos de los conceptos más básicos en la Teoría de la Información Cuántica (TIC): el bit cuántico y las puertas cuánticas (o operaciones). Una vez que todos estos conceptos hayan sido introducidos, ilustraremos, a través del teorema de la no clonación y el teorema de Bell, cómo la TIC puede diferir drásticamente de su contraparte clásica.
 
 
