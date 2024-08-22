@@ -5,7 +5,7 @@
 
 # El Teorema de No Clonación
 
-Las secciones anteriores han mostrado que un bit cuántico es más rico que su contraparte clásica porque puede existir en estados de superposición. Curiosamente, la codificación de información en estados cuánticos también presenta limitaciones que no aparecen en la Teoría de la Información Clásica. Una de las diferencias más importantes está encapsulada en el Teorema de No Clonación cuántico, que demuestra que la información cuántica no puede ser copiada. A primera vista, esto parece una desventaja grave para una teoría de la información. Sin embargo, existen formas de sortear este problema, como se explica a continuación. Además, esta limitación puede convertirse en una ventaja, como lo demuestra la Criptografía Cuántica. Pero comencemos demostrando el Teorema de No Clonación, presentado por Wootters y Zurek en {cite}`wootters1982single`.
+Las secciones anteriores han mostrado que un bit cuántico es más rico que su contraparte clásica porque puede existir en estados de superposición. Curiosamente, la codificación de información en estados cuánticos también presenta limitaciones que no aparecen en la Teoría de la Información Clásica. Una de las diferencias más importantes está encapsulada en el teorema de no clonación cuántico, que demuestra que la información cuántica no puede ser copiada. A primera vista, esto parece una desventaja grave para una teoría de la información. Sin embargo, existen formas de sortear este problema, como se explica a continuación. Además, esta limitación puede convertirse en una ventaja, como lo demuestra la Criptografía Cuántica. Pero comencemos demostrando el teorema de no clonación, presentado por Wootters y Zurek en {cite}`wootters1982single`.
 
 Supongamos que existe una máquina que duplica el estado cuántico de un sistema, es decir, para cualquier $\ket\psi \in \compl^d$, la máquina produce $\ket{\psi}\ket{\psi}$. Este proceso cuántico debe ser descrito matemáticamente por un mapa lineal $\L$,
 
@@ -39,7 +39,7 @@ lo cual no es igual a dos copias del estado inicial,
     \frac{1}{\sqrt 2}(\ket 0+\ket 1) .
 ```
 
-Por lo tanto, la linealidad de la Mecánica Cuántica hace que el proceso de clonación sea imposible. De hecho, cabe destacar que se puede construir una máquina de clonación que produzca dos copias de dos estados ortogonales (Ec. {eq}`clclon`), una máquina de clonación clásica. Desafortunadamente, esta falla al clonar cualquier superposición coherente de estos dos estados. En otras palabras, la no ortogonalidad está en el corazón del Teorema de No Clonación.
+Por lo tanto, la linealidad de la Mecánica Cuántica hace que el proceso de clonación sea imposible. De hecho, cabe destacar que se puede construir una máquina de clonación que produzca dos copias de dos estados ortogonales (Ec. {eq}`clclon`), una máquina de clonación clásica. Desafortunadamente, esta falla al clonar cualquier superposición coherente de estos dos estados. En otras palabras, la no ortogonalidad está en el corazón del teorema de no clonación.
 
 ## Bibilografía para esta sección
 ```{bibliography}
