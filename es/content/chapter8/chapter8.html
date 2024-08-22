@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -447,7 +446,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="escenario-independiente-del-dispositivo">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="escenario-independiente-del-dispositivo">
 <h1>Escenario Independiente del Dispositivo<a class="headerlink" href="#escenario-independiente-del-dispositivo" title="Link to this heading">#</a></h1>
 <p>La solución a los anteriores ataques de hacking viene de el llamado escenario independiente del dispositivo (device-independent, DI) <span id="id1">[<a class="reference internal" href="section2.html#id36" title="Antonio Acín, Nicolas Brunner, Nicolas Gisin, Serge Massar, Stefano Pironio, and Valerio Scarani. Device-independent security of quantum cryptography against collective attacks. Physical Review Letters, 98(23):230501, 2007.">1</a>]</span>. En este plantamiento, los dispositivos cuánticos son vistos como cajas negras con las que los usarios pueden interactuar, proporcionando una entrada clásica y obteniendo una salida clásica. El plantamiento DI es bastante general y, de hecho, puede aplicarse a cualquier procolo de información cuántica, pero en lo que sigue nos centraremos en QKD.</p>
 <p>Como se mencionó, en el escenario DI, los dispositivos son vistos como cajas negras cuánticas que procesan una entrada clásica para producir una salida clásica. Se supone que el proceso de entrada y salida en un dispositivo dado ocurre localmente, lo que significa que no está influenciado causalmente por lo que sucede en otros dispositivos. Esto se puede imponer, por ejemplo, sincronizando los dispositivos para que estos procesos de entrada y salida definan eventos separados espacialmente, y por lo tanto, no haya tiempo para que cualquier señal, ni siquiera las que se propagan a la velocidad de la luz, pueda ir de un dispositivo a otro. Sin embargo, puede haber otras formas de imponer esta suposición de no comunicación. En un contexto de QKD, Alice y Bob tienen cada uno un dispositivo, véase <a class="reference internal" href="#difig"><span class="std std-numref">Figura 8</span></a>. Sin pérdida de generalidad, asumimos que sus entradas, etiquetadas por <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, pueden tomar <span class="math notranslate nohighlight">\(m\)</span> valores posibles y sus salidas, etiquetadas por <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span>, pueden tomar <span class="math notranslate nohighlight">\(r\)</span> resultados posibles, es decir, <span class="math notranslate nohighlight">\(x,y=1,\ldots,m\)</span> and <span class="math notranslate nohighlight">\(a,b=1,\ldots,r\)</span>. Alice y Bob prueban sus dispositivos utilizando diferentes entradas y recopilando las estadísticas que generan. Esto se encapsula en la distribución de probabilidad condicional <span class="math notranslate nohighlight">\(p(ab|xy)\)</span>, que da la probabilidad de que Alice y Bob observen los resultados <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span>, respectivamente, cuando usan las entradas <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>. Por lo tanto, tenemos una lista de <span class="math notranslate nohighlight">\(m^2r^2\)</span> números reales, tales que <span class="math notranslate nohighlight">\(p(ab|xy)\geq 0\)</span> y <span class="math notranslate nohighlight">\(\sum_{ab}p(ab|xy)=1\)</span> para todo <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>. Esta distribución de probabilidad condicional también se denomina <em>correlaciones</em>. El objetivo de un protocolo DIQKD es concluir a partir de estas correlaciones observadas, y solo de ellas, que las partes pueden destilar una clave secreta. Si este es el caso, no puede haber ninguna discrepancia entre el modelado y la implementación, ya que no se realiza ningún modelado en estos dispositivos, aparte del hecho de que lo que sea que ocurra internamente para producir la salida dada la entrada debe ser compatible con las leyes cuánticas.</p>

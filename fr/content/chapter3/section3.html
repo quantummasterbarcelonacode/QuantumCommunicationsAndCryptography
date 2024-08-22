@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Autres Protocoles &#8212; Quantum Communications and Cryptography</title>
+    <title>&lt;no title&gt; &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -179,19 +179,17 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">Cryptographie Quantique</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -425,7 +423,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Autres Protocoles</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -434,12 +432,9 @@ document.write(`
                 <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b92">B92</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocole-a-six-etats">Protocole à six états</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocole-goldenber-vaidman">Protocole Goldenber-Vaidman</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliographie-de-la-section">Bibliographie de la section</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -450,70 +445,80 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="math notranslate nohighlight">
-\[\def\tr{{\text{tr}}}
-\def\one{{\mathbb{1}}}
-\def\sz{{\sigma_z}}
-\def\sx{{\sigma_x}}
-\def\sy{{\sigma_y}}
-\def\compl{{\mathbb{C}}}
-\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="autres-protocoles">
-<h1>Autres Protocoles<a class="headerlink" href="#autres-protocoles" title="Link to this heading">#</a></h1>
-<p>Le protocole BB84 distribue une clé secrète entre Alice et Bob en utilisant des états quantiques préparés par Alice, envoyés à travers un canal non sécurisé et mesurés par Bob. Ce type de protocole est connu sous le nom de « préparer et mesurer » (« prepare and measure »). Il est clair que la construction est beaucoup plus générale que le BB84 et que l’on peut concevoir de nombreux autres protocoles de distribution de clés sécurisées basés sur cette idée. Le but principal de cette section est de présenter certains d’entre eux. On peut trouver de nombreux autres protocoles QKD dans la littérature. Ici, nous choisissons ceux qui ont représenté une avancée théorique importante.</p>
-<section id="b92">
-<h2>B92<a class="headerlink" href="#b92" title="Link to this heading">#</a></h2>
-<p>La principale raison pour laquelle Eve ne peut pas lire l’information encodée dans les états quantiques envoyés est qu’Alice les choisit à partir d’un ensemble contenant des états quantiques non orthogonaux. Eve ne peut donc pas les cloner ou les mesurer tous sans introduire des erreurs détectables. En 1992, Bennett a démontré que deux états non orthogonaux suffisent pour une distribution sécurisée de clés quantiques (QKD) <span id="id1">[<a class="reference internal" href="#id23" title="Charles H Bennett. Quantum cryptography using any two nonorthogonal states. Physical review letters, 68(21):3121, 1992.">1</a>]</span>. L’intérêt de ce protocole réside dans le fait qu’il implique le nombre minimal d’états préparés, à savoir deux.
-Le protocole fonctionne comme suit. Alice encode un bit aléatoire dans deux états non orthogonaux, <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> et <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, et envoie l’état préparé à Bob à travers un canal non sécurisé. Une fois encore, l’attaque d’Eve est limitée par la non-orthogonalité des états. Une mesure possible et simple pour Bob est la suivante : il choisit aléatoirement de mesurer dans la base définie par <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> et son état orthogonal, noté <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> et tel que <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, ou bien la base <span class="math notranslate nohighlight">\(\{\ket{\psi_1},\ket{\psi^\perp_1}\}\)</span>. Lorsque Bob obtient le résultat correspondant à l’un des états orthogonaux pour l’une des deux mesures, disons le résultat correspondant à <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> quand il mesure <span class="math notranslate nohighlight">\(\{\ket{\psi_0},\ket{\psi^\perp_0}\}\)</span>, il sait que l’état n’était certainement pas <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> car <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, et donc qu’il doit s’agir de <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>. Ainsi, lors de cette réconciliation, Bob annonce les instances où sa mesure a donné un résultat correspondant à l’un des états orthogonaux à ceux préparés par Alice. Une mesure plus efficace mais également plus exigeante expérimentalement est celle qui permet une discrimination non ambiguë optimale des états <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> et <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Exercice 2 – Discrimination non ambiguë de deux états purs non-orthogonaux.</p>
-<p>Considérons deux états purs non-orthogonaux <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> et <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, avec <span class="math notranslate nohighlight">\(\langle \psi_0\ket{\psi_1}&gt;0\)</span>. Sans perte de généralité, les deux états peuvent être orientés de manière à se situer dans le plan <span class="math notranslate nohighlight">\(XZ\)</span> et avec l’axe <span class="math notranslate nohighlight">\(+z\)</span> comme bisecteur, de sorte qu’ils soient représentés par:</p>
-<div class="math notranslate nohighlight" id="equation-states">
-<span class="eqno">(29)<a class="headerlink" href="#equation-states" title="Link to this equation">#</a></span>\[\begin{split}\ket{\psi_0}=\left(\begin{array}{c}\cos\theta \\ \sin\theta\end{array}\right) \quad\quad
-\ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right) ,\end{split}\]</div>
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<p>﻿```{math}
+\def\tr}
+\def\one}
+\def\sz
+\def\sx
+\def\sy
+\def\compl}
+\def\proj#1{\ket{#1}!\bra{#1}}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+# Autres Protocoles
+
+Le protocole BB84 distribue une clé secrète entre Alice et Bob en utilisant des états quantiques préparés par Alice, envoyés à travers un canal non sécurisé et mesurés par Bob. Ce type de protocole est connu sous le nom de « préparer et mesurer » (« prepare and measure »). Il est clair que la construction est beaucoup plus générale que le BB84 et que l&#39;on peut concevoir de nombreux autres protocoles de distribution de clés sécurisées basés sur cette idée. Le but principal de cette section est de présenter certains d&#39;entre eux. On peut trouver de nombreux autres protocoles QKD dans la littérature. Ici, nous choisissons ceux qui ont représenté une avancée théorique importante.
+
+## B92
+
+La principale raison pour laquelle Eve ne peut pas lire l&#39;information encodée dans les états quantiques envoyés est qu&#39;Alice les choisit à partir d&#39;un ensemble contenant des états quantiques non orthogonaux. Eve ne peut donc pas les cloner ou les mesurer tous sans introduire des erreurs détectables. En 1992, Bennett a démontré que deux états non orthogonaux suffisent pour une distribution sécurisée de clés quantiques (QKD) {cite}`B92`. L&#39;intérêt de ce protocole réside dans le fait qu&#39;il implique le nombre minimal d&#39;états préparés, à savoir deux.
+Le protocole fonctionne comme suit. Alice encode un bit aléatoire dans deux états non orthogonaux, $\ket{\psi_0}$ et $\ket{\psi_1}$, et envoie l’état préparé à Bob à travers un canal non sécurisé. Une fois encore, l’attaque d’Eve est limitée par la non-orthogonalité des états. Une mesure possible et simple pour Bob est la suivante : il choisit aléatoirement de mesurer dans la base définie par $\ket{\psi_0}$ et son état orthogonal, noté $\ket{\psi^\perp_0}$ et tel que $\langle \psi^\perp_0\ket{\psi_0}=0$, ou bien la base $\{\ket{\psi_1},\ket{\psi^\perp_1}\}$. Lorsque Bob obtient le résultat correspondant à l&#39;un des états orthogonaux pour l&#39;une des deux mesures, disons le résultat correspondant à $\ket{\psi^\perp_0}$ quand il mesure $\{\ket{\psi_0},\ket{\psi^\perp_0}\}$, il sait que l&#39;état n&#39;était certainement pas $\ket{\psi_0}$ car $\langle \psi^\perp_0\ket{\psi_0}=0$, et donc qu’il doit s’agir de $\ket{\psi_1}$. Ainsi, lors de cette réconciliation, Bob annonce les instances où sa mesure a donné un résultat correspondant à l&#39;un des états orthogonaux à ceux préparés par Alice. Une mesure plus efficace mais également plus exigeante expérimentalement est celle qui permet une discrimination non ambiguë optimale des états $\ket{\psi_0}$ et $\ket{\psi_1}$. 
+
+`````{admonition} Exercice 2 – Discrimination non ambiguë de deux états purs non-orthogonaux.
+:class: tip
+Considérons deux états purs non-orthogonaux $\ket{\psi_0}$ et $\ket{\psi_1}$, avec $\langle \psi_0\ket{\psi_1}&gt;0$. Sans perte de généralité, les deux états peuvent être orientés de manière à se situer dans le plan $XZ$ et avec l’axe $+z$ comme bisecteur, de sorte qu’ils soient représentés par:
+
+```{math}
+:label: states
+\ket{\psi_0}=\left(\begin{array}{c}\cos\theta \\ \sin\theta\end{array}\right) \quad\quad
+\ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right) ,
+</pre></div>
+</div>
 <p>avec <span class="math notranslate nohighlight">\(0&lt;\theta\leq\pi/4\)</span>. Soit <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> un état inconnu choisi entre ces deux états avec une probabilité égale. Considérons une mesure à trois réponses définie par les opérateurs suivants :</p>
 <div class="math notranslate nohighlight" id="equation-povm">
-<span class="eqno">(30)<a class="headerlink" href="#equation-povm" title="Link to this equation">#</a></span>\[M_0=\mu\proj{\psi_1^\perp} \quad\quad  M_1=\mu\proj{\psi_0^\perp}   \quad\quad  M_?=\one-M_0-M_1 ,\]</div>
+<span class="eqno">(28)<a class="headerlink" href="#equation-povm" title="Link to this equation">#</a></span>\[M_0=\mu\proj{\psi_1^\perp} \quad\quad  M_1=\mu\proj{\psi_0^\perp}   \quad\quad  M_?=\one-M_0-M_1 ,\]</div>
 <p>où <span class="math notranslate nohighlight">\(\ket{\psi_i^\perp}\)</span> désigne l’état orthogonal à <span class="math notranslate nohighlight">\(\ket{\psi_i}\)</span>.</p>
 <p>a) Trouvez l’intervalle des valeurs de <span class="math notranslate nohighlight">\(\mu\)</span> pour que la mesure soit bien définie, c’est-à-dire que les trois opérateurs de mesure soient positifs semi-définis.
 b) Pour cette valeur de <span class="math notranslate nohighlight">\(\mu\)</span>, calculez les probabilités d’obtenir les trois résultats pour chacun des deux états. Quelle est la signification opérationnelle de cette mesure à trois issues ?</p>
 <!--Luke: Should this not be "values" or "range of values" rather than "value"?-->
 <p>c) Enfin, déterminez la valeur de <span class="math notranslate nohighlight">\(\mu\)</span> qui minimise la probabilité moyenne d’obtenir la troisième issue, c’est-à-dire :</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter3-section3-0">
-<span class="eqno">(31)<a class="headerlink" href="#equation-content-chapter3-section3-0" title="Link to this equation">#</a></span>\[P_?=\frac{1}{2}\left(p(?|0)+p(?|1)\right) .\]</div>
+<span class="eqno">(29)<a class="headerlink" href="#equation-content-chapter3-section3-0" title="Link to this equation">#</a></span>\[P_?=\frac{1}{2}\left(p(?|0)+p(?|1)\right) .\]</div>
 <p>Comment cela est-il lié au recouvrement entre les deux états ?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+## Protocole à six états
+
+Le protocole à six états, introduit par Bruß {cite}`6state`, 
+va dans la direction opposée : elle implique davantage d&#39;états pour rendre l&#39;attaque d&#39;Eve plus difficile. Dans le protocole BB84, seuls quatre états appartenant à un équateur donné dans la sphère de Bloch, disons le plan $xy$, sont utilisés. Cependant, on pourrait envisager des protocoles plus élaborés dans lesquels Alice prépare des états mieux répartis sur la sphère. C&#39;est précisément l&#39;idée principale derrière le protocole à six états : Alice prépare un état à partir de l&#39;ensemble des six états $\{\ket{\pm x},\ket{\pm y},\ket{\pm z}\}$. Bob mesure maintenant selon ces trois bases, $x$, $y$ and $z$. Clairement, après la réconciliation des bases, Alice et Bob sont supposés obtenir une liste de bits parfaitement corrélés. Du point de vue d&#39;Eve, sa tâche devient plus complexe car elle doit cloner ou distinguer parmi un plus grand nombre d&#39;états non orthogonaux. Cependant, du point de vue d&#39;Alice et Bob, seulement 1/3 des tours sont conservés après la réconciliation des bases. En fin de compte, l&#39;amélioration de la sécurité est modérée, tandis que dans certaines implémentations, les exigences technologiques pour préparer les six états sont plus contraignantes, ce qui fait que le protocole n&#39;est pas vraiment utilisé en pratique.
+
+## Protocole Goldenber-Vaidman
+
+Le dernier protocole que nous présentons dans cette partie a été introduit par Goldenberg et Vaidman{cite}`vaidman`. Le protocole utilise l&#39;intrication et prouve que la distribution de clés sécurisée est toujours possible en utilisant deux états orthogonaux si ces deux états sont employés de manière astucieuse. L&#39;idée du protocole est la suivante : Bob prépare un état maximalement intriqué à deux qubits, $\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt 2$. Il envoie seulement une des particules à Alice. Alice applique alors soit l&#39;opérateur identité $\one$, soit l&#39;opérateur $\sigma_z$ en fonction du bit qu&#39;elle souhaite transmettre, et renvoie le qubit à Bob. Les deux états, selon le bit aléatoire d&#39;Alice, sont 
+$\ket{\Phi^\pm}$, avec $\ket{\Phi^-}=(\ket{00}-\ket{11})/\sqrt 2$. À la réception, Bob peut parfaitement discriminer entre ces deux états et lire le résultat car ils sont orthogonaux. Cependant, bien que l&#39;encodage de l&#39;information par Alice produise deux états orthogonaux, ce fait ne peut pas être exploité par Eve. Elle n&#39;a accès qu&#39;à une des deux particules quantiques préparées et envoyées par Bob, tandis que l&#39;autre particule reste toujours dans le laboratoire de Bob et est donc jamais accessible à Eve. Cela rend la mesure quantique par Eve sur les deux états orthogonaux impossible. En fait, le qubit auquel Eve a accès est toujours dans l&#39;état réduit de $\ket{\Phi^\pm}$, égal à $\one/2$ pour les deux états, ce qui garantit la sécurité du protocole.
+
+## Bibliographie de la section
+```{bibliography}
+:style: unsrt
+:filter: docname in docnames
+```
+
+
+
+</pre></div>
 </div>
-</section>
-<section id="protocole-a-six-etats">
-<h2>Protocole à six états<a class="headerlink" href="#protocole-a-six-etats" title="Link to this heading">#</a></h2>
-<p>Le protocole à six états, introduit par Bruß <span id="id2">[<a class="reference internal" href="#id24" title="Dagmar Bruß. Optimal eavesdropping in quantum cryptography with six states. Physical Review Letters, 81(14):3018, 1998.">2</a>]</span>,
-va dans la direction opposée : elle implique davantage d’états pour rendre l’attaque d’Eve plus difficile. Dans le protocole BB84, seuls quatre états appartenant à un équateur donné dans la sphère de Bloch, disons le plan <span class="math notranslate nohighlight">\(xy\)</span>, sont utilisés. Cependant, on pourrait envisager des protocoles plus élaborés dans lesquels Alice prépare des états mieux répartis sur la sphère. C’est précisément l’idée principale derrière le protocole à six états : Alice prépare un état à partir de l’ensemble des six états <span class="math notranslate nohighlight">\(\{\ket{\pm x},\ket{\pm y},\ket{\pm z}\}\)</span>. Bob mesure maintenant selon ces trois bases, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. Clairement, après la réconciliation des bases, Alice et Bob sont supposés obtenir une liste de bits parfaitement corrélés. Du point de vue d’Eve, sa tâche devient plus complexe car elle doit cloner ou distinguer parmi un plus grand nombre d’états non orthogonaux. Cependant, du point de vue d’Alice et Bob, seulement 1/3 des tours sont conservés après la réconciliation des bases. En fin de compte, l’amélioration de la sécurité est modérée, tandis que dans certaines implémentations, les exigences technologiques pour préparer les six états sont plus contraignantes, ce qui fait que le protocole n’est pas vraiment utilisé en pratique.</p>
-</section>
-<section id="protocole-goldenber-vaidman">
-<h2>Protocole Goldenber-Vaidman<a class="headerlink" href="#protocole-goldenber-vaidman" title="Link to this heading">#</a></h2>
-<p>Le dernier protocole que nous présentons dans cette partie a été introduit par Goldenberg et Vaidman<span id="id3">[<a class="reference internal" href="#id25" title="Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. Physical Review Letters, 75(7):1239, 1995.">3</a>]</span>. Le protocole utilise l’intrication et prouve que la distribution de clés sécurisée est toujours possible en utilisant deux états orthogonaux si ces deux états sont employés de manière astucieuse. L’idée du protocole est la suivante : Bob prépare un état maximalement intriqué à deux qubits, <span class="math notranslate nohighlight">\(\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt 2\)</span>. Il envoie seulement une des particules à Alice. Alice applique alors soit l’opérateur identité <span class="math notranslate nohighlight">\(\one\)</span>, soit l’opérateur <span class="math notranslate nohighlight">\(\sigma_z\)</span> en fonction du bit qu’elle souhaite transmettre, et renvoie le qubit à Bob. Les deux états, selon le bit aléatoire d’Alice, sont
-<span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, avec <span class="math notranslate nohighlight">\(\ket{\Phi^-}=(\ket{00}-\ket{11})/\sqrt 2\)</span>. À la réception, Bob peut parfaitement discriminer entre ces deux états et lire le résultat car ils sont orthogonaux. Cependant, bien que l’encodage de l’information par Alice produise deux états orthogonaux, ce fait ne peut pas être exploité par Eve. Elle n’a accès qu’à une des deux particules quantiques préparées et envoyées par Bob, tandis que l’autre particule reste toujours dans le laboratoire de Bob et est donc jamais accessible à Eve. Cela rend la mesure quantique par Eve sur les deux états orthogonaux impossible. En fait, le qubit auquel Eve a accès est toujours dans l’état réduit de <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, égal à <span class="math notranslate nohighlight">\(\one/2\)</span> pour les deux états, ce qui garantit la sécurité du protocole.</p>
-</section>
-<section id="bibliographie-de-la-section">
-<h2>Bibliographie de la section<a class="headerlink" href="#bibliographie-de-la-section" title="Link to this heading">#</a></h2>
-<div class="docutils container" id="id4">
-<div role="list" class="citation-list">
-<div class="citation" id="id23" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Charles H Bennett. Quantum cryptography using any two nonorthogonal states. <em>Physical review letters</em>, 68(21):3121, 1992.</p>
-</div>
-<div class="citation" id="id24" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Dagmar Bruß. Optimal eavesdropping in quantum cryptography with six states. <em>Physical Review Letters</em>, 81(14):3018, 1998.</p>
-</div>
-<div class="citation" id="id25" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
-<p>Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. <em>Physical Review Letters</em>, 75(7):1239, 1995.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -578,12 +583,9 @@ va dans la direction opposée : elle implique davantage d’états pour rendre l
     <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b92">B92</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocole-a-six-etats">Protocole à six états</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocole-goldenber-vaidman">Protocole Goldenber-Vaidman</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliographie-de-la-section">Bibliographie de la section</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>

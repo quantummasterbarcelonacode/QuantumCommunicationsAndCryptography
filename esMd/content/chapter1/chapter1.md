@@ -1,5 +1,19 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Fundamentos de la Mecánica Cuántica 
-# 
 
 El objetivo de esta primera sección es introducir los postulados básicos de la mecánica cuántica y su estructura matemática. La mayor parte del formalismo presentado aquí se puede encontrar en el Capítulo 2 de {cite}`nielsen2010quantum`. 
 La álgebra lineal es el estudio de los espacios vectoriales y de los operadores lineales que actúan sobre esos espacios. De hecho, toda la maquinaria cuántica es fundamentalmente álgebra lineal en un espacio de Hilbert complejo, representada por la notación menos estándar de Dirac. En esta notación, 

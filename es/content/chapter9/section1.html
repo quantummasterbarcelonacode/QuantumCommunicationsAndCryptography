@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -437,7 +436,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="comunicacion-clasica">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="comunicacion-clasica">
 <h1>Comunicación Clásica<a class="headerlink" href="#comunicacion-clasica" title="Link to this heading">#</a></h1>
 <p>El problema de enviar información de manera confiable a través de un canal ruidoso tiene una larga historia en la teoría de la información clásica. En este contexto, un canal clásico se describe mediante un mapa estocástico <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, que describe cómo una variable aleatoria de entrada <span class="math notranslate nohighlight">\(X\)</span> se transforma en una variable de salida <span class="math notranslate nohighlight">\(Y\)</span>. La manera estándar de corregir los errores del canal es a través de la <em>corrección de errores</em>.</p>
 <p>Como ejemplo, consideremos el simple canal binario simétrico <span class="math notranslate nohighlight">\(P_\epsilon\)</span> que invierte un bit con una probabilidad <span class="math notranslate nohighlight">\(\epsilon\)</span>, es decir, <span class="math notranslate nohighlight">\(P_\epsilon(Y=0|X=0)=P_\epsilon(Y=1|X=1)=1-\epsilon\)</span> y <span class="math notranslate nohighlight">\(P_\epsilon(Y=0|X=1)=P_\epsilon(Y=1|X=0)=\epsilon\)</span>, lo que define la probabilidad de error. Sin pérdida generalidad, la probabilidad de error satisface <span class="math notranslate nohighlight">\(\epsilon&lt;1/2\)</span>. Un código de corrección de errores muy simple explota la repetición: para transmitir un bit <span class="math notranslate nohighlight">\(X\)</span> a Bob, Alice envía su valor tres veces a través del canal, <span class="math notranslate nohighlight">\(X_1=X_2=X_3=X\)</span>.  Para definir el valor de su bit, Bob utiliza la mayoría de los símbolos recibidos, <span class="math notranslate nohighlight">\(Y=\text{maj}(Y_1,Y_2,Y_3)\)</span>. Por lo tanto, la nueva probabilidad de error es <span class="math notranslate nohighlight">\(\epsilon'=3(1-\epsilon)\epsilon^2+\epsilon^3\)</span>, que siempre es menor que <span class="math notranslate nohighlight">\(\epsilon\)</span> cuando <span class="math notranslate nohighlight">\(\epsilon&lt;1/2\)</span>.</p>

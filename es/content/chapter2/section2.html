@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Puertas Cuánticas</a></li>
@@ -447,7 +446,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="puertas-cuanticas">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="puertas-cuanticas">
 <h1>Puertas Cuánticas<a class="headerlink" href="#puertas-cuanticas" title="Link to this heading">#</a></h1>
 <p>Aunque estas notas se centran en la comunicación y la criptografía cuánticas, revisemos brevemente, para mayor claridad, las operaciones lógicas básicas que actúan sobre un cúbit. Recordemos que cualquier cálculo clásico consiste en una secuencia de puertas lógicas sobre una cadena de bits. Cualquiera de estas puertas siempre puede descomponerse en términos de puertas AND y NOT. Estas dos operaciones, entonces, proporcionan un conjunto universal de puertas para la computación clásica. Se concluiría que lo que se necesita para adaptar la computación clásica a la cuántica es (i) codificar los bits clásicos en bits cuánticos como se describió anteriormente, <span class="math notranslate nohighlight">\(i \rightarrow \ket i\)</span>, y (ii) implementar la versión cuántica de estas puertas.</p>
 <p>Cuando se trata de procesamiento de información cuántica en un sistema controlado (cerrado), cualquier evolución se describe mediante una operación unitaria <span class="math notranslate nohighlight">\(U\)</span>. Estas operaciones son reversibles, es decir, conociendo la operación y el estado de salida, siempre se puede reconstruir el estado de entrada. Sin embargo, cabe señalar que las puertas OR y AND son irreversibles, ya que el bit de salida no es suficiente para inferir los dos bits de entrada.</p>

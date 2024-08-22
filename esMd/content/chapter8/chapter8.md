@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Escenario Independiente del Dispositivo
 
 La solución a los anteriores ataques de hacking viene de el llamado escenario independiente del dispositivo (device-independent, DI) {cite}`diqkd`. En este plantamiento, los dispositivos cuánticos son vistos como cajas negras con las que los usarios pueden interactuar, proporcionando una entrada clásica y obteniendo una salida clásica. El plantamiento DI es bastante general y, de hecho, puede aplicarse a cualquier procolo de información cuántica, pero en lo que sigue nos centraremos en QKD.

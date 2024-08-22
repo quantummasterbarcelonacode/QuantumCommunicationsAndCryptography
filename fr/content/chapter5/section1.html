@@ -182,7 +182,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -437,7 +435,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="math notranslate nohighlight">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<div class="math notranslate nohighlight">
 \[\def\tr{{\text{tr}}}
 \def\one{{\mathbb{1}}}
 \def\sz{{\sigma_z}}
@@ -460,11 +471,11 @@ document.write(`
 <p>Considérons une attaque individuelle par clonage dans laquelle l’action d’Eve est décrite par une famille uniparamétrique d’opérations unitaires <span class="math notranslate nohighlight">\(U(\eta)\)</span>. Bien que le théorème de non-clonage stipule qu’un état quantique inconnu ne peut pas être cloné, un clonage approximatif est toujours possible.
 Considérons des états situés sur l’équateur de la sphère de Bloch, c’est-à-dire,</p>
 <div class="math notranslate nohighlight" id="equation-thetast">
-<span class="eqno">(34)<a class="headerlink" href="#equation-thetast" title="Link to this equation">#</a></span>\[\ket{\theta}=\frac{1}{\sqrt
+<span class="eqno">(32)<a class="headerlink" href="#equation-thetast" title="Link to this equation">#</a></span>\[\ket{\theta}=\frac{1}{\sqrt
 2}\left(\ket{0}+e^{i\theta}\ket{1}\right) .\]</div>
 <p>Notez que si <span class="math notranslate nohighlight">\(\theta = 0, \pi/2, \pi, 3\pi/2\)</span>, on obtient les quatre états <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span> et <span class="math notranslate nohighlight">\(\ket{\pm y}\)</span> qui peuvent être utilisés pour le protocole BB84. Prenons un état générique <span class="math notranslate nohighlight">\(\ket{\theta}\)</span> et un état auxiliaire <span class="math notranslate nohighlight">\(\ket{0}\)</span> et appliquons la transformation globale (agissant sur les deux états) <span class="math notranslate nohighlight">\(U(\eta)\)</span>, ou <span class="math notranslate nohighlight">\(U\)</span> pour simplifier la notation.</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter5-section1-0">
-<span class="eqno">(35)<a class="headerlink" href="#equation-content-chapter5-section1-0" title="Link to this equation">#</a></span>\[\begin{split}  U\ket{00} &amp;= \ket{00}, \\
+<span class="eqno">(33)<a class="headerlink" href="#equation-content-chapter5-section1-0" title="Link to this equation">#</a></span>\[\begin{split}  U\ket{00} &amp;= \ket{00}, \\
   U\ket{10} &amp;= \cos\eta\ket{10}+\sin\eta\ket{01} .\end{split}\]</div>
 <p>a) Expliquez brièvement pourquoi <span class="math notranslate nohighlight">\(U\)</span> est une transformation unitaire valide sur les états quantiques considérés.</p>
 <p>b) Calculez l’état final des deux qubits <span class="math notranslate nohighlight">\(\ket{\psi(\theta)}{BE}=U{BE}\ket{\theta}_B\ket{0}_E\)</span> et les états réduits <span class="math notranslate nohighlight">\(\rho_B\)</span> et <span class="math notranslate nohighlight">\(\rho_E\)</span>, où <span class="math notranslate nohighlight">\(\rho_B=\tr_E\proj{\psi(\theta)}\)</span> et de manière similaire pour <span class="math notranslate nohighlight">\(\rho_E\)</span>.</p>
@@ -474,7 +485,7 @@ Considérons des états situés sur l’équateur de la sphère de Bloch, c’es
 <p>Historiquement, les attaques individuelles ont été les premières étudiées dans le cadre de la sécurité des protocoles cryptographiques. L’attaque de clonage précédente est optimale en termes de fidélités car elle optimise la valeur de <span class="math notranslate nohighlight">\(F_E\)</span> pour une fidélité donnée du côté de Bob, <span class="math notranslate nohighlight">\(F_B\)</span>. Cependant, les attaques individuelles ne sont pas les plus générales car elles supposent qu’Eve (i) interagit de la même manière avec toutes les particules quantiques envoyées par Alice à Bob et (ii) mesure sa particule à la fin de la réconciliation des bases. Les attaques individuelles peuvent par exemple négliger la possibilité qu’une interaction corrélée entre les tours du protocole puisse fournir à Eve plus d’informations, ou qu’Eve pourrait attendre la fin du processus de distillation de la clé et utiliser toutes les informations révélées pendant celui-ci pour optimiser sa mesure, voire attendre jusqu’à ce que la clé soit utilisée. En fait, la preuve de sécurité doit fonctionner pour la situation la plus générale dans laquelle Eve conserve sa particule quantique dans une mémoire quantique sans la mesurer. Si l’on prouve la sécurité pour cette situation, la preuve est également valable pour toute mesure qu’Eve pourrait appliquer ultérieurement à son système quantique. Les attaques individuelles et les attaques les plus générales sont illustrées dans <a class="reference internal" href="#attacks"><span class="std std-numref">Fig. 4</span></a>, où elles sont présentées dans le cadre d’un protocol basé sur l’intrication habituellement utilisé pour prouver la sécurité. Une attaque intermédiaire qui s’avère très utile est appelée attaque <em>collective</em>, dans laquelle Eve (i) conserve ses informations sous une forme quantique, c’est-à-dire stocke ses particules quantiques dans une mémoire, mais (ii) applique la même interaction à chaque tour.</p>
 <p>Enfin, comme dans les situations les plus générales, nous considérons des attaques dans lesquelles Eve conserve ses informations sous une forme quantique, la définition d’une clé secrète doit être adaptée à ce scénario. De manière informelle, un protocole est capable de distiller une clé de longueur <span class="math notranslate nohighlight">\(k\)</span> chaque fois que le résultat du protocole est un état <span class="math notranslate nohighlight">\(\rho_{ABE}\)</span>, très proche de l’état idéal</p>
 <div class="math notranslate nohighlight" id="equation-secretkey">
-<span class="eqno">(36)<a class="headerlink" href="#equation-secretkey" title="Link to this equation">#</a></span>\[\rho_{ABE}^{(k)}=\frac{1}{2}(\proj{00}+\proj{11})_{AB}^{\otimes k}\otimes\proj{E}_E.\]</div>
+<span class="eqno">(34)<a class="headerlink" href="#equation-secretkey" title="Link to this equation">#</a></span>\[\rho_{ABE}^{(k)}=\frac{1}{2}(\proj{00}+\proj{11})_{AB}^{\otimes k}\otimes\proj{E}_E.\]</div>
 <p>Ici, Alice et Bob partagent <span class="math notranslate nohighlight">\(k\)</span> bits parfaitement corrélés qui sont secrets parce qu’ils ne sont pas couplés au système quantique d’Eve, qui est dans un état de référence arbitraire <span class="math notranslate nohighlight">\(\ket{E}\)</span>.</p>
 <figure class="align-default" id="attacks">
 <a class="reference internal image-reference" href="../../_images/attacks.png"><img alt="../../_images/attacks.png" src="../../_images/attacks.png" style="height: 400px;" /></a>

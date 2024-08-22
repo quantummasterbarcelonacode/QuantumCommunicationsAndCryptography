@@ -1,5 +1,19 @@
-﻿# Basics of Quantum Mechanics
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
 
+
+# Basics of Quantum Mechanics
 
 The scope of this first section is to introduce the basic postulates of Quantum Mechanics and its mathematical structure. Most of the formalism presented here can be found in Chapter 2 of {cite}`nielsen2010quantum`. Linear algebra is the study of vector spaces and of linear operators acting on those spaces. In fact, all quantum machinery is fundamentally linear algebra on a complex Hilbert space, represented by the less standard Dirac notation. In this notation,
 

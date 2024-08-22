@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # El Ataque de División del Número de Fotones
 
 La sustitución de estados de fotones individuales por estados débilmente coherentes parecía ofrecer un buen balance entre emplementeabilidad y seguridad. Sin embargo, esta intuición inicial fue cuestionada por el llamado ataque de División del Número de Fotones (Photon-Number Splitting, PNS), introducido en {cite}`PNS`. Este ataque considera una implementación realista con estados coherentes débiles a través de una fibra estándar, donde las pérdidas son exponenciales con la distancia. El ataque explota la presencia de pérdidas y el hecho de que un estado coherente débil contiene incidentalmente clones del estado preparado. Para simplificar la explicación del ataque, consideramos un protocolo en el que Alice codifica la información en la polarización de los estados de luz preparados, aunque también se aplica a otros métodos de codificación, como los bloques temporales explicados anteriormente. El ataque funciona de la siguiente manera:

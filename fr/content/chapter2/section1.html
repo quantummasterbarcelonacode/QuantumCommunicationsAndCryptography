@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Le Bit Quantique &#8212; Quantum Communications and Cryptography</title>
+    <title>&lt;no title&gt; &#8212; Quantum Communications and Cryptography</title>
   
   
   
@@ -179,10 +179,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Le Bit Quantique</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -412,7 +410,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -423,11 +423,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Le Bit Quantique</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -437,40 +445,58 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="math notranslate nohighlight">
-\[\def\compl{{\mathbb{C}}}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="le-bit-quantique">
-<h1>Le Bit Quantique<a class="headerlink" href="#le-bit-quantique" title="Link to this heading">#</a></h1>
-<p>La première étape consiste à introduire l’unité de base de l’information quantique, le bit quantique ou qubit. Considérons l’encodage d’un bit classique dans une particule quantique. On peut le faire au moyen d’un système bidimensionnel : la valeur du bit 0 est codée dans un état <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span>, ou simplement <span class="math notranslate nohighlight">\(\ket{0}\)</span>, et 1 dans <span class="math notranslate nohighlight">\(\ket{1}\)</span>. Puisque ces deux options doivent définir un bit classique, les états doivent être orthogonaux et former une base dans <span class="math notranslate nohighlight">\(\compl^2\)</span>. Ainsi, une mesure dans cette base distingue de manière déterministe les deux possibilités, comme c’est le cas pour un bit classique. Par exemple,</p>
-<div class="math notranslate nohighlight" id="equation-content-chapter2-section1-0">
-<span class="eqno">(10)<a class="headerlink" href="#equation-content-chapter2-section1-0" title="Link to this equation">#</a></span>\[\begin{split}\ket 0=\begin{pmatrix}1\\0\\\end{pmatrix}\quad\quad
-\ket 1=\begin{pmatrix}0\\1\\\end{pmatrix} .\end{split}\]</div>
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<p>﻿```{math}
+\def\compl}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+# Le Bit Quantique
+
+
+La première étape consiste à introduire l&#39;unité de base de l&#39;information quantique, le bit quantique ou qubit. Considérons l&#39;encodage d&#39;un bit classique dans une particule quantique. On peut le faire au moyen d&#39;un système bidimensionnel : la valeur du bit 0 est codée dans un état $\ket{\psi_0}$, ou simplement $\ket{0}$, et 1 dans $\ket{1}$. Puisque ces deux options doivent définir un bit classique, les états doivent être orthogonaux et former une base dans $\compl^2$. Ainsi, une mesure dans cette base distingue de manière déterministe les deux possibilités, comme c&#39;est le cas pour un bit classique. Par exemple,
+
+```{math}
+:label:
+\ket 0=\begin{pmatrix}1\\0\\\end{pmatrix}\quad\quad
+\ket 1=\begin{pmatrix}0\\1\\\end{pmatrix} .
+</pre></div>
+</div>
 <p>Une particule quantique bidimensionnelle peut coder un bit classique et ainsi définir un bit quantique. Notez cependant que, grâce au principe de superposition, toute combinaison cohérente de <span class="math notranslate nohighlight">\(\ket{0}\)</span> et <span class="math notranslate nohighlight">\(\ket{1}\)</span> est également permise, ce qui est impossible en physique classique. Ainsi, un bit quantique peut être dans n’importe quel état,</p>
-<div class="math notranslate nohighlight" id="equation-content-chapter2-section1-1">
-<span class="eqno">(11)<a class="headerlink" href="#equation-content-chapter2-section1-1" title="Link to this equation">#</a></span>\[    \ket{\psi}=\alpha\ket 0+\beta\ket 1 ,\]</div>
+<div class="math notranslate nohighlight" id="equation-content-chapter2-section1-0">
+<span class="eqno">(10)<a class="headerlink" href="#equation-content-chapter2-section1-0" title="Link to this equation">#</a></span>\[    \ket{\psi}=\alpha\ket 0+\beta\ket 1 ,\]</div>
 <p>où <span class="math notranslate nohighlight">\(\alpha\)</span> et <span class="math notranslate nohighlight">\(\beta\)</span> sont des nombres complexes tels que <span class="math notranslate nohighlight">\(|\alpha|^2 + |\beta|^2 = 1\)</span>. Il est possible de représenter graphiquement l’état d’un qubit, ou d’une particule quantique bidimensionnelle, au moyen de la sphère de Poincaré ou de Bloch (voir <a class="reference internal" href="#bloch"><span class="std std-numref">Fig. 1</span></a>). En effet, en utilisant le fait que la phase globale de tout état pur est sans importance, <span class="math notranslate nohighlight">\(\alpha\)</span> peut toujours être considéré comme réel. Ainsi, tout bit quantique peut être spécifié par un nombre complexe <span class="math notranslate nohighlight">\(\beta\)</span>, puisque <span class="math notranslate nohighlight">\(\alpha\)</span> est fixé en raison de la normalisation. Autrement dit, tout état a la forme suivante</p>
 <div class="math notranslate nohighlight" id="equation-blochv">
-<span class="eqno">(12)<a class="headerlink" href="#equation-blochv" title="Link to this equation">#</a></span>\[\begin{split}    \ket\psi=\begin{pmatrix}\cos\left(\frac{\theta}{2}\right)
+<span class="eqno">(11)<a class="headerlink" href="#equation-blochv" title="Link to this equation">#</a></span>\[\begin{split}    \ket\psi=\begin{pmatrix}\cos\left(\frac{\theta}{2}\right)
     \\\sin\left(\frac{\theta}{2}\right)e^{i\varphi}\\\end{pmatrix}
     .\end{split}\]</div>
 <p>Deux angles, <span class="math notranslate nohighlight">\(\theta\)</span> et <span class="math notranslate nohighlight">\(\varphi\)</span>, suffisent pour spécifier tout état pur dans <span class="math notranslate nohighlight">\(\compl^2\)</span>, comme n’importe quel point à la surface d’une sphère unité. Il est important de mentionner ici que, étant donné <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, le vecteur orthogonal, <span class="math notranslate nohighlight">\(\ket{\psi_\perp}\)</span>, s’exprime ainsi</p>
 <div class="math notranslate nohighlight" id="equation-blochvorth">
-<span class="eqno">(13)<a class="headerlink" href="#equation-blochvorth" title="Link to this equation">#</a></span>\[\begin{split}    \ket{\psi_\perp}=\begin{pmatrix}\sin\left(\frac{\theta}{2}\right)
+<span class="eqno">(12)<a class="headerlink" href="#equation-blochvorth" title="Link to this equation">#</a></span>\[\begin{split}    \ket{\psi_\perp}=\begin{pmatrix}\sin\left(\frac{\theta}{2}\right)
     \\-\cos\left(\frac{\theta}{2}\right)e^{i\varphi}\\\end{pmatrix}
     ,\end{split}\]</div>
 <p>ainsi les vecteurs orthogonaux dans <span class="math notranslate nohighlight">\(\compl^2\)</span> définissent des vecteurs antiparallèles sur la sphère de Bloch. Les matrices dites « de Pauli » vont jouer un rôle significatif dans ce qui suit. Leur expression est la suivante</p>
 <div class="math notranslate nohighlight" id="equation-pauli">
-<span class="eqno">(14)<a class="headerlink" href="#equation-pauli" title="Link to this equation">#</a></span>\[\begin{split}    \sigma_x=\begin{pmatrix}0&amp;1\\1&amp;0\\\end{pmatrix}\quad
+<span class="eqno">(13)<a class="headerlink" href="#equation-pauli" title="Link to this equation">#</a></span>\[\begin{split}    \sigma_x=\begin{pmatrix}0&amp;1\\1&amp;0\\\end{pmatrix}\quad
     \sigma_y=\begin{pmatrix}0&amp;-i\\i&amp;0\\\end{pmatrix}\quad
     \sigma_z=\begin{pmatrix}1&amp;0\\0&amp;-1\\\end{pmatrix} .\end{split}\]</div>
-<p>Notez que dans notre définition du qubit, <span class="math notranslate nohighlight">\(\ket{0}\)</span> et <span class="math notranslate nohighlight">\(\ket{1}\)</span> sont les vecteurs propres de <span class="math notranslate nohighlight">\(\sigma_z\)</span> avec les valeurs propres <span class="math notranslate nohighlight">\(\pm 1\)</span>, puisque <span class="math notranslate nohighlight">\(\sigma_z \ket{i} = (-1)^i \ket{i}\)</span>. C’est pourquoi <span class="math notranslate nohighlight">\(\sigma_z\)</span> est souvent appelée « phase flip ». En mettant <span class="math notranslate nohighlight">\(\theta=0\)</span> (et <span class="math notranslate nohighlight">\(\theta=\pi\)</span>) dans les équations Eq. <a class="reference internal" href="#equation-blochv">(12)</a> et Eq. <a class="reference internal" href="#equation-blochvorth">(13)</a>, c’est-à-dire en définissant des vecteurs de Bloch qui pointent dans les directions <span class="math notranslate nohighlight">\(\pm z\)</span>, on obtient <span class="math notranslate nohighlight">\(\ket{0}\)</span> et <span class="math notranslate nohighlight">\(\ket{1}\)</span>, les vecteurs propres de <span class="math notranslate nohighlight">\(\sigma_z\)</span>. L’effet de <span class="math notranslate nohighlight">\(\sigma_x\)</span> dans notre base de qubit est <span class="math notranslate nohighlight">\(\sigma_x \ket{i} = \ket{1-i}\)</span>, c’est-à-dire qu’il effectue un « bit flip ». De manière similaire, en substituant <span class="math notranslate nohighlight">\((\theta,\varphi) = (\pi/2,0)\)</span>, <span class="math notranslate nohighlight">\((\pi,0)\)</span>, <span class="math notranslate nohighlight">\((\pi/2,\pi/2)\)</span> et <span class="math notranslate nohighlight">\((\pi/2,-\pi/2)\)</span> dans les équations Eq. <a class="reference internal" href="#equation-blochv">(12)</a> et Eq. <a class="reference internal" href="#equation-blochvorth">(13)</a>, on obtient les deux vecteurs propres de <span class="math notranslate nohighlight">\(\sigma_x\)</span> et <span class="math notranslate nohighlight">\(\sigma_y\)</span>, souvent notés <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span> et <span class="math notranslate nohighlight">\(\ket{\pm y}\)</span>.</p>
+<p>Notez que dans notre définition du qubit, <span class="math notranslate nohighlight">\(\ket{0}\)</span> et <span class="math notranslate nohighlight">\(\ket{1}\)</span> sont les vecteurs propres de <span class="math notranslate nohighlight">\(\sigma_z\)</span> avec les valeurs propres <span class="math notranslate nohighlight">\(\pm 1\)</span>, puisque <span class="math notranslate nohighlight">\(\sigma_z \ket{i} = (-1)^i \ket{i}\)</span>. C’est pourquoi <span class="math notranslate nohighlight">\(\sigma_z\)</span> est souvent appelée « phase flip ». En mettant <span class="math notranslate nohighlight">\(\theta=0\)</span> (et <span class="math notranslate nohighlight">\(\theta=\pi\)</span>) dans les équations Eq. <a class="reference internal" href="#equation-blochv">(11)</a> et Eq. <a class="reference internal" href="#equation-blochvorth">(12)</a>, c’est-à-dire en définissant des vecteurs de Bloch qui pointent dans les directions <span class="math notranslate nohighlight">\(\pm z\)</span>, on obtient <span class="math notranslate nohighlight">\(\ket{0}\)</span> et <span class="math notranslate nohighlight">\(\ket{1}\)</span>, les vecteurs propres de <span class="math notranslate nohighlight">\(\sigma_z\)</span>. L’effet de <span class="math notranslate nohighlight">\(\sigma_x\)</span> dans notre base de qubit est <span class="math notranslate nohighlight">\(\sigma_x \ket{i} = \ket{1-i}\)</span>, c’est-à-dire qu’il effectue un « bit flip ». De manière similaire, en substituant <span class="math notranslate nohighlight">\((\theta,\varphi) = (\pi/2,0)\)</span>, <span class="math notranslate nohighlight">\((\pi,0)\)</span>, <span class="math notranslate nohighlight">\((\pi/2,\pi/2)\)</span> et <span class="math notranslate nohighlight">\((\pi/2,-\pi/2)\)</span> dans les équations Eq. <a class="reference internal" href="#equation-blochv">(11)</a> et Eq. <a class="reference internal" href="#equation-blochvorth">(12)</a>, on obtient les deux vecteurs propres de <span class="math notranslate nohighlight">\(\sigma_x\)</span> et <span class="math notranslate nohighlight">\(\sigma_y\)</span>, souvent notés <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span> et <span class="math notranslate nohighlight">\(\ket{\pm y}\)</span>.</p>
 <figure class="align-default" id="bloch">
 <a class="reference internal image-reference" href="../../_images/qubit.png"><img alt="../../_images/qubit.png" src="../../_images/qubit.png" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text"><span class="math notranslate nohighlight">\(\textbf{Sphère de Bloch:}\)</span> Tout qubit pur peut être représenté par un point à la surface de la sphère de Bloch. Le vecteur unitaire correspondant, <span class="math notranslate nohighlight">\(\hat n=(\sin\theta\cos\varphi, \sin\theta\sin\varphi,  \cos\theta)\)</span>, est appelé vecteur de Bloch. Les états mixtes se trouvent à l’intérieur de la sphère.</span><a class="headerlink" href="#bloch" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -527,7 +553,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

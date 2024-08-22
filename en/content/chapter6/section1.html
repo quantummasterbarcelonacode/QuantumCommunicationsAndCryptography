@@ -435,7 +435,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bb84-with-time-bin-encoding-and-weak-coherent-states">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="bb84-with-time-bin-encoding-and-weak-coherent-states">
 <h1>BB84 with Time-Bin Encoding and Weak Coherent States<a class="headerlink" href="#bb84-with-time-bin-encoding-and-weak-coherent-states" title="Link to this heading">#</a></h1>
 <p>Time bins represent one of the most popular solutions to send quantum information over long distances. In principle, the idea is to prepare single-photon states and send them through a fibre coupler with a given transmission <span class="math notranslate nohighlight">\(T\)</span>.  The two paths have different lengths and are recombined. A phase shift <span class="math notranslate nohighlight">\(\varphi\)</span> is applied to one of the two paths, say the longer one, see <a class="reference internal" href="#timebin"><span class="std std-numref">Fig. 5</span></a>. By playing with the transmission of the coupling and the phase, it is in principle possible to prepare any qubit state, as one has <span class="math notranslate nohighlight">\(\ket\psi=\sqrt T\ket s+\sqrt Re^{i\varphi}\ket{\ell}\)</span>. In practice, changing the transmission of the first coupler is more demanding than changing the applied phase, so one often employs a fixed transmission given by <span class="math notranslate nohighlight">\(T=1/2\)</span>. Also, recombining the two paths in a deterministic way is also challenging, so one often uses another coupler again with transmission <span class="math notranslate nohighlight">\(1/2\)</span>. This simpler process therefore prepares any state <span class="math notranslate nohighlight">\(\ket\psi=(\ket s+e^{i\varphi}\ket{\ell})/\sqrt 2\)</span>, that is, any state in the equator of the Bloch sphere defined by <span class="math notranslate nohighlight">\(\ket s\)</span> and <span class="math notranslate nohighlight">\(\ket{\ell}\)</span>, with some probability. This is however sufficient to implement the BB84 protocol through the scheme in <a class="reference internal" href="#timebin"><span class="std std-numref">Fig. 5</span></a>.</p>
 <!--Luke: Maybe we should mention that R is just the coefficient normalizing the state based on T?-->

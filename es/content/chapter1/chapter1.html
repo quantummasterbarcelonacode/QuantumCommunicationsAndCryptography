@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -435,8 +434,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de la Mecánica Cuántica</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-puros">Estados puros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-compuestos">Sistemas compuestos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrelazamiento">Entrelazamiento</a></li>
@@ -447,9 +444,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-general">Evolución general</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibilografia-para-esta-seccion">Bibilografía para esta sección</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -460,12 +454,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-la-mecanica-cuantica">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-la-mecanica-cuantica">
 <h1>Fundamentos de la Mecánica Cuántica<a class="headerlink" href="#fundamentos-de-la-mecanica-cuantica" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>El objetivo de esta primera sección es introducir los postulados básicos de la mecánica cuántica y su estructura matemática. La mayor parte del formalismo presentado aquí se puede encontrar en el Capítulo 2 de <span id="id2">[<a class="reference internal" href="#id4" title="Michael A Nielsen and Isaac L Chuang. Quantum computation and quantum information. Cambridge university press, 2010.">1</a>]</span>.
+<p>El objetivo de esta primera sección es introducir los postulados básicos de la mecánica cuántica y su estructura matemática. La mayor parte del formalismo presentado aquí se puede encontrar en el Capítulo 2 de <span id="id1">[<a class="reference internal" href="#id3" title="Michael A Nielsen and Isaac L Chuang. Quantum computation and quantum information. Cambridge university press, 2010.">1</a>]</span>.
 La álgebra lineal es el estudio de los espacios vectoriales y de los operadores lineales que actúan sobre esos espacios. De hecho, toda la maquinaria cuántica es fundamentalmente álgebra lineal en un espacio de Hilbert complejo, representada por la notación menos estándar de Dirac. En esta notación,</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\ket{\psi}\)</span> representa un vector columna, también conocido como ket.</p></li>
@@ -551,10 +555,10 @@ Ec. <a class="reference internal" href="#equation-eqnref5">(6)</a>, es</p>
 </section>
 <section id="bibilografia-para-esta-seccion">
 <h2>Bibilografía para esta sección<a class="headerlink" href="#bibilografia-para-esta-seccion" title="Link to this heading">#</a></h2>
-<div class="docutils container" id="id3">
+<div class="docutils container" id="id2">
 <div role="list" class="citation-list">
-<div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Michael A Nielsen and Isaac L Chuang. <em>Quantum computation and quantum information</em>. Cambridge university press, 2010.</p>
 </div>
 </div>
@@ -626,8 +630,6 @@ Ec. <a class="reference internal" href="#equation-eqnref5">(6)</a>, es</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de la Mecánica Cuántica</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-puros">Estados puros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-compuestos">Sistemas compuestos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrelazamiento">Entrelazamiento</a></li>
@@ -638,9 +640,6 @@ Ec. <a class="reference internal" href="#equation-eqnref5">(6)</a>, es</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-general">Evolución general</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibilografia-para-esta-seccion">Bibilografía para esta sección</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

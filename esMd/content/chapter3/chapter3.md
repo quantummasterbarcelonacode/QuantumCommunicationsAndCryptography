@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Criptografía Cuántica 
 
 El teorema de no clonación muestra que la TIC ofrece nuevas posibilidades pero también limitaciones en la forma en que se puede procesar la información en los estados cuánticos. La derivación de este teorema es sorprendentemente simple. De hecho, resulta estar conectada a una limitación más conocida del formalismo cuántico: que el proceso de medición perturba el estado del sistema. De hecho, la clonación perfecta violaría claramente el hecho de que el estado de un solo sistema cuántico no puede conocerse perfectamente. Si la clonación perfecta fuera posible, uno podría conocer todo sobre el estado de una sola partícula sin siquiera medirla, simplemente produciendo clones y midiendo estos, dejando el estado inicial intacto. Por otro lado, si la estimación perfecta fuera posible, uno podría clonar fácilmente haciendo primero una medición precisa del estado y luego preparando tantas copias como se desee.

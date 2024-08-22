@@ -15,20 +15,26 @@
 #done
 
 # Add the language link to the top of each file
-for file in $(find . -name '*.md'); do
+#for file in $(find . -name '*.md'); do
 
-    # Check if the first character is a <
-    if [ "$(head -c 1 $file)" == "<" ]; then
-        echo "Skipping $file"
-        continue
-    fi
+    ## Check if the first character is a <
+    #if [ "$(head -c 1 $file)" == "<" ]; then
+        #echo "Skipping $file"
+        #continue
+    #fi
 
-    # Add header.html to the top of each file
-    echo "Adding header to $file"
-    cat header.html $file > temp.md
-    mv temp.md $file
+    ## Add header.html to the top of each file
+    #echo "Adding header to $file"
+    #cat header.html $file > temp.md
+    #mv temp.md $file
 
-done
+#done
+
+# Fix all carriage returns
+#for file in $(find . -name '*.md'); do
+    #echo "Fixing carriage returns in $file"
+    #dos2unix $file
+#done
 
 # Run jupyter-book build on all language folders
 jupyter-book build enMd/ -n --all
@@ -38,3 +44,5 @@ rm -r en es fr
 mv enMd/_build/html en
 mv esMd/_build/html es
 mv frMd/_build/html fr
+rm -r enMd/_build esMd/_build frMd/_build
+rm -r en/_sources es/_sources fr/_sources

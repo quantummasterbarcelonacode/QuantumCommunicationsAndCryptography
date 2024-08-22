@@ -182,7 +182,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -447,7 +445,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="math notranslate nohighlight">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<div class="math notranslate nohighlight">
 \[\def\compl{{\mathbb{C}}}
 \def\L{{\cal L}}\]</div>
 <section class="tex2jax_ignore mathjax_ignore" id="le-theoreme-de-non-clonage">
@@ -456,21 +467,21 @@ document.write(`
 <!--Hippo: not exactly… say a bit more about the history or give ref ?-->
 <p>Supposons qu’il existe une machine capable de dupliquer l’état quantique d’un système, c’est-à-dire que pour tout <span class="math notranslate nohighlight">\(\ket\psi\in\compl^d\)</span>, la machine produirait <span class="math notranslate nohighlight">\(\ket{\psi}\ket{\psi}\)</span>. Ce processus quantique hypothétique doit être mathématiquement décrit par une application linéaire <span class="math notranslate nohighlight">\(\L\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-clmach">
-<span class="eqno">(17)<a class="headerlink" href="#equation-clmach" title="Link to this equation">#</a></span>\[    \L(\ket{\psi}\otimes\ket{C})=\ket{\psi}\otimes\ket{\psi} ,\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-clmach" title="Link to this equation">#</a></span>\[    \L(\ket{\psi}\otimes\ket{C})=\ket{\psi}\otimes\ket{\psi} ,\]</div>
 <p>où <span class="math notranslate nohighlight">\(\ket{C}\)</span> est l’état de la machine dans lequel le clone est produit. Puisque cette machine est censée fonctionner pour tout état initial, lorsqu’elle est appliquée à deux états orthogonaux, on obtient</p>
 <div class="math notranslate nohighlight" id="equation-clclon">
-<span class="eqno">(18)<a class="headerlink" href="#equation-clclon" title="Link to this equation">#</a></span>\[\begin{split}  \L(\ket{0}\otimes\ket{C}) &amp;=&amp; \ket{0}\otimes\ket{0} \nonumber\\
+<span class="eqno">(17)<a class="headerlink" href="#equation-clclon" title="Link to this equation">#</a></span>\[\begin{split}  \L(\ket{0}\otimes\ket{C}) &amp;=&amp; \ket{0}\otimes\ket{0} \nonumber\\
   \L(\ket{1}\otimes\ket{C}) &amp;=&amp; \ket{1}\otimes\ket{1} .\end{split}\]</div>
 <p>Si nous examinons maintenant un état en superposition, par exemple <span class="math notranslate nohighlight">\((\ket{0}+\ket{1})/\sqrt{2}\)</span>, et puisque toute opération quantique <span class="math notranslate nohighlight">\(\L\)</span> est linéaire,</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter2-section3-0">
-<span class="eqno">(19)<a class="headerlink" href="#equation-content-chapter2-section3-0" title="Link to this equation">#</a></span>\[    \L\left(\frac{1}{\sqrt 2}(\ket 0+\ket 1)\ket C\right)=
+<span class="eqno">(18)<a class="headerlink" href="#equation-content-chapter2-section3-0" title="Link to this equation">#</a></span>\[    \L\left(\frac{1}{\sqrt 2}(\ket 0+\ket 1)\ket C\right)=
     \frac{1}{\sqrt 2}(\L\left(\ket 0\ket C\right)+\L\left(\ket 1\ket C\right))=
     \frac{1}{\sqrt 2}(\ket{00}+\ket{11}) ,\]</div>
 <p>ce qui n’est pas égal à deux copies de l’état initial,</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter2-section3-1">
-<span class="eqno">(20)<a class="headerlink" href="#equation-content-chapter2-section3-1" title="Link to this equation">#</a></span>\[    \frac{1}{\sqrt 2}(\ket 0+\ket 1)\otimes
+<span class="eqno">(19)<a class="headerlink" href="#equation-content-chapter2-section3-1" title="Link to this equation">#</a></span>\[    \frac{1}{\sqrt 2}(\ket 0+\ket 1)\otimes
     \frac{1}{\sqrt 2}(\ket 0+\ket 1) .\]</div>
-<p>Par conséquent, la linéarité de la Mécanique Quantique rend le processus de clonage impossible. Notez que l’on peut en effet construire une machine de clonage produisant deux copies de deux états orthogonaux (Eq. <a class="reference internal" href="#equation-clclon">(18)</a>), une machine de clonage classique. Malheureusement, elle échoue lorsqu’il s’agit de cloner toute superposition cohérente de ces deux états. En d’autres termes, la non-orthogonalité est au cœur du théorème de non-clonage.</p>
+<p>Par conséquent, la linéarité de la Mécanique Quantique rend le processus de clonage impossible. Notez que l’on peut en effet construire une machine de clonage produisant deux copies de deux états orthogonaux (Eq. <a class="reference internal" href="#equation-clclon">(17)</a>), une machine de clonage classique. Malheureusement, elle échoue lorsqu’il s’agit de cloner toute superposition cohérente de ces deux états. En d’autres termes, la non-orthogonalité est au cœur du théorème de non-clonage.</p>
 <section id="bibliographie-de-la-section">
 <h2>Bibliographie de la section<a class="headerlink" href="#bibliographie-de-la-section" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id2">

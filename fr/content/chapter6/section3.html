@@ -182,7 +182,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -447,7 +445,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="protocole-sarg">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="protocole-sarg">
 <h1>Protocole SARG<a class="headerlink" href="#protocole-sarg" title="Link to this heading">#</a></h1>
 <p>L’attaque PNS représentait une limitation importante pour les mises en œuvre de QKD, mais plusieurs solutions ont émergé après sa formulation. La première est le protocole Scarani-Acín-Ribordy-Gisin (SARG) <span id="id1">[<a class="reference internal" href="#id30" title="Valerio Scarani, Antonio Acin, Grégoire Ribordy, and Nicolas Gisin. Quantum cryptography protocols robust against photon number splitting attacks for weak laser pulse implementations. Physical review letters, 92(5):057901, 2004.">1</a>]</span>, qui montre comment un simple changement dans la manière dont l’information est traitée dans une mise en œuvre BB84 utilisant des états cohérents atténués diminue l’impact des attaques PNS. Dans SARG, Alice prépare les mêmes quatre états que dans BB84, et Bob effectue également les mêmes deux mesures. Ainsi, au niveau quantique, les deux protocoles sont identiques et il n’est pas nécessaire de modifier le matériel quantique pour passer de BB84 à SARG. Cependant, Alice code son bit comme montré dans <a class="reference internal" href="#sargfig"><span class="std std-numref">Fig. 6</span></a> : le bit <span class="math notranslate nohighlight">\(0\)</span> (<span class="math notranslate nohighlight">\(1\)</span>) est codé sur <span class="math notranslate nohighlight">\(\ket{\pm z}\)</span> (<span class="math notranslate nohighlight">\(\ket{\pm x}\)</span>), c’est-à-dire que la base encode le bit.</p>
 <p>Voyons maintenant comment Alice et Bob effectuent la réconciliation après que les états ont été préparés et mesurés. Alice annonce l’état effectivement envoyé et l’un de ses voisins dans la sphère de Bloch. Par exemple, si elle a codé le bit <span class="math notranslate nohighlight">\(0\)</span> dans l’état <span class="math notranslate nohighlight">\(\ket{+z}\)</span>, elle annonce cet état et l’un des deux états <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span>. Sans perdre de généralité, supposons qu’elle annonce <span class="math notranslate nohighlight">\((+z,+x)\)</span>. Existe-t-il une situation dans laquelle Bob peut conclure de manière déterministe quel état Alice envoyait à partir de sa mesure effectuée et de son résultat ? Si Bob mesure dans la base <span class="math notranslate nohighlight">\(z\)</span>, il obtiendra le résultat <span class="math notranslate nohighlight">\(+1\)</span> avec une probabilité de un. Ce résultat est cependant compatible avec les deux états annoncés par Alice, donc Bob ne peut parvenir à une discrimination non ambiguë et cette instance est rejetée. Lorsque Bob mesure dans la base <span class="math notranslate nohighlight">\(x\)</span>, il peut obtenir les deux résultats possibles avec une probabilité de <span class="math notranslate nohighlight">\(1/2\)</span>. S’il obtient <span class="math notranslate nohighlight">\(+1\)</span>, ce résultat est à nouveau compatible avec les deux états annoncés, donc cette instance est rejetée. Cependant, s’il obtient <span class="math notranslate nohighlight">\(-1\)</span>, Bob conclut que l’état envoyé n’était pas <span class="math notranslate nohighlight">\(\ket{+x}\)</span>, donc il doit être <span class="math notranslate nohighlight">\(\ket{+z}\)</span>, c’est-à-dire qu’Alice encode un <span class="math notranslate nohighlight">\(0\)</span>. Notez que le nombre de symboles conservés après cette réconciliation est, en moyenne, la moitié de celui où Alice et Bob utilisent des bases différentes. Donc, dans une situation idéale sans pertes et avec des états de photons uniques, ce protocole est moins performant que BB84.</p>

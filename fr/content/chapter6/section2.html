@@ -182,7 +182,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -447,11 +445,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="l-attaque-pns-photon-number-splitting">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="l-attaque-pns-photon-number-splitting">
 <h1>L’attaque PNS (Photon-Number Splitting)<a class="headerlink" href="#l-attaque-pns-photon-number-splitting" title="Link to this heading">#</a></h1>
 <p>Le remplacement des états uniques de photon par des états cohérents atténués semblait offrir un bon compromis entre faisabilité et sécurité. Cependant, cette intuition initiale a été remise en question par l’attaque dite de Photon-Number Splitting (PNS), introduite dans <span id="id1">[<a class="reference internal" href="#id29" title="Gilles Brassard, Norbert Lütkenhaus, Tal Mor, and Barry C Sanders. Limitations on practical quantum cryptography. Physical review letters, 85(6):1330, 2000.">1</a>]</span>. Elle considère une mise en œuvre réaliste avec des états cohérents atténués à travers une fibre standard, où les pertes sont exponentielles avec la distance. L’attaque exploite la présence des pertes et le fait qu’un état cohérent atténués contient incidentellement des clones de l’état préparé. Pour simplifier l’explication de l’attaque, considérons un protocole dans lequel Alice code l’information dans la polarisation des états de lumière préparés, mais cela s’applique également à d’autres codages, comme les créneaux temporels expliqués ci-dessus. L’attaque fonctionne comme suit :</p>
 <ol class="arabic simple">
-<li><p>Après que l’état lumineux ait été préparé par Alice, Eve l’intercepte et mesure le nombre de photons de manière non destructive, c’est-à-dire que si elle mesure <span class="math notranslate nohighlight">\(n\)</span> photons, elle sait que l’état a été projeté dans l’état à <span class="math notranslate nohighlight">\(n\)</span> photons <span class="math notranslate nohighlight">\(\ket{n}\)</span>. Notez que cette mesure ne regarde que le nombre de photons, mais ne perturbe pas le degré de liberté utilisé par Alice pour coder l’information, la polarisation dans notre exemple. Eve obtient le résultat <span class="math notranslate nohighlight">\(n\)</span> avec une probabilité <span class="math notranslate nohighlight">\(p(n)=e^{-|\alpha|^2} \mu^n/n!\)</span>, voir l’équation <a class="reference internal" href="section1.html#equation-coherentstate">(53)</a>.</p></li>
+<li><p>Après que l’état lumineux ait été préparé par Alice, Eve l’intercepte et mesure le nombre de photons de manière non destructive, c’est-à-dire que si elle mesure <span class="math notranslate nohighlight">\(n\)</span> photons, elle sait que l’état a été projeté dans l’état à <span class="math notranslate nohighlight">\(n\)</span> photons <span class="math notranslate nohighlight">\(\ket{n}\)</span>. Notez que cette mesure ne regarde que le nombre de photons, mais ne perturbe pas le degré de liberté utilisé par Alice pour coder l’information, la polarisation dans notre exemple. Eve obtient le résultat <span class="math notranslate nohighlight">\(n\)</span> avec une probabilité <span class="math notranslate nohighlight">\(p(n)=e^{-|\alpha|^2} \mu^n/n!\)</span>, voir l’équation <a class="reference internal" href="section1.html#equation-coherentstate">(51)</a>.</p></li>
 <li><p>En fonction du nombre de photons mesurés :</p>
 <ul class="simple">
 <li><p>Si <span class="math notranslate nohighlight">\(n=0\)</span>, Eve ne fait rien.</p></li>

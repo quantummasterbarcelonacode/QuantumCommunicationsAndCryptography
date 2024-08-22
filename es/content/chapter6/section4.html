@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -447,7 +446,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="protocolos-de-estado-senuelo">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="protocolos-de-estado-senuelo">
 <h1>Protocolos de Estado Señuelo<a class="headerlink" href="#protocolos-de-estado-senuelo" title="Link to this heading">#</a></h1>
 <p>La solución definitiva a los ataques PNS fue proporcionada por Hwang <span id="id1">[<a class="reference internal" href="#id31" title="Won-Young Hwang. Quantum key distribution with high loss: toward global secure communication. Physical review letters, 91(5):057901, 2003.">1</a>]</span> en forma de los llamados protocolos de estado señuelo. En su versión más simple, Alice elige aleatoriamente si codifica su bit en un estado coherente débil con intensidades <span class="math notranslate nohighlight">\(\mu_1\)</span> o <span class="math notranslate nohighlight">\(\mu_2\)</span>. Experimentalmente, esto no es particularmente difícil, lo único que Alice necesita hacer es modular la intensidad de la luz. Ella envía el estado a Bob, quien lo mide como se esperaría en una implementación de BB84. Al final del protocolo, Alice también anuncia la amplitud que realmente utilizó en la codificación, de modo que Bob puede estimar la tasa de fotones recibidos en los dos casos, <span class="math notranslate nohighlight">\(R_B^{(1)}\)</span> y <span class="math notranslate nohighlight">\(R_B^{(2)}\)</span>. A continuación, mostramos cómo el uso de dos amplitudes permite a las partes honestas detectar a Eve cuando ella implementa el ataque PNS estándar. Esto no es una prueba de seguridad completa, pero ilustra las ideas principales del protocolo.</p>
 <p>En ausencia de Eve, cuando Alice y Bob están conectados por una fibra con pérdidas, las dos tasas son <span class="math notranslate nohighlight">\(R_B^{(i)}=f\mu_i\eta_C\)</span>, para <span class="math notranslate nohighlight">\(i=1,2\)</span>. Por lo tanto, la razón entre estas dos amplitudes es igual a la razón de las amplitudes de los estados coherentes, <span class="math notranslate nohighlight">\(R_B^{(1)} /R_B^{(2)}=\mu_1/\mu_2\)</span>. Cuando Eve implementa los ataques PNS, las tasas obtenidas están básicamente determinadas por los pulsos de dos fotones, por lo que se tiene <span class="math notranslate nohighlight">\(R_B^{(i)}\sim p_2^{(i)}\sim\mu_i^2\)</span>. Por lo tanto, si Eve aplicara el ataque, Alice y Bob notarían una razón inesperada entre las dos tasas, que ahora escalaría como el cuadrado de la razón de las intensidades y no como la razón misma. En tal caso, Alice y Bob detendrían la comunicación insegura. Agregar más intensidades dificulta aún más la tarea de Eve y se puede demostrar que la tasa esperada tiende a la ideal, proporcional a <span class="math notranslate nohighlight">\(\eta_C\)</span>.</p>

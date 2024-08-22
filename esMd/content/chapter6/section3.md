@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Protocolo SARG
 
 El ataque PNS representaba una limitación importante para la implementación de QKD, pero tras su formulación surgieron varias soluciones. La primera de ellas es el protocolo Scarani-Acin-Ribordy-Gisin (SARG) {cite}`SARG`, que muestra cómo un simple cambio en la forma en que se procesa la información al implementar BB84 utilizando estados coherentes débiles reduce el impacto de los ataques PNS. En SARG, Alice prepara los mismos cuatro estados que en BB84, y Bob también realiza las mismas dos mediciones. Por lo tanto, a nivel cuántico, ambos protocolos son idénticos y no es necesario cambiar ningún hardware cuántico para pasar de BB84 a SARG. Sin embargo, Alice codifica su bit como se muestra en {numref}`SARGfig`: el bit $0$ ($1$) se codifica en $\ket{\pm z}$ ($\ket{\pm x}$), es decir, la base codifica el bit.

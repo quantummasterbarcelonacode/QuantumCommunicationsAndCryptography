@@ -435,7 +435,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="classical-communication">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="classical-communication">
 <h1>Classical Communication<a class="headerlink" href="#classical-communication" title="Link to this heading">#</a></h1>
 <p>The problem of sending information in a reliable way through a noisy channel has a long history in classical information theory. There, a classical channel is described by a stochastic map <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, describing how an input random variable <span class="math notranslate nohighlight">\(X\)</span> is transformed into an output variable <span class="math notranslate nohighlight">\(Y\)</span>. The standard way of correcting channel errors is through <em>error correction</em>.</p>
 <p>As an example, consider the simple binary symmetric channel <span class="math notranslate nohighlight">\(P_\epsilon\)</span> that flips a bit with probability <span class="math notranslate nohighlight">\(\epsilon\)</span>, that is, <span class="math notranslate nohighlight">\(P_\epsilon(Y=0|X=0)=P_\epsilon(Y=1|X=1)=1-\epsilon\)</span> and <span class="math notranslate nohighlight">\(P_\epsilon(Y=0|X=1)=P_\epsilon(Y=1|X=0)=\epsilon\)</span>, which defines the error probability. Without losing generality, the error probability satisfies <span class="math notranslate nohighlight">\(\epsilon&lt;1/2\)</span>. A very simple error correcting code exploits repetition: to transmit a bit <span class="math notranslate nohighlight">\(X\)</span> to Bob, Alice sends its value three times through the channel, <span class="math notranslate nohighlight">\(X_1=X_2=X_3=X\)</span>. To define the value of his bit, Bob uses the majority of the received symbols, <span class="math notranslate nohighlight">\(Y=\text{maj}(Y_1,Y_2,Y_3)\)</span>. The new error probability is therefore <span class="math notranslate nohighlight">\(\epsilon'=3(1-\epsilon)\epsilon^2+\epsilon^3\)</span>, which is always smaller than <span class="math notranslate nohighlight">\(\epsilon\)</span> when <span class="math notranslate nohighlight">\(\epsilon&lt;1/2\)</span>.</p>

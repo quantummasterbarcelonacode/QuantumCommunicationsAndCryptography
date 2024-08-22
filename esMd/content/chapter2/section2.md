@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Puertas Cuánticas 
 
 Aunque estas notas se centran en la comunicación y la criptografía cuánticas, revisemos brevemente, para mayor claridad, las operaciones lógicas básicas que actúan sobre un cúbit. Recordemos que cualquier cálculo clásico consiste en una secuencia de puertas lógicas sobre una cadena de bits. Cualquiera de estas puertas siempre puede descomponerse en términos de puertas AND y NOT. Estas dos operaciones, entonces, proporcionan un conjunto universal de puertas para la computación clásica. Se concluiría que lo que se necesita para adaptar la computación clásica a la cuántica es (i) codificar los bits clásicos en bits cuánticos como se describió anteriormente, $i \rightarrow \ket i$, y (ii) implementar la versión cuántica de estas puertas.

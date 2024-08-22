@@ -435,7 +435,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="implementations">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="implementations">
 <h1>Implementations<a class="headerlink" href="#implementations" title="Link to this heading">#</a></h1>
 <p>While still challenging, QKD protocols are simpler to implement than other quantum information applications, such as quantum computers. This is because they “only” require the preparation of single-qubit states by Alice that are immediately sent to Bob, who measures them upon reception. The main challenge is that, for QKD protocols to be practical, the quantum state must travel over long distances. Therefore, QKD implementations have to deal with the problem of long-distance quantum communication. Light is the ideal carrier for that, so Alice should send her quantum states to Bob using light pulses at the quantum level. There are three main scenarios for QKD protocols in prepare-and-measure configurations:</p>
 <ul>

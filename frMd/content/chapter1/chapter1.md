@@ -1,4 +1,18 @@
-﻿# Postulats de base de la Mécanique Quantique
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+# Postulats de base de la Mécanique Quantique
 
 L'objectif de cette première section est d'introduire les postulats de base de la mécanique quantique et sa structure mathématique. La plupart du formalisme présenté ici peut être trouvé dans le chapitre 2 de {cite}`nielsen2010quantum`. L'algèbre linéaire est l'étude des espaces vectoriels et des opérateurs linéaires agissant sur ces espaces. En fait, toute la mécanique quantique repose fondamentalement sur de l'algèbre linéaire appliquée à un espace de Hilbert complexe, représentée par la notation Dirac, moins standard. Dans cette notation :
 

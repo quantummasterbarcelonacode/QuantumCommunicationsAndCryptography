@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -447,7 +446,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="protocolo-de-ekert">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="protocolo-de-ekert">
 <h1>Protocolo de Ekert<a class="headerlink" href="#protocolo-de-ekert" title="Link to this heading">#</a></h1>
 <p>En todos los protocolos anteriores, excepto en el último, el entrelazamiento no juega ningún papel: Alice prepara estados de una sola partícula que son enviados y medidos por Bob. En 1991, Artur Ekert propuso un esquema novedoso para la distribución segura de claves cuánticas basado en estados entrelazados y en la violación de la desigualdad de Bell <span id="id1">[<a class="reference internal" href="#id24" title="Artur K Ekert. Quantum cryptography based on bell’s theorem. Physical review letters, 67(6):661, 1991.">1</a>]</span>. Ekert no estaba al tanto del trabajo previo de Bennett y Brassard, que apareció en las actas de una conferencia de informática. De hecho, él (re)descubrió la QKD de manera independiente. Sin embargo, su enfoque del problema parecía ser completamente diferente, basado en las violaciones de la desigualdad de Bell producidas por estados entrelazados, en lugar de la no ortogonalidad de los estados cuánticos.</p>
 <p>El protocolo de Ekert funciona de la siguiente manera (aquí proporcionamos una versión ligeramente diferente de su protocolo original, que es más simple pero conceptualmente equivalente): Alice y Bob reciben bits cuánticos correlacionados que se supone que están en un estado maximamente entrelazado, digamos el estado <a class="reference internal" href="../chapter2/section4.html#equation-bellstate">(25)</a>. Alice y Bob aplican cada uno las dos mediciones <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span> y <span class="math notranslate nohighlight">\(B_1\)</span> y <span class="math notranslate nohighlight">\(B_2\)</span> dadas en <a class="reference internal" href="../chapter2/section4.html#chshfig"><span class="std std-numref">Figura 2</span></a>, que maximizan el valor de la desigualdad de CHSH. Además, Alice realiza una tercera medición <span class="math notranslate nohighlight">\(A_3\)</span> en la misma dirección que una de las mediciones de Bob, digamos <span class="math notranslate nohighlight">\(B_1\)</span>, para obtener resultados perfectamente correlacionados. La idea es que las partes honestas obtienen una clave a partir de <span class="math notranslate nohighlight">\(A_3\)</span> y <span class="math notranslate nohighlight">\(B_1\)</span>, que están perfectamente alineadas. Luego, calculan el valor de CHSH para garantizar que comparten un estado maximamente entrelazado. En el caso ideal, este parámetro debería ser igual a <span class="math notranslate nohighlight">\(2\sqrt{2}\)</span>.</p>

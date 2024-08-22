@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -437,7 +436,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="libreta-de-un-solo-uso-y-distribucion-cuantica-de-claves">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="libreta-de-un-solo-uso-y-distribucion-cuantica-de-claves">
 <h1>Libreta de Un Solo Uso y Distribución Cuántica de Claves<a class="headerlink" href="#libreta-de-un-solo-uso-y-distribucion-cuantica-de-claves" title="Link to this heading">#</a></h1>
 <p>Antes de adentrarnos en el mundo cuántico, revisemos un resultado seminal de Vernam que muestra cómo intercambiar información privada de manera completamente segura utilizando una clave secreta compartida previamente.</p>
 <p>En cualquier escenario criptográfico, dos partes honestas, Alice y Bob, desean intercambiar información de manera privada. También hay una tercera parte deshonesta, la espía, llamada Eve, que quiere leer esta información. A partir de ahora, supongamos que Alice y Bob comparten una clave secreta, es decir, una lista de bits perfectamente correlacionados sobre los cuales Eve no tiene información. La clave secreta, de longitud <span class="math notranslate nohighlight">\(N\)</span>, se denota por <span class="math notranslate nohighlight">\(\vec k\)</span> que es una cadena de <span class="math notranslate nohighlight">\(N\)</span> bits <span class="math notranslate nohighlight">\(k_i\)</span>, con <span class="math notranslate nohighlight">\(i=1,\ldots,N\)</span>. Para enviar un mensaje de longitud <span class="math notranslate nohighlight">\(M\leq N\)</span> a Bob, denotado por <span class="math notranslate nohighlight">\(\vec m\)</span> Alice puede realizar una suma módulo 2 de los bits de su mensaje con <span class="math notranslate nohighlight">\(M\)</span> bits de la clave secreta y enviar la cadena de <span class="math notranslate nohighlight">\(M\)</span> bits resultante a Bob a través de un canal público (inseguro). De forma más exacta, con esta operación, Alice calcula el XOR booleano (el XOR booleano, denotado por <span class="math notranslate nohighlight">\(\oplus\)</span>, es la operación tal que <span class="math notranslate nohighlight">\(0\oplus 0=1\oplus 1=0\)</span> y <span class="math notranslate nohighlight">\(0\oplus 1=1\oplus 0=1\)</span>) de cada bit en su mensaje, <span class="math notranslate nohighlight">\(m_i\)</span>, con un bit en la clave secreta, <span class="math notranslate nohighlight">\(k_i\)</span>, y envía los bits resultantes, <span class="math notranslate nohighlight">\(r_i=m_i\oplus k_i\)</span>, a través del canal. Se puede demostrar que Eve, quien solo tiene acceso al mensaje <span class="math notranslate nohighlight">\(\vec r\)</span> enviado a través del canal inseguro, no tiene ninguna información sobre el mensaje real <span class="math notranslate nohighlight">\(\vec m\)</span>. Sin embargo, en el lado de Bob, es muy fácil decodificar el mensaje ya que él conoce la clave. Simplemente tiene que sumar el mensaje recibido a su clave, obteniendo <span class="math notranslate nohighlight">\(r_i\oplus k_i=m_i\oplus k_i\oplus k_i=m_i\)</span>. Este esquema, conocido como el protocolo de libreta de un solo uso, es seguro siempre que (i) el número de bits de clave utilizados para la codificación sea igual al número de bits en el mensaje y (ii) los bits de la clave secreta no se reutilicen nunca.</p>

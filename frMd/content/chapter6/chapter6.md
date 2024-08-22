@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Implémentations
 
 Bien que cela reste difficile, les protocoles de QKD (Quantum Key Distribution) sont plus simples à mettre en œuvre que d'autres applications de l'information quantique, comme les ordinateurs quantiques. En effet, ils nécessitent « seulement » la préparation d'états à un seul qubit par Alice, qui sont immédiatement envoyés à Bob, qui les mesure dès leur réception. Le principal défi est que, pour que les protocoles de QKD soient pratiques, l'état quantique doit voyager sur de longues distances. Par conséquent, les implémentations de QKD doivent faire face au problème de la communication quantique à longue distance. La lumière est le support idéal pour cela, donc Alice doit envoyer ses états quantiques à Bob en utilisant des impulsions lumineuses au niveau quantique. Il existe trois scénarios principaux pour les protocoles de QKD dans des configurations de préparation-et-mesure :

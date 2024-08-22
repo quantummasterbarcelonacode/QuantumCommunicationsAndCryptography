@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # The Photon-Number Splitting Attack
 
 The replacement of single-photon states by weak coherent states seemed to offer a good compromise between feasibility and security. However this initial intuition was challenged by the so-called Photon-Number Splitting (PNS) attack, introduced in {cite}`PNS`. It considers a realistic implementation with weak coherent states through a standard fibre, where losses are exponential with distance. The attack exploits the presence of losses and the fact that a weak-coherent state incidentally contains clones of the prepared state. To simplify the explanation of the attack, we consider a protocol in which Alice encodes the information in the polarisation of the prepared light states, but it equally applies to other encodings, such as the time bins explained above. The attack works as follows:

@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Protocole Ekert 
 
 Dans tous les protocoles précédents, sauf le dernier, l'intrication ne joue aucun rôle : Alice prépare des états de particules uniques qui sont envoyés à Bob et mesurés par lui. En 1991, Artur Ekert a proposé un nouveau schéma pour la QKD sécurisée basé sur des états intriqués et une violation des inégalités de Bell {cite}`Ekert`. Ekert n'était pas au courant des travaux précédents de Bennett et Brassard, qui apparaissent dans les publications d'une conférence en informatique. De fait, il a (re)découvert la QKD de manière indépendante. Cependant, son approche du problème fut complètement différente, basée sur les violations des inégalités de Bell produites par des états intriqués plutôt que sur la non-orthogonalité des états quantiques.

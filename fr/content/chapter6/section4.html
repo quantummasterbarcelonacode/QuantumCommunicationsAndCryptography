@@ -182,7 +182,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -447,7 +445,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="protocoles-a-etats-leurres">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="protocoles-a-etats-leurres">
 <h1>Protocoles à états leurres<a class="headerlink" href="#protocoles-a-etats-leurres" title="Link to this heading">#</a></h1>
 <p>La solution finale aux attaques PNS a été fournie par Hwang <span id="id1">[<a class="reference internal" href="#id31" title="Won-Young Hwang. Quantum key distribution with high loss: toward global secure communication. Physical review letters, 91(5):057901, 2003.">1</a>]</span> sous la forme des protocoles dits à états leurres. Dans leur version la plus simple, Alice choisit aléatoirement si elle encode son bit dans un état cohérent atténué avec des intensités différentes <span class="math notranslate nohighlight">\(\mu_1\)</span> ou <span class="math notranslate nohighlight">\(\mu_2\)</span>. Expérimentalement, cela n’est pas particulièrement difficile ; tout ce qu’Alice doit faire est de moduler l’intensité de la lumière. Elle envoie l’état à Bob, qui le mesure comme prévu dans une implémentation BB84. À la fin du protocole, Alice annonce également l’amplitude qu’elle a réellement utilisée pour l’encodage, permettant à Bob d’estimer le taux de photons reçus dans les deux cas, <span class="math notranslate nohighlight">\(R_B^{(1)}\)</span> et <span class="math notranslate nohighlight">\(R_B^{(2)}\)</span>. Ce qui suit montre l’intuition de comment l’utilisation de deux amplitudes permet aux parties honnêtes de détecter Eve lorsqu’elle met en œuvre l’attaque PNS standard. Ce n’est pas une preuve de sécurité complète, mais cela illustre les principales idées du protocole.</p>
 <p>En l’absence d’Eve, lorsque Alice et Bob sont connectés par une fibre qui induit des pertes, les deux taux sont <span class="math notranslate nohighlight">\(R_B^{(i)} = f \mu_i \eta_C\)</span>, pour <span class="math notranslate nohighlight">\(i = 1,2\)</span>. Le ratio entre ces deux amplitudes est donc égal au ratio des amplitudes des états cohérents, <span class="math notranslate nohighlight">\(R_B^{(1)} / R_B^{(2)} = \mu_1 / \mu_2\)</span>. Lorsque Eve met en œuvre les attaques PNS, les taux obtenus sont essentiellement donnés par les impulsions à deux photons, donc on a <span class="math notranslate nohighlight">\(R_B^{(i)} \sim p_2^{(i)} \sim \mu_i^2\)</span>. Par conséquent, si Eve a appliqué l’attaque, Alice et Bob remarqueraient un ratio inattendu entre les deux taux, qui serait désormais proportionnel au carré du ratio des intensités et non au ratio lui-même. Dans ce cas, Alice et Bob interrompent la communication non sécurisée. Ajouter plus d’intensités rend la vie d’Eve encore plus difficile, et il peut être prouvé que le taux attendu tend vers le taux idéal, proportionnel à <span class="math notranslate nohighlight">\(\eta_C\)</span>.</p>

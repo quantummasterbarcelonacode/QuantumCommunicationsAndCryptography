@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Repetidores Cuánticos
 
 El uso de la destilación de entrelazamiento amplía el conjunto de canales que permiten una comunicación cuántica confiable. Sin embargo, esto no es la solución definitiva. De hecho, existen estados de los cuales no se pueden destilar estados de entrelazamiento máximo. El ejemplo más simple son los estados separables: claramente, no se puede destilar entrelazamiento de un estado no entrelazado. Al hablar de canales, existen canales para los cuales cualquier estado de salida es separable. Estos canales se denominan *canales que rompen el entrelazamiento*, por obvias razones. Se sabe que un canal $\Lambda$ rompe el entrelazamiento si, y solo si, el estado obtenido al aplicar el canal a una de las mitades del estado maximalmente entrelazado, es separable. Un ejemplo simple de tal canal es dado por el canal de despolarización, Ec. {eq}`depchannel`, con $0\leq p\leq 1/3$.  Incluso existen canales que permiten la distribución de entrelazamiento, pero los estados entrelazados obtenidos no pueden ser destilados en estados maximalmente entrelazados. Estos estados son conocidos como estados *limitados por el entrelazamiento* {cite}`horodecki`. Los canales que rompen el entrelazamiento, o canales que a lo sumo limitan el entrelazamiento, tienen $\text{QC}^\leftrightarrow=0$. Más allá de estas consideraciones más académicas, incluso para un canal con pérdidas, y a pesar de que dicho canal tiene en principio una capacidad cuántica positiva para todas las pérdidas, la tasa de comunicación cuántica escala con la transmisión del canal, disminuyendo así exponencialmente con la distancia entre Alice y Bob. En una implementación realista, la comunicación cuántica se vuelve impráctica después de, digamos, unos pocos cientos de kilómetros.

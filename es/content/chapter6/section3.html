@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -447,7 +446,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="protocolo-sarg">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="protocolo-sarg">
 <h1>Protocolo SARG<a class="headerlink" href="#protocolo-sarg" title="Link to this heading">#</a></h1>
 <p>El ataque PNS representaba una limitación importante para la implementación de QKD, pero tras su formulación surgieron varias soluciones. La primera de ellas es el protocolo Scarani-Acin-Ribordy-Gisin (SARG) <span id="id1">[<a class="reference internal" href="#id30" title="Valerio Scarani, Antonio Acin, Grégoire Ribordy, and Nicolas Gisin. Quantum cryptography protocols robust against photon number splitting attacks for weak laser pulse implementations. Physical review letters, 92(5):057901, 2004.">1</a>]</span>, que muestra cómo un simple cambio en la forma en que se procesa la información al implementar BB84 utilizando estados coherentes débiles reduce el impacto de los ataques PNS. En SARG, Alice prepara los mismos cuatro estados que en BB84, y Bob también realiza las mismas dos mediciones. Por lo tanto, a nivel cuántico, ambos protocolos son idénticos y no es necesario cambiar ningún hardware cuántico para pasar de BB84 a SARG. Sin embargo, Alice codifica su bit como se muestra en <a class="reference internal" href="#sargfig"><span class="std std-numref">Figura 6</span></a>: el bit <span class="math notranslate nohighlight">\(0\)</span> (<span class="math notranslate nohighlight">\(1\)</span>) se codifica en <span class="math notranslate nohighlight">\(\ket{\pm z}\)</span> (<span class="math notranslate nohighlight">\(\ket{\pm x}\)</span>), es decir, la base codifica el bit.</p>
 <p>Veamos ahora cómo Alice y Bob realizan la reconciliación después de que los estados han sido preparados y medidos. Alice anuncia el estado enviado y uno de sus vecinos en la esfera de Bloch. Por ejemplo, si ha codificado el bit <span class="math notranslate nohighlight">\(0\)</span> en el estado <span class="math notranslate nohighlight">\(\ket{+z}\)</span>, anuncia este estado y uno de los dos estados <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span>. Sin perder generalidad, supongamos que anuncia <span class="math notranslate nohighlight">\((+z,+x)\)</span>. ¿Existe una situación en la que Bob pueda concluir de manera determinística qué estado estaba enviando Alice a partir de la medición implementada y su resultado? Si Bob mide en la base <span class="math notranslate nohighlight">\(z\)</span>, obtendrá el resultado <span class="math notranslate nohighlight">\(+1\)</span> con probabilidad uno. Sin embargo, este resultado es compatible con los dos estados anunciados por Alice, por lo que Bob no puede llegar a una discriminación inequívoca y esta ronda se descarta. Cuando Bob mide en la base <span class="math notranslate nohighlight">\(x\)</span>, puede obtener dos resultados posibles con probabilidad <span class="math notranslate nohighlight">\(1/2\)</span>. Si obtiene <span class="math notranslate nohighlight">\(+1\)</span>, este resultado nuevamente es compatible con los dos estados anunciados, por lo que esta instancia se descarta. Sin embargo, si obtiene <span class="math notranslate nohighlight">\(-1\)</span>, Bob concluye que el estado enviado no era <span class="math notranslate nohighlight">\(\ket{+x}\)</span>, por lo que tiene que ser <span class="math notranslate nohighlight">\(\ket{+z}\)</span>, es decir, Alice está codificando un <span class="math notranslate nohighlight">\(0\)</span>. Cabe señalar que el número de símbolos que se conservan después de esta reconciliación es, en promedio, la mitad de aquellos en los que Alice y Bob usan bases diferentes. Así que, en una situación ideal sin pérdidas y con estados de fotón único, este protocolo es peor que BB84.</p>

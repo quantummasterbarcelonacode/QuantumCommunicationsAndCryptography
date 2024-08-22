@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # El Protocolo BB84
 
 Después de introducir la idea de la QKD, presentamos el primer protocolo, introducido en 1984 por Bennett y Brassard y conocido como BB84 {cite}`BB84`. Recordemos que el objetivo del protocolo es establecer una clave secreta compartida, que luego se utiliza para ejecutar el protocolo de libreta de un solo uso. En el caso de BB84, la clave se establece de la siguiente manera:

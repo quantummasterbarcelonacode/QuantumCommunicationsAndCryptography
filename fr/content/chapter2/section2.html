@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Recherche" href="../../search.html" />
     <link rel="next" title="Le Théorème de Non-Clonage" href="section3.html" />
-    <link rel="prev" title="Le Bit Quantique" href="section1.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="section1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -182,7 +182,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="section1.html">Le Bit Quantique</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Portes Quantiques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section3.html">Le Théorème de Non-Clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="section4.html">Le Théorème de Bell</a></li>
@@ -191,7 +190,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
 </ul>
@@ -447,21 +445,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="portes-quantiques">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="portes-quantiques">
 <h1>Portes Quantiques<a class="headerlink" href="#portes-quantiques" title="Link to this heading">#</a></h1>
 <p>Bien que ces notes se concentrent sur la communication et la cryptographie quantiques, revoyons brièvement ici, pour des raisons d’exhaustivité, les opérations logiques de base agissant sur un qubit. Rappelons que tout calcul classique consiste en une séquence de portes logiques appliquées à une chaîne de bits. Chacune de ces portes peut toujours être décomposée en termes de portes AND et NOT. Ces deux opérations fournissent donc un ensemble universel de portes pour le calcul classique. On pourrait conclure que les ingrédients nécessaire au passage du calcul classique au calcul quantique est (i) d’encoder les bits classiques en qubits comme précédemment, <span class="math notranslate nohighlight">\(i\rightarrow\ket i\)</span>, et (ii) d’implémenter la version quantique de ces portes.</p>
 <p>Lorsqu’on aborde le traitement de l’information quantique dans un système contrôlé (fermé), toute évolution est décrite par une opération unitaire <span class="math notranslate nohighlight">\(U\)</span>. Ces opérations sont réversibles, c’est-à-dire qu’en connaissant l’opération et l’état de sortie, on peut toujours reconstruire l’état d’entrée. Notez cependant que les portes OR et AND sont irréversibles, car le bit de sortie n’est pas suffisant pour inférer les deux bits d’entrée. Ainsi, pour incorporer le calcul classique standard dans le formalisme quantique, il faut d’abord le rendre réversible. C’est en effet possible, comme l’a montré Bennett dans <span id="id1">[<a class="reference internal" href="#id7" title="Charles H Bennett. Logical reversibility of computation. IBM journal of Research and Development, 17(6):525–532, 1973.">1</a>]</span>: tout calcul classique peut être rendu réversible sans augmentation exponentielle des ressources requises. Cela implique que tout calcul classique peut être simulé par des ressources quantiques de la manière suivante : d’abord, construire le calcul classique réversible équivalent, puis remplacer les bits classiques, ou cbits, par des qubits.</p>
 <p>Dans ce schéma, la version quantique et réversible d’une opération <span class="math notranslate nohighlight">\(f\)</span>
 Sur une chaîne de bits <span class="math notranslate nohighlight">\(\vec b\)</span> se lit</p>
 <div class="math notranslate nohighlight" id="equation-revf">
-<span class="eqno">(15)<a class="headerlink" href="#equation-revf" title="Link to this equation">#</a></span>\[    U_f\ket{\vec b}\ket 0=\ket{\vec b}\ket{f(\vec b)} .\]</div>
+<span class="eqno">(14)<a class="headerlink" href="#equation-revf" title="Link to this equation">#</a></span>\[    U_f\ket{\vec b}\ket 0=\ket{\vec b}\ket{f(\vec b)} .\]</div>
 <p>Par exemple, l’opération AND quantique peut être réalisée comme suit : un état auxiliaire dans l’état <span class="math notranslate nohighlight">\(\ket{0}\)</span> est ajouté aux deux qubits d’entrée dans les états <span class="math notranslate nohighlight">\(\ket i\)</span> et <span class="math notranslate nohighlight">\(\ket j\)</span>. Il est facile de voir qu’il existe une unitaire agissant sur un système de trois qubits qui effectue la transformation <span class="math notranslate nohighlight">\(\ket i\ket j\ket 0\rightarrow\ket
 i\ket j\ket{i\cdot j}\)</span>.</p>
 <!--Luke: rather than a dot, maybe $i \text{AND} j$ would be better?) -->
 <p>La discussion précédente montre que tout calcul classique peut être incorporé dans un ordinateur quantique, un dispositif capable de manipuler des états quantiques. Mais est-il possible d’aller plus loin ? Pour ce faire, il est important de caractériser l’ensemble de toutes les opérations quantiques sur un état quantique. Par exemple, il serait intéressant d’identifier, comme dans le cas classique, un ensemble de portes élémentaires dans lequel décomposer toute opération unitaire agissant sur un état initial de <span class="math notranslate nohighlight">\(N\)</span> qubits. Un résultat fondamental dans cette direction a été fourni dans <span id="id2">[<a class="reference internal" href="#id8" title="Adriano Barenco, Charles H Bennett, Richard Cleve, David P DiVincenzo, Norman Margolus, Peter Shor, Tycho Sleator, John A Smolin, and Harald Weinfurter. Elementary gates for quantum computation. Physical review A, 52(5):3457, 1995.">2</a>]</span>: l’ensemble constitué de toutes les opérations sur un qubit et de la porte CNOT est universel. Plus précisément, toute opération unitaire agissant sur un système de <span class="math notranslate nohighlight">\(N\)</span>-qubit, <span class="math notranslate nohighlight">\(U\in SU(2^N)\)</span>, peut être décomposée en une séquence d’opérations sur un qubit et de portes CNOT. En fait, il s’avère que toute opération « intriquante » à deux qubits est suffisante pour le calcul quantique lorsqu’elle est assistée par des opérations sur un qubit<span id="id3">[<a class="reference internal" href="#id9" title="Michael J Bremner, Christopher M Dawson, Jennifer L Dodd, Alexei Gilchrist, Aram W Harrow, Duncan Mortimer, Michael A Nielsen, and Tobias J Osborne. Practical scheme for quantum computation with any two-qubit entangling gate. Physical review letters, 89(24):247902, 2002.">3</a>]</span>. D’un point de vue plus pratique, il a été démontré que les portes de Hadamard (<span class="math notranslate nohighlight">\(U_H\)</span>), de phase (<span class="math notranslate nohighlight">\(U_{ph}\)</span>), <span class="math notranslate nohighlight">\(\pi/8\)</span> (<span class="math notranslate nohighlight">\(U_{\pi/8}\)</span>) et CNOT sont universelles, i.e. toute opérations unitaire sur <span class="math notranslate nohighlight">\(N\)</span>-qubit peut être décomposée sous la forme de ces portes
 <span id="id4">[<a class="reference internal" href="#id10" title="P Oscar Boykin, Tal Mor, Matthew Pulver, Vwani Roychowdhury, and Farrokh Vatan. On universal and fault-tolerant quantum computing. arXiv preprint quant-ph/9906054, 1999.">4</a>]</span>. Leurs expressions sont:</p>
 <div class="math notranslate nohighlight" id="equation-content-chapter2-section2-0">
-<span class="eqno">(16)<a class="headerlink" href="#equation-content-chapter2-section2-0" title="Link to this equation">#</a></span>\[\begin{split}  U_H = \frac{1}{\sqrt 2}\begin{pmatrix}1 &amp; 1 \\
+<span class="eqno">(15)<a class="headerlink" href="#equation-content-chapter2-section2-0" title="Link to this equation">#</a></span>\[\begin{split}  U_H = \frac{1}{\sqrt 2}\begin{pmatrix}1 &amp; 1 \\
   1 &amp; 1\\\end{pmatrix}\quad
   U_{ph} = \begin{pmatrix}1 &amp; 0 \\
   0 &amp; i\\\end{pmatrix}\quad
@@ -529,7 +540,7 @@ i\ket j\ket{i\cdot j}\)</span>.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">précédent</p>
-        <p class="prev-next-title">Le Bit Quantique</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"

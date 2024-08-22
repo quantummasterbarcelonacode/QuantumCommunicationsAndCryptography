@@ -1,3 +1,18 @@
+<p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+
+
 # Protocolo de Ekert
 
 En todos los protocolos anteriores, excepto en el último, el entrelazamiento no juega ningún papel: Alice prepara estados de una sola partícula que son enviados y medidos por Bob. En 1991, Artur Ekert propuso un esquema novedoso para la distribución segura de claves cuánticas basado en estados entrelazados y en la violación de la desigualdad de Bell {cite}`Ekert`. Ekert no estaba al tanto del trabajo previo de Bennett y Brassard, que apareció en las actas de una conferencia de informática. De hecho, él (re)descubrió la QKD de manera independiente. Sin embargo, su enfoque del problema parecía ser completamente diferente, basado en las violaciones de la desigualdad de Bell producidas por estados entrelazados, en lugar de la no ortogonalidad de los estados cuánticos.

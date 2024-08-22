@@ -445,7 +445,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bennett-brassard-mermin-argument">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="bennett-brassard-mermin-argument">
 <h1>Bennett-Brassard-Mermin Argument<a class="headerlink" href="#bennett-brassard-mermin-argument" title="Link to this heading">#</a></h1>
 <p>A few months after Ekert’s work, Bennett, Brassard and
 Mermin <span id="id1">[<a class="reference internal" href="#id26" title="Charles H Bennett, Gilles Brassard, and N David Mermin. Quantum cryptography without bell’s theorem. Physical review letters, 68(5):557, 1992.">1</a>]</span> wrote an article showing that a QKD protocol à

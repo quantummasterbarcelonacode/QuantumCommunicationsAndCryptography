@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -447,7 +446,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="argumento-de-bennett-brassard-mermin">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="argumento-de-bennett-brassard-mermin">
 <h1>Argumento de Bennett-Brassard-Mermin<a class="headerlink" href="#argumento-de-bennett-brassard-mermin" title="Link to this heading">#</a></h1>
 <p>Unos meses después del trabajo de Ekert, Bennett, Brassard y Mermin <span id="id1">[<a class="reference internal" href="#id26" title="Charles H Bennett, Gilles Brassard, and N David Mermin. Quantum cryptography without bell’s theorem. Physical review letters, 68(5):557, 1992.">1</a>]</span> escribieron un artículo demostrando que un protocolo de QKD al estilo de Ekert siempre puede transformarse en un protocolo equivalente sin entrelazamiento, al estilo BB84, en el que los estados son preparados por Alice y medidos por Bob. Su argumento es el siguiente:</p>
 <p>En primer lugar, el papel de la violación de la desigualdad de Bell en la propuesta de Ekert es certificar que Alice y Bob comparten un estado de dos cúbits maximamente entrelazado. Sin embargo, existen otras mediciones que pueden proporcionar el mismo nivel de certificación. Por ejemplo, es el único estado que da correlaciones perfectas cuando ambas partes locales miden en las bases <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span>. Es decir, es el único estado de dos cúbits tal que

@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
@@ -437,7 +436,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bb84-con-codificacion-en-bloques-temporales-y-estados-debilmente-coherentes">
+  <p style="text-align: center;">
+    <a id="linken" href="../../../../en/content/index.html">English &#x1F1EC;&#x1F1E7;</a> - 
+    <a id="linkfr" href="../../../../fr/content/index.html">Français &#x1F1EB;&#x1F1F7;</a> - 
+    <a id="linkes" href="../../../../es/content/index.html">Español &#x1F1EA;&#x1F1F8;</a>
+</p>
+<script>
+    currentPage = window.location.href;
+    beforeLang = currentPage.slice(0, currentPage.indexOf("content") - 3);
+    afterLang = currentPage.slice(currentPage.indexOf("content"));
+    document.getElementById("linken").href = beforeLang + "en/" + afterLang;
+    document.getElementById("linkfr").href = beforeLang + "fr/" + afterLang;
+    document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="bb84-con-codificacion-en-bloques-temporales-y-estados-debilmente-coherentes">
 <h1>BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes<a class="headerlink" href="#bb84-con-codificacion-en-bloques-temporales-y-estados-debilmente-coherentes" title="Link to this heading">#</a></h1>
 <p>La codificación en bloques temporales es una de las soluciones más populares para enviar información cuántica a largas distancias. En principio, la idea es preparar estados de un solo fotón y enviarlos a través de un acoplador de fibra con transmisión <span class="math notranslate nohighlight">\(T\)</span>. Los dos caminos tienen diferentes longitudes y son recombinados. Se aplica un cambio de fase <span class="math notranslate nohighlight">\(\varphi\)</span>  a uno de los dos caminos, digamos el más largo, véase <a class="reference internal" href="#timebin"><span class="std std-numref">Figura 5</span></a>. Al manipular la transmisión del acoplamiento y la fase, en principio es posible preparar cualquier estado cúbit, dado que uno tiene <span class="math notranslate nohighlight">\(\ket\psi=\sqrt T\ket s+\sqrt Re^{i\varphi}\ket{\ell}\)</span>. En la práctica, cambiar la transmisión del primer acoplador es más demandante que cambiar la fase aplicada, por lo que a menudo se emplea una transmisión fija dada por <span class="math notranslate nohighlight">\(T=1/2\)</span>. Además, recombinar los dos caminos de manera determinística también es un desafío, por lo que a menudo se utiliza otro acoplador nuevamente con una transmisión de <span class="math notranslate nohighlight">\(1/2\)</span>. Este proceso más simple, por lo tanto, prepara cualquier estado <span class="math notranslate nohighlight">\(\ket\psi=(\ket s+e^{i\varphi}\ket{\ell})/\sqrt 2\)</span>, es decir, cualquier estado en el ecuador de la esfera de Bloch definido por <span class="math notranslate nohighlight">\(\ket{s}\)</span> y <span class="math notranslate nohighlight">\(\ket{\ell}\)</span>, con cierta probabilidad. Sin embargo, esto es suficiente para implementar el protocolo BB84 a través del esquema en <a class="reference internal" href="#timebin"><span class="std std-numref">Figura 5</span></a>.</p>
 <!--Luke: Maybe we should mention that R is just the coefficient normalizing the state based on T?-->
