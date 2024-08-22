@@ -45,7 +45,6 @@ mv enMd/_build/html en
 mv esMd/_build/html es
 mv frMd/_build/html fr
 rm -r enMd/_build esMd/_build frMd/_build
-rm -r en/_sources es/_sources fr/_sources
 
 # For each of the built html files
 for file in $(find . -wholename '*/content/*.html'); do
