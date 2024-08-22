@@ -31,10 +31,10 @@
 #done
 
 # Fix all carriage returns
-#for file in $(find . -name '*.md'); do
-    #echo "Fixing carriage returns in $file"
-    #dos2unix $file
-#done
+for file in $(find . -name '*.md'); do
+    echo "Fixing carriage returns in $file"
+    dos2unix $file
+done
 
 # Run jupyter-book build on all language folders
 jupyter-book build enMd/ -n --all
@@ -51,6 +51,7 @@ rm -r en/_sources es/_sources fr/_sources
 for file in $(find . -wholename '*/content/*.html'); do
 
     echo "Removing html links from $file"
+    sed -i 's/intro.html/intro/g' $file
     sed -i 's/chapter1.html/chapter1/g' $file
     sed -i 's/chapter2.html/chapter2/g' $file
     sed -i 's/chapter3.html/chapter3/g' $file
@@ -68,3 +69,6 @@ for file in $(find . -wholename '*/content/*.html'); do
     sed -i 's/section6.html/section6/g' $file
 
 done
+
+sed -i 's/index.html/index/g' index.html
+sed -i 's/intro.html/intro/g' en/index.html
