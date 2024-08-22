@@ -15,8 +15,6 @@
 
 # Comunicaciones y Criptografía Cuánticas
 
-[English](https://quantummasterbarcelonacode.github.io/QuantumCommunicationsAndCryptography/en/_build/html/content/intro.html) - [Français](https://quantummasterbarcelonacode.github.io/QuantumCommunicationsAndCryptography/fr/_build/html/content/intro.html) - [Español](https://quantummasterbarcelonacode.github.io/QuantumCommunicationsAndCryptography/es/_build/html/content/intro.html)
-
 Estas son las notas del curso de Comunicaciones y Criptografía Cuánticas del Máster en Ciencia y Tecnología Cuánticas de la Universidad de Barcelona, impartido por el Prof. Antonio Acín.
 
 Primero, damos un resumen de las técnicas matemáticas requeridas en el formalismo cuántico: cómo representar los estados cuánticos, su evolución y su medición. Esto define las reglas comunes a cualquier aplicación de la información cuántica. Luego, presentamos la unidad básica de la información cuántica, el llamado bit cuántico o cúbit. A continuación, nos movemos hacia la criptografía cuántica, con un énfasis en los protocolos de distribución de claves cuánticas. Finalmente, discutimos el problema de la comunicación cuántica a larga distancia.
