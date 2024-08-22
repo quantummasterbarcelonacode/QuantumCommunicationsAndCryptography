@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fundamentos de la Mecánica Cuántica &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter1/chapter1';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Elementos Básicos de la Teoría de la Información Cuántica" href="../chapter2/chapter2.html" />
+    <link rel="prev" title="Comunicaciones y Criptografía Cuánticas" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Comunicaciones y Criptografía Cuánticas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de la Mecánica Cuántica</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">El Teorema de No Clonación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Teorema de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Criptografía Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">Libreta de Un Solo Uso y Distribución Cuántica de Claves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">El Protocolo BB84</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Otros Protocolos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocolo de Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Argumento de Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Estructura General de los Protocolos QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Pruebas de Seguridad</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Ataques de Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Tasa de Clave para Ataques Colectivos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementaciones</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">El Ataque de División del Número de Fotones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocolo SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocolos de Estado Señuelo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Ataques de Hacking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">Escenario Independiente del Dispositivo</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Correlaciones Físicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Distribución Claves Cuánticas Independiente del Dispositivo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Comunicación Cuántica a Larga Distancia</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Comunicación Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Corrección de Errores Cuánticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Comunicación Cuántica Basada en Entrelazamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Repetidores Cuánticos</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter1/chapter1.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter1/chapter1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter1/chapter1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamentos de la Mecánica Cuántica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de la Mecánica Cuántica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-puros">Estados puros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-compuestos">Sistemas compuestos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrelazamiento">Entrelazamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-unitaria">Evolución unitaria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-mixtos">Estados mixtos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-ruidosa">Evolución ruidosa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medicion">Medición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-general">Evolución general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibilografia-para-esta-seccion">Bibilografía para esta sección</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-la-mecanica-cuantica">
+<h1>Fundamentos de la Mecánica Cuántica<a class="headerlink" href="#fundamentos-de-la-mecanica-cuantica" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>El objetivo de esta primera sección es introducir los postulados básicos de la mecánica cuántica y su estructura matemática. La mayor parte del formalismo presentado aquí se puede encontrar en el Capítulo 2 de <span id="id2">[<a class="reference internal" href="#id4" title="Michael A Nielsen and Isaac L Chuang. Quantum computation and quantum information. Cambridge university press, 2010.">1</a>]</span>.
+La álgebra lineal es el estudio de los espacios vectoriales y de los operadores lineales que actúan sobre esos espacios. De hecho, toda la maquinaria cuántica es fundamentalmente álgebra lineal en un espacio de Hilbert complejo, representada por la notación menos estándar de Dirac. En esta notación,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\ket{\psi}\)</span> representa un vector columna, también conocido como ket.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bra{\psi}\)</span> representa el vector dual de <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, también conocido como bra.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\braket{\phi|\psi}\)</span> es el producto escalar estándar entre dos vectores <span class="math notranslate nohighlight">\(\ket{\phi}\)</span> y <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</p></li>
+</ul>
+<p>La norma de un vector <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> se define como <span class="math notranslate nohighlight">\(||\psi||\)</span> = <span class="math notranslate nohighlight">\(\sqrt{\braket{\psi|\psi}}\)</span>. En general, la mayoría de las aplicaciones de la Información Cuántica (IC) tratan con espacios complejos de dimensión finita <span class="math notranslate nohighlight">\(d\)</span>, denotados por <span class="math notranslate nohighlight">\(\mathbb{C}^d\)</span>.</p>
+<div class="note admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Dado dos vectores en un espacio complejo bidimensional, denotado por <span class="math notranslate nohighlight">\(\mathbb{C}^2\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-content-chapter1-chapter1-0" title="Link to this equation">#</a></span>\[\begin{split}\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix},\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-content-chapter1-chapter1-1" title="Link to this equation">#</a></span>\[\begin{split}\ket{\psi} = \begin{pmatrix}1 \\ i\end{pmatrix} \qquad \ket{\phi} = \begin{pmatrix}−3i \\ −1\end{pmatrix},\end{split}\]</div>
+<p>se tiene</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-content-chapter1-chapter1-2" title="Link to this equation">#</a></span>\[\begin{split}\bra{\psi} = (1 \quad −i) \qquad \bra{\phi} = (3i \quad −1), \\\\
+\braket{\phi|\psi} = (3i \quad −1) \begin{pmatrix} 1 \\ i \end{pmatrix} = 2i.\end{split}\]</div>
+</div>
+<section id="estados-puros">
+<h2>Estados puros<a class="headerlink" href="#estados-puros" title="Link to this heading">#</a></h2>
+<p>El primer postulado de la Mecánica Cuántica establece que cada sistema físico está asociado a un espacio de Hilbert complejo (un espacio vectorial con un producto interno). El estado del sistema se describe mediante un vector normalizado en este espacio. En cambio, cualquier vector normalizado en el espacio representa un posible estado del sistema físico. Por lo tanto, toda la información sobre un sistema físico aislado puede especificarse mediante un vector en un espacio de Hilbert. Se deduce de este postulado y de la definición de un espacio vectorial que si <span class="math notranslate nohighlight">\(\ket{\psi_1}, \ket{\psi_2} \in \mathbb{C}^d\)</span> son dos posibles estados de un sistema, entonces cualquier superposición lineal de estos dos vectores, <span class="math notranslate nohighlight">\(\ket{\psi} = \alpha\ket{\psi_1} + \beta \ket{\psi_2}\)</span>, es un vector válido y, por lo tanto, también representa un estado válido del sistema. Aquí, α y β son números complejos tales que <span class="math notranslate nohighlight">\(||\psi|| = 1\)</span>. Esto también se conoce como el principio de superposición y <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> a menudo se llama una superposición coherente de <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span> y <span class="math notranslate nohighlight">\(\ket{\psi_2}\)</span>.</p>
+</section>
+<section id="sistemas-compuestos">
+<h2>Sistemas compuestos<a class="headerlink" href="#sistemas-compuestos" title="Link to this heading">#</a></h2>
+<p>Considera ahora dos sistemas físicos, <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>, cada uno descrito por el espacio de Hilbert correspondiente, <span class="math notranslate nohighlight">\(\mathcal{H}_A\)</span> y <span class="math notranslate nohighlight">\(\mathcal{H}_B\)</span>. El espacio de Hilbert asociado al sistema global <span class="math notranslate nohighlight">\(AB\)</span>, denotado por <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, consiste en el producto tensorial de los dos espacios locales, <span class="math notranslate nohighlight">\(\mathcal{H} = \mathcal{H}_A \otimes \mathcal{H}_B\)</span>. Este es otro postulado de la Mecánica Cuántica.</p>
+</section>
+<section id="entrelazamiento">
+<h2>Entrelazamiento<a class="headerlink" href="#entrelazamiento" title="Link to this heading">#</a></h2>
+<p>Las consecuencias de estos dos postulados iniciales son inmensas. De hecho, considera dos posibles estados del sistema global, <span class="math notranslate nohighlight">\(\mathcal{H}_A \otimes \mathcal{H}_B\)</span>: <span class="math notranslate nohighlight">\(\ket{\psi_A}\otimes\ket{\psi_B}\)</span> y <span class="math notranslate nohighlight">\(\ket{\phi_A}\otimes\ket{\phi_B}\)</span>, o más brevemente <span class="math notranslate nohighlight">\(\ket{\psi_A \psi_B}\)</span> y <span class="math notranslate nohighlight">\(\ket{\phi_A \phi_B}\)</span>. Entonces, <span class="math notranslate nohighlight">\(\ket{\Psi} = \alpha\ket{\psi_A \psi_B} + \beta\ket{\phi_A \phi_B}\)</span> también representa un posible estado del sistema compuesto <span class="math notranslate nohighlight">\(AB\)</span>. Sin embargo, este estado en general no siempre puede escribirse como el producto tensorial de dos vectores en cada espacio local, es decir, <span class="math notranslate nohighlight">\(\ket{\Psi} \ne \ket{\varphi_A \varphi_B}\)</span>. En este caso, se dice que <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> está entrelazado. El entrelazamiento aparece entonces como una consecuencia de la estructura del producto tensorial y del espacio vectorial en la Mecánica Cuántica.</p>
+</section>
+<section id="evolucion-unitaria">
+<h2>Evolución unitaria<a class="headerlink" href="#evolucion-unitaria" title="Link to this heading">#</a></h2>
+<p>La evolución de un sistema físico aislado, cuyo estado inicial está dado por <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, se describe mediante la aplicación de una operación unitaria, <span class="math notranslate nohighlight">\(U\)</span>. Así, el estado evolucionado del sistema es <span class="math notranslate nohighlight">\(\ket{\phi} = U \ket{\psi}\)</span>. Recuerda que este es otro postulado de la Mecánica Cuántica. Una operación unitaria en un espacio de Hilbert de dimensión <span class="math notranslate nohighlight">\(d\)</span> es simplemente una matriz compleja <span class="math notranslate nohighlight">\(d \times d\)</span> que satisface <span class="math notranslate nohighlight">\(U U^\dagger = \mathbb{1}\)</span>.</p>
+</section>
+<section id="estados-mixtos">
+<h2>Estados mixtos<a class="headerlink" href="#estados-mixtos" title="Link to this heading">#</a></h2>
+<p>Considera la descripción anterior del entrelazamiento: un estado está entrelazado cuando no puede escribirse en forma de producto. Es decir, aunque el estado global del sistema puede describirse mediante un vector en <span class="math notranslate nohighlight">\(\mathcal{H}_A ⊗ \mathcal{H}_B\)</span>, es imposible asociar a cada sistema local un vector en <span class="math notranslate nohighlight">\(\mathcal{H}_A\)</span> y <span class="math notranslate nohighlight">\(\mathcal{H}_B\)</span>. Esto está relacionado con el hecho de que el sistema A está correlacionado con B, por lo que no está aislado. ¿Existe una manera matemática de describir sistemas no aislados?</p>
+<p>Alternativamente, considera el caso en el que la preparación de un sistema es imperfecta, es decir, el sistema puede estar en el estado <span class="math notranslate nohighlight">\(|ψ_1〉\)</span> con probabilidad <span class="math notranslate nohighlight">\(p_1\)</span>, <span class="math notranslate nohighlight">\(|ψ_2〉\)</span> con probabilidad <span class="math notranslate nohighlight">\(p_2\)</span>, y así sucesivamente. ¿Cuál es la descripción matemática del estado del sistema? Observa que en ambos casos hay una falta de conocimiento sobre el estado del sistema. Esto es evidente en el segundo escenario, ya que la preparación es ruidosa. Pero lo mismo es cierto en el primer caso: al intentar describir el estado local de un sistema no aislado, se ignoran todas las correlaciones con otros sistemas o el entorno. Dado que la información sobre el estado del sistema no es completa, el estado no puede ser puro. Para tener en cuenta esta falta de información, se introduce el concepto de estados mixtos.</p>
+<p>La descripción matemática de un sistema que puede estar en el estado <span class="math notranslate nohighlight">\(|ψ_i〉∈ \mathcal{H}\)</span> con probabilidades <span class="math notranslate nohighlight">\(p_i\)</span>, donde <span class="math notranslate nohighlight">\(i = 1, ..., N\)</span> y <span class="math notranslate nohighlight">\(N\)</span> es arbitrario, ya no está dada por un vector en este espacio de Hilbert, sino por un operador que actúa sobre él con la forma</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-content-chapter1-chapter1-3" title="Link to this equation">#</a></span>\[ρ = \sum^N_{i=1} p_i |ψ_i〉〈ψ_i|. \]</div>
+<p>Observa que <span class="math notranslate nohighlight">\(\text{tr}(ρ) = ∑ p_i \text{tr}(|ψ_i〉〈ψ_i|) = \sum_i p_i 〈ψ_i|ψ_i〉 = \sum_i p_i = 1\)</span>. Si el estado es puro, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, solo hay una probabilidad no nula, <span class="math notranslate nohighlight">\(p_1 = 1\)</span>, y <span class="math notranslate nohighlight">\(ρ = \ket{\psi}〈ψ|\)</span>. De forma más general, un estado <span class="math notranslate nohighlight">\(ρ\)</span> es puro si y solo si <span class="math notranslate nohighlight">\(\text{tr}(ρ^2) = 1\)</span>.</p>
+</section>
+<section id="evolucion-ruidosa">
+<h2>Evolución ruidosa<a class="headerlink" href="#evolucion-ruidosa" title="Link to this heading">#</a></h2>
+<p>Habiendo introducido el formalismo de estados mixtos, se puede especificar cómo evoluciona un sistema cuántico abierto, o cómo describir una evolución ruidosa. En este caso, un sistema cuántico en un estado puro puede perder su pureza y volverse mixto. El formalismo general está dado por mapas completamente positivos que conservan la traza. De hecho, cualquier evolución de un estado inicial (posiblemente mixto), <span class="math notranslate nohighlight">\(ρ_i\)</span>, a un estado <span class="math notranslate nohighlight">\(ρ_f\)</span>, puede representarse como</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-4">
+<span class="eqno">(5)<a class="headerlink" href="#equation-content-chapter1-chapter1-4" title="Link to this equation">#</a></span>\[ρ_f = \sum_k A_k ρ_i A^†_k,\]</div>
+<p>donde <span class="math notranslate nohighlight">\(A_k\)</span> son operadores tales que <span class="math notranslate nohighlight">\(∑_k A_k A_k^† = \mathbb{1}\)</span>. Nota que <span class="math notranslate nohighlight">\(ρ_f\)</span> tiene traza uno, es Hermítico y es positivo semidefinido (tiene únicamente valores propios no negativos).</p>
+</section>
+<section id="medicion">
+<h2>Medición<a class="headerlink" href="#medicion" title="Link to this heading">#</a></h2>
+<p>El último proceso a considerar es una medición. Cualquier medición con <span class="math notranslate nohighlight">\(m\)</span> resultados en un sistema cuyo espacio de Hilbert asociado tiene dimensión <span class="math notranslate nohighlight">\(d\)</span> puede ser representada por el llamado medida de valor de operador positivo (POVM, por sus siglas en inglés), definida por <span class="math notranslate nohighlight">\(r\)</span> operadores positivos <span class="math notranslate nohighlight">\({M_i ≥ 0}\)</span>, donde <span class="math notranslate nohighlight">\(i = 1, ..., r\)</span>, tales que <span class="math notranslate nohighlight">\(\sum_i M_i = \mathbb{1}\)</span>. Denotemos por <span class="math notranslate nohighlight">\(ρ\)</span> el estado a medir. Entonces, el resultado <span class="math notranslate nohighlight">\(i\)</span> se obtiene con probabilidad <span class="math notranslate nohighlight">\(p(i|ρ) = \text{tr}(ρ M_i)\)</span>. Este valor es positivo porque <span class="math notranslate nohighlight">\(M_i\)</span> son positivos. También se deduce que <span class="math notranslate nohighlight">\(\sum_i p(i|ρ) = \sum_i \text{tr}(ρ M_i) = \text{tr}(ρ \sum_i M_i) = \text{tr}(ρ) = 1\)</span>.</p>
+</section>
+<section id="evolucion-general">
+<h2>Evolución general<a class="headerlink" href="#evolucion-general" title="Link to this heading">#</a></h2>
+<p>Reuniendo todos los procesos anteriores, una evolución general, que consiste en una secuencia de mediciones y posiblemente evoluciones ruidosas, siempre puede ser especificada por un conjunto de operadores <span class="math notranslate nohighlight">\(A^i_k\)</span> que describe un mapa que transforma cualquier estado <span class="math notranslate nohighlight">\(ρ\)</span> en</p>
+<div class="math notranslate nohighlight" id="equation-eqnref5">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eqnref5" title="Link to this equation">#</a></span>\[ρ_i = \frac{\sum_k A^i_k ρ A^{i†}_k}{\text{tr}(\sum_k A^i_k ρ A^{i†}_k)} \quad \text{with probability} \quad p_i = \text{tr}(\sum_k A^i_k ρ A^{i†}_k).\]</div>
+<p>Las mediciones estándar de von Neumann están cubiertas por el
+formalismo anterior. Una medición de von Neumann, o medición
+proyectiva de rango uno, en un sistema de dimensión <span class="math notranslate nohighlight">\(d\)</span> tiene
+<span class="math notranslate nohighlight">\(d\)</span> resultados posibles y los operadores correspondientes son
+los proyectores sobre una base en este espacio. Más
+precisamente: considera una base en <span class="math notranslate nohighlight">\(\mathbb{C}^d\)</span>, definida
+por <span class="math notranslate nohighlight">\(d\)</span> vectores ortonormales <span class="math notranslate nohighlight">\(|i〉\)</span> tales que <span class="math notranslate nohighlight">\(〈i|j〉= δ_{ij}\)</span>. Una medición en esta base está representada por los
+proyectores <span class="math notranslate nohighlight">\(A_i = |i〉〈i|\)</span>. Nota que si el estado inicial
+es <span class="math notranslate nohighlight">\(ρ\)</span>, la probabilidad de obtener el resultado <span class="math notranslate nohighlight">\(i\)</span>, véase la
+Ec. <a class="reference internal" href="#equation-eqnref5">(6)</a>, es</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-5">
+<span class="eqno">(7)<a class="headerlink" href="#equation-content-chapter1-chapter1-5" title="Link to this equation">#</a></span>\[p_i = \text{tr}(|i〉〈i|ρ|i〉〈i|) = 〈i|ρ|i〉,\]</div>
+<p>mientras que el estado se mapea a</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-6">
+<span class="eqno">(8)<a class="headerlink" href="#equation-content-chapter1-chapter1-6" title="Link to this equation">#</a></span>\[ρ_i = \frac{|i〉〈i|ρ|i〉〈i|}{\text{tr}(|i〉〈i|ρ|i〉〈i|)} = |i〉〈i|.\]</div>
+<p>Para el caso de estados puros, ρ = <span class="math notranslate nohighlight">\(\ket{\psi}\bra{\psi}\)</span>, estas expresiones se escriben como</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-7">
+<span class="eqno">(9)<a class="headerlink" href="#equation-content-chapter1-chapter1-7" title="Link to this equation">#</a></span>\[p_i = \text{tr}(|i〉〈i|\ket{\psi}〈ψ||i〉〈i|) = |〈i\ket{\psi}|^2,\]</div>
+<p>y</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter1-chapter1-8">
+<span class="eqno">(10)<a class="headerlink" href="#equation-content-chapter1-chapter1-8" title="Link to this equation">#</a></span>\[|ψ_i〉 = |i〉,\]</div>
+<p>es decir, el estado inicial <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> colapsa en <span class="math notranslate nohighlight">\(|i〉\)</span> con una probabilidad dada por el cuadrado de la superposición, <span class="math notranslate nohighlight">\(|〈i\ket{\psi}|^2\)</span>. Las fórmulas anteriores también implican que no hay ninguna medición (proceso físico) que distinga <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> de <span class="math notranslate nohighlight">\(e^{iγ} \ket{\psi}\)</span>. De esta manera, el estado de un sistema físico está en realidad descrito por un vector en un espacio de Hilbert, salvo por una fase global irrelevante.</p>
+</section>
+<section id="bibilografia-para-esta-seccion">
+<h2>Bibilografía para esta sección<a class="headerlink" href="#bibilografia-para-esta-seccion" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id3">
+<div role="list" class="citation-list">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Michael A Nielsen and Isaac L Chuang. <em>Quantum computation and quantum information</em>. Cambridge university press, 2010.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Comunicaciones y Criptografía Cuánticas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../chapter2/chapter2.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Elementos Básicos de la Teoría de la Información Cuántica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de la Mecánica Cuántica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-puros">Estados puros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-compuestos">Sistemas compuestos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrelazamiento">Entrelazamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-unitaria">Evolución unitaria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-mixtos">Estados mixtos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-ruidosa">Evolución ruidosa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medicion">Medición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-general">Evolución general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibilografia-para-esta-seccion">Bibilografía para esta sección</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

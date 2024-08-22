@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Corrélations Physiques &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter8/section1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="Distribution de Clés Quantiques Indépendante des Dispositifs" href="section2.html" />
+    <link rel="prev" title="Scenario Indépendant des Dispositifs (Device-Independent)" href="chapter8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Communications quantiques et Cryptographie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Structure Générale des Protocoles QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Preuves de sécurité</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Les attaques d’Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Taux de clé pour les attaques collectives</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implémentations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 avec découpage en créneaux temporels et états cohérents atténués</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">L’attaque PNS (Photon-Number Splitting)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocole SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocoles à états leurres</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Attaques de piratage</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter8.html">Scenario Indépendant des Dispositifs (Device-Independent)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Corrélations Physiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Distribution de Clés Quantiques Indépendante des Dispositifs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Communication à longue distance</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Communication classique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Correction d’erreur quantique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Communication quantique basée sur l’intrication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Répéteurs Quantiques</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter8/section1.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter8/section1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter8/section1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Corrélations Physiques</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="correlations-physiques">
+<h1>Corrélations Physiques<a class="headerlink" href="#correlations-physiques" title="Link to this heading">#</a></h1>
+<p>La principale raison pour laquelle les applications DI sont possibles est qu’il est supposé que les dispositifs sont compatibles avec une théorie physique, dans notre cas par exemple la mécanique quantique, ce qui impose des contraintes non triviales sur les corrélations observées.</p>
+<p>La contrainte la plus faible qui peut être imposée est que les corrélations n’autorisent aucune forme de communication entre Alice et Bob. Comme mentionné, il s’agit de l’une des rares hypothèses du formalisme, qui peut être imposée, par exemple, par des considérations spatio-temporelles. Certaines corrélations sont compatibles avec cette hypothèse si et seulement si la distribution de probabilité marginale observée par l’une des parties, disons Alice, est indépendante de l’entrée utilisée par l’autre, Bob. En effet, si ce n’était pas le cas, Bob, en choisissant son entrée, pourrait produire un effet notable sur Alice, c’est-à-dire qu’il pourrait lui envoyer un signal. Ces contraintes sont connues sous le nom de conditions de non-communication (non-signalling) et donnent naissance aux corrélations dites de non-signalling. Elles impliquent que les corrélations satisfont les contraintes linéaires</p>
+<div class="math notranslate nohighlight" id="equation-nscorrelations">
+<span class="eqno">(55)<a class="headerlink" href="#equation-nscorrelations" title="Link to this equation">#</a></span>\[\forall y: p_A(a|x)=\sum_b p(ab|xy), \quad\quad
+\forall x: p_B(b|y)=\sum_a p(ab|xy).\]</div>
+<p>L’ensemble des corrélations non-signalling, note <span class="math notranslate nohighlight">\(\mathcal{NS}\)</span>, est convexe, et il peut être prouvé que pour des <span class="math notranslate nohighlight">\(m\)</span> et <span class="math notranslate nohighlight">\(r\)</span> finis, il a un nombre fini de points extrêmes, ce qui définit un polytope.</p>
+<p>Avant l’avènement de la théorie quantique, la méthode standard pour décrire les corrélations reposait sur des modèles classiques déterministes. Ces modèles définissent ce que l’on appelle les corrélations <em>classiques</em>, qui sont celles pouvant être exprimées comme</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter8-section1-0">
+<span class="eqno">(56)<a class="headerlink" href="#equation-content-chapter8-section1-0" title="Link to this equation">#</a></span>\[p(ab|xy)\sum_\lambda p(\lambda)D_A(a|x\lambda)D_B(b|y\lambda) ,\]</div>
+<p>où <span class="math notranslate nohighlight">\(\lambda\)</span> désigne une variable classique cachée corrélée dans les dispositifs, décrite par la distribution de probabilité <span class="math notranslate nohighlight">\(p(\lambda)\)</span>, tandis que <span class="math notranslate nohighlight">\(D_A\)</span> et <span class="math notranslate nohighlight">\(D_B\)</span> sont des fonctions déterministes produisant les sorties en fonction des entrées et de cette variable. Les corrélations classiques ne sont rien d’autre que les corrélations EPR introduites dans <span id="id1">[<a class="reference internal" href="#id11" title="Albert Einstein, Boris Podolsky, and Nathan Rosen. Can quantum-mechanical description of physical reality be considered complete? Physical review, 47(10):777, 1935.">1</a>]</span>. Pour des <span class="math notranslate nohighlight">\(m\)</span> et <span class="math notranslate nohighlight">\(r\)</span> finis, l’ensemble des corrélations classiques <span class="math notranslate nohighlight">\(\mathcal C\)</span> est aussi un polytope, i.e., un ensemble convexe avec un nombre fini de points.
+Enfin, l’ensemble qui nous intéresse ici est celui des corrélations quantiques. Cet ensemble est défini par les corrélations qui peuvent être obtenues lors de mesures locales sur un état quantique à deux parties. Ainsi, les corrélations sont quantiques chaque fois qu’il existe un état agissant sur un espace de Hilbert composite <span class="math notranslate nohighlight">\(\mathcal H_A\otimes\mathcal H_B\)</span> et une mesure locale dans chaque espace de Hilbert défini par les éléments POVMs <span class="math notranslate nohighlight">\(M_{a|x}\)</span> et <span class="math notranslate nohighlight">\(M_{b|y}\)</span>, des opérateurs positifs et tels que <span class="math notranslate nohighlight">\(\sum_a M_{a|x}=\one_A\)</span> pour tout <span class="math notranslate nohighlight">\(x\)</span> et <span class="math notranslate nohighlight">\(\sum_a M_{b|y}=\one_B\)</span> pour tout <span class="math notranslate nohighlight">\(y\)</span>, de telle sorte que</p>
+<div class="math notranslate nohighlight" id="equation-qcorrelations">
+<span class="eqno">(57)<a class="headerlink" href="#equation-qcorrelations" title="Link to this equation">#</a></span>\[p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{a|x}) .\]</div>
+<p>Notez que nous n’imposons aucune condition spécifique sur les espaces de Hilbert utilisés pour dériver ces corrélations : ils sont arbitraires. En particulier, les dimensions des espaces de Hilbert ne sont pas spécifiées, c’est-à-dire que les systèmes mesurés peuvent être des qubits, des qutrits, ou même des systèmes de dimension infinie. En réalité, la caractérisation des corrélations quantiques, c’est-à-dire trouver quelles distributions de probabilité conditionnelles peuvent être exprimées comme dans Eq. <a class="reference internal" href="#equation-qcorrelations">(57)</a>, est très compliquée, car, intuitivement, elle requiert d’explorer tous les espaces de Hilbert possibles. L’ensemble des corrélations quantiques <span class="math notranslate nohighlight">\(\mathcal Q\)</span> est également convexe mais n’a pas de nombre fini de points extrêmes (ce n’est donc pas un polytope).
+La relation entre ces trois ensembles physiques est relativement bien comprise : <span class="math notranslate nohighlight">\(\mathcal C \subsetneq \mathcal Q \subsetneq \mathcal{NS}\)</span>. Une représentation graphique de ces ensembles est donnée par <a class="reference internal" href="chapter8.html#difig"><span class="std std-numref">Fig. 8</span></a>, qui illustre les propriétés les plus marquantes de ces ensembles. La première inclusion stricte découle directement du théorème de Bell, qui établit l’existence de corrélations quantiques sans analogue classique. En effet, les facettes de l’ensemble classique définissent les inégalités de Bell, des hyperplans qui expriment des conditions linéaires en termes des corrélations observées, satisfaites par toutes les corrélations classiques (l’ensemble des corrélations classiques étant entièrement contenu d’un côté de l’hyperplan).
+La deuxième inclusion a été démontrée par Tsirelson et, indépendamment, par Popescu et Rohrlich <span id="id2">[<a class="reference internal" href="#id36" title="Sandu Popescu and Daniel Rohrlich. Quantum nonlocality as an axiom. Foundations of Physics, 24:379–385, 1994.">3</a>]</span>. Ils ont introduits les fameuses boîtes Popescu-Rohrlich (PR), une distribution de probabilité conditionnelle <span class="math notranslate nohighlight">\(p(ab|xy)\in\mathcal{NS}\)</span> qui n’a pas de réalisation quantique. Cette distribution est obtenue pour le cas d’entrées et de sorties binaires, <span class="math notranslate nohighlight">\(m=r=2\)</span>. En représentant les valeurs des entrées et des sorties par des bits, la PR-box est telle que <span class="math notranslate nohighlight">\(p(ab|xy)=\delta_{a\oplus b=xy}/2\)</span>. Ici, <span class="math notranslate nohighlight">\(\oplus\)</span> correspond au XOR classique, tandis que <span class="math notranslate nohighlight">\(xy\)</span> correspond au AND des bits <span class="math notranslate nohighlight">\(x\)</span> et <span class="math notranslate nohighlight">\(y\)</span>. Deux exemples pour comprendre la notation :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}p(a=1,b=1|x=1,y=1)=\delta_{1\oplus 1=AND(1,1)}/2=\delta_{0,1}/2=0,\\
+p(a=0,b=0|x=0,y=1)=\delta_{0\oplus 0=AND(0,1)}/2=\delta_{0,0}/2=1/2.\end{split}\]</div>
+<p>De manière plus compacte, lorsque <span class="math notranslate nohighlight">\(xy=0\)</span> (<span class="math notranslate nohighlight">\(xy=1\)</span>), les sorties d’Alice et de Bob sont parfaitement (anti-)corrélées et apparaissent avec la même probabilité. La preuve que ces corrélations ne sont pas quantiques découle du fait qu’elles conduisent à une valeur CHSH de 4, supérieure au maximum autorisé par la physique quantique, qui est <span class="math notranslate nohighlight">\(2\sqrt 2\)</span> <span id="id3">[<a class="reference internal" href="#id21" title="BS Tsirelson. Lett. math. phys. Lett. Math. Phys, 4:93, 1980.">2</a>]</span>. Pour voir que ces corrélations produisent une valeur CHSH égale à <span class="math notranslate nohighlight">\(4\)</span>, il est pratique de renommer les sorties <span class="math notranslate nohighlight">\(a,b=\pm 1\)</span> et les  entrées <span class="math notranslate nohighlight">\(x,y=1,2\)</span>. Lorsque au moins une entrée est égale à 1 (0 dans la notation binaire utilisée pour spécifier la boîte PR), les sorties sont parfaitement corrélées, donc <span class="math notranslate nohighlight">\(ab=+1\)</span>, ainsi <span class="math notranslate nohighlight">\(A_1B_1=A_1B_2=A_2B_1=+1\)</span>, tandis que lorsque les deux entrées sont égales à 2 (1 dans la notation binaire), les sorties sont parfaitement anti-corrélées, on a donc <span class="math notranslate nohighlight">\(A_2B_2=-1\)</span>. Ces valeurs produisent la valeur maximale post-quantique de <span class="math notranslate nohighlight">\(\text{CHSH}=4\)</span>.</p>
+<p>Après cette courte digression visant à expliquer pourquoi les corrélations deviennent significatives lorsqu’elles sont combinées avec une théorie ou un principe physique, nous allons présenter les idées clés pour concevoir des protocoles d’information quantique indépendants des dispositifs. Il est important de noter que, dans le scénario des protocoles indépendants des dispositifs (DI), pour qu’Alice et Bob obtiennent des résultats impossibles à obtenir dans la théorie de l’information classique, ils doivent observer des corrélations qui ne peuvent pas être expliquées par un modèle classique, c’est-à-dire des corrélations qui violent une inégalité de Bell. En effet, les inégalités de Bell servent de témoins pour l’origine intrinsèquement quantique ou non classique de ces corrélations. En supposant que les dispositifs sont quantiques, nous pouvons nous concentrer sur les corrélations dans <span class="math notranslate nohighlight">\(\mathcal Q\)</span> et ignorer celles dans <span class="math notranslate nohighlight">\(\mathcal{NS}\)</span> qui n’ont pas de réalisation quantique.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div role="list" class="citation-list">
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Albert Einstein, Boris Podolsky, and Nathan Rosen. Can quantum-mechanical description of physical reality be considered complete? <em>Physical review</em>, 47(10):777, 1935.</p>
+</div>
+<div class="citation" id="id21" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>BS Tsirelson. Lett. math. phys. <em>Lett. Math. Phys</em>, 4:93, 1980.</p>
+</div>
+<div class="citation" id="id36" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>Sandu Popescu and Daniel Rohrlich. Quantum nonlocality as an axiom. <em>Foundations of Physics</em>, 24:379–385, 1994.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter8.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Scenario Indépendant des Dispositifs (Device-Independent)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="section2.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Distribution de Clés Quantiques Indépendante des Dispositifs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

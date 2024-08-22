@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>El Bit Cuántico &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter2/section1';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Puertas Cuánticas" href="section2.html" />
+    <link rel="prev" title="Elementos Básicos de la Teoría de la Información Cuántica" href="chapter2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Comunicaciones y Criptografía Cuánticas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">El Bit Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Puertas Cuánticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">El Teorema de No Clonación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Teorema de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Criptografía Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">Libreta de Un Solo Uso y Distribución Cuántica de Claves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">El Protocolo BB84</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Otros Protocolos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocolo de Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Argumento de Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Estructura General de los Protocolos QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Pruebas de Seguridad</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Ataques de Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Tasa de Clave para Ataques Colectivos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementaciones</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">El Ataque de División del Número de Fotones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocolo SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocolos de Estado Señuelo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Ataques de Hacking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">Escenario Independiente del Dispositivo</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Correlaciones Físicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Distribución Claves Cuánticas Independiente del Dispositivo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Comunicación Cuántica a Larga Distancia</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Comunicación Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Corrección de Errores Cuánticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Comunicación Cuántica Basada en Entrelazamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Repetidores Cuánticos</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter2/section1.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter2/section1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter2/section1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>El Bit Cuántico</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="math notranslate nohighlight">
+\[\def\compl{{\mathbb{C}}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="el-bit-cuantico">
+<h1>El Bit Cuántico<a class="headerlink" href="#el-bit-cuantico" title="Link to this heading">#</a></h1>
+<p>El primer paso es introducir la unidad básica de la IC, el bit cuántico o cúbit. Consideremos la codificación de un bit clásico en una partícula cuántica. Esto se puede lograr mediante un sistema bidimensional: el valor del bit 0 se codifica en un estado <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span>, o simplemente <span class="math notranslate nohighlight">\(\ket{0}\)</span>, y el 1 en <span class="math notranslate nohighlight">\(\ket{1}\)</span>. Dado que estas dos opciones deben definir un bit clásico, los estados tienen que ser ortogonales y formar una base en <span class="math notranslate nohighlight">\(\compl^2\)</span>. De este modo, una medición en esta base distingue de manera determinista entre las dos posibilidades, tal como ocurre con un bit clásico. Por ejemplo,</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter2-section1-0">
+<span class="eqno">(11)<a class="headerlink" href="#equation-content-chapter2-section1-0" title="Link to this equation">#</a></span>\[\begin{split}\ket 0=\begin{pmatrix}1\\0\\\end{pmatrix}\quad\quad
+\ket 1=\begin{pmatrix}0\\1\\\end{pmatrix} .\end{split}\]</div>
+<p>Una partícula cuántica bidimensional puede codificar un bit clásico y, por lo tanto, define un bit cuántico. Sin embargo, es importante notar que, debido al principio de superposición, cualquier combinación coherente de <span class="math notranslate nohighlight">\(\ket 0\)</span> y <span class="math notranslate nohighlight">\(\ket 1\)</span> también está permitida, algo que es imposible en el ámbito clásico. Por lo tanto, un bit cuántico puede estar en cualquier estado,</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter2-section1-1">
+<span class="eqno">(12)<a class="headerlink" href="#equation-content-chapter2-section1-1" title="Link to this equation">#</a></span>\[    \ket{\psi}=\alpha\ket 0+\beta\ket 1 ,\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> son números complejos tales que <span class="math notranslate nohighlight">\(|\alpha|^2+|\beta|^2=1\)</span>. Es posible representar de manera pictórica el estado de un cúbit, o una partícula cuántica bidimensional, mediante la esfera de Poincaré o de Bloch (ver {numref}bloch). En realidad, utilizando el hecho de que la fase global de cualquier estado puro es irrelevante, <span class="math notranslate nohighlight">\(\alpha\)</span> siempre puede tomarse como real. Entonces, cualquier bit cuántico puede especificarse por un número complejo <span class="math notranslate nohighlight">\(\beta\)</span>, ya que <span class="math notranslate nohighlight">\(\alpha\)</span> queda fijado debido a la normalización. Es decir, cualquier estado tiene la forma</p>
+<div class="math notranslate nohighlight" id="equation-blochv">
+<span class="eqno">(13)<a class="headerlink" href="#equation-blochv" title="Link to this equation">#</a></span>\[\begin{split}    \ket\psi=\begin{pmatrix}\cos\left(\frac{\theta}{2}\right)
+    \\\sin\left(\frac{\theta}{2}\right)e^{i\varphi}\\\end{pmatrix}
+    .\end{split}\]</div>
+<p>Dos ángulos, <span class="math notranslate nohighlight">\(\theta\)</span> y <span class="math notranslate nohighlight">\(\varphi\)</span>, son suficientes para especificar cualquier estado puro en <span class="math notranslate nohighlight">\(\compl^2\)</span>, como cualquier punto en la superficie de una esfera unitaria. Es importante mencionar aquí que, dado <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, el vector ortogonal, <span class="math notranslate nohighlight">\(\ket{\psi_\perp}\)</span>, se expresa como</p>
+<div class="math notranslate nohighlight" id="equation-blochvorth">
+<span class="eqno">(14)<a class="headerlink" href="#equation-blochvorth" title="Link to this equation">#</a></span>\[\begin{split}    \ket{\psi_\perp}=\begin{pmatrix}\sin\left(\frac{\theta}{2}\right)
+    \\-\cos\left(\frac{\theta}{2}\right)e^{i\varphi}\\\end{pmatrix}
+    ,\end{split}\]</div>
+<p>por lo tanto, los vectores ortogonales en <span class="math notranslate nohighlight">\(\compl^2\)</span> definen vectores antiparalelos en la esfera de Bloch. Las matrices de Pauli van a desempeñar un papel importante en lo que sigue. Su expresión es la siguiente:</p>
+<div class="math notranslate nohighlight" id="equation-pauli">
+<span class="eqno">(15)<a class="headerlink" href="#equation-pauli" title="Link to this equation">#</a></span>\[\begin{split}    \sigma_x=\begin{pmatrix}0&amp;1\\1&amp;0\\\end{pmatrix}\quad
+    \sigma_y=\begin{pmatrix}0&amp;-i\\i&amp;0\\\end{pmatrix}\quad
+    \sigma_z=\begin{pmatrix}1&amp;0\\0&amp;-1\\\end{pmatrix} .\end{split}\]</div>
+<p>Observa que en nuestra definición del cúbit, <span class="math notranslate nohighlight">\(\ket 0\)</span> y <span class="math notranslate nohighlight">\(\ket 1\)</span> son los vectores propios de <span class="math notranslate nohighlight">\(\sigma_z\)</span> con valores propios <span class="math notranslate nohighlight">\(\pm 1\)</span>, ya que <span class="math notranslate nohighlight">\(\sigma_z\ket i=(-1)^i\ket i\)</span>. Es por esto que <span class="math notranslate nohighlight">\(\sigma_z\)</span> se denomina frecuentemente un cambio de fase. Ten en cuenta que al poner <span class="math notranslate nohighlight">\(\theta=0\)</span> (y <span class="math notranslate nohighlight">\(\theta=\pi\)</span>) en la Ec. <a class="reference internal" href="#equation-blochv">(13)</a> and Ec. <a class="reference internal" href="#equation-blochvorth">(14)</a>, es decir, definiendo vectores de Bloch que apuntan en la dirección <span class="math notranslate nohighlight">\(\pm z\)</span>, se obtienen <span class="math notranslate nohighlight">\(\ket 0\)</span> y <span class="math notranslate nohighlight">\(\ket 1\)</span>, los vectores propios de <span class="math notranslate nohighlight">\(\sigma_z\)</span>. El efecto de <span class="math notranslate nohighlight">\(\sigma_x\)</span> en nuestra base de cúbits es <span class="math notranslate nohighlight">\(\sigma_x\ket i=\ket{1-i}\)</span>, es decir, produce un cambio de bit. De manera similar a lo anterior, al sustituir <span class="math notranslate nohighlight">\((\theta,\varphi)=(\pi/2,0)\)</span>, <span class="math notranslate nohighlight">\((\pi,0)\)</span>, <span class="math notranslate nohighlight">\((\pi/2,\pi/2)\)</span> y <span class="math notranslate nohighlight">\((\pi/2,-\pi/2)\)</span> en la Ec. <a class="reference internal" href="#equation-blochv">(13)</a> y Ec. <a class="reference internal" href="#equation-blochvorth">(14)</a> se obtienen los dos vectores propios de <span class="math notranslate nohighlight">\(\sigma_x\)</span> y <span class="math notranslate nohighlight">\(\sigma_y\)</span>, a menudo denotados como <span class="math notranslate nohighlight">\(\ket{\pm x}\)</span> y <span class="math notranslate nohighlight">\(\ket{\pm y}\)</span>.</p>
+<figure class="align-default" id="bloch">
+<a class="reference internal image-reference" href="../../_images/qubit.png"><img alt="../../_images/qubit.png" src="../../_images/qubit.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 1 </span><span class="caption-text"><span class="math notranslate nohighlight">\(\textbf{Esfera de Bloch:}\)</span> Cualquier bit cuántico puro puede representarse por un punto en la superficie de la esfera de Bloch. El vector unitario correspondiente, <span class="math notranslate nohighlight">\(\hat n=(\sin\theta\cos\varphi,\sin\theta\sin\varphi, \cos\theta)\)</span>, se conoce como vector de Bloch. Los estados mixtos están dentro de la esfera.</span><a class="headerlink" href="#bloch" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter2.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Elementos Básicos de la Teoría de la Información Cuántica</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="section2.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Puertas Cuánticas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

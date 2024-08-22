@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Répéteurs Quantiques &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter9/section4';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Communication quantique basée sur l’intrication" href="section3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Communications quantiques et Cryptographie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Postulats de base de la Mécanique Quantique</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Éléments de base de la Théorie de l’Information Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">Le Bit Quantique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Portes Quantiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">Le Théorème de Non-Clonage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Le Théorème de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Cryptographie Quantique</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad et Distribution Quantique de Clés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">Le Protocole BB84</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Autres Protocoles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocole Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">L’argument Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Structure Générale des Protocoles QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Preuves de sécurité</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Les attaques d’Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Taux de clé pour les attaques collectives</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implémentations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 avec découpage en créneaux temporels et états cohérents atténués</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">L’attaque PNS (Photon-Number Splitting)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocole SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocoles à états leurres</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Attaques de piratage</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">Scenario Indépendant des Dispositifs (Device-Independent)</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Corrélations Physiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Distribution de Clés Quantiques Indépendante des Dispositifs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter9.html">Communication à longue distance</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Communication classique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Correction d’erreur quantique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">Communication quantique basée sur l’intrication</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Répéteurs Quantiques</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter9/section4.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter9/section4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter9/section4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Répéteurs Quantiques</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="repeteurs-quantiques">
+<h1>Répéteurs Quantiques<a class="headerlink" href="#repeteurs-quantiques" title="Link to this heading">#</a></h1>
+<p>L’utilisation de la distillation d’intrication élargit l’ensemble des canaux permettant une communication quantique fiable. Cependant, ce n’est pas la solution finale. En effet, il existe des états à partir desquels on ne peut pas distiller des états maximalement intriqués. L’exemple le plus simple est donné par les états séparables : clairement, aucune intrication ne peut être distillée à partir d’un état non intriqué. En ce qui concerne les canaux, il existe des canaux pour lesquels tout état de sortie est séparable. Ces canaux sont appelés canaux briseurs d’intrication, pour des raisons évidentes. On sait qu’un canal <span class="math notranslate nohighlight">\(\Lambda\)</span> est un briseur d’intrication si, et seulement si, l’état obtenu lorsqu’on applique le canal à une moitié d’un état maximalement intriqué est séparable. Un exemple simple de tel canal est donné par le canal de dépolarisation, Eq. <a class="reference internal" href="../chapter5/section2.html#equation-depchannel">(44)</a>, avec <span class="math notranslate nohighlight">\(0 \leq p \leq 1/3\)</span>. Il existe même des canaux qui permettent la distribution d’intrication, mais les états intriqués obtenus ne peuvent pas être distillés en états maximalement intriqués. Ces états sont connus sous le nom d’états liés par l’intrication <span id="id1">[<a class="reference internal" href="#id48" title="Michał Horodecki, Paweł Horodecki, and Ryszard Horodecki. Mixed-state entanglement and distillation: is there a “bound” entanglement in nature? Physical Review Letters, 80(24):5239, 1998.">2</a>]</span>. Les canaux briseurs d’intrication, ou les canaux qui distribuent au plus de l’intrication lié, ont <span class="math notranslate nohighlight">\(\text{QC}^\leftrightarrow=0\)</span>. Au-delà de ces considérations plus académiques, même pour le canal purement à perte, et malgré le fait qu’un tel canal a en principe une capacité quantique positive pour toutes les pertes, le taux de communication quantique diminue avec la transmission du canal, décroissant donc de manière exponentielle avec la distance entre Alice et Bob. Dans une mise en œuvre réaliste, la communication quantique devient impraticable après, disons, quelques centaines de kilomètres.</p>
+<p>En fait, déjà dans la théorie de l’information classique, et malgré le fait que tous les canaux non triviaux ont une capacité quantique strictement positive, la transmission directe devient inutile à un moment donné. La solution réside dans la division du long canal à perte en segments où placer des nœuds, ou répéteurs, qui lisent l’information, la corrigent et préparent une nouvelle copie parfaite pour le prochain nœud. Si l’on suivait littéralement cette idée, il faudrait placer des répéteurs dès que le canal ne permet pas la correction d’erreurs quantiques, ce qui impliquerait que des répéteurs seraient nécessaires après des distances très courtes. La solution consiste alors à combiner l’idée des répéteurs avec l’intrication, menant au concept de <em>répéteur quantique</em> <span id="id2">[<a class="reference internal" href="#id49" title="H-J Briegel, Wolfgang Dür, Juan I Cirac, and Peter Zoller. Quantum repeaters: the role of imperfect local operations in quantum communication. Physical Review Letters, 81(26):5932, 1998.">3</a>]</span>. L’idée exploite beaucoup des outils expliqués ci-dessus, ainsi que le protocole de <em>l’échange d’intrication</em>. L’échange d’intrication considère la situation dans laquelle le protocole de téléportation est appliqué à une moitié d’un état maximalement intriqué. Ce protocole est déjà discuté dans le papier original sur la téléportation <span id="id3">[<a class="reference internal" href="#id47" title="Charles H Bennett, Gilles Brassard, Claude Crépeau, Richard Jozsa, Asher Peres, and William K Wootters. Teleporting an unknown quantum state via dual classical and einstein-podolsky-rosen channels. Physical review letters, 70(13):1895, 1993.">1</a>]</span>, et développé dans <span id="id4">[<a class="reference internal" href="#id50" title="M Zukowski, A Zeilinger, MA Horne, and AK Ekert. Bell experiment via entanglement swapping. Phys. Rev. Lett, 71:4287, 1993.">4</a>]</span>. Imaginez la situation où trois parties partagent deux états maximalement intriqués comme suit : Alice partage un état maximement intriqué <span class="math notranslate nohighlight">\(\ket{\Phi^+}{AB_1}\)</span> avec Bob, qui, à son tour, partage un autre état maximement intriqué <span class="math notranslate nohighlight">\(\ket{\Phi^+}{B_2C}\)</span> avec Charlie. Maintenant, si Bob téléporte la particule <span class="math notranslate nohighlight">\(B_1\)</span> à Charlie en utilisant ce deuxième état, l’intrication est échangé et maintenant Alice et Charlie partagent un état <span class="math notranslate nohighlight">\(\ket{\Phi^+}_{AC}\)</span>, tandis que toute intrication avec Bob est détruit. La mesure de Bob mappe l’intrication qu’il a avec Alice et Charlie en une intrication directe entre eux.</p>
+<p>L’idée intuitive d’un répéteur quantique est la suivante, voir aussi <a class="reference internal" href="#qrepfig"><span class="std std-numref">Fig. 11</span></a>. Considérez deux parties éloignées connectées par un canal très bruité pour lequel la communication quantique directe est impraticable, voire impossible. Plusieurs stations intermédiaires, les répéteurs, sont placées à travers le canal, de sorte que le canal effectif entre chaque répéteur consécutif a une qualité bien meilleure. Maintenant, des états intriqués sont distribués à travers les différents nœuds. Étant donné que les canaux ont une meilleure qualité, les états intriqués moins bruités peuvent maintenant être distillés en états maximalement intriqués connectant tous les nœuds du canal. Les parties effectuent ensuite un échange d’intrication afin que toutes les paires intriquées soient maintenant partagées entre les deux nœuds terminaux, Alice et Bob. Enfin, Alice et Bob utilisent ces paires pour échanger de manière fiable de l’information quantique par téléportation. Le protocole, bien qu’intuitivement attrayant, est cependant très difficile, car les nœuds doivent effectuer des opérations sur plusieurs qubits et les stocker dans des mémoires sans décohérence pendant l’exécution du protocole. Aucune démonstration de configuration de répéteur, même avec un seul répéteur et dans un environnement de laboratoire, n’a encore été réalisée, bien que plusieurs groupes dans le monde entier travaillent intensivement sur le développement de tous les ingrédients nécessaires à cela.</p>
+<figure class="align-default" id="qrepfig">
+<a class="reference internal image-reference" href="../../_images/QRepeater.png"><img alt="../../_images/QRepeater.png" src="../../_images/QRepeater.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Répéteurs quantiques :(i) Alice et Bob sont connectés par un canal très bruité <span class="math notranslate nohighlight">\(\Lambda_L\)</span>, où la communication quantique est impraticable ou même impossible. (ii) Des stations intermédiaires appelées répéteurs sont ajoutées, de sorte que le canal résultant connectant différents nœuds, <span class="math notranslate nohighlight">\(\Lambda_{L'}\)</span>, a une qualité bien meilleure et permet la distribution d’états intriqués distillables. (iii) Les parties utilisent le canal <span class="math notranslate nohighlight">\(n\)</span> fois pour distribuer l’intrication, ce qui donne <span class="math notranslate nohighlight">\(n\)</span> copies d’un état intriqué mixte. (iv) Ces états mixtes sont distillés en <span class="math notranslate nohighlight">\(m\)</span> états maximalement intriqués par des opérations LOCC (Local Operations and Classical Communication). (v) L’intrication est mappé vers les nœuds finaux au moyen de l’échange d’intrication, permettant ainsi une communication quantique fiable par téléportation quantique.</span><a class="headerlink" href="#qrepfig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>En rassemblant toutes ces idées, nous arrivons au concept <em>d’internet quantique</em> <span id="id5">[<a class="reference internal" href="#id51" title="H Jeff Kimble. The quantum internet. Nature, 453(7198):1023–1030, 2008.">5</a>]</span>, où différents nœuds disposeront d’ordinateurs quantiques capables d’effectuer toutes les opérations quantiques sur leurs états, de les stocker dans des mémoires quantiques et d’échanger des bits quantiques à travers l’intrication et la téléportation. C’est l’objectif ultime de la communication quantique.</p>
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id6">
+<div role="list" class="citation-list">
+<div class="citation" id="id47" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>Charles H Bennett, Gilles Brassard, Claude Crépeau, Richard Jozsa, Asher Peres, and William K Wootters. Teleporting an unknown quantum state via dual classical and einstein-podolsky-rosen channels. <em>Physical review letters</em>, 70(13):1895, 1993.</p>
+</div>
+<div class="citation" id="id48" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<p>Michał Horodecki, Paweł Horodecki, and Ryszard Horodecki. Mixed-state entanglement and distillation: is there a “bound” entanglement in nature? <em>Physical Review Letters</em>, 80(24):5239, 1998.</p>
+</div>
+<div class="citation" id="id49" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>H-J Briegel, Wolfgang Dür, Juan I Cirac, and Peter Zoller. Quantum repeaters: the role of imperfect local operations in quantum communication. <em>Physical Review Letters</em>, 81(26):5932, 1998.</p>
+</div>
+<div class="citation" id="id50" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>M Zukowski, A Zeilinger, MA Horne, and AK Ekert. Bell experiment via entanglement swapping. <em>Phys. Rev. Lett</em>, 71:4287, 1993.</p>
+</div>
+<div class="citation" id="id51" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>H Jeff Kimble. The quantum internet. <em>Nature</em>, 453(7198):1023–1030, 2008.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="section3.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Communication quantique basée sur l’intrication</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../bibliography.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

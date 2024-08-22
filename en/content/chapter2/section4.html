@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bell’s Theorem &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter2/section4';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Quantum Cryptography" href="../chapter3/chapter3.html" />
+    <link rel="prev" title="The No-Cloning Theorem" href="section3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Quantum Communications and Cryptography
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Basics of Quantum Mechanics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter2.html">Basics Elements of Quantum Information Theory</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">The Quantum Bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">Quantum Gates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">The No-Cloning Theorem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bell’s Theorem</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Quantum Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">One-Time Pad and Quantum Key Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">The BB84 Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Other Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Ekert Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Bennett-Brassard-Mermin Argument</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">General Structure of QKD Protocols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Security Proofs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Eve’s Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Key Rate for Collective Attacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementations</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 with Time-Bin Encoding and Weak Coherent States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">The Photon-Number Splitting Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">SARG Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Decoy-State Protocols</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Hacking Attacks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">The Device-Independent Scenario</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Physical Correlations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Device-Independent Quantum Key Distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Long-Distance Quantum Communication</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Classical Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Quantum Error Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Entanglement-Based Quantum Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Quantum Repeaters</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter2/section4.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter2/section4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter2/section4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bell’s Theorem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="bell-s-theorem">
+<h1>Bell’s Theorem<a class="headerlink" href="#bell-s-theorem" title="Link to this heading">#</a></h1>
+<p>Bell’s theorem is arguably the strongest result showing the separation between classical and quantum physics (and the corresponding information theories). Historically, the whole discussion started with a celebrated article by Einstein, Podolsky and
+Rosen (EPR) “Can Quantum-Mechanical Description of Physical Reality
+Be Considered Complete?” <span id="id1">[<a class="reference internal" href="../chapter8/section1.html#id11" title="Albert Einstein, Boris Podolsky, and Nathan Rosen. Can quantum-mechanical description of physical reality be considered complete? Physical review, 47(10):777, 1935.">1</a>]</span>, where they raised doubts about the
+completeness of quantum theory as a local-realistic (LR) theory. Their argument was based on three requirements that any physical theory, according to EPR, should satisfy:</p>
+<ul class="simple">
+<li><p>“Locality”: Events in space-like separated regions cannot have
+a (direct) causal relation.</p></li>
+<li><p>“Reality”: If, without disturbing a system in any way, we
+can predict with certainty the value of a physical quantity,
+then there exists an element of physical reality corresponding
+to this physical quantity.</p></li>
+<li><p>“Completeness”: Every element of the physical reality must
+have a counterpart in the physical theory.</p></li>
+</ul>
+<p>All these conditions seem intuitively natural and hardly
+restrictive. Einstein, Podolsky and Rosen argued that if quantum theory was local and realistic, then it could not be complete. They did not necessarily question the predictive power of quantum theory, but advocated for the existence of another theory, possibly with the same predictive power as quantum theory, but complete and hence more satisfactory.</p>
+<p>For years the EPR program was mainly a matter of
+quasi-philosophical debate, until the work of J. Bell in 1964 <span id="id2">[<a class="reference internal" href="#id18" title="John S Bell. On the einstein podolsky rosen paradox. Physics Physique Fizika, 1(3):195, 1964.">2</a>]</span>. Bell’s merit was to (i) identify a series of
+conditions, the so-called Bell inequalities, that any LR theory
+satisfies and (ii) provide a quantum experiment violating them.
+Therefore, Bell was able to construct an experimentally verifiable
+condition testing LR theories against quantum theory. The experimental
+demonstrations of Bell inequality violations, from the pioneering demonstrations in <span id="id3">[<a class="reference internal" href="#id19" title="Alain Aspect, Philippe Grangier, and Gérard Roger. Experimental tests of realistic local theories via bell's theorem. Physical review letters, 47(7):460, 1981.">3</a>, <a class="reference internal" href="#id20" title="Wolfgang Tittel, Jürgen Brendel, Hugo Zbinden, and Nicolas Gisin. Violation of bell inequalities by photons more than 10 km apart. Physical review letters, 81(17):3563, 1998.">4</a>, <a class="reference internal" href="#id21" title="Gregor Weihs, Thomas Jennewein, Christoph Simon, Harald Weinfurter, and Anton Zeilinger. Violation of bell's inequality under strict einstein locality conditions. Physical Review Letters, 81(23):5039, 1998.">5</a>, <a class="reference internal" href="#id22" title="Mary A Rowe, David Kielpinski, Volker Meyer, Charles A Sackett, Wayne M Itano, Christopher Monroe, and David J Wineland. Experimental violation of a bell's inequality with efficient detection. Nature, 409(6822):791–794, 2001.">6</a>]</span> to the most recent loophole-free experiments <span id="id4">[<a class="reference internal" href="#id23" title="Bas Hensen, Hannes Bernien, Anaïs E Dréau, Andreas Reiserer, Norbert Kalb, Machiel S Blok, Just Ruitenberg, Raymond FL Vermeulen, Raymond N Schouten, Carlos Abellán, and others. Loophole-free bell inequality violation using electron spins separated by 1.3 kilometres. Nature, 526(7575):682–686, 2015.">7</a>, <a class="reference internal" href="#id24" title="Marissa Giustina, Marijn AM Versteegh, Sören Wengerowsky, Johannes Handsteiner, Armin Hochrainer, Kevin Phelan, Fabian Steinlechner, Johannes Kofler, Jan-Åke Larsson, Carlos Abellán, and others. Significant-loophole-free test of bell’s theorem with entangled photons. Physical review letters, 115(25):250401, 2015.">8</a>, <a class="reference internal" href="#id25" title="Lynden K Shalm, Evan Meyer-Scott, Bradley G Christensen, Peter Bierhorst, Michael A Wayne, Martin J Stevens, Thomas Gerrits, Scott Glancy, Deny R Hamel, Michael S Allman, and others. Strong loophole-free test of local realism. Physical review letters, 115(25):250402, 2015.">9</a>]</span>, definitively closed the EPR program.</p>
+<p>Here we present Bell’s theorem through the best-known Bell inequality, the
+so-called Clauser-Horne-Shimony-Holt (CHSH) inequality <span id="id5">[<a class="reference internal" href="#id26" title="John F Clauser, Michael A Horne, Abner Shimony, and Richard A Holt. Proposed experiment to test local hidden-variable theories. Physical review letters, 23(15):880, 1969.">10</a>]</span>. In fact, this was not the inequality used by Bell to prove his theorem, but it is now the most used one and it provides the simplest demonstration of Bell’s result. To do that, we follow a more modern and operational formulation of the problem, without making explicit use of the concepts of locality and realism.</p>
+<p>A Bell scenario is defined by two non-communicating observers, Alice and Bob, who receive two correlated systems from a source. The parties can perform <span class="math notranslate nohighlight">\(m\)</span> possible measurements on their systems, each with <span class="math notranslate nohighlight">\(r\)</span> possible outcomes. The performed measurements are labelled by <span class="math notranslate nohighlight">\(x,y=1,\ldots,m\)</span> and the obtained results by <span class="math notranslate nohighlight">\(a,b=1,\ldots,r\)</span>, see also <a class="reference internal" href="#chshfig"><span class="std std-numref">Fig. 2</span></a>. By repeating the experiment several times, it is possible to compute the conditional probabilities <span class="math notranslate nohighlight">\(p(ab|xy)\)</span> of observing the different results <span class="math notranslate nohighlight">\((a,b)\)</span> for each configuration of measurements <span class="math notranslate nohighlight">\((x,y)\)</span>. Clearly, these probabilities are all positive and normalised, <span class="math notranslate nohighlight">\(p(ab|xy)&gt;0\)</span> and <span class="math notranslate nohighlight">\(\sum_{a,b}p(ab|xy)=1\)</span> for all <span class="math notranslate nohighlight">\((x,y)\)</span>. These probabilities define the observed statistics and are often dubbed <em>correlations</em>. What EPR called a LR model is given by correlations that can be written as local deterministic strategies specifying the output given the input and possibly correlated through the particles received from the source. These correlations read</p>
+<div class="math notranslate nohighlight" id="equation-lrmodel">
+<span class="eqno">(21)<a class="headerlink" href="#equation-lrmodel" title="Link to this equation">#</a></span>\[p(ab|xy)=\sum_{\lambda}p(\lambda) ~ D_A(a|x\lambda) ~ D_B(a|x\lambda) ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> denote the instructions received from the source, possibly changing according to a probabilistic preparation <span class="math notranslate nohighlight">\(p(\lambda)\)</span>, while the functions <span class="math notranslate nohighlight">\(D_A\)</span> and <span class="math notranslate nohighlight">\(D_B\)</span> deterministically specify the output of each party given the input and these instructions. Note that these functions do not depend on the other party’s input because it is assumed that the parties do not communicate. Also, note that if the value of <span class="math notranslate nohighlight">\(\lambda\)</span> is known, which can be interpreted as the state prepared by the source, then it is possible to predict the measurement output in a deterministic way. It is natural to expect that, in nature, correlations between two non-communicating parties can always be expressed in this form.</p>
+<figure class="align-default" id="chshfig">
+<a class="reference internal image-reference" href="../../_images/CHSH_Fig.png"><img alt="../../_images/CHSH_Fig.png" src="../../_images/CHSH_Fig.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">CHSH Bell inequality: Two
+parties measure two two-outcome observables, <span class="math notranslate nohighlight">\(A_1\)</span>
+and <span class="math notranslate nohighlight">\(A_2\)</span> for Alice, and <span class="math notranslate nohighlight">\(B_1\)</span> and <span class="math notranslate nohighlight">\(B_2\)</span> for Bob. The choice of
+measurement is represented by a bit, <span class="math notranslate nohighlight">\(x\)</span> for Alice and <span class="math notranslate nohighlight">\(y\)</span> for Bob.
+The two possible
+outcomes are labeled by <span class="math notranslate nohighlight">\(\pm 1\)</span>. For the quantum violation, observables are replaced by quantum operators and they act on a two-qubit maximally entangled state.</span><a class="headerlink" href="#chshfig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The CHSH inequality <span id="id6">[<a class="reference internal" href="#id26" title="John F Clauser, Michael A Horne, Abner Shimony, and Richard A Holt. Proposed experiment to test local hidden-variable theories. Physical review letters, 23(15):880, 1969.">10</a>]</span> is defined in the simplest Bell scenario in which the parties perform two measurements of two outputs, <span class="math notranslate nohighlight">\(m=r=2\)</span>, and the convention is to denote the performed measurement by <span class="math notranslate nohighlight">\(x,y=1,2\)</span> and the obtained result by <span class="math notranslate nohighlight">\(a,b=\pm 1\)</span>. This convention is arbitrary but this choice simplifies the calculations. One then considers the following quantity:</p>
+<div class="math notranslate nohighlight" id="equation-chshdef">
+<span class="eqno">(22)<a class="headerlink" href="#equation-chshdef" title="Link to this equation">#</a></span>\[    \text{CHSH}=A_1B_1+A_1B_2+A_2B_1-A_2B_2 ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_x\)</span> (<span class="math notranslate nohighlight">\(B_y\)</span>) denotes the measurement result by Alice (Bob) when implementing measurement <span class="math notranslate nohighlight">\(x\)</span> (<span class="math notranslate nohighlight">\(y\)</span>). It is very simple to see that if the measurement results are deterministically fixed, that is for any assignments of <span class="math notranslate nohighlight">\(\pm 1\)</span> to these values, the CHSH expression satisfies <span class="math notranslate nohighlight">\(|CHSH|=2\)</span>. This implies that even if the assignment changes according to a probabilistic preparation at the source <span class="math notranslate nohighlight">\(p(\lambda)\)</span>,  as in Eq. <a class="reference internal" href="#equation-lrmodel">(21)</a>, the expectation value of this expression always satisfies</p>
+<div class="math notranslate nohighlight" id="equation-chshineq">
+<span class="eqno">(23)<a class="headerlink" href="#equation-chshineq" title="Link to this equation">#</a></span>\[    \langle CHSH\rangle \leq 2.\]</div>
+<p>Eq. <a class="reference internal" href="#equation-chshineq">(23)</a> is the famous CHSH inequality, whose mathematical derivation is astonishingly simple. The maximal violation of an inequality for LR models is called the local bound, equal to 2 for CHSH.</p>
+<p>Let us now consider a quantum implementation of a CHSH Bell scenario in which the state prepared by the source is the two-qubit maximally entangled state</p>
+<div class="math notranslate nohighlight" id="equation-bellstate">
+<span class="eqno">(24)<a class="headerlink" href="#equation-bellstate" title="Link to this equation">#</a></span>\[    \ket{\Phi^+}=\frac{1}{\sqrt 2}(\ket{00}+\ket{11}) ,\]</div>
+<p>and the measurements by each of the two parties are defined by the observables <span class="math notranslate nohighlight">\(A_1=\sx\)</span>, <span class="math notranslate nohighlight">\(A_2=\sz\)</span>, <span class="math notranslate nohighlight">\(B_1=(\sx+\sz)/\sqrt 2\)</span> and <span class="math notranslate nohighlight">\(B_2=(\sx-\sz)/\sqrt 2\)</span>, see <a class="reference internal" href="#chshfig"><span class="std std-numref">Fig. 2</span></a>. After some calculations, it is possible to see that the quantum value of the CHSH expression for this configuration is</p>
+<div class="math notranslate nohighlight" id="equation-tsirelson">
+<span class="eqno">(25)<a class="headerlink" href="#equation-tsirelson" title="Link to this equation">#</a></span>\[    \langle \text{CHSH}\rangle =\langle A_1B_1\rangle +\langle A_1B_2\rangle +\langle A_2B_1\rangle -\langle A_2B_2\rangle =2\sqrt 2 &gt; 2,\]</div>
+<p>proving that quantum correlations do not have a description in terms of an EPR model <a class="reference internal" href="#equation-lrmodel">(21)</a>. The value <span class="math notranslate nohighlight">\(2\sqrt 2\)</span> is the largest possible in quantum physics and is known as the Tsirelson bound <span id="id7">[<a class="reference internal" href="../chapter8/section1.html#id21" title="BS Tsirelson. Lett. math. phys. Lett. Math. Phys, 4:93, 1980.">2</a>]</span>.</p>
+<!--\textbf{Exercise 1}: Compute the quantum value of each of the four terms $\langle A_x\otimes B_y\rangle$, with $x,y=1,2$, in the CHSH expression for the state {eq}`bellstate` and settings as in {numref}`CHSHfig` and verify that they sum up to $2\sqrt 2$.-->
+<div class="tip admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Compute the quantum value of each of the four terms <span class="math notranslate nohighlight">\(\langle A_x\otimes B_y\rangle\)</span>, with <span class="math notranslate nohighlight">\(x,y=1,2\)</span>, in the CHSH expression for the state <a class="reference internal" href="#equation-bellstate">(24)</a> and settings as in <a class="reference internal" href="#chshfig"><span class="std std-numref">Fig. 2</span></a> and verify that they sum up to <span class="math notranslate nohighlight">\(2\sqrt 2\)</span>.</p>
+</div>
+<p>The implications of this violation are huge. First of all, there is no LR
+theory able to give a value of CHSH larger than 2, so either the predictions of quantum theory are wrong or the EPR program is not possible. Bell was thereby able to
+map the EPR debate into a measurable condition. The only thing
+left was to design the experimental situation for testing the
+violation of any of these quantities. The rigorous experimental
+verification of the violation of a Bell inequality came almost two
+decades after Bell’s seminal paper <span id="id8">[<a class="reference internal" href="#id19" title="Alain Aspect, Philippe Grangier, and Gérard Roger. Experimental tests of realistic local theories via bell's theorem. Physical review letters, 47(7):460, 1981.">3</a>]</span>. Since then, other
+experimental tests have been performed, all of who’s results favored the
+quantum formalism <span id="id9">[<a class="reference internal" href="#id23" title="Bas Hensen, Hannes Bernien, Anaïs E Dréau, Andreas Reiserer, Norbert Kalb, Machiel S Blok, Just Ruitenberg, Raymond FL Vermeulen, Raymond N Schouten, Carlos Abellán, and others. Loophole-free bell inequality violation using electron spins separated by 1.3 kilometres. Nature, 526(7575):682–686, 2015.">7</a>, <a class="reference internal" href="#id24" title="Marissa Giustina, Marijn AM Versteegh, Sören Wengerowsky, Johannes Handsteiner, Armin Hochrainer, Kevin Phelan, Fabian Steinlechner, Johannes Kofler, Jan-Åke Larsson, Carlos Abellán, and others. Significant-loophole-free test of bell’s theorem with entangled photons. Physical review letters, 115(25):250401, 2015.">8</a>, <a class="reference internal" href="#id25" title="Lynden K Shalm, Evan Meyer-Scott, Bradley G Christensen, Peter Bierhorst, Michael A Wayne, Martin J Stevens, Thomas Gerrits, Scott Glancy, Deny R Hamel, Michael S Allman, and others. Strong loophole-free test of local realism. Physical review letters, 115(25):250402, 2015.">9</a>]</span>.</p>
+<p>Two facts should be mentioned here. First, note that, although only
+one inequality is presented here, there are many similar
+conditions that characterize the set of probability distributions
+achievable in a LR theory <a class="reference internal" href="#equation-lrmodel">(21)</a>. The fact
+that quantum theory predicts the existence of correlations leading to a Bell inequality violation means that these quantum correlations cannot be written in this form.
+Second, despite the fact that quantum theory predicts the violation of these
+inequalities, no faster-than-light communication is allowed in the
+quantum formalism. This would correspond to the case where Alice’s measurement
+could change Bob’s measurement statistics. It is straightforward
+to prove that this is not possible. Consider the situation where
+Alice and Bob share a quantum state <span class="math notranslate nohighlight">\(\rho_{AB}\)</span> on which they
+apply measurements <span class="math notranslate nohighlight">\(\{M_{a|x}\}\)</span> and <span class="math notranslate nohighlight">\(\{M_{b|y}\}\)</span> so that</p>
+<div class="math notranslate nohighlight" id="equation-qcorr">
+<span class="eqno">(26)<a class="headerlink" href="#equation-qcorr" title="Link to this equation">#</a></span>\[p(ab|xy)=\tr(\rho_{AB}M_{a|x}\otimes M_{b|y}) .\]</div>
+<p>The probability that Alice obtains outcome <span class="math notranslate nohighlight">\(a\)</span> when she measures <span class="math notranslate nohighlight">\(x\)</span> and Bob measures <span class="math notranslate nohighlight">\(y\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter2-section4-0">
+<span class="eqno">(27)<a class="headerlink" href="#equation-content-chapter2-section4-0" title="Link to this equation">#</a></span>\[    p_A\,(a|xy)=\sum_b p\,(ab|xy)=\sum_b\tr(\rho_{AB}M_{a|x}\otimes M_{b|y})
+    =\tr(\rho_{AB}M_{a|x}\otimes \one_B) =\tr(A_x\rho_A) ,\]</div>
+<p>and we used that <span class="math notranslate nohighlight">\(\sum_b M_{b|y}=\one_B\)</span> for all <span class="math notranslate nohighlight">\(y\)</span> and where <span class="math notranslate nohighlight">\(\rho_A=\tr_B(\rho_{AB})\)</span>. Here <span class="math notranslate nohighlight">\(\tr_B\)</span> is the partial trace over subsystem <span class="math notranslate nohighlight">\(B\)</span>. This means that Alice’s local measurement statistics
+cannot be affected by any measurement by Bob (and vice versa), as they do not depend on the implemented measurement <span class="math notranslate nohighlight">\(y\)</span>, so
+no faster-than-light (in fact, instantaneous) communication is possible.</p>
+<!--TODO Luke: I think this above section could be clearer, regarding the partial trace etc. -->
+<section id="bibliography-for-this-section">
+<h2>Bibliography for this section<a class="headerlink" href="#bibliography-for-this-section" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id10">
+<div role="list" class="citation-list">
+<div class="citation" id="id17" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Albert Einstein, Boris Podolsky, and Nathan Rosen. Can quantum-mechanical description of physical reality be considered complete? <em>Physical review</em>, 47(10):777, 1935.</p>
+</div>
+<div class="citation" id="id18" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>John S Bell. On the einstein podolsky rosen paradox. <em>Physics Physique Fizika</em>, 1(3):195, 1964.</p>
+</div>
+<div class="citation" id="id19" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p>Alain Aspect, Philippe Grangier, and Gérard Roger. Experimental tests of realistic local theories via bell's theorem. <em>Physical review letters</em>, 47(7):460, 1981.</p>
+</div>
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">4</a><span class="fn-bracket">]</span></span>
+<p>Wolfgang Tittel, Jürgen Brendel, Hugo Zbinden, and Nicolas Gisin. Violation of bell inequalities by photons more than 10 km apart. <em>Physical review letters</em>, 81(17):3563, 1998.</p>
+</div>
+<div class="citation" id="id21" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">5</a><span class="fn-bracket">]</span></span>
+<p>Gregor Weihs, Thomas Jennewein, Christoph Simon, Harald Weinfurter, and Anton Zeilinger. Violation of bell's inequality under strict einstein locality conditions. <em>Physical Review Letters</em>, 81(23):5039, 1998.</p>
+</div>
+<div class="citation" id="id22" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">6</a><span class="fn-bracket">]</span></span>
+<p>Mary A Rowe, David Kielpinski, Volker Meyer, Charles A Sackett, Wayne M Itano, Christopher Monroe, and David J Wineland. Experimental violation of a bell's inequality with efficient detection. <em>Nature</em>, 409(6822):791–794, 2001.</p>
+</div>
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id9">2</a>)</span>
+<p>Bas Hensen, Hannes Bernien, Anaïs E Dréau, Andreas Reiserer, Norbert Kalb, Machiel S Blok, Just Ruitenberg, Raymond FL Vermeulen, Raymond N Schouten, Carlos Abellán, and others. Loophole-free bell inequality violation using electron spins separated by 1.3 kilometres. <em>Nature</em>, 526(7575):682–686, 2015.</p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id9">2</a>)</span>
+<p>Marissa Giustina, Marijn AM Versteegh, Sören Wengerowsky, Johannes Handsteiner, Armin Hochrainer, Kevin Phelan, Fabian Steinlechner, Johannes Kofler, Jan-Åke Larsson, Carlos Abellán, and others. Significant-loophole-free test of bell’s theorem with entangled photons. <em>Physical review letters</em>, 115(25):250401, 2015.</p>
+</div>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id9">2</a>)</span>
+<p>Lynden K Shalm, Evan Meyer-Scott, Bradley G Christensen, Peter Bierhorst, Michael A Wayne, Martin J Stevens, Thomas Gerrits, Scott Glancy, Deny R Hamel, Michael S Allman, and others. Strong loophole-free test of local realism. <em>Physical review letters</em>, 115(25):250402, 2015.</p>
+</div>
+<div class="citation" id="id26" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id5">1</a>,<a role="doc-backlink" href="#id6">2</a>)</span>
+<p>John F Clauser, Michael A Horne, Abner Shimony, and Richard A Holt. Proposed experiment to test local hidden-variable theories. <em>Physical review letters</em>, 23(15):880, 1969.</p>
+</div>
+<div class="citation" id="id27" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">11</a><span class="fn-bracket">]</span></span>
+<p>BS Tsirelson. Lett. math. phys. <em>Lett. Math. Phys</em>, 4:93, 1980.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="section3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The No-Cloning Theorem</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../chapter3/chapter3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quantum Cryptography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography-for-this-section">Bibliography for this section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Otros Protocolos &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter3/section3';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Protocolo de Ekert" href="section4.html" />
+    <link rel="prev" title="El Protocolo BB84" href="section2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Comunicaciones y Criptografía Cuánticas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">El Teorema de No Clonación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Teorema de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter3.html">Criptografía Cuántica</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Libreta de Un Solo Uso y Distribución Cuántica de Claves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section2.html">El Protocolo BB84</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Otros Protocolos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Protocolo de Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section5.html">Argumento de Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Estructura General de los Protocolos QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Pruebas de Seguridad</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Ataques de Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Tasa de Clave para Ataques Colectivos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementaciones</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">El Ataque de División del Número de Fotones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocolo SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocolos de Estado Señuelo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Ataques de Hacking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">Escenario Independiente del Dispositivo</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Correlaciones Físicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Distribución Claves Cuánticas Independiente del Dispositivo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Comunicación Cuántica a Larga Distancia</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Comunicación Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Corrección de Errores Cuánticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Comunicación Cuántica Basada en Entrelazamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Repetidores Cuánticos</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter3/section3.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter3/section3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter3/section3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Otros Protocolos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b92">B92</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolo-de-seis-estados">Protocolo de Seis Estados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolo-de-goldenber-vaidman">Protocolo de Goldenber-Vaidman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibilografia-para-esta-seccion">Bibilografía para esta sección</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="otros-protocolos">
+<h1>Otros Protocolos<a class="headerlink" href="#otros-protocolos" title="Link to this heading">#</a></h1>
+<p>El protocolo BB84 distribuye una clave secreta entre Alice y Bob utilizando estados cuánticos que son preparados por Alice, enviados a través de un canal inseguro y medidos por Bob. Este tipo de protocolo es conocido como <em>prepara y mide</em>. Claramente, la construcción es mucho más general que el BB84, y es posible diseñar muchos otros protocolos para la distribución segura de claves basados en esta idea. El objetivo principal de esta sección es presentar algunos de ellos. Se pueden encontrar muchos más protocolos de QKD en la literatura. Aquí, elegimos aquellos que representaron un avance teórico importante.</p>
+<section id="b92">
+<h2>B92<a class="headerlink" href="#b92" title="Link to this heading">#</a></h2>
+<p>La razón principal por la que Eve no puede leer la información codificada en los estados cuánticos enviados es que Alice los elige de un conjunto que contiene estados cuánticos no ortogonales. Al ser no ortogonales, Eve no puede clonarlos ni medirlos todos sin introducir errores detectables. En 1992, Bennett demostró que dos estados no ortogonales son suficientes para QKD de manera segura <span id="id1">[<a class="reference internal" href="#id23" title="Charles H Bennett. Quantum cryptography using any two nonorthogonal states. Physical review letters, 68(21):3121, 1992.">1</a>]</span>. El interés de este protocolo radica en que es el que involucra el menor número de estados preparados, es decir, dos.</p>
+<p>El protocolo funciona de la siguiente manera. Alice codifica un bit aleatorio en dos estados no ortogonales, <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> y <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, y envía el estado preparado a Bob a través de un canal inseguro. Nuevamente, el ataque de Eve está limitado por la no ortogonalidad de los estados. Una posible medición simple por parte de Bob es la siguiente: él elige al azar medir en la base definida por <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> y su estado ortogonal, denotado por <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> y tal que <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, o en la base <span class="math notranslate nohighlight">\(\{\ket{\psi_1},\ket{\psi^\perp_1}\}\)</span>. Cuando Bob obtiene un resultado correspondiente a cualquiera de los estados ortogonales en cualquiera de las dos mediciones, por ejemplo, el resultado correspondiente a <span class="math notranslate nohighlight">\(\ket{\psi^\perp_0}\)</span> al medir <span class="math notranslate nohighlight">\(\{\ket{\psi_0},\ket{\psi^\perp_0}\}\)</span>, sabe que el estado no era <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> porque <span class="math notranslate nohighlight">\(\langle \psi^\perp_0\ket{\psi_0}=0\)</span>, y por lo tanto, tiene que ser <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>. En esta reconciliación, Bob anuncia aquellas instancias en las que su medición dio un resultado correspondiente a cualquiera de los estados ortogonales a los preparados por Alice. Una medición más eficiente, pero también más exigente experimentalmente, es la que permite la discriminación inequívoca óptima de los estados <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> y <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejercicio 2 - Discriminación inequívoca de dos estados puros no ortogonales</p>
+<p>Considera dos estados puros no ortogonales <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> y <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span>, con <span class="math notranslate nohighlight">\(\langle \psi_0\ket{\psi_1}&gt;0\)</span>. Sin pérdida de generalidad, los dos estados pueden ser rotados para estar en el plano <span class="math notranslate nohighlight">\(XZ\)</span> y con el eje <span class="math notranslate nohighlight">\(+z\)</span> como bisector, de manera que se escriben:</p>
+<div class="math notranslate nohighlight" id="equation-states">
+<span class="eqno">(30)<a class="headerlink" href="#equation-states" title="Link to this equation">#</a></span>\[\begin{split}\ket{\psi_0}=\left(\begin{array}{c}\cos\theta \\ \sin\theta\end{array}\right) \quad\quad
+\ket{\psi_1}=\left(\begin{array}{c}\cos\theta \\ -\sin\theta\end{array}\right),\end{split}\]</div>
+<p>con <span class="math notranslate nohighlight">\(0&lt;\theta\leq\pi/4\)</span>. Sea <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> un estado desconocido elegido entre estos dos con probabilidad igual. Considera una medición de tres resultados, definida por los operadores:</p>
+<div class="math notranslate nohighlight" id="equation-povm">
+<span class="eqno">(31)<a class="headerlink" href="#equation-povm" title="Link to this equation">#</a></span>\[M_0=\mu\proj{\psi_1^\perp} \quad\quad  M_1=\mu\proj{\psi_0^\perp}   \quad\quad  M_?=\one-M_0-M_1 ,\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\ket{\psi_i^\perp}\)</span> denota el estado ortogonal a <span class="math notranslate nohighlight">\(\ket{\psi_i}\)</span>.</p>
+<p>a) Encuentra el rango de valores de <span class="math notranslate nohighlight">\(\mu\)</span> para que la medición esté bien definida, es decir, para que los tres operadores de medición sean positivos semidefinidos.</p>
+<p>b) Para este valor de <span class="math notranslate nohighlight">\(\mu\)</span>, calcula las probabilidades de obtener los tres resultados para cada uno de los dos estados. ¿Cuál es el significado operacional de esta medición de tres resultados?</p>
+<p>c) Finalmente, determina el valor de <span class="math notranslate nohighlight">\(\mu\)</span> que minimiza la probabilidad promedio de obtener el tercer resultado, es decir:</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter3-section3-0">
+<span class="eqno">(32)<a class="headerlink" href="#equation-content-chapter3-section3-0" title="Link to this equation">#</a></span>\[P_?=\frac{1}{2}\left(p(?|0)+p(?|1)\right) .\]</div>
+<p>¿Cómo se relaciona con la superposición entre los dos estados?</p>
+</div>
+</section>
+<section id="protocolo-de-seis-estados">
+<h2>Protocolo de Seis Estados<a class="headerlink" href="#protocolo-de-seis-estados" title="Link to this heading">#</a></h2>
+<p>El protocolo de seis estados, introducido por BruÃŸ <span id="id2">[<a class="reference internal" href="#id24" title="Dagmar Bruß. Optimal eavesdropping in quantum cryptography with six states. Physical Review Letters, 81(14):3018, 1998.">2</a>]</span>, sigue una dirección opuesta: involucra más estados para dificultar el ataque de Eve. En el protocolo BB84, solo se utilizan cuatro estados que pertenecen a un determinado ecuador en la esfera de Bloch, digamos el plano <span class="math notranslate nohighlight">\(xy\)</span>. Sin embargo, se podrían considerar protocolos más elaborados en los que Alice prepare estados que estén mejor distribuidos sobre la esfera. Esta es precisamente la idea principal detrás del protocolo de seis estados: Alice prepara un estado del conjunto de seis estados <span class="math notranslate nohighlight">\(\{\ket{\pm x},\ket{\pm y},\ket{\pm z}\}\)</span>. Bob mide ahora a lo largo de estas tres bases, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> y <span class="math notranslate nohighlight">\(z\)</span>. Claramente, después de la reconciliación de bases, se asume que Alice y Bob derivan una lista de bits perfectamente correlacionados. Desde el punto de vista de Eve, su tarea se vuelve más compleja ya que tiene que clonar o distinguir entre más estados no ortogonales. Sin embargo, desde el punto de vista de Alice y Bob, solo 1/3 de las rondas se mantienen después de la reconciliación de bases. Después de todo, la mejora en seguridad es moderada, mientras que en algunas implementaciones los requisitos tecnológicos para preparar los seis estados son más exigentes, por lo que el protocolo apenas se ha adoptado en la práctica.</p>
+</section>
+<section id="protocolo-de-goldenber-vaidman">
+<h2>Protocolo de Goldenber-Vaidman<a class="headerlink" href="#protocolo-de-goldenber-vaidman" title="Link to this heading">#</a></h2>
+<p>El último protocolo que presentamos en esta sección fue introducido por Goldenberg y Vaidman <span id="id3">[<a class="reference internal" href="#id25" title="Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. Physical Review Letters, 75(7):1239, 1995.">3</a>]</span>. El protocolo utiliza entrelazamiento y demuestra que la distribución segura de claves aún es posible utilizando dos estados ortogonales si estos dos estados se utilizan de manera cuidadosa. La idea del protocolo es la siguiente: Bob prepara un estado entrelazado de dos cúbits, <span class="math notranslate nohighlight">\(\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt 2\)</span>. Envía solo una de las partículas a Alice. Alice ahora no aplica nada, es decir, <span class="math notranslate nohighlight">\(\one\)</span> o <span class="math notranslate nohighlight">\(\sigma_z\)</span> dependiendo del bit que quiere transmitir, y envía el cúbit de vuelta a Bob. Los dos estados, dependiendo del bit aleatorio de Alice, son <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>,  donde ahora <span class="math notranslate nohighlight">\(\ket{\Phi^-}=(\ket{00}-\ket{11})/\sqrt{2}\)</span>. Al recibirlo, Bob puede discriminar perfectamente entre estos dos estados y leer el resultado porque son ortogonales. Aunque la codificación de la información por Alice genera dos estados ortogonales, Eve no puede aprovechar este hecho. Ella solo tiene acceso a una de las dos partículas cuánticas preparadas y transmitidas por Bob, mientras que la otra partícula siempre permanece en el laboratorio de Bob, y por lo tanto nunca está accesible para Eve. Esto hace que la medición cuántica por parte de Eve sobre los dos estados ortogonales sea imposible. De hecho, el cúbit al que Eve puede acceder siempre está en el estado reducido de <span class="math notranslate nohighlight">\(\ket{\Phi^\pm}\)</span>, igual a <span class="math notranslate nohighlight">\(\one/2\)</span> para ambos estados, lo que garantiza la seguridad del protocolo.</p>
+</section>
+<section id="bibilografia-para-esta-seccion">
+<h2>Bibilografía para esta sección<a class="headerlink" href="#bibilografia-para-esta-seccion" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div role="list" class="citation-list">
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Charles H Bennett. Quantum cryptography using any two nonorthogonal states. <em>Physical review letters</em>, 68(21):3121, 1992.</p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Dagmar Bruß. Optimal eavesdropping in quantum cryptography with six states. <em>Physical Review Letters</em>, 81(14):3018, 1998.</p>
+</div>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Lior Goldenberg and Lev Vaidman. Quantum cryptography based on orthogonal states. <em>Physical Review Letters</em>, 75(7):1239, 1995.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="section2.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">El Protocolo BB84</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="section4.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Protocolo de Ekert</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b92">B92</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolo-de-seis-estados">Protocolo de Seis Estados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolo-de-goldenber-vaidman">Protocolo de Goldenber-Vaidman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibilografia-para-esta-seccion">Bibilografía para esta sección</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

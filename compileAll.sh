@@ -14,7 +14,27 @@
     #echo $encoding $encodingAfter
 #done
 
+# Add the language link to the top of each file
+for file in $(find . -name '*.md'); do
+
+    # Check if the first character is a <
+    if [ "$(head -c 1 $file)" == "<" ]; then
+        echo "Skipping $file"
+        continue
+    fi
+
+    # Add header.html to the top of each file
+    echo "Adding header to $file"
+    cat header.html $file > temp.md
+    mv temp.md $file
+
+done
+
 # Run jupyter-book build on all language folders
-jupyter-book build en/ -n --all
-jupyter-book build es/ -n --all
-jupyter-book build fr/ -n --all
+jupyter-book build enMd/ -n --all
+jupyter-book build esMd/ -n --all
+jupyter-book build frMd/ -n --all
+rm -r en es fr
+mv enMd/_build/html en
+mv esMd/_build/html es
+mv frMd/_build/html fr

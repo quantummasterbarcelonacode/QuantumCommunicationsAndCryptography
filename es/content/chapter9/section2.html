@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Corrección de Errores Cuánticos &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter9/section2';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Comunicación Cuántica Basada en Entrelazamiento" href="section3.html" />
+    <link rel="prev" title="Comunicación Clásica" href="section1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Comunicaciones y Criptografía Cuánticas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">El Teorema de No Clonación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Teorema de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Criptografía Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">Libreta de Un Solo Uso y Distribución Cuántica de Claves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">El Protocolo BB84</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Otros Protocolos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocolo de Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Argumento de Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Estructura General de los Protocolos QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Pruebas de Seguridad</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Ataques de Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Tasa de Clave para Ataques Colectivos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementaciones</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">El Ataque de División del Número de Fotones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocolo SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocolos de Estado Señuelo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter7/chapter7.html">Ataques de Hacking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">Escenario Independiente del Dispositivo</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Correlaciones Físicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Distribución Claves Cuánticas Independiente del Dispositivo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter9.html">Comunicación Cuántica a Larga Distancia</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="section1.html">Comunicación Clásica</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Corrección de Errores Cuánticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section3.html">Comunicación Cuántica Basada en Entrelazamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="section4.html">Repetidores Cuánticos</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter9/section2.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter9/section2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter9/section2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Corrección de Errores Cuánticos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia-para-esta-seccion">Bibliografía para esta sección</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="correccion-de-errores-cuanticos">
+<h1>Corrección de Errores Cuánticos<a class="headerlink" href="#correccion-de-errores-cuanticos" title="Link to this heading">#</a></h1>
+<p>Adaptar la corrección de errores al mundo cuántico no es fácil. La corrección de errores se basa en la redundancia, la repetición del mensaje, y sabemos que la información cuántica no puede ser clonada. Además, al decodificar, Bob debería realizar una medición para leer el estado recibido y luego decidir cómo decodificar. Pero las mediciones cuánticas perturban el estado del sistema, por lo que parece que el proceso de decodificación también introducirá errores. De hecho, en los primeros días de la teoría de la información cuántica, investigadores prominentes dudaban de la posibilidad de la corrección de errores cuánticos <span id="id1">[<a class="reference internal" href="#id41" title="Serge Haroche and Jean-Michel Raimond. Quantum computing: dream or nightmare? Physics Today, 49(8):51–52, 1996.">1</a>]</span>.</p>
+<p>Como mostraron por primera vez Shor y Steane en <span id="id2">[<a class="reference internal" href="#id42" title="Peter W Shor. Scheme for reducing decoherence in quantum computer memory. Physical review A, 52(4):R2493, 1995.">2</a>, <a class="reference internal" href="#id43" title="Andrew M Steane. Error correcting codes in quantum theory. Physical Review Letters, 77(5):793, 1996.">3</a>]</span>, la corrección de errores cuánticos es posible. Este avance se basó en una ingeniosa traducción de las técnicas clásicas conocidas al formalismo cuántico, donde nuevamente <span class="math notranslate nohighlight">\(m\)</span> cúbits lógicos son codificados en palabras clave formadas por <span class="math notranslate nohighlight">\(n\)</span> cúbits físicos: <span class="math notranslate nohighlight">\((m=1,n=7)\)</span> en el esquema de Steane y <span class="math notranslate nohighlight">\((m=1,n=9)\)</span> en el esquema de Shor. Ahora, con este conocimiento, podemos reformular la discusión anterior sobre la corrección de errores en términos cuánticos. Dado un canal descrito por un mapa CPTP <span class="math notranslate nohighlight">\(\Lambda\)</span>, Alice codifica un mensaje de <span class="math notranslate nohighlight">\(m\)</span> cúbits en <span class="math notranslate nohighlight">\(n\)</span> cúbits físicos a través de una isometría <span class="math notranslate nohighlight">\(\mathcal E\)</span> que mapea cualquier estado <span class="math notranslate nohighlight">\(\ket\psi\in\compl^{\otimes m}\)</span> a <span class="math notranslate nohighlight">\(\ket{\psi'}=\mathcal E \ket{\psi}\in\compl^{\otimes n}\)</span>. Estos <span class="math notranslate nohighlight">\(n\)</span> cúbits ahora se envían a través del canal ruidoso, por lo que Bob recibe el estado mixto de <span class="math notranslate nohighlight">\(n\)</span> cúbits <span class="math notranslate nohighlight">\(\rho'=\Lambda^{\otimes N}(\proj{\psi'})\)</span>. Bob aplica un mapa de decodificación <span class="math notranslate nohighlight">\(\mathcal D\)</span> a este estado, obteniendo <span class="math notranslate nohighlight">\(\rho=\mathcal D(\rho')\)</span>. El objetivo del protocolo es que este estado sea <span class="math notranslate nohighlight">\(\epsilon\)</span> cercano al estado codificado <span class="math notranslate nohighlight">\(\ket\psi\)</span>, es decir, que se cumpla <span class="math notranslate nohighlight">\(\bra\psi\rho\ket\psi\geq 1-\epsilon\)</span> para un umbral de error dado <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>Está fuera del alcance de estas notas dar una explicación detallada de la corrección de errores cuánticos. Sin embargo, proporcionamos a continuación un esquema simple que muestra cómo mejorar la tasa de error del canal ruidoso</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter9-section2-0">
+<span class="eqno">(59)<a class="headerlink" href="#equation-content-chapter9-section2-0" title="Link to this equation">#</a></span>\[\Lambda_x(\rho)=(1-p_x)\rho+p_x\sx\rho\sx ,\]</div>
+<p>un canal para el cual, con probabilidad <span class="math notranslate nohighlight">\(1-p_x\)</span> el estado no cambia, mientras que el bit sea invertido <span class="math notranslate nohighlight">\(\sx\)</span> ocurre con probabilidad <span class="math notranslate nohighlight">\(p_x\)</span>. Es un canal bastante académico, pero es suficiente para ilustrar cómo funcionan las técnicas de corrección de errores cuánticos.</p>
+<p>El objetivo es presentar un proceso de codificación y decodificación que haga el análogo del simple código de repetición clásico <span class="math notranslate nohighlight">\(1\rightarrow 3\)</span> descrito anteriormente. Una representación de este esquema se muestra en <a class="reference internal" href="#errc"><span class="std std-numref">Figura 10</span></a>. El cúbit inicial que se va a transmitir está en un estado arbitrario <span class="math notranslate nohighlight">\(\ket\psi=\alpha\ket 0 +\beta\ket 1\)</span>. Alice los codifica en un estado de tres cúbits mediante la isometría en la que añade dos nuevos cúbits en estado <span class="math notranslate nohighlight">\(\ket 0\)</span> y realiza dos operaciones CNOT como se muestra en <a class="reference internal" href="#errc"><span class="std std-numref">Figura 10</span></a>. El estado resultante es <span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>. Cabe destacar que de alguna manera se logra la repetición <span class="math notranslate nohighlight">\(1\rightarrow 3\)</span> manteniendo las coherencias en el estado. Este estado ahora se envía a través del canal, por lo que el estado que recibe Bob es <span class="math notranslate nohighlight">\(\rho'=\Lambda_x^{\otimes 3}(\proj{\psi'})\)</span>. Es fácil ver que este estado se puede escribir como</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter9-section2-1">
+<span class="eqno">(60)<a class="headerlink" href="#equation-content-chapter9-section2-1" title="Link to this equation">#</a></span>\[\rho'=(1-p_x)^3\rho'_0+3(1-p_x)^2p_x\rho'_1+3(1-p_x)p_x^2\rho'_2+p_x^3\rho'_3 ,\]</div>
+<p>donde</p>
+<div class="math notranslate nohighlight" id="equation-content-chapter9-section2-2">
+<span class="eqno">(61)<a class="headerlink" href="#equation-content-chapter9-section2-2" title="Link to this equation">#</a></span>\[\begin{split}&amp;&amp;\rho'_0=\proj{\psi'}\nonumber\\
+&amp;&amp;\rho'_1=\frac{1}{3}\left(\sx\otimes\one\otimes\one\proj{\psi'}\sx\otimes\one\otimes\one+\one\otimes\sx\otimes\one\proj{\psi'}\one\otimes\sx\otimes\one\right.\nonumber\\
+&amp;\quad&amp;\left.\quad\quad+\one\otimes\one\otimes\sx \proj{\psi'} \one\otimes\one\otimes\sx\right) \nonumber\\
+&amp;&amp;\rho'_2= \frac{1}{3}\left(\sx\otimes\sx\otimes\one \proj{\psi'} \sx\otimes\sx\otimes\one + \sx\otimes\one\otimes\sx \proj{\psi'} \sx\otimes\one\otimes\sx\right.\nonumber\\
+&amp;\quad&amp;\left.\quad\quad+\one\otimes\sx\otimes\sx \proj{\psi'} \one\otimes\sx\otimes\sx\right) \nonumber\\
+&amp;&amp;\rho'_3= \sx\otimes\sx\otimes\sx \proj{\psi'} \sx\otimes\sx\otimes\sx ,\end{split}\]</div>
+<p>es decir, todos los diferentes términos donde ocurren cero, uno, dos o tres errores. Note las analogías con el caso clásico. Ahora, el objetivo es diseñar un mapa que corrija todos los casos con cero y un error, es decir, <span class="math notranslate nohighlight">\(\mathcal D(\rho'_0)=\mathcal D(\rho'_1)=\proj\psi\)</span>. El circuito en <a class="reference internal" href="#errc"><span class="std std-numref">Figura 10</span></a>  logra esto, como vamos a mostrar para cada uno de los estados puros que aparecen en estos estados mixtos.</p>
+<figure class="align-default" id="errc">
+<a class="reference internal image-reference" href="../../_images/errcorr.png"><img alt="../../_images/errcorr.png" src="../../_images/errcorr.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 10 </span><span class="caption-text">Corrección de errores cuánticos: La figura muestra un ejemplo simple de operaciones de codificación y decodificación que corrigen como máximo un bit invertido. Las mediciones en el cuarto y quinto cúbit informan a Bob sobre qué operaciones unitarias <span class="math notranslate nohighlight">\(U_1\)</span>, <span class="math notranslate nohighlight">\(U_2\)</span> y <span class="math notranslate nohighlight">\(U_3\)</span> implementar para corregir el error en uno (o ninguno) de los tres cúbits físicos que codifican el cúbit lógico en el estado <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</span><a class="headerlink" href="#errc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Sin errores: Bob recibe el estado codificado
+<span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>. Se puede ver que el estado después de agregar los dos cúbits adicionales y realizar las CNOT en la parte de corrección de errores es <span class="math notranslate nohighlight">\((\alpha\ket{000}+\beta\ket{111})\ket{00}\)</span>. Las mediciones de los dos últimos cúbits dan <span class="math notranslate nohighlight">\(00\)</span>. Básicamente, este circuito deja el estado en los primeros tres cúbits sin cambios, ya que están controlando el resultado de las puertas CNOT, mientras que los dos bits obtenidos en la medición, ver <a class="reference internal" href="#errc"><span class="std std-numref">Figura 10</span></a>, extraen la información sobre el error: informan si el cúbit 1 y el cúbit 2 son idénticos, o si el cúbit 1 y el cúbit 3 son iguales. En el presente caso, dado que el resultado es 00, Bob deduce que los tres cúbits son iguales. Esto es compatible con ningún error o tres errores, pero es más probable el primero, por lo que no hace nada, <span class="math notranslate nohighlight">\(U_1=U_2=U_3=\one\)</span>. El estado que entra en la parte final de decodificación es nuevamente  <span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>, que se mapea a <span class="math notranslate nohighlight">\(\ket{\psi}=\alpha\ket{0}+\beta\ket{1}\)</span> mediante las dos últimas operaciones CNOT y mediciones. De hecho, estas dos últimas mediciones no son realmente necesarias.</p></li>
+<li><p>Error en el primer cúbit: Bob recibe el estado
+<span class="math notranslate nohighlight">\(\alpha\ket{100}+\beta\ket{011}\)</span>. Después de la serie de puertas CNOT, se obtiene <span class="math notranslate nohighlight">\((\alpha\ket{100}+\beta\ket{011})\ket{11}\)</span>. Las dos mediciones en los últimos dos cúbits dan 11. Esto informa a Bob que el cúbit 1 es diferente del 2, y también del 3. Si hubo solo un error, Bob sabe que debe corregir el primer cúbit, por lo que aplica <span class="math notranslate nohighlight">\(U_1=\sigma_x\)</span> y <span class="math notranslate nohighlight">\(U_2=U_3=\one\)</span>. El estado resultante es nuevamente <span class="math notranslate nohighlight">\(\ket{\psi'}=\alpha\ket{000}+\beta\ket{111}\)</span>, por lo que la parte final de decodificación proporciona el estado inicial.</p></li>
+<li><p>Error en el segundo cúbit: Bob recibe el estado
+<span class="math notranslate nohighlight">\(\alpha\ket{010}+\beta\ket{101}\)</span>. El razonamiento procede como
+se explicó anteriormente, pero ahora el estado antes de la primera medición es <span class="math notranslate nohighlight">\((\alpha\ket{010}+\beta\ket{101})\ket{10}\)</span>. Las mediciones dan 10 e informan a Bob que el segundo cúbit es diferente de los otros dos, por lo tanto, lo corrige, <span class="math notranslate nohighlight">\(U_2=\sigma_x\)</span> y <span class="math notranslate nohighlight">\(U_1=U_3=\one\)</span>. La última parte es idéntica a la del paso anterior.</p></li>
+<li><p>Error en el tercer cúbit: Bob recibe el estado
+<span class="math notranslate nohighlight">\(\alpha\ket{001}+\beta\ket{110}\)</span>. Igual que antes, pero ahora las
+mediciones en el cuarto y quinto cúbit dan 01, por lo que Bob infiere que el tercer cúbit es incorrecto y aplica <span class="math notranslate nohighlight">\(U_3=\sigma_x\)</span> y
+<span class="math notranslate nohighlight">\(U_1=U_2=\one\)</span>.</p></li>
+</ul>
+<p>Este esquema simple ilustra cómo funciona la corrección de errores cuánticos: (i) Alice codifica los <span class="math notranslate nohighlight">\(m\)</span> cúbits lógicos iniciales en palabras código cuánticas hechas de <span class="math notranslate nohighlight">\(n\)</span> cúbits físicos; (ii) después de la propagación a través del canal, algunos de los cúbits son medidos, proporcionando a Bob información sobre los errores ocurridos en el canal; (iii) el error se corrige y el estado cuántico original se decodifica. Un método real de corrección de errores cuánticos debería corregir no solo errores de bit, <span class="math notranslate nohighlight">\(\sigma_x\)</span>, sino también errores de fase, <span class="math notranslate nohighlight">\(\sigma_z\)</span>, y cualquier combinación arbitraria de ellos. Como se mencionó, tales esquemas existen y constituyen una primitiva básica en cualquier implementación de procesamiento de información cuántica, especialmente con fines en computación cuántica.</p>
+<p>Ahora tenemos todos los ingredientes para definir la capacidad cuántica <span class="math notranslate nohighlight">\(\text{QC}\)</span> de un canal cuántico <span class="math notranslate nohighlight">\(\Lambda\)</span>. Primero, para <span class="math notranslate nohighlight">\(n\)</span> usos del canal, definimos <span class="math notranslate nohighlight">\(m^*(n,\epsilon)\)</span> como el número máximo de cúbits que se pueden transmitir con un error <span class="math notranslate nohighlight">\(\epsilon\)</span>. Esto significa que existen mapas de codificación y decodificación, <span class="math notranslate nohighlight">\(\mathcal E\)</span> y <span class="math notranslate nohighlight">\(\mathcal D\)</span>, tales que para todos los <span class="math notranslate nohighlight">\(\ket\psi\in\compl^{\otimes m}\)</span>, se tiene <span class="math notranslate nohighlight">\(\bra\psi\rho\ket\psi\geq 1-\epsilon\)</span>, donde <span class="math notranslate nohighlight">\(\rho=(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)\)</span>. Luego, la capacidad cuántica del canal se define como en la Ec. <a class="reference internal" href="section1.html#equation-capacity">(57)</a>, con esta nueva definición de <span class="math notranslate nohighlight">\(m^*(n,\epsilon)\)</span>.</p>
+<p>Aunque la definición formal de capacidades para canales clásicos y cuánticos parece casi idéntica, hay varias diferencias importantes. Primero, y contrario a lo que sucede en el caso clásico, existen canales con capacidad cuántica cero, <span class="math notranslate nohighlight">\(\text{QC}=0\)</span>, aunque el estado recibido por Bob depende de la preparación de Alice. Los ejemplos más sencillos de este tipo de canales son los denominados canales bipartitos. Estos son canales <span class="math notranslate nohighlight">\(\Lambda\)</span>, digamos <span class="math notranslate nohighlight">\(A\rightarrow B\)</span>, tal que existe otro canal <span class="math notranslate nohighlight">\(\tilde\Lambda\)</span> donde <span class="math notranslate nohighlight">\(A\rightarrow B_1B_2\)</span> con la propiedad que, para todos los estados de entrada <span class="math notranslate nohighlight">\(\rho\)</span>, uno tiene <span class="math notranslate nohighlight">\(\tr_1(\tilde\Lambda(\rho))=\tr_2(\tilde\Lambda(\rho))=\Lambda(\rho)\)</span>. De hecho, supongamos que el canal original era tal que <span class="math notranslate nohighlight">\(\text{QC}&gt;0\)</span>. Esto significaría que existen operaciones de codificación y decodificación tales que <span class="math notranslate nohighlight">\(\bra\psi(\mathcal D\circ\Lambda^{\otimes n}\circ\mathcal E)(\proj\psi)\ket\psi\geq 1-\epsilon\)</span>. Ahora, podríamos aplicar entonces la codificación a un estado <span class="math notranslate nohighlight">\(\ket\psi\)</span>, usarlo como entrada para <span class="math notranslate nohighlight">\(\tilde\Lambda\)</span> y aplicar un mapa de decodificación a los estados de salida <span class="math notranslate nohighlight">\(B_1\)</span> y <span class="math notranslate nohighlight">\(B_2\)</span>,obteniendo dos copias del estado inicial de calidad arbitrariamente buena, y por lo tanto violando el teorema de no clonación. Es decir, el teorema de no clonación implica la existencia de canales no triviales con capacidad cuántica cero. Cabe destacar que existen ejemplos muy naturales de canales bipartitos, posiblemente el más simple sea un canal con pérdida en el cual un estado se transmite con probabilidad <span class="math notranslate nohighlight">\(1/2\)</span> desde <span class="math notranslate nohighlight">\(A\)</span> hasta <span class="math notranslate nohighlight">\(B\)</span>. Se puede compartir trivialmente por un canal en el cual el estado se transmite ya sea a <span class="math notranslate nohighlight">\(B_1\)</span> y <span class="math notranslate nohighlight">\(B_2\)</span> con probabilidad <span class="math notranslate nohighlight">\(1/2\)</span>. Recordemos que este canal aparece en comunicaciones por fibra óptica y, de hecho, se obtiene una transmisión inferior a <span class="math notranslate nohighlight">\(1/2\)</span> a una distancia relativamente corta. Esto implica que la corrección de errores cuánticos tiene un uso limitado para fines de comunicación cuántica.</p>
+<p>En segundo lugar, en el caso cuántico, no sabemos si existe una fórmula de una sola letra para la capacidad del canal cuántico y, de hecho, es concebible que no exista. En tercer lugar, y esto está relacionado con el punto anterior, la capacidad cuántica no es aditiva <span id="id3">[<a class="reference internal" href="#id44" title="Graeme Smith and Jon Yard. Quantum communication with zero-capacity channels. Science, 321(5897):1812–1815, 2008.">4</a>]</span>: existen canales cuánticos <span class="math notranslate nohighlight">\(\Lambda_1\)</span> y <span class="math notranslate nohighlight">\(\Lambda_2\)</span> tal que (i) <span class="math notranslate nohighlight">\(\text{QC}(\Lambda_1)=\text{QC}(\Lambda_2)=0\)</span>, pero (ii) <span class="math notranslate nohighlight">\(\text{QC}(\Lambda_1\otimes\Lambda_2)&gt;0\)</span>. En otras palabras, dos canales que individualmente no son útiles para enviar comunicación cuántica se vuelven útiles cuando se combinan. Esta asombrosa propiedad de la información cuántica es, de hecho, más común de lo inicialmente esperado, ya que hay varios escenarios operativos en los que las propiedades de la información cuántica no son aditivas, siendo la capacidad cuántica uno de los ejemplos más famosos. Esta propiedad de no aditividad a veces se encapsula en la curiosa fórmula <span class="math notranslate nohighlight">\(0+0&gt;0\)</span>.</p>
+<section id="bibliografia-para-esta-seccion">
+<h2>Bibliografía para esta sección<a class="headerlink" href="#bibliografia-para-esta-seccion" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div role="list" class="citation-list">
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Serge Haroche and Jean-Michel Raimond. Quantum computing: dream or nightmare? <em>Physics Today</em>, 49(8):51–52, 1996.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Peter W Shor. Scheme for reducing decoherence in quantum computer memory. <em>Physical review A</em>, 52(4):R2493, 1995.</p>
+</div>
+<div class="citation" id="id43" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>Andrew M Steane. Error correcting codes in quantum theory. <em>Physical Review Letters</em>, 77(5):793, 1996.</p>
+</div>
+<div class="citation" id="id44" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">4</a><span class="fn-bracket">]</span></span>
+<p>Graeme Smith and Jon Yard. Quantum communication with zero-capacity channels. <em>Science</em>, 321(5897):1812–1815, 2008.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="section1.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Comunicación Clásica</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="section3.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Comunicación Cuántica Basada en Entrelazamiento</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia-para-esta-seccion">Bibliografía para esta sección</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

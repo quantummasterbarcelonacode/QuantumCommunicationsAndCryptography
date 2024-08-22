@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ataques de Hacking &#8212; Quantum Communications and Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter7/chapter7';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Escenario Independiente del Dispositivo" href="../chapter8/chapter8.html" />
+    <link rel="prev" title="Protocolos de Estado Señuelo" href="../chapter6/section4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quantum Communications and Cryptography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quantum Communications and Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Comunicaciones y Criptografía Cuánticas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Fundamentos de la Mecánica Cuántica</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter2/chapter2.html">Elementos Básicos de la Teoría de la Información Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section1.html">El Bit Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section2.html">Puertas Cuánticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section3.html">El Teorema de No Clonación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/section4.html">Teorema de Bell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/chapter3.html">Criptografía Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section1.html">Libreta de Un Solo Uso y Distribución Cuántica de Claves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section2.html">El Protocolo BB84</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section3.html">Otros Protocolos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section4.html">Protocolo de Ekert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/section5.html">Argumento de Bennett-Brassard-Mermin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Estructura General de los Protocolos QKD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/chapter5.html">Pruebas de Seguridad</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section1.html">Ataques de Eve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/section2.html">Tasa de Clave para Ataques Colectivos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/chapter6.html">Implementaciones</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section1.html">BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section2.html">El Ataque de División del Número de Fotones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section3.html">Protocolo SARG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/section4.html">Protocolos de Estado Señuelo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ataques de Hacking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/chapter8.html">Escenario Independiente del Dispositivo</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section1.html">Correlaciones Físicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter8/section2.html">Distribución Claves Cuánticas Independiente del Dispositivo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/chapter9.html">Comunicación Cuántica a Larga Distancia</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section1.html">Comunicación Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section2.html">Corrección de Errores Cuánticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section3.html">Comunicación Cuántica Basada en Entrelazamiento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/section4.html">Repetidores Cuánticos</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/edit/master/content/chapter7/chapter7.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quantummasterbarcelonacode/QuantumCommunicationsAndCryptography/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter7/chapter7.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/chapter7/chapter7.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ataques de Hacking</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia-para-esta-seccion">Bibliografía para esta sección</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="math notranslate nohighlight">
+\[\def\tr{{\text{tr}}}
+\def\one{{\mathbb{1}}}
+\def\sz{{\sigma_z}}
+\def\sx{{\sigma_x}}
+\def\sy{{\sigma_y}}
+\def\compl{{\mathbb{C}}}
+\def\proj#1{\ket{#1}\!\bra{#1}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="ataques-de-hacking">
+<h1>Ataques de Hacking<a class="headerlink" href="#ataques-de-hacking" title="Link to this heading">#</a></h1>
+<p>Toda la discusión anterior muestra que aparecen fallos de seguridad cuando se pasa de protocolos teóricos a su implementación práctica. La existencia de ataques PNS no podía descartarse a priori, porque no había una prueba de seguridad para una implementación del protocolo BB84 con estados coherentes débiles y grandes pérdidas. Los ataques, de hecho, demostraron que tal prueba era imposible. El principal mérito de los protocolos de estado señuelo fue que se pudo establecer una prueba completa de seguridad para ellos en una implementación con pérdidas y estados débilmente coherentes. Esta prueba parecía poner fin a la discusión.</p>
+<p>Sin embargo, en 2010, se reportaron varios ataques de hacking exitosos en implementaciones comerciales de QKD que, a priori, contaban con una prueba de seguridad. Vadim Makarov fue uno de los investigadores más activos en estos esfuerzos de hacking cuántico <span id="id1">[<a class="reference internal" href="#id33" title="Lars Lydersen, Carlos Wiechers, Christoffer Wittmann, Dominique Elser, Johannes Skaar, and Vadim Makarov. Hacking commercial quantum cryptography systems by tailored bright illumination. Nature photonics, 4(10):686–689, 2010.">1</a>]</span>. En la implementación considerada en BB84, el último paso del lado de Bob era enviar un pulso de luz a un divisor de haz polarizado y detectar los modos de salida, ver <a class="reference internal" href="#hackingfig"><span class="std std-numref">Figura 7</span></a>. Los hackers modificaron el funcionamiento de los detectores de Bob inyectando algo de luz en sus dispositivos. Con este ataque, los detectores dejaron de ser sensibles a fotones individuales y dieron un clic cada vez que la intensidad recibida estaba por encima de un umbral dado, , <span class="math notranslate nohighlight">\(I_{\text{th}}\)</span>. Una vez que Eve ha modificado el funcionamiento de los detectores, Eve mide el estado producido por Alice en una base aleatoria, digamos <span class="math notranslate nohighlight">\(z\)</span>, en una ronda dada. Luego, prepara un nuevo estado igual a su resultado, digamos <span class="math notranslate nohighlight">\(\ket{+z}\)</span>, codificado en la intensidad del pulso de luz <span class="math notranslate nohighlight">\(I_{\text{th}}&lt;\mu_E&lt;2I_{\text{th}}\)</span> y lo envía a Bob a través de un canal sin pérdidas (de manera equivalente, ella codifica su bit en un pulso con intensidad igual a <span class="math notranslate nohighlight">\(\mu_E/\eta_C\)</span>, de modo que lo que le llega a Bob tiene la intensidad correcta igual a <span class="math notranslate nohighlight">\(\mu_E\)</span>). Ahora, si Bob escoge la misma medida que Eve, el pulso se envía de manera determinística a uno de los dos detectores de Bob, manteniendo su intensidad por encima del umbral, y luego se detectará con el mismo resultado que la preparación de Eve. Sin embargo, si Bob elige una base diferente a la de Eve, el estado coherente se divide en dos pulsos de intensidades por debajo del umbral y no se produce ninguna detección. Bob anuncia que el fotón se perdió durante la propagación y esas rondas se descartan. En total, la mitad de las rondas se descartan, pero para aquellas que se conservan y pasan la reconciliación de bases, tendremos que las bases de Alice, Bob y Eve coinciden. Por lo tanto, el ataque de Eve le proporciona toda la información y no interfiere con la medida de Alice ni con la preparación de Bob. Por supuesto, este ataque solo funciona si las pérdidas son mayores que <span class="math notranslate nohighlight">\(1/2\)</span>, pero este es siempre el caso después de, aproximadamente, más de 15 km de fibra óptica.</p>
+<figure class="align-default" id="hackingfig">
+<a class="reference internal image-reference" href="../../_images/Hacking.png"><img alt="../../_images/Hacking.png" src="../../_images/Hacking.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 7 </span><span class="caption-text">Ataque de hacking: Eve inyecta luz en los dispositivos de Bob para que no sean sensibles a los fotones entrantes, pero den un resultado cada vez que la intensidad de la luz entrante esté por encima del umbral <span class="math notranslate nohighlight">\(I_{\text{th}}\)</span>. En el ataque, Eve mide el estado enviado por Alice y prepara un nuevo estado coherente para Bob igual a su resultado de medición con intensidad <span class="math notranslate nohighlight">\(I_{\text{th}}&lt;\mu_E&lt;2I_{\text{th}}\)</span>. Si las bases de Bob y Eve coinciden, todo el pulso de luz se envía a un detector, dando el resultado preparado. Si las bases no coinciden, el pulso de luz entrante se divide en dos pulsos con intensidades por debajo del umbral y no hay detección.</span><a class="headerlink" href="#hackingfig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Estos ataques de hacking fueron muy importantes porque demostraron que certificar la seguridad de una implementación cuántica es más sutil de lo que se pensaba inicialmente. Recuerda que, en principio, había una prueba matemática de seguridad para el protocolo hackeado. ¿Estaba equivocada esta prueba? ¿O los hackers lograron infringir una ley cuántica y luego romper el protocolo? La respuesta a estas preguntas es negativa y lo que realmente sucedió fue que la implementación no cumplió con los requisitos necesarios para demostrar la seguridad. Hubo una discrepancia entre el modelado teórico del experimento y su implementación, que fue explotada por los hackers. La prueba de seguridad se derivó bajo las suposiciones del modelo, pero si el modelo no es perfectamente preciso al describir el experimento, la prueba de seguridad obtenida no se aplica a la implementación, que se vuelve potencialmente insegura.</p>
+<p>Para entender mejor este punto, consideremos nuevamente el protocolo BB84. En su formulación, Alice y Bob preparan los estados propios de <span class="math notranslate nohighlight">\(\sx\)</span> y <span class="math notranslate nohighlight">\(\sz\)</span>, y Bob mide estos observables.  Todos estos son operadores que actúan en el espacio de cúbits, <span class="math notranslate nohighlight">\(\compl^2\)</span>. Al pensar en una implementación, es fundamentalmente imposible garantizar que cualquier sistema físico viva estrictamente en un espacio de Hilbert de dimensión dos. Por lo tanto, si no se cumplen las suposiciones del protocolo, la prueba de seguridad tampoco se cumple. Por ejemplo, consideremos la situación en la que Alice codifica el qubit en un estado de un solo fotón con frecuencia <span class="math notranslate nohighlight">\(\omega_0\)</span>. Sin embargo, supongamos que hay una pequeña imperfección en los dispositivos de Alice y, siempre que codifica en la base <span class="math notranslate nohighlight">\(x\)</span>, está desplazando ligeramente esta frecuencia a <span class="math notranslate nohighlight">\(\omega'_0=\omega_0+\delta\omega\)</span>. Si Eve nota esta imperfección, todo lo que necesita hacer para hackear el protocolo es (i) medir la frecuencia del estado de un solo fotón que sale del laboratorio de Alice y (ii) medir en la base <span class="math notranslate nohighlight">\(z\)</span> (<span class="math notranslate nohighlight">\(x\)</span>) si la frecuencia medida es <span class="math notranslate nohighlight">\(\omega_0\)</span> (<span class="math notranslate nohighlight">\(\omega_0+\delta\omega\)</span>). De esta forma, Eve obtiene toda la información y su ataque pasa desapercibido. Claramente, este ataque puede evitarse si Alice calibra inicialmente su dispositvo y corrige este desplazamiento, pero este no será posible si la sensibilidad de los dispositivos de calibración de Alice es mayor que <span class="math notranslate nohighlight">\(\delta\omega\)</span>, mientras que los dispositivos de Eve pueden discriminar este desplazamiento de frecuencia. Observa que los cuatro estados anteriores ofrecen muy buenas aproximaciones a los cuatro estados de BB84, pero no son idénticos. De hecho, estos estados actúan en un espacio vectorial de dimensión cuatro, abarcado por <span class="math notranslate nohighlight">\(\{\ket{\pm z,\omega_0}, \ket{\pm x,\omega'_0}\}\)</span>, incumpliendo así la suposición inicial utilizada en la prueba de seguridad de que todos los estados abarcan un espacio de dos dimensiones. Para fortalecer la seguridad, Alice y Bob pueden intentar detectar y corregir todos los errores posibles de este tipo y garantizar que la brecha entre el modelo y la implementación sea mínima. De hecho, después de que se anunció el ataque de hacking, los proveedores de QKD corrigieron el detector de tal manera que el ataque específico de <span id="id2">[<a class="reference internal" href="#id33" title="Lars Lydersen, Carlos Wiechers, Christoffer Wittmann, Dominique Elser, Johannes Skaar, and Vadim Makarov. Hacking commercial quantum cryptography systems by tailored bright illumination. Nature photonics, 4(10):686–689, 2010.">1</a>]</span> ya no fuera posible. Sin embargo, ¿cómo podemos asegurarnos de que no sea posible ningún ataque que explote las imperfecciones de los dispositivos, especialmente si tomamos en cuenta que algunas suposiciones en los protocolos estándar de QKD, como la dimensión del espacio de Hilbert, no son comprobables?</p>
+<section id="bibliografia-para-esta-seccion">
+<h2>Bibliografía para esta sección<a class="headerlink" href="#bibliografia-para-esta-seccion" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id3">
+<div role="list" class="citation-list">
+<div class="citation" id="id33" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<p>Lars Lydersen, Carlos Wiechers, Christoffer Wittmann, Dominique Elser, Johannes Skaar, and Vadim Makarov. Hacking commercial quantum cryptography systems by tailored bright illumination. <em>Nature photonics</em>, 4(10):686–689, 2010.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/chapter7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter6/section4.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Protocolos de Estado Señuelo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../chapter8/chapter8.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Escenario Independiente del Dispositivo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia-para-esta-seccion">Bibliografía para esta sección</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Antonio Acín, Luke Mortimer, Fionnuala Curran, Hippolyte Dourdent, Raja Yehia, Júlia Barberà Rodríguez, Mariana Navarro Asan-Srain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
