@@ -10,12 +10,12 @@ because it can exist in superposition states.
 Interestingly, the encoding of information on quantum states also
 suffer from limitations that do not appear in Classical
 Information Theory. One of the most important differences is encapsulated by the quantum
-No-cloning Theorem, that shows that quantum information cannot be
+no-cloning theorem, that shows that quantum information cannot be
 copied. At first sight this is serious drawback for an information
 theory. However, there are ways of circumventing this problem, as explained 
 below. Moreover, this limitation can be turned into an
 advantage, as shown by Quantum Cryptography. But let us
-start by proving the No-cloning Theorem, first presented by Wootters
+start by proving the no-cloning theorem, first presented by Wootters
 and Zurek in {cite}`wootters1982single`.
 
 Assume there is a machine duplicating the quantum state of a
@@ -60,8 +60,8 @@ process impossible. Note that one can indeed construct a cloning
 machine producing two copies of two orthogonal states
 (Eq. {eq}`clclon`), a classical cloning machine. Unfortunately, it
 fails when cloning any coherent superposition of these two states.
-In other words, nonorthogonality is at the heart of the No-cloning
-Theorem.
+In other words, nonorthogonality is at the heart of the no-cloning
+theorem.
 
 ## Bibliography for this section
 ```{bibliography}
