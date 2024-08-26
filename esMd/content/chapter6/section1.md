@@ -29,9 +29,9 @@ Cúbits en bloques temporales: La información cuántica se codifica en un estad
 
 Para ello, Alice prepara los cuatro posibles estado en BB84, $\ket{\pm x}$ y $\ket{\pm y}$, a través del arreglo anterior y eligiendo una fase $\varphi_A=0,\pi$ para $\ket{\pm x}$ y $\varphi_A=\pm\pi/2$ para $\ket{\pm y}$. Estos estados se envían a Bob, quien aplica el *mismo* arreglo interferométrico y detecta qué camino toma el fotón al final del proceso. Como se aclarará más adelante, $\varphi_B=0$ ($\varphi=\pi/2$) corresponde a la medida en la base $x$ ($y$). También es importante tener en cuenta que solo se conservan los eventos en los que Bob detecta un fotón; todos los demás se descartan. Si denotamos por $T$ el tiempo que le toma al fotón en ir de Alice a Bob, y por $\Delta T$ el desfase temporal entre los dos brazos de interferómetro de cada lado, hay tres valores posibles para el tiempo $T_B$ en el que ocurra la detección de un fotón en el lado de Bob:
 
-- $T_B=T$: el fotón toma el camino corto en ambos interferómetros. Puede ser dectado en cualquiera de los dos detectores con probailidad $1/2$. Estos eventos son descartados.
-- $T_B=T+2\Delta T$: el fotón toma el camino largo en ambos interferómetros. Puede ser dectado en cualquiera de los dos detectores con probailidad $1/2$. Estos eventos son descartados.
-- $T_B=T+\Delta T$: hay interferencia entre las dos posibilidad en las que el fotón primero tomó el camino corto y luego el largo, y viceversa. Crucialmente, esta interferencia, y por lo tanto la probabilidad de observar el fotón en uno u otro detector, depende de la diferencia de fase aplicada por Alice y Bob. Este es el caso interesante que se utiliza para generar la clave.
+- $T_B=T$: el fotón toma el camino corto en ambos interferómetros. Puede ser dectado en cualquiera de los dos detectores con probabilidad $1/2$. Estos eventos son descartados.
+- $T_B=T+2\Delta T$: el fotón toma el camino largo en ambos interferómetros. Puede ser detectado en cualquiera de los dos detectores con probailidad $1/2$. Estos eventos son descartados.
+- $T_B=T+\Delta T$: hay interferencia entre las dos posibilidades en las que el fotón primero tomó el camino corto y luego el largo, y viceversa. Crucialmente, esta interferencia, y por lo tanto la probabilidad de observar el fotón en uno u otro detector, depende de la diferencia de fase aplicada por Alice y Bob. Este es el caso interesante que se utiliza para generar la clave.
 
 Cabe señalar que, para definir estos tiempos de llegada, Alice y Bob deben compartir una referencia temporal, es decir, Bob debe saber cuándo esperar la llegada de los fotones preparados por Alice.
 
@@ -52,15 +52,15 @@ En la configuración considerada, debemos aplicar esta transformación a los mod
 (d_1+d_2)e^{i\varphi_B}+(d_1-d_2)e^{i\varphi_A}. 
 ```
 
-Esto implica que las probabilidades de observar un fotón en los detectores son, después de restaurar la normalizacióm, 
+Esto implica que las probabilidades de observar un fotón en los detectores son, después de restaurar la normalización, 
 
 ```{math}
 :label: 
-\text{Pr}(d_1 \text{ clicks})&=&\frac{|e^{i\varphi_A}+e^{i\varphi_B}|^2}{4}=\frac{|e^{i(\varphi_A-\varphi_B)/2}+e^{-i(\varphi_A-\varphi_B)/2}|^2}{4}=\frac{1+\cos(\varphi_A-\varphi_B)}{2} \nonumber\\
-\text{Pr}(d_2 \text{ clicks})&=&\frac{|e^{i\varphi_A}-e^{i\varphi_B}|^2}{4}=\frac{|e^{i(\varphi_A-\varphi_B)/2}-e^{-i(\varphi_A-\varphi_B)/2}|^2}{4}=\frac{1-\cos(\varphi_A-\varphi_B)}{2} .
+\text{Pr}(d_1 \text{ clics})&=&\frac{|e^{i\varphi_A}+e^{i\varphi_B}|^2}{4}=\frac{|e^{i(\varphi_A-\varphi_B)/2}+e^{-i(\varphi_A-\varphi_B)/2}|^2}{4}=\frac{1+\cos(\varphi_A-\varphi_B)}{2} \nonumber\\
+\text{Pr}(d_2 \text{ clics})&=&\frac{|e^{i\varphi_A}-e^{i\varphi_B}|^2}{4}=\frac{|e^{i(\varphi_A-\varphi_B)/2}-e^{-i(\varphi_A-\varphi_B)/2}|^2}{4}=\frac{1-\cos(\varphi_A-\varphi_B)}{2} .
 ```
 
-Cuando las bases de Alice y Bob coinciden y son iguales a $z$, correspondientes a $\varphi_A=0,\pi$ y $\varphi_B=0$, entonces el primer detector hace clic de manera determinística cuando Alice prepara $\ket{+z}$, correspondiente a $\varphi_A=0$, mientras que el segundo lo hace para $\ket{-z}$, correspondiente a $\varphi_A=\pi$. Es fácil ver que lo mismo se observa para $\varphi_A=\pm\pi/2$ y $\varphi_B=\pi/2$. Cuando las bases no coinciden, digamos $\varphi_A=0$ y $\varphi_B=\pi/2$, los dos detectores hacen clic con la misma probabilidad, $\text{Pr}(d_1 \text{ clicks})=\text{Pr}(d_2 \text{ clicks})=1/2$. Por lo tanto, obtenemos la mis correlación entre la preparación de Alice y las medidad de Bob como en el protocolo BB84, como fue anunciado.
+Cuando las bases de Alice y Bob coinciden y son iguales a $z$, correspondientes a $\varphi_A=0,\pi$ y $\varphi_B=0$, entonces el primer detector hace clic de manera determinística cuando Alice prepara $\ket{+z}$, correspondiente a $\varphi_A=0$, mientras que el segundo lo hace para $\ket{-z}$, correspondiente a $\varphi_A=\pi$. Es fácil ver que lo mismo se observa para $\varphi_A=\pm\pi/2$ y $\varphi_B=\pi/2$. Cuando las bases no coinciden, digamos $\varphi_A=0$ y $\varphi_B=\pi/2$, los dos detectores hacen clic con la misma probabilidad, $\text{Pr}(d_1 \text{ clics})=\text{Pr}(d_2 \text{ clics})=1/2$. Por lo tanto, obtenemos la misma correlación entre la preparación de Alice y las medidas de Bob como en el protocolo BB84, como fue anunciado.
 
 La implementación de este esquema sigue siendo bastante exigente porque requiere la preparación de estados de fotón único. A pesar del tremendo progreso en las fuentes de fotones individuales, este sigue siendo un dispositivo costoso y desafiante. Para superar este problema, Alice reemplaza los estados de fotón único por estados débilmente coherentes. Recordemos que un estado coherente es dado por la siguiente superposición de estados número:
 

@@ -15,20 +15,20 @@
 #done
 
 # Add the language link to the top of each file
-#for file in $(find . -name '*.md'); do
+for file in $(find . -name '*.md'); do
 
-    ## Check if the first character is a <
-    #if [ "$(head -c 1 $file)" == "<" ]; then
-        #echo "Skipping $file"
-        #continue
-    #fi
+    # Check if the first character is a <
+    if [ "$(head -c 1 $file)" == "<" ]; then
+        echo "Skipping $file"
+        continue
+    fi
 
-    ## Add header.html to the top of each file
-    #echo "Adding header to $file"
-    #cat header.html $file > temp.md
-    #mv temp.md $file
+    # Add header.html to the top of each file
+    echo "Adding header to $file"
+    cat header.html $file > temp.md
+    mv temp.md $file
 
-#done
+done
 
 # Fix all carriage returns
 for file in $(find . -name '*.md'); do
@@ -48,7 +48,6 @@ rm -r enMd/_build esMd/_build frMd/_build
 
 # For each of the built html files
 for file in $(find . -wholename '*/content/*.html'); do
-
     echo "Removing html links from $file"
     sed -i 's/intro.html/intro/g' $file
     sed -i 's/chapter1.html/chapter1/g' $file
@@ -66,8 +65,6 @@ for file in $(find . -wholename '*/content/*.html'); do
     sed -i 's/section4.html/section4/g' $file
     sed -i 's/section5.html/section5/g' $file
     sed -i 's/section6.html/section6/g' $file
-
 done
-
 sed -i 's/index.html/index/g' index.html
 sed -i 's/intro.html/intro/g' en/index.html
