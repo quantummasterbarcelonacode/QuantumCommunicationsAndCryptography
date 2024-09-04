@@ -43,13 +43,13 @@ $\tilde\rho_{AB}$, namely $\tilde\rho_{AB}=\sum_i\lambda_i\proj{\lambda_i}$.
 If Alice and Bob want to include Eve in the picture, they should
 characterise those pure states $\ket{\tilde\Psi}_{ABE}$ compatible with their shared state $\tilde\rho_{AB}$. Any such state can be written as  
 
-    ```{math}
-    :label: psiabe
-        \ket{\tilde\Psi}_{ABE}=\sum_i
-        \sqrt{\lambda_i}\ket{\lambda_i}_{AB}\ket{e_i} ,
-    ```  
+```{math}
+:label: psiabe
+    \ket{\tilde\Psi}_{ABE}=\sum_i
+    \sqrt{\lambda_i}\ket{\lambda_i}_{AB}\ket{e_i} ,
+```  
 
-    where $\{\ket{e_i}\}$ define an orthonormal basis in Eve's space.
+where $\{\ket{e_i}\}$ define an orthonormal basis in Eve's space.
 Note that Eve's dimensional space is equal to the rank (number of
 non-zero eigenvalues) of $\tilde\rho_{AB}$. Given
 $\ket{\tilde\Psi}_{ABE}$, which is completely specified by the basis
@@ -60,23 +60,23 @@ the only difference between these two states is a unitary
 operation on Eve's space, which corresponds to a different basis
 $\{\ket{e'_i}\}$. This implies that any of these states is equally
 powerful from Eve's point of view. We denote by $\mathcal{S}_{ABE}$ the set of pure states between Alice, Bob and Eve compatible with the observed probability distributions $p(ab|xy)$. Of course the state $\ket{\Psi}_{ABE}$ actually prepared by Eve is an element of this set.
-- Alice and Bob focus on those measurements that are used to construct the key, for instance measurements $z$ by Alice and Bob in the BB84 protocol. When they apply these measurements to any of the states $\ket{\tilde\Psi}_{ABE}$, they get
+Alice and Bob focus on those measurements that are used to construct the key, for instance measurements $z$ by Alice and Bob in the BB84 protocol. When they apply these measurements to any of the states $\ket{\tilde\Psi}_{ABE}$, they get
 
-    ```{math}
-    :label: ccq
-        \tilde\rho_{ABE}=\sum_{a,b}p(ab)\proj{a}_A \otimes\proj{b}_B\otimes\proj{\tilde e^{ab}}_E,
-    ```
+```{math}
+:label: ccq
+    \tilde\rho_{ABE}=\sum_{a,b}p(ab)\proj{a}_A \otimes\proj{b}_B\otimes\proj{\tilde e^{ab}}_E,
+```
 
-    where $p(ab)=\bra{ab}\tilde\rho_{AB}\ket{ab}$ is the joint probability of
+where $p(ab)=\bra{ab}\tilde\rho_{AB}\ket{ab}$ is the joint probability of
 getting outcomes $a$ and $b$ and $\ket{\tilde e^{ab}}$ is Eve's projected
 state when Alice and Bob have got these results. Up to normalization, this state is proportional to
 
-    ```{math}
-    :label: evestate
-        \ket{\tilde e^{ab}}\propto\langle ab\ket{\tilde\Psi}_{ABE} .
-    ```
+```{math}
+:label: evestate
+    \ket{\tilde e^{ab}}\propto\langle ab\ket{\tilde\Psi}_{ABE} .
+```
 
-    More precisely, the pure state $\ket{\tilde e^{ab}}$ is given by the right-hand side of the previous equation after normalisation.
+More precisely, the pure state $\ket{\tilde e^{ab}}$ is given by the right-hand side of the previous equation after normalisation.
 The state {eq}`ccq` is often said to contain
 classical-classical-quantum (ccq) correlations. In fact, note that, although
 the state is given in a quantum form, Alice and Bob share only
@@ -84,42 +84,42 @@ classical outcomes whose correlations are encapsulated by the
 probability distribution $p(ab)$. On Eve's side, however, she has
 a quantum state $\ket{\tilde e^{ab}}$ that depends on, or equivalently, is correlated to Alice and Bob's classical
 measurement results.
-- Devetak and Winter proved that the key rate $k_C$ distillable from an asymptotically large number of identical copies of a ccq state {eq}`ccq` is lower bounded by the so-called Devetak-Winter bound, which reads {cite}`dwrate`
+Devetak and Winter proved that the key rate $k_C$ distillable from an asymptotically large number of identical copies of a ccq state {eq}`ccq` is lower bounded by the so-called Devetak-Winter bound, which reads {cite}`dwrate`
 
-    ```{math}
-    :label: dwbound
-        k_C\geq K_{DW}(\tilde\rho_{ABE})=I(A:B)-\chi(A:E) .
-    ```
+```{math}
+:label: dwbound
+    k_C\geq K_{DW}(\tilde\rho_{ABE})=I(A:B)-\chi(A:E) .
+```
 
-    Clearly, the bound is a function of the ccq state $\tilde\rho_{ABE}$.
-    Recall that $I(A:B)=H(A)+H(B)-H(A,B)$ is the mutual information of the
-    probability distribution $p(ab)$. The expression $\chi(A:E)$ denotes the
-    Holevo quantity {cite}`Holevo` for the effective coding of Alice's measurement
-    outcome $a$ on Eve's quantum states. Indeed, any measurement result by
-    Alice projects Eve's state into
+Clearly, the bound is a function of the ccq state $\tilde\rho_{ABE}$.
+Recall that $I(A:B)=H(A)+H(B)-H(A,B)$ is the mutual information of the
+probability distribution $p(ab)$. The expression $\chi(A:E)$ denotes the
+Holevo quantity {cite}`Holevo` for the effective coding of Alice's measurement
+outcome $a$ on Eve's quantum states. Indeed, any measurement result by
+Alice projects Eve's state into
 
-    ```{math}
-    :label: 
-        \tilde\rho_E^a=\tr_{AB}(\proj a\otimes\one_{BE}\proj{\tilde\Psi}_{ABE})/p(a),
-    ```
+```{math}
+:label: 
+    \tilde\rho_E^a=\tr_{AB}(\proj a\otimes\one_{BE}\proj{\tilde\Psi}_{ABE})/p(a),
+```
 
-    where $p(a)$ is the probability that Alice observes the result $a$, $p(a)=\sum_bp(ab)=\tr(\proj a \otimes \one_{BE}\proj{\Psi}_{ABE})=\tr(\proj a\otimes\one_B\rho_{AB})=\tr(\proj a\rho_A)$, where $\rho_A=\tr_B\rho_{AB}$.
-    The Holevo quantity then reads
+where $p(a)$ is the probability that Alice observes the result $a$, $p(a)=\sum_bp(ab)=\tr(\proj a \otimes \one_{BE}\proj{\Psi}_{ABE})=\tr(\proj a\otimes\one_B\rho_{AB})=\tr(\proj a\rho_A)$, where $\rho_A=\tr_B\rho_{AB}$.
+The Holevo quantity then reads
 
-    ```{math}
-    :label: 
-        \chi(A:E)=S(\tilde\rho_E)-\sum_a p(a)S(\tilde\rho_E^a) ,
-    ```
+```{math}
+:label: 
+    \chi(A:E)=S(\tilde\rho_E)-\sum_a p(a)S(\tilde\rho_E^a) ,
+```
 
-    where $\tilde\rho_E=\sum_a p(a)\tilde\rho_E^a=\tr_{AB}\proj{\tilde\Psi}_{ABE}$. 
-    To compute a valid bound on the the key rate, Alice and Bob should minimise the Devetak-Winter bound over all those states compatible with the observed statistics
+where $\tilde\rho_E=\sum_a p(a)\tilde\rho_E^a=\tr_{AB}\proj{\tilde\Psi}_{ABE}$. 
+To compute a valid bound on the the key rate, Alice and Bob should minimise the Devetak-Winter bound over all those states compatible with the observed statistics
 
-    ```{math}
-    :label: dwbound
-        k_C\geq \min_{\tilde\rho_{ABE}\in\mathcal S_{ABE}}K_{DW}(\tilde\rho_{ABE}) .
-    ```
+```{math}
+:label: dwbound
+    k_C\geq \min_{\tilde\rho_{ABE}\in\mathcal S_{ABE}}K_{DW}(\tilde\rho_{ABE}) .
+```
 
-    In fact, Alice and Bob should assume that the prepared state by Eve is the worst possible, that is, the solution to the previous minimisation problem. This minimisation provides the desired asymptotic key rate.
+In fact, Alice and Bob should assume that the prepared state by Eve is the worst possible, that is, the solution to the previous minimisation problem. This minimisation provides the desired asymptotic key rate.
 
 `````{admonition} Exercise 4: Computation of key rates
 :class: tip
