@@ -14,6 +14,7 @@
 
 
 
+
 # Classical Communication
 
 The problem of sending information in a reliable way through a noisy channel has a long history in classical information theory. There, a classical channel is described by a stochastic map $P(Y|X)$, describing how an input random variable $X$ is transformed into an output variable $Y$. The standard way of correcting channel errors is through *error correction*. 

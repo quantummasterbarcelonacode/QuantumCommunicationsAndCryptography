@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Preuves de sécurité
 
 Les sections précédentes ont résumé certains des protocoles les plus connus de QKD (quantum key distribution) sécurisé et ont conclu avec leur structure générale. L'intuition pour tous ces protocoles est qu'une attaque par Eve introduit des erreurs détectables dans le canal. L'argument intuitif poursuit en disant qu'Alice et Bob peuvent surveiller la présence de ces erreurs et arrêter le protocole, mettant fin à la tentative d'espionnage. Il est clair que, bien que cette intuition suggère que le schéma peut être sécurisé, elle est ne fonctionne pas lorsqu'il s'agit de mises en œuvre pratiques. Dans tout scénario réaliste, il y aura des erreurs qui ne sont pas dues à Eve mais qui sont simplement une conséquence du bruit dans le canal et/ou des imperfections dans les laboratoires d'Alice et Bob. Par conséquent, nous ne pouvons pas accepter qu'Alice et Bob interrompent le protocole chaque fois qu'ils observent des erreurs.

@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Quantum Gates
 
 Although these notes focus on quantum communication and cryptography, let us briefly

@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Protocolo de Ekert
 
 En todos los protocolos anteriores, excepto en el último, el entrelazamiento no juega ningún papel: Alice prepara estados de una sola partícula que son enviados y medidos por Bob. En 1991, Artur Ekert propuso un esquema novedoso para la distribución segura de claves cuánticas basado en estados entrelazados y en la violación de la desigualdad de Bell {cite}`Ekert`. Ekert no estaba al tanto del trabajo previo de Bennett y Brassard, que apareció en las actas de una conferencia de informática. De hecho, él (re)descubrió la QKD de manera independiente. Sin embargo, su enfoque del problema parecía ser completamente diferente, basado en las violaciones de la desigualdad de Bell producidas por estados entrelazados, en lugar de la no ortogonalidad de los estados cuánticos.

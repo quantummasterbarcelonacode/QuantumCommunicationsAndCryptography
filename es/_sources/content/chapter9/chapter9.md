@@ -14,6 +14,7 @@
 
 
 
+
 # Comunicación Cuántica a Larga Distancia
 
 En la última parte de las notas, nos enfocamos en el problema de la comunicación cuántica a larga distancia o, más generalmente, cómo enviar de manera confiable información cuántica a través de un canal ruidoso. El escenario es bastante similar a lo discutido hasta ahora, con Alice y Bob en ubicaciones distantes conectados por un canal cuántico. Sin embargo, ahora el objetivo es enviar información cuántica, no distribuir una clave secreta. Por lo tanto, no necesitamos incluir a Eve en el estudio.

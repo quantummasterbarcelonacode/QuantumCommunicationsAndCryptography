@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Criptografía Cuántica 
 
 El teorema de no clonación muestra que la TIC ofrece nuevas posibilidades pero también limitaciones en la forma en que se puede procesar la información en los estados cuánticos. La derivación de este teorema es sorprendentemente simple. De hecho, resulta estar conectada a una limitación más conocida del formalismo cuántico: que el proceso de medición perturba el estado del sistema. De hecho, la clonación perfecta violaría claramente el hecho de que el estado de un solo sistema cuántico no puede conocerse perfectamente. Si la clonación perfecta fuera posible, uno podría conocer todo sobre el estado de una sola partícula sin siquiera medirla, simplemente produciendo clones y midiendo estos, dejando el estado inicial intacto. Por otro lado, si la estimación perfecta fuera posible, uno podría clonar fácilmente haciendo primero una medición precisa del estado y luego preparando tantas copias como se desee.

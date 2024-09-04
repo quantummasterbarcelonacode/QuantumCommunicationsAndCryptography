@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Implementations
 
 While still challenging, QKD protocols are simpler to implement than other quantum information applications, such as quantum computers. This is because they "only" require the preparation of single-qubit states by Alice that are immediately sent to Bob, who measures them upon reception. The main challenge is that, for QKD protocols to be practical, the quantum state must travel over long distances. Therefore, QKD implementations have to deal with the problem of long-distance quantum communication. Light is the ideal carrier for that, so Alice should send her quantum states to Bob using light pulses at the quantum level. There are three main scenarios for QKD protocols in prepare-and-measure configurations:

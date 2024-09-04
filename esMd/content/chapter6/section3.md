@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Protocolo SARG
 
 El ataque PNS representaba una limitación importante para la implementación de QKD, pero tras su formulación surgieron varias soluciones. La primera de ellas es el protocolo Scarani-Acin-Ribordy-Gisin (SARG) {cite}`SARG`, que muestra cómo un simple cambio en la forma en que se procesa la información al implementar BB84 utilizando estados coherentes débiles reduce el impacto de los ataques PNS. En SARG, Alice prepara los mismos cuatro estados que en BB84, y Bob también realiza las mismas dos mediciones. Por lo tanto, a nivel cuántico, ambos protocolos son idénticos y no es necesario cambiar ningún hardware cuántico para pasar de BB84 a SARG. Sin embargo, Alice codifica su bit como se muestra en {numref}`SARGfig`: el bit $0$ ($1$) se codifica en $\ket{\pm z}$ ($\ket{\pm x}$), es decir, la base codifica el bit.

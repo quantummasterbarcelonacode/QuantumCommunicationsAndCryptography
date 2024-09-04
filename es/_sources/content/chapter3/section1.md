@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Libreta de Un Solo Uso y Distribución Cuántica de Claves
 
 Antes de adentrarnos en el mundo cuántico, revisemos un resultado seminal de Vernam que muestra cómo intercambiar información privada de manera completamente segura utilizando una clave secreta compartida previamente.

@@ -14,6 +14,7 @@
 
 
 
+
 # Communication à longue distance
 
 Dans la dernière partie de ces notes, nous nous concentrons sur le problème de la communication quantique à longue distance ou, plus généralement, sur la manière d'envoyer de manière fiable des informations quantiques à travers un canal bruité. Le scénario est assez similaire à ce qui a été discuté jusqu'à présent, avec Alice et Bob dans des endroits éloignés connectés par un canal quantique. Cependant, l'objectif maintenant est d'envoyer de l'information quantique, et non de distribuer une clé secrète. Par conséquent, nous n'avons pas besoin d'inclure Eve dans l'étude.

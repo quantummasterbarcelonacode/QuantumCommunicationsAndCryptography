@@ -12,6 +12,7 @@
     document.getElementById("linkes").href = beforeLang + "es/" + afterLang;
 </script>
 
+
 ```{math}
 \def\tr{{\text{tr}}}
 \def\one{{\mathbb{1}}}

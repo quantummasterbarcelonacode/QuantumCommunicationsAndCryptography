@@ -14,6 +14,7 @@
 
 
 
+
 # Communication classique
 
 Le problème de l'envoi d'informations de manière fiable à travers un canal bruité a une longue histoire dans la théorie de l'information classique. Ici, un canal classique est décrit par une application stochastique $P(Y|X)$, décrivant comment une variable aléatoire d'entrée $X$ est transformée en une variable de sortie $Y$. La méthode standard pour corriger les erreurs de canal est appelé *code de correction d'erreurs*.

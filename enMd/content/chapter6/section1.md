@@ -14,6 +14,7 @@
 
 
 
+
 # BB84 with Time-Bin Encoding and Weak Coherent States
 
 Time bins represent one of the most popular solutions to send quantum information over long distances. In principle, the idea is to prepare single-photon states and send them through a fibre coupler with a given transmission $T$.  The two paths have different lengths and are recombined. A phase shift $\varphi$ is applied to one of the two paths, say the longer one, see {numref}`timebin`. By playing with the transmission of the coupling and the phase, it is in principle possible to prepare any qubit state, as one has $\ket\psi=\sqrt T\ket s+\sqrt Re^{i\varphi}\ket{\ell}$. In practice, changing the transmission of the first coupler is more demanding than changing the applied phase, so one often employs a fixed transmission given by $T=1/2$. Also, recombining the two paths in a deterministic way is also challenging, so one often uses another coupler again with transmission $1/2$. This simpler process therefore prepares any state $\ket\psi=(\ket s+e^{i\varphi}\ket{\ell})/\sqrt 2$, that is, any state in the equator of the Bloch sphere defined by $\ket s$ and $\ket{\ell}$, with some probability. This is however sufficient to implement the BB84 protocol through the scheme in {numref}`timebin`.

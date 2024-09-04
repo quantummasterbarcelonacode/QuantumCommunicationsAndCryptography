@@ -13,6 +13,7 @@
 </script>
 
 
+
 # BB84 con Codificación en Bloques Temporales y Estados Débilmente Coherentes
 
 La codificación en bloques temporales es una de las soluciones más populares para enviar información cuántica a largas distancias. En principio, la idea es preparar estados de un solo fotón y enviarlos a través de un acoplador de fibra con transmisión $T$. Los dos caminos tienen diferentes longitudes y son recombinados. Se aplica un cambio de fase $\varphi$  a uno de los dos caminos, digamos el más largo, véase {numref}`timebin`. Al manipular la transmisión del acoplamiento y la fase, en principio es posible preparar cualquier estado cúbit, dado que uno tiene $\ket\psi=\sqrt T\ket s+\sqrt Re^{i\varphi}\ket{\ell}$. En la práctica, cambiar la transmisión del primer acoplador es más demandante que cambiar la fase aplicada, por lo que a menudo se emplea una transmisión fija dada por $T=1/2$. Además, recombinar los dos caminos de manera determinística también es un desafío, por lo que a menudo se utiliza otro acoplador nuevamente con una transmisión de $1/2$. Este proceso más simple, por lo tanto, prepara cualquier estado $\ket\psi=(\ket s+e^{i\varphi}\ket{\ell})/\sqrt 2$, es decir, cualquier estado en el ecuador de la esfera de Bloch definido por $\ket{s}$ y $\ket{\ell}$, con cierta probabilidad. Sin embargo, esto es suficiente para implementar el protocolo BB84 a través del esquema en {numref}`timebin`.

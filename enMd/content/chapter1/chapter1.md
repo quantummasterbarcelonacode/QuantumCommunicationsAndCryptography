@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Basics of Quantum Mechanics
 
 The scope of this first section is to introduce the basic postulates of Quantum Mechanics and its mathematical structure. Most of the formalism presented here can be found in Chapter 2 of {cite}`nielsen2010quantum`. Linear algebra is the study of vector spaces and of linear operators acting on those spaces. In fact, all quantum machinery is fundamentally linear algebra on a complex Hilbert space, represented by the less standard Dirac notation. In this notation,

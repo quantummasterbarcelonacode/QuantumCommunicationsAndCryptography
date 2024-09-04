@@ -13,6 +13,7 @@
 </script>
 
 
+
 # L'attaque PNS (Photon-Number Splitting)
 
 Le remplacement des états uniques de photon par des états cohérents atténués semblait offrir un bon compromis entre faisabilité et sécurité. Cependant, cette intuition initiale a été remise en question par l'attaque dite de Photon-Number Splitting (PNS), introduite dans {cite}`PNS`. Elle considère une mise en œuvre réaliste avec des états cohérents atténués à travers une fibre standard, où les pertes sont exponentielles avec la distance. L'attaque exploite la présence des pertes et le fait qu'un état cohérent atténués contient incidentellement des clones de l'état préparé. Pour simplifier l'explication de l'attaque, considérons un protocole dans lequel Alice code l'information dans la polarisation des états de lumière préparés, mais cela s'applique également à d'autres codages, comme les créneaux temporels expliqués ci-dessus. L'attaque fonctionne comme suit :

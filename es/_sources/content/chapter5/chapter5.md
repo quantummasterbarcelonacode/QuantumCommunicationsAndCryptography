@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Pruebas de Seguridad
 
 Las secciones anteriores resumieron algunos de los protocolos más conocidos para QKD segura y concluyeron con su estructura general. La intuición detrás de todos ellos es que un ataque por parte de Eve introduce errores detectables en el canal. El argumento intuitivo sigue sugiriendo que Alice y Bob pueden monitorear la presencia de estos errores y detener el protocolo, abortando el ataque de espionaje. Claramente, mientras que esta intuición sugiere que el esquema puede ser seguro, no es aceptable cuando se trata de implementaciones prácticas. En cualquier escenario realista, habrá errores que no se deben a Eve, sino que son simplemente una consecuencia del ruido en el canal y/o imperfecciones en los laboratorios de Alice y Bob. Por lo tanto, no podemos aceptar que Alice y Bob aborten el protocolo cada vez que observen errores.

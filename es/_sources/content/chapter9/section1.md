@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Comunicación Clásica
 
 El problema de enviar información de manera confiable a través de un canal ruidoso tiene una larga historia en la teoría de la información clásica. En este contexto, un canal clásico se describe mediante un mapa estocástico $P(Y|X)$, que describe cómo una variable aleatoria de entrada $X$ se transforma en una variable de salida $Y$. La manera estándar de corregir los errores del canal es a través de la *corrección de errores*.

@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Escenario Independiente del Dispositivo
 
 La solución a los anteriores ataques de hacking viene de el llamado escenario independiente del dispositivo (device-independent, DI) {cite}`diqkd`. En este planteamiento, los dispositivos cuánticos son vistos como cajas negras con las que los usuarios pueden interactuar, proporcionando una entrada clásica y obteniendo una salida clásica. El planteamiento DI es bastante general y, de hecho, puede aplicarse a cualquier protocolo de información cuántica, pero en lo que sigue nos centraremos en QKD.

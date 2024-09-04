@@ -14,6 +14,7 @@
 
 
 
+
 # SARG Protocol
 
 The PNS attack was an important limitation for QKD implementations, but several solutions appeared after its formulation, the first one is given by the Scarani-Acin-Ribordy-Gisin (SARG) protocol {cite}`SARG`, which shows how a simple change in the way information is processed in a BB84 implementation using weak coherent states diminishes the impact of PNS attacks. In SARG, Alice prepares the same four states as in BB84, and Bob also makes the same two measurements. Therefore, at the quantum level, both protocols are identical and there is no need to change any quantum hardware to shift from BB84 to SARG.  Alice however encodes her bit as shown in {numref}`SARGfig`: bit $0$ ($1$) is encoded on $\ket{\pm z}$ ($\ket{\pm x}$), that is, the basis encodes the bit.

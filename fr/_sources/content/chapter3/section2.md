@@ -14,6 +14,7 @@
 
 
 
+
 # Le Protocole BB84
 
 Après avoir introduit l'idée de la distribution quantique de clés (QKD), nous présentons le premier protocole, introduit en 1984 par Bennett et Brassard, connu sous le nom de BB84 [1]. Rappelons que l'objectif de ce protocole est d'établir une clé secrète partagée, qui sera ensuite utilisée pour exécuter le one-time pad. Dans le cas du protocole BB84, la clé est établie de la manière suivante :

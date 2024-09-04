@@ -14,6 +14,7 @@
 
 
 
+
 # Protocoles à états leurres
 
 La solution finale aux attaques PNS a été fournie par Hwang {cite}`decoy` sous la forme des protocoles dits à états leurres. Dans leur version la plus simple, Alice choisit aléatoirement si elle encode son bit dans un état cohérent atténué avec des intensités différentes $\mu_1$ ou $\mu_2$. Expérimentalement, cela n'est pas particulièrement difficile ; tout ce qu'Alice doit faire est de moduler l'intensité de la lumière. Elle envoie l'état à Bob, qui le mesure comme prévu dans une implémentation BB84. À la fin du protocole, Alice annonce également l'amplitude qu'elle a réellement utilisée pour l'encodage, permettant à Bob d'estimer le taux de photons reçus dans les deux cas, $R_B^{(1)}$ et $R_B^{(2)}$. Ce qui suit montre l'intuition de comment l'utilisation de deux amplitudes permet aux parties honnêtes de détecter Eve lorsqu'elle met en œuvre l'attaque PNS standard. Ce n'est pas une preuve de sécurité complète, mais cela illustre les principales idées du protocole.

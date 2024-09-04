@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Implémentations
 
 Bien que cela reste difficile, les protocoles de QKD (Quantum Key Distribution) sont plus simples à mettre en œuvre que d'autres applications de l'information quantique, comme les ordinateurs quantiques. En effet, ils nécessitent « seulement » la préparation d'états à un seul qubit par Alice, qui sont immédiatement envoyés à Bob, qui les mesure dès leur réception. Le principal défi est que, pour que les protocoles de QKD soient pratiques, l'état quantique doit voyager sur de longues distances. Par conséquent, les implémentations de QKD doivent faire face au problème de la communication quantique à longue distance. La lumière est le support idéal pour cela, donc Alice doit envoyer ses états quantiques à Bob en utilisant des impulsions lumineuses au niveau quantique. Il existe trois scénarios principaux pour les protocoles de QKD dans des configurations de préparation-et-mesure :

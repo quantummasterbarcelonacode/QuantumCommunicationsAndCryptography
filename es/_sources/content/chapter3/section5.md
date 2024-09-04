@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Argumento de Bennett-Brassard-Mermin
 
 Unos meses después del trabajo de Ekert, Bennett, Brassard y Mermin {cite}`BBM` escribieron un artículo demostrando que un protocolo de QKD al estilo de Ekert siempre puede transformarse en un protocolo equivalente sin entrelazamiento, al estilo BB84, en el que los estados son preparados por Alice y medidos por Bob. Su argumento es el siguiente:

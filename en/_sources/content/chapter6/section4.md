@@ -14,6 +14,7 @@
 
 
 
+
 # Decoy-State Protocols
 
 The final solution to PNS attacks was provided by Hwang {cite}`decoy` in the form of the so-called decoy-state protocols. In their simplest version, Alice chooses randomly whether to encode her bit in a weak coherent state with intensities $\mu_1$ or $\mu_2$. Experimentally, this is not particularly difficult, all what Alice needs to do is to modulate the light intensity. She sends the state to Bob who measures it as expected in a BB84 implementation. At the end of the protocol, Alice also announces the amplitude she actually used in the encoding, so that Bob can estimate the rate of received photons in the two cases, $R_B^{(1)}$ and $R_B^{(2)}$. In what follows, we show how the use of two amplitudes allows the honest party to detect Eve when she implements the standard PNS attack. This is not a full security proof, but it illustrates the main ideas in the protocol.

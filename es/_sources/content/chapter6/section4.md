@@ -14,6 +14,7 @@
 
 
 
+
 # Protocolos de Estado Señuelo
 
 La solución definitiva a los ataques PNS fue proporcionada por Hwang {cite}`decoy` en forma de los llamados protocolos de estado señuelo. En su versión más simple, Alice elige aleatoriamente si codifica su bit en un estado coherente débil con intensidades $\mu_1$ o $\mu_2$. Experimentalmente, esto no es particularmente difícil, lo único que Alice necesita hacer es modular la intensidad de la luz. Ella envía el estado a Bob, quien lo mide como se esperaría en una implementación de BB84. Al final del protocolo, Alice también anuncia la amplitud que realmente utilizó en la codificación, de modo que Bob puede estimar la tasa de fotones recibidos en los dos casos, $R_B^{(1)}$ y $R_B^{(2)}$. A continuación, mostramos cómo el uso de dos amplitudes permite a las partes honestas detectar a Eve cuando ella implementa el ataque PNS estándar. Esto no es una prueba de seguridad completa, pero ilustra las ideas principales del protocolo.

@@ -14,6 +14,7 @@
 
 
 
+
 # BB84 avec découpage en créneaux temporels et états cohérents atténués
 
 Le découpage en créneaux temporels représente l'une des solutions les plus populaires pour envoyer de l'information quantique sur de longues distances. En principe, l'idée est de préparer des états de photons uniques et de les envoyer dans deux chemins grace à un séparateur de faisceau avec une transmission donnée $T$. Les deux chemins ont des longueurs différentes et sont recombinés. Un décalage de phase $\varphi$ est appliqué à l'un des deux chemins, disons le plus long, voir {numref}`timebin`. En jouant avec la transmission du séparateur et la phase, il est en principe possible de préparer n'importe quel état de qubit, puisque l'on a $\ket\psi=\sqrt T\ket s+\sqrt Re^{i\varphi}\ket{\ell}$. En pratique, changer la transmission du premier séparateur est plus exigeant que de changer la phase appliquée, donc on utilise souvent une transmission fixe donnée par $T=1/2$. De plus, recombiner les deux chemins de manière déterministe est également difficile, donc on utilise souvent un autre séparateur avec une transmission $1/2$. Ce processus plus simple prépare donc tout état $\ket\psi=(\ket s+e^{i\varphi}\ket{\ell})/\sqrt 2$, c'est-à-dire tout état dans l'équateur de la sphère de Bloch défini par $\ket s$ et $\ket{\ell}$, avec une certaine probabilité. Cependant, cela est suffisant pour mettre en œuvre le protocole BB84 à travers le schéma montré dans {numref}`timebin`.

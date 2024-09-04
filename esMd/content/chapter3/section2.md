@@ -13,6 +13,7 @@
 </script>
 
 
+
 # El Protocolo BB84
 
 Después de introducir la idea de la QKD, presentamos el primer protocolo, introducido en 1984 por Bennett y Brassard y conocido como BB84 {cite}`BB84`. Recordemos que el objetivo del protocolo es establecer una clave secreta compartida, que luego se utiliza para ejecutar el protocolo de libreta de un solo uso. En el caso de BB84, la clave se establece de la siguiente manera:

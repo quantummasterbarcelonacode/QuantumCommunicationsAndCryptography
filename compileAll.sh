@@ -20,7 +20,7 @@ for file in $(find . -name '*.md'); do
     # Check if the first character is a <
     if [ "$(head -c 1 $file)" == "<" ]; then
         echo "Removing header from $file"
-        tail -n +15 $file > temp.md
+        tail -n +16 $file > temp.md
         mv temp.md $file
     fi
 

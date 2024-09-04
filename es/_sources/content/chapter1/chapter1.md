@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Fundamentos de la Mecánica Cuántica 
 
 El objetivo de esta primera sección es introducir los postulados básicos de la mecánica cuántica y su estructura matemática. La mayor parte del formalismo presentado aquí se puede encontrar en el Capítulo 2 de {cite}`nielsen2010quantum`. 

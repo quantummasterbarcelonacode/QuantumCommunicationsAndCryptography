@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Comunicaciones y Criptografía Cuánticas
 
 Estas son las notas del curso de Comunicaciones y Criptografía Cuánticas del Máster en Ciencia y Tecnología Cuánticas de la Universidad de Barcelona, impartido por el Prof. Antonio Acín.

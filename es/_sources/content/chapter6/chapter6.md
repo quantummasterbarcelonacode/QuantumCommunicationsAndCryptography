@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Implementaciones
 
 Aunque siguen siendo desafiantes, los protocolos de QKD (Quantum Key Distribution) son más simples de implementar que otras aplicaciones en información cuántica, como las computadoras cuánticas. Esto es porque "sólo" requieren la preparación de estados de un solo cúbit por parte de Alice, que son enviados inmediatamente a Bob, quien los mide al recibirlos. El principal desafío es que, para que los protocolos de QKD sean prácticos, el estado cuántico debe viajar largas distancias. Por lo tanto, las implementaciones de QKD deben lidiar con el problema de la comunicación cuántica a larga distancia. La luz es el portador ideal para eso, por lo que Alice debería enviar sus estados cuánticos a Bob usando pulsos de luz a nivel cuántico. Hay tres escenarios principales para los protocolos de QKD en configuraciones de preparación y medida:

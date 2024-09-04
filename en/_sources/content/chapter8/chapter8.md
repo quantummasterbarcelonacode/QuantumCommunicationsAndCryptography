@@ -14,6 +14,7 @@
 
 
 
+
 # The Device-Independent Scenario
 
 The solution to the previous hacking attacks is provided by the so-called device-independent (DI) scenario {cite}`diqkd`. In this approach, quantum devices are seen as black boxes with which the users can interact, providing a classical input and getting a classical output. The DI approach is quite general and can, in fact, can be applied to any quantum information protocol, but in what follows we focus on QKD. 

@@ -13,6 +13,7 @@
 </script>
 
 
+
 # El Ataque de División del Número de Fotones
 
 La sustitución de estados de fotones individuales por estados débilmente coherentes parecía ofrecer un buen balance entre implementabilidad y seguridad. Sin embargo, esta intuición inicial fue cuestionada por el llamado ataque de División del Número de Fotones (Photon-Number Splitting, PNS), introducido en {cite}`PNS`. Este ataque considera una implementación realista con estados coherentes débiles a través de una fibra estándar, donde las pérdidas son exponenciales con la distancia. El ataque explota la presencia de pérdidas y el hecho de que un estado coherente débil contiene incidentalmente clones del estado preparado. Para simplificar la explicación del ataque, consideramos un protocolo en el que Alice codifica la información en la polarización de los estados de luz preparados, aunque también se aplica a otros métodos de codificación, como los bloques temporales explicados anteriormente. El ataque funciona de la siguiente manera:

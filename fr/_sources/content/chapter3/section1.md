@@ -13,6 +13,7 @@
 </script>
 
 
+
 # One-Time Pad et Distribution Quantique de Clés
 
 Avant de plonger dans le monde quantique, passons en revue un résultat fondamental de Vernam montrant comment échanger des informations privées de manière complètement sécurisée en utilisant une clé secrète pré-partagée.

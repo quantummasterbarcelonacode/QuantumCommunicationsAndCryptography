@@ -14,6 +14,7 @@
 
 
 
+
 # Scenario Indépendant des Dispositifs (Device-Independent)
 
 La solution aux précédentes attaques de piratage est fournie par le scénario dit indépendant des dispositifs (DI){cite}`diqkd`. Dans cette approche, les dispositifs quantiques sont considérés comme des boîtes noires avec lesquelles les utilisateurs peuvent interagir, fournissant une entrée classique et en obtenant une sortie classique. L'approche DI est assez générale et peut, en fait, être appliquée à n'importe quel protocole d'information quantique. Dans ce qui suit, nous nous concentrerons sur la distribution quantique de clés (QKD).

@@ -13,6 +13,7 @@
 </script>
 
 
+
 # Estructura General de los Protocolos QKD
 
 La estructura general de un protocolo QKD es la siguiente:
